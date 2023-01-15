@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Hexo</title>
+  <title>阿浩の博客</title>
   
-  
+  <subtitle>阿浩の博客</subtitle>
   <link href="http://pengsec.github.io/atom.xml" rel="self"/>
   
   <link href="http://pengsec.github.io/"/>
@@ -10,7 +10,7 @@
   <id>http://pengsec.github.io/</id>
   
   <author>
-    <name>John Doe</name>
+    <name>阿浩</name>
     
   </author>
   
