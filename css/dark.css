@@ -103,47 +103,15 @@ body.DarkMode span.bg-color {
 }
 
 /* 背景颜色变黑色 */
-/* body.DarkMode #rewardModal .modal-content, */
-body.DarkMode #reward .reward-link,
-body.DarkMode #rewardModal .fa-times,
-body.DarkMode #rewardModal .reward-title,
-body.DarkMode #vcomments ::placeholder,
-body.DarkMode #vcomments .vbtn,
-body.DarkMode #waline ::placeholder,
-body.DarkMode #waline .wl-header label ,
-body.DarkMode #waline .wl-header input,
-body.DarkMode #waline .wl-btn,
-body.DarkMode #waline .wl-footer .wl-action svg,
-body.DarkMode #waline .wl-reply svg,
-body.DarkMode #waline .wl-info span,
-body.DarkMode #waline .wl-info div,
-body.DarkMode .toc-widget,
-body.DarkMode .tag_share .chip,
-body.DarkMode .archive-container,
-body.DarkMode .modal,
+body.DarkMode,
 body.DarkMode .v[data-class="v"] .vcount,
+body.DarkMode #rewardModal .modal-content,
+body.DarkMode .modal,
 body.DarkMode header .side-nav,
 body.DarkMode header .side-nav .menu-list .m-nav-show {
-    filter: invert(0.8);
-}
-body.DarkMode .waline-card .comment_headling span {
-    color: rgba(255, 255, 255, 0.6);
-}
-body.DarkMode #waline .wl-card .wl-meta span{
-    color: rgba(255, 255, 255, 0.6);
-    background: #666666;
+  background-color: #12121c;
 }
 
-body.DarkMode .reward-tabs img {
-    filter: invert(0.9) !important;
-}
-
-body.DarkMode .tabs .tab a,
-body.DarkMode .tabs .tab {
-    filter: invert(0.8);
-    font-weight: bolder;
-    color: rgba(255, 255, 255, 0.6);
-}
 
 /*首页文章滑动卡片文字*/
 body.DarkMode #thisTime,
@@ -185,7 +153,7 @@ body.DarkMode table th {
     background-color:rgba(255, 255, 255, 0.6);
 }
 /*音乐播放器*/
-body.DarkMode .aplayer {
+/* body.DarkMode .aplayer {
     background: rgb(42 34 34);
     color: #42b983;
     font-family: Arial,Helvetica,sans-serif;
@@ -211,7 +179,7 @@ body.DarkMode .aplayer .aplayer-list ol li:hover {
 body.DarkMode .aplayer .aplayer-body {
     position: relative;
     filter: invert(.8);
-}
+} */
 
 /*图片滤镜*/
 body.DarkMode img,
@@ -279,8 +247,8 @@ body.DarkMode .toc-title {
     color:#666 !important
 }
 /*toc目录滤镜*/
-body.DarkMode .skillbar .skill-bar-percent {
-    color: #000;
+body.DarkMode .toc-widget{
+  filter: invert(0.8);
 }
 
 /*一些细节背景*/

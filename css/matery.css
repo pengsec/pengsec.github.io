@@ -242,6 +242,7 @@ mark {
 
 .bg-color {
     background-image: linear-gradient(to right, #4cbf30 0%, #0f9d58 100%);
+	opacity: 0.8  /* 透明效果 */
 }
 
 .text-color {
@@ -550,10 +551,10 @@ header .go-back i {
     height: 40vh !important;
 }
 
-.bg-cover:after {
+/* .bg-cover:after {
     -webkit-animation: rainbow 60s infinite;
     animation: rainbow 60s infinite;
-}
+} */
 
 .bg-cover:before,
 .bg-cover:after {
@@ -2298,4 +2299,8 @@ body.DarkMode .theme-btn:hover {
 /* Hide Valine Version*/
 .vpower.txt-right {
         display: none;
+}
+
+body.DarkMode .search-input {
+    color: rgba(255, 255, 255, 0.6);
 }
