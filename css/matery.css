@@ -2294,3 +2294,8 @@ body.DarkMode .theme-btn:hover {
     font-weight: 900;
     color: #d9534f;
 }
+
+/* Hide Valine Version*/
+.vpower.txt-right {
+        display: none;
+}
