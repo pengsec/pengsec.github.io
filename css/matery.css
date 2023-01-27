@@ -2299,9 +2299,9 @@ body.DarkMode .theme-btn:hover {
 }
 
 /* Hide Valine Version*/
-.vpower.txt-right {
+/* .vpower.txt-right {
         display: none;
-}
+} */
 
 body.DarkMode .search-input {
     color: rgba(255, 255, 255, 0.6);
