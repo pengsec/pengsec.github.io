@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="谈谈pyhon数据类型">
-    <meta name="description" content="谈谈python数据类型">
+    <meta name="keywords" content="msic的基本解题思路">
+    <meta name="description" content="msic的基本解题思路">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>python数据类型 | 阿浩の博客</title>
+    <title>msic的基本解题思路(一) | 阿浩の博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
     <style>
@@ -296,12 +296,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">python数据类型</h1>
+                    <h1 class="description center-align post-title">msic的基本解题思路(一)</h1>
                 </div>
             </div>
         </div>
@@ -325,8 +325,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/python/">
-                                <span class="chip bg-color">python</span>
+                            <a href="/tags/msic/">
+                                <span class="chip bg-color">msic</span>
                             </a>
                         
                     </div>
@@ -337,8 +337,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/python/" class="post-category">
-                                python
+                            <a href="/categories/CTF/" class="post-category">
+                                CTF
                             </a>
                         
                     </div>
@@ -350,21 +350,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-01-24
+                    2023-02-01
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-01-24
+                    2023-02-01
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.8k
+                    2.7k
                 </div>
                 
 
@@ -384,509 +384,408 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1>python数据类型</h1>
-<h2 id="python数据类型概况">python数据类型概况</h2>
-<p><strong>数字类型</strong></p>
-<p><strong>字符类型</strong></p>
-<p><strong>布尔类型</strong></p>
-<p><strong>空类型</strong></p>
-<p><strong>列表类型</strong></p>
-<p><strong>元组类型</strong></p>
-<p><strong>字典类型</strong></p>
-<h3 id="整型int">整型int</h3>
+                <h1>msic的基本解题思路(一)</h1>
+<p><strong>msic的四大部分：</strong></p>
 <ul class="lvl-0">
 <li class="lvl-2">
-<p>整型就是所说的整数，0也是整数，但是特殊的整数</p>
+<p>文件操作与隐写</p>
 </li>
 <li class="lvl-2">
-<p><mark>int</mark>即是整型的代表，又是定义整型的<mark>内置函数</mark></p>
+<p>图片隐写术</p>
+</li>
+<li class="lvl-2">
+<p>压缩文件处理</p>
+</li>
+<li class="lvl-2">
+<p>流量取证技术</p>
 </li>
 </ul>
-<h3 id="浮点型">浮点型</h3>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>浮点型就是我们生活中的小数，凡是带有小数点的类型，都可以认为是浮点型</p>
-</li>
-<li class="lvl-2">
-<p>在python中，<mark>float</mark>既是浮点型的代表，又是浮点型类型定义的内置函数</p>
-</li>
-<li class="lvl-2">
-<p>定义<mark>float</mark>类型的时候，并不需要一定使用<mark>float</mark>声明</p>
-</li>
-</ul>
-<h3 id="内置函数–type">内置函数–type</h3>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>返回变量的类型</p>
-</li>
-<li class="lvl-2">
-<p><mark>type</mark>（已经被赋值的变量名或变量）</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">count <span class="token operator">=</span> <span class="token number">1050</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">type</span><span class="token punctuation">(</span>count<span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">type</span><span class="token punctuation">(</span><span class="token number">3.1415926</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-</li>
-</ul>
-<h3 id="字符串">字符串</h3>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>用 " 或者 “” 包裹的信息，就是字符串</p>
-</li>
-<li class="lvl-2">
-<p>字符串中可以包含任意字符：如字母，数字，符号，且没有先后顺序</p>
-</li>
-</ul>
-<h4 id="字符串的定义方法">字符串的定义方法</h4>
-<p>在python中，使用<mark>str</mark>来代表字符串类型，并且通过该函数可以定义字符串</p>
-<h4 id="字符串的重要思想">字符串的重要思想</h4>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>字符串是不可改变的！</p>
-</li>
-</ul>
-<h4 id="内置函数id">内置函数id</h4>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>返回变量的内存地址</p>
-</li>
-<li class="lvl-2">
-<p>数字地址 = <mark>id</mark>(变量)</p>
-</li>
-</ul>
-<h4 id="内置函数">内置函数</h4>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>返回字符串的长度</p>
-</li>
-<li class="lvl-2">
-<p>无法返回数字类型的长度，因为数字类型没有长度</p>
-</li>
-<li class="lvl-2">
-<p>返回 = len(字符串)</p>
-</li>
-</ul>
-<h4 id="内置成员运算符in的使用">内置成员运算符<mark>in</mark>的使用</h4>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>成员运算符是用来判断你的数据中是否存在你想要的成员</p>
-</li>
-</ul>
-<h4 id="内置函数max">内置函数<mark>max</mark></h4>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p><mark>max</mark>(数据) -&gt; 成员值     <code>print(max(''今天是1月3日!'))</code>    -&gt; <mark>月</mark></p>
-</li>
-<li class="lvl-2">
-<p><strong>规则</strong>：中文符号 &gt; 字母 &gt; 数字 &gt; 英文符号</p>
-</li>
-<li class="lvl-2">
-<p>中文按照拼音的首字母来计算</p>
-</li>
-</ul>
-<h4 id="内置函数min">内置函数<mark>min</mark></h4>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p><mark>min</mark>函数返回数据中最小的成员  <code>pinrt(min('今天是1月3日!'))</code>  -&gt; !</p>
-</li>
-<li class="lvl-2">
-<p>min(数据) &gt; 字母 &gt; 数字 &gt; 英文符号</p>
-</li>
-<li class="lvl-2">
-<p><strong>规则</strong>：中文符号 &gt; 字母 &gt; 数字 &gt; 英文符号</p>
-</li>
-<li class="lvl-2">
-<p>中文按照拼音的首字母来计算</p>
-</li>
-</ul>
-<h4 id="字符串的累加">字符串的累加</h4>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>字符串不是数字不能做减法，乘除法</p>
-</li>
-<li class="lvl-2">
-<p>字符串的拼接，用 “+” 这个符号</p>
-</li>
-</ul>
-<h3 id="布尔类型">布尔类型</h3>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>定义：真假的判断 即 布尔类型</p>
-</li>
-<li class="lvl-2">
-<p>固定值：True -&gt; 真；False -&gt; 假；</p>
-</li>
-<li class="lvl-2">
-<p>布尔值</p>
-</li>
-</ul>
-<h4 id="布尔类型的使用">布尔类型的使用</h4>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p><mark>bool</mark>代表布尔类型，也可以对于结果进行真假的判读</p>
-</li>
-</ul>
-<h4 id="使用场景">使用场景</h4>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>常被用来判断一件事儿的真假</p>
-</li>
-</ul>
-<h4 id="数字与字符串的布尔应用">数字与字符串的布尔应用</h4>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>int 0 -&gt; False，非0 -&gt; True</p>
-</li>
-<li class="lvl-2">
-<p>float 0.0 -&gt; False，非0.0 -&gt; True</p>
-</li>
-<li class="lvl-2">
-<p>str " -&gt; False(即 空字符串)，非空字符串 -&gt; True</p>
-</li>
-<li class="lvl-2">
-<p>在计算机中0 1是计算机的最原始形态，单个占空间也最小，故而经常会将0 1用来替代True与False</p>
-</li>
-</ul>
-<h3 id="pyhton中的空类型">pyhton中的空类型</h3>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>不属于任何数据类型就是<mark>空类型</mark></p>
-</li>
-<li class="lvl-2">
-<p>固定值：<mark>None</mark></p>
-</li>
-<li class="lvl-2">
-<p>空类型 属于 <mark>False</mark>的范畴</p>
-</li>
-<li class="lvl-2">
-<p>如果不确定类型的时候可以使用<mark>空类型</mark></p>
-</li>
-</ul>
-<h3 id="列表类型">列表类型</h3>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>列表就是队列</p>
+<h2 id="文件操作与隐写">文件操作与隐写</h2>
+<h3 id="文件类型识别">文件类型识别</h3>
+<ol>
+<li class="lvl-3">
+<p>File命令</p>
+<p>当文件没有后缀名或者有后缀名而无法打开时，根据识别出的文件类型来修改后缀名即可正常打开文件。</p>
+<p><mark>使用场景：不知道后缀名，无法打开文件</mark></p>
+<p><code>Linux环境下命令格式：file+文件名</code></p>
 </li>
 <li class="lvl-3">
-<p>他是各种数据类型的集合，也是一种数据结构</p>
+<p>winhex</p>
+<p>通过<mark>winhex</mark>程序中可以查看文件头类型，根据头类型判断文件类型</p>
+<p><mark>使用场景：windows下通过文件头信息判断文件类型</mark></p>
 </li>
-<li class="lvl-2">
-<p>列表是一种有序，且内容可重复的集合类型</p>
-</li>
-</ul>
-<h4 id="列表的定义">列表的定义</h4>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>在python中，<mark>list</mark>代表这种类型，也可以用它定义一个列表  <code>name_01=list(['',''])</code></p>
-</li>
-<li class="lvl-2">
-<p>在python中，列表中的元素存在于一个[]中  <code>name_02=['','']</code></p>
-</li>
-<li class="lvl-2">
-<p>在python中，列表是一个无限制长度的数据结构</p>
-</li>
-</ul>
-<h4 id="列表中的类型">列表中的类型</h4>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p><strong>str_array</strong></p>
-</li>
-<li class="lvl-2">
-<p><strong>int_array</strong></p>
-</li>
-<li class="lvl-2">
-<p><strong>float_array</strong></p>
-</li>
-<li class="lvl-2">
-<p><strong>bool_array</strong></p>
-</li>
-<li class="lvl-2">
-<p><strong>list_array</strong>  列表中嵌套列表</p>
-</li>
-<li class="lvl-2">
-<p><strong>min_array</strong>  列表中可以放混合类型</p>
-</li>
-</ul>
-<h4 id="in，max，min在列表中的使用">in，max，min在列表中的使用</h4>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>1 in [1,2,3,4] -&gt; True; 10 in  [1,2,3,4] -&gt; False</p>
-</li>
-<li class="lvl-2">
-<p>max([1,2,3,4]) -&gt; 4</p>
-</li>
-<li class="lvl-2">
-<p>min([1,2,3,4]) -&gt; 1</p>
-</li>
-<li class="lvl-2">
-<p>max和min在列表中使用的时候，列表中的元素不能是多种类型，如果类型不统一，则会报错</p>
-</li>
-</ul>
-<h3 id="元组">元组</h3>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>元组和列表一样，都是一种可以存储多种数据结构的队列</p>
-</li>
-<li class="lvl-2">
-<p>元组也是一个有序的，且元素可以重复的集合</p>
-</li>
-</ul>
-<h4 id="元组的定义">元组的定义</h4>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>在python中，tuple代表着元组这种类型，也可以用它定义一个元组   <code>name_01=tuple('','')</code></p>
-</li>
-<li class="lvl-2">
-<p>在python中，元组中的元素存在于一个（）小括号中  <code>name_02=('','')</code></p>
-</li>
-<li class="lvl-2">
-<p>在python中，元组是一个无限制长度的数据结构</p>
-</li>
-</ul>
-<blockquote>
-<p>注：如果元组中只有一个元素，那一定要在这个元素后面加上一个逗号</p>
-</blockquote>
-<h4 id="列表与元组的区别">列表与元组的区别</h4>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>元组比列表占用资源更小</p>
-</li>
-<li class="lvl-2">
-<p>列表是可变的，元组是不可变的</p>
-</li>
-</ul>
-<h4 id="元组中的类型">元组中的类型</h4>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p><strong>str_tuple</strong></p>
-</li>
-<li class="lvl-2">
-<p><strong>int_tuple</strong></p>
-</li>
-<li class="lvl-2">
-<p><strong>float_tuple</strong></p>
-</li>
-<li class="lvl-2">
-<p><strong>bool_tuple</strong></p>
-</li>
-<li class="lvl-2">
-<p><strong>none_tuple</strong>=(None,None,None)</p>
-</li>
-<li class="lvl-2">
-<p><strong>tuple_tuple</strong>=((1,2,3),(1.2,3.1))</p>
-</li>
-<li class="lvl-2">
-<p><strong>list_type</strong>=([123,456],[6789,1234])</p>
-</li>
-<li class="lvl-2">
-<p><strong>mix_tuple</strong>=(‘’,1,3.14,None,True)</p>
-</li>
-<li class="lvl-2">
-<p><strong>tuple_array</strong>=[(‘a’,‘b’),(‘c’,‘d’),(‘e’,)]</p>
-</li>
-</ul>
-<h4 id="in，max，min在元组中的使用">in，max，min在元组中的使用</h4>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>1 in （1，2，3，4） -&gt; True；10 not in （1，2，3，4） -&gt; True</p>
-</li>
-<li class="lvl-2">
-<p>max((1,2,3,4)) -&gt; 4</p>
-</li>
-<li class="lvl-2">
-<p>min((1,2,3,4)) -&gt; 1</p>
-</li>
-<li class="lvl-2">
-<p>max和min在元组中使用的时候，元组中的元素不能是多种类型，如果类型不统一，则会报错</p>
-</li>
-</ul>
-<h3 id="字典类型">字典类型</h3>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>字典是由多个键（key）及其对应的值（value）所组成的一种数据类型</p>
-</li>
-</ul>
-<h4 id="字典的结构与创建方法">字典的结构与创建方法</h4>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>在python中，<mark>dict</mark>用来代表字典，并且可以创建一个字典</p>
-</li>
-<li class="lvl-2">
-<p>在python中，通过{}将一个个key与value存入字典中</p>
-<p><code>a = dict()</code></p>
-<p><code>a = {}</code></p>
-<p><code>person = {'name':'xiaoming','age':33}</code></p>
-</li>
-</ul>
-<h4 id="字典支持的数据类型">字典支持的数据类型</h4>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>key支持字符串，数字和元组类型，但列表是不支持的</p>
-</li>
-<li class="lvl-2">
-<p>value支持所有python的数据类型</p>
-<p><code>a = {'name':'dewei','age':30}</code></p>
-<p><code>b = {1:'one',2:'two'}</code></p>
-<p><code>c = {(1,2,3):[1,2,3],(4,5,6):[4,5,6]}</code></p>
-</li>
-</ul>
-<h4 id="列表与元组中的字典">列表与元组中的字典</h4>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>dict_array = [{1:1,2:2},{‘one’:1,‘two’:2}]</p>
-</li>
-<li class="lvl-2">
-<p>dict_tuple = ({1:1,2:2},{‘one’:1,"two’:2})</p>
-</li>
-<li class="lvl-2">
-<p><mark>元组一旦创建，就不可以改变</mark></p>
-</li>
-</ul>
-<h4 id="python3-7与之前版本-字典的区别">python3.7与之前版本 字典的区别</h4>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>python3.7之前是无序的</p>
-</li>
-<li class="lvl-2">
-<p>python3.7之后是有序的</p>
-</li>
-</ul>
-<h4 id="字典的重要特性">字典的重要特性</h4>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>字典中每一个key一定是唯一的</p>
-</li>
-</ul>
-<h3 id="数字的运算">数字的运算</h3>
-<h4 id="赋值运算符">赋值运算符</h4>
+</ol>
+<p><strong>常见的文件头类型如下：</strong></p>
 <table>
 <thead>
 <tr>
-<th>运算符</th>
-<th>描述</th>
-<th>举例</th>
+<th>文件类型</th>
+<th>文件头</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>=</td>
-<td>等于运算符</td>
-<td>c=a+b</td>
+<td>JPEG(jpg)</td>
+<td>FFD8FFE1</td>
 </tr>
 <tr>
-<td>+=</td>
-<td>加法运算符</td>
-<td>c+=a -&gt; c=c+a</td>
+<td>PNG(png)</td>
+<td>89504E47</td>
 </tr>
 <tr>
-<td>-=</td>
-<td>减法运算符</td>
-<td>c-=a -&gt; c=c-a</td>
+<td>GIF(gif)</td>
+<td>47494638</td>
 </tr>
 <tr>
-<td>*=</td>
-<td>乘法运算符</td>
-<td>c*=a  -&gt;  c=c * a</td>
+<td>TIFF(tiff)</td>
+<td>49492A00</td>
 </tr>
 <tr>
-<td>/=</td>
-<td>除法运算符</td>
-<td>c/=a -&gt; c=c/a</td>
+<td>Windows Bitmap(bmp)</td>
+<td>424DC001</td>
 </tr>
 <tr>
-<td>%=</td>
-<td>取模运算符</td>
-<td>c%=a -&gt; c=c%a</td>
+<td>ZIP Archive(ZIP)</td>
+<td>504B0304</td>
 </tr>
 <tr>
-<td>**=</td>
-<td>幂运算符</td>
-<td>c ** =a -&gt; c=c ** a</td>
+<td>RAR Archive(rar)</td>
+<td>52617221</td>
 </tr>
 <tr>
-<td>//=</td>
-<td>整除运算符</td>
-<td>c//=a -&gt; c=c//a</td>
+<td>Adobe Photshop(psd)</td>
+<td>38425053</td>
+</tr>
+<tr>
+<td>Rich Text Format(rtf)</td>
+<td>7B5C727466</td>
+</tr>
+<tr>
+<td>XML(xml)</td>
+<td>3C3F786D6C</td>
+</tr>
+<tr>
+<td>HTML(html)</td>
+<td>68746D6C3E</td>
+</tr>
+<tr>
+<td>Adobe Acrobat(pdf)</td>
+<td>255044462D312E</td>
+</tr>
+<tr>
+<td>Wave(wav)</td>
+<td>57415645</td>
+</tr>
+<tr>
+<td>pacp</td>
+<td>4D3C2B1A</td>
 </tr>
 </tbody>
 </table>
-<h4 id="b-kb-mb-gb-的转换">b kb mb gb 的转换</h4>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>b kb mb gb 是计算机的计量单位</p>
+<ol start="3">
+<li class="lvl-3">
+<p>文件头残缺/错误</p>
+<p>通常文件无法正常打开有两种情况，一种文件头部残缺，另一种头部字段错误。针对文件头部残缺的情况，使用winhex程序添加相应的文件头，针对头部字段错误，可以找一个相同类型的文件进行替换。</p>
+<p><mark>使用场景：文件头部残缺或文件头部字段错误无法打开正常文件</mark></p>
+<p><code>格式：file 文件名</code></p>
+<p><img src="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202302011320661.png" alt="file命令识别文件"></p>
 </li>
-<li class="lvl-2">
-<p>1024相差量</p>
-</li>
-</ul>
-<h4 id="字符串与数字的乘法">字符串与数字的乘法</h4>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>字符串无法与字符串做乘法</p>
-</li>
-<li class="lvl-2">
-<p>字符串只可以和数字作乘法</p>
-</li>
-</ul>
-<h3 id="比较运算符">比较运算符</h3>
-<table>
-<thead>
-<tr>
-<th>运算符</th>
-<th>描述</th>
-<th>举例</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>==</td>
-<td>判断是否等于</td>
-<td>a==b</td>
-</tr>
-<tr>
-<td>!=</td>
-<td>判断是否不等于</td>
-<td>a!=b</td>
-</tr>
-<tr>
-<td>&gt;</td>
-<td>判断是否大于</td>
-<td>a&gt;b</td>
-</tr>
-<tr>
-<td>&lt;</td>
-<td>判断是否小于</td>
-<td>a&lt;b</td>
-</tr>
-<tr>
-<td>&gt;=</td>
-<td>判断是否大于等于</td>
-<td>a&gt;=b</td>
-</tr>
-<tr>
-<td>&lt;=</td>
-<td>判断是否小于等于</td>
-<td>a&lt;=b</td>
-</tr>
-<tr>
-<td><mark>&lt;&gt;</mark></td>
-<td><mark>判断是否不等于</mark></td>
-<td>a&lt;&gt;b</td>
-</tr>
-<tr>
-<td>is</td>
-<td>判断两个对象存储单元是否相同</td>
-<td>a is b</td>
-</tr>
-<tr>
-<td>is not</td>
-<td>判断两个对象存储单元是否不同</td>
-<td>a is not b</td>
-</tr>
-</tbody>
-</table>
+</ol>
+<h3 id="文件分离操作">文件分离操作</h3>
+<ol>
+<li class="lvl-3">
+<p>Binwalk工具</p>
+<p><strong>Binwalk</strong>工具是Linux下用来分析和分离文件的工具，可以快速分辨文件是否由多个文件合并而成，并将文件进行分离。如果分离成功会在目标文件的目录。</p>
+<p>同目录下生成一个形如_文件名_extracted的文件目录，目录中有分离后的文件。</p>
+<p><mark>用法</mark>：</p>
+<p><code>分析文件：binwalk filename</code></p>
+<p><code>分离文件：binwalk -e filename</code></p>
 <blockquote>
-<p>注：&lt;&gt;在python3里已经废弃，仅python2里可用</p>
-<p>​       <mark>单元存储</mark> 就是我们提过的<mark>内存块</mark></p>
+<p>注：binwalk遇到压缩包会自动解压。</p>
 </blockquote>
+</li>
+<li class="lvl-3">
+<p>formost</p>
+<p>如果<strong>binwalk</strong>无法正确分离文件，可以使用<strong>foremost</strong>，将目标文件复制到kali中，成功执行后，会在目标文件的文件目录下生成我们设置的目录，目录中会按文件类型分离出文件。</p>
+<p><mark>用法</mark>：</p>
+<p><code>foremost 文件名 -o 输出目录名</code></p>
+</li>
+<li class="lvl-3">
+<p>dd</p>
+<p>当文件自动分离出错或者因为其他原因无法自动分离时，可以使用<strong>dd</strong>实现文件手动分离。</p>
+<p><code>格式：dd if=源文件 of=目标文件名 bs=1 skip=开始分离的字节数</code></p>
+<p><mark>参数说明</mark>：</p>
+<p><code>if=file  #输入文件名，缺省为标准输入</code></p>
+<p><code>of=file  #输出文件名，缺省为标准输出</code></p>
+<p><code>bs=bytes  #同时设置读写块的大小为bytes，可代替ibs和obs</code></p>
+<p><code>skip=blocks  #从输入文件开头跳过blocks个块后再开始复制</code></p>
+</li>
+<li class="lvl-3">
+<p>Winhex</p>
+<p>除了使用dd外，还可以使用winhex实现文件手动分离，将目标文件拖入问winhex中，找到要分离的部分，点击复制即可。</p>
+<p><mark>使用场景：Windows下利用winhex程序对文件进行手动分离</mark></p>
+</li>
+<li class="lvl-3">
+<p>010Editor</p>
+<p><mark>将某块区域文件保存的方式如下：</mark></p>
+<ol>
+<li class="lvl-6">
+<p>010Editor打开文件 -&gt; 选中右键 -&gt; Selection -&gt; Save Selection</p>
+</li>
+</ol>
+<p><mark>将16进制字符文件导入保存操作方法如下：</mark></p>
+<ol>
+<li class="lvl-6">
+<p>将16进制字符文件保存在一个文件</p>
+</li>
+<li class="lvl-6">
+<p>打开010Editor import Hex</p>
+</li>
+<li class="lvl-6">
+<p>另存为一个文件，后缀名以010Editor获取到它本身文件信息而定</p>
+</li>
+</ol>
+</li>
+</ol>
+<h3 id="文件合并操作">文件合并操作</h3>
+<ol>
+<li class="lvl-3">
+<p>Linux下的文件合并</p>
+<p><mark>使用场景：Linux下，通常对文件名相似的文件要进行批量合并</mark></p>
+<p><code>格式：cat 合并的文件 &gt; 输出的文件</code></p>
+<p><mark>完整性检测：Linux下计算文件md5：</mark></p>
+<p><code>md5sum 文件名</code></p>
+</li>
+<li class="lvl-3">
+<p>Windows下的文件合并</p>
+<p><mark>使用场景：Windows下，通常要对文件 名相似的文件进行批量合并</mark></p>
+<p><code>格式：copy /B 合并的文件 输出的文件命令</code></p>
+<p><mark>完整性检测：Windows下计算文件md5：</mark></p>
+<p><code>certutil -hashfiel 文件名 md5</code></p>
+</li>
+</ol>
+<h3 id="文件内容隐写">文件内容隐写</h3>
+<p>文件内容隐写，就是直接将KEY以十六进制的形式写在文件中，通常在文件的开头或结尾部分，<mark>分析时通常重点观察文件开头和结尾部分</mark>。如果在文件中间部分，通常搜索关键字<strong>KEY</strong>或者<strong>flag</strong>来查找隐藏内容。</p>
+<p><mark>使用场景：Windows下，搜索隐写的文件内容</mark></p>
+<ol>
+<li class="lvl-3">
+<p>winhex/010Editor</p>
+<p>通常将识别的文件拖入<strong>winhex</strong>中，查找具有关键字或明显与文件不和谐的部分，通常优先观察文件首部和尾部，搜索flag或key等关键字，最后拖动滚轮寻找。</p>
+</li>
+<li class="lvl-3">
+<p>Notepad++</p>
+<p>使用<strong>Notepad++<strong>打开文件，查看文件头尾是否有含有关键字的字符串，搜索</strong>flag</strong>或<strong>key</strong>等关键字，最后拖动滚轮寻找。</p>
+<p>另外通过安装插件HEX-Editor可以实现winhex的功能</p>
+</li>
+</ol>
+<h2 id="图片隐写术">图片隐写术</h2>
+<h3 id="图片隐写的常见隐写方法">图片隐写的常见隐写方法</h3>
+<ol>
+<li class="lvl-3">
+<p><strong>细微的颜色差别</strong></p>
+</li>
+<li class="lvl-3">
+<p><strong>GIF图多帧隐藏</strong></p>
+<ol>
+<li class="lvl-6">颜色通道隐藏</li>
+<li class="lvl-6">不同帧图信息隐藏</li>
+<li class="lvl-6">不同帧对比隐写</li>
+</ol>
+</li>
+<li class="lvl-3">
+<p><strong>Exif信息隐藏</strong></p>
+</li>
+<li class="lvl-3">
+<p><strong>图片修复</strong></p>
+<ol>
+<li class="lvl-6">图片头修复</li>
+<li class="lvl-6">图片尾修复</li>
+<li class="lvl-6">CRC校验修复</li>
+<li class="lvl-6">长、宽、高度修复</li>
+</ol>
+</li>
+<li class="lvl-3">
+<p><strong>最低有效位LSB隐写</strong></p>
+</li>
+<li class="lvl-3">
+<p><strong>图片加密</strong></p>
+<ol>
+<li class="lvl-6">Stedetect</li>
+<li class="lvl-6">outguess</li>
+<li class="lvl-6">F5</li>
+</ol>
+</li>
+</ol>
+<h3 id="图片文件隐写">图片文件隐写</h3>
+<ol>
+<li class="lvl-3">
+<p><strong>Firework</strong></p>
+<p>使用<strong>winhex</strong>打开文件时会看到文件头部中包含f<strong>irework</strong>的标识，通过<strong>firework</strong>可以找到隐藏图片。</p>
+<p><mark>使用场景：查看隐写的图片文件</mark></p>
+</li>
+<li class="lvl-3">
+<p><strong>Exif</strong></p>
+<p><strong>Exif</strong>按照JPEG的规格在JPEG中插入一些图像/数字相机的信息数据以及缩略图像，可以通过与JPEG兼容的互联浏览器/图片浏览器/图片处理等一些软件来查看<strong>Exif</strong>格式的图片文件，就跟浏览器通常JPEG图像文件一样。</p>
+<p>图片右键属性，查看Exif或查看详细信息，在相关选项卡中看找flag信息。</p>
+<p>如果是Linux环境下，可以用<strong>exiftool</strong>工具，<code>命令：exiftool 文件名（带后缀名）</code></p>
+</li>
+<li class="lvl-3">
+<p><strong>Stegsolve</strong></p>
+<p>当两张图片外观、大小、像素都基本相同时，可以考虑进行结合分析，即将两个文件的像素RGB值进行XOR、ADD、SUB等操作，看能否得到有用的信息，Stegsolve可以方便地进行这些操作。</p>
+<p><mark>使用场景：两张图片信息基本相同</mark></p>
+<ol>
+<li class="lvl-6">
+<p>打开第一张图片，点击analyse -&gt; Image combiner</p>
+</li>
+<li class="lvl-6">
+<p>在弹出的窗口中点击左右按钮选择处理方式，点击save保存有价值的结果</p>
+</li>
+</ol>
+</li>
+<li class="lvl-3">
+<p><strong>LSB（最低有效位Least Significant Bit)</strong></p>
+<p><strong>LSB</strong>替换隐写基本思想是用嵌入的秘密信息取代载体图像的最低特位，原来的7个高位平面与替代秘密信息的最低位平面组合成含有隐藏信息的新图形。</p>
+<ol>
+<li class="lvl-6">
+<p>像素三原色（RGB）</p>
+</li>
+<li class="lvl-6">
+<p>通过修改像素中最低位的1bit来达到隐藏的效果</p>
+</li>
+<li class="lvl-6">
+<p>工具：stegsolve、zsteg、wbstego4、python脚本</p>
+</li>
+<li class="lvl-6">
+<p><strong>Stegsolve.jar工具</strong></p>
+<ol>
+<li class="lvl-9">打开文件 -&gt; Analyse -&gt; Data Extract</li>
+<li class="lvl-9">调整Bit Plans，Bits Order，Bit Plane Order</li>
+</ol>
+</li>
+<li class="lvl-6">
+<p><strong>zsteg工具</strong></p>
+<p><mark>检测LSB隐写：</mark></p>
+<p><code>命令：zsteg xxx.png</code></p>
+</li>
+<li class="lvl-6">
+<p><strong>wbstego4工具</strong></p>
+<p>解密通过1sb加密的图片</p>
+</li>
+<li class="lvl-6">
+<p><strong>python脚本来处理</strong></p>
+<p>将目标文件放在以下脚本目录下，将脚本中的文件名修改为你的目标文件名，运行python脚本即可</p>
+<blockquote>
+<p>注：要在python2的环境运行。</p>
+</blockquote>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#coding:utf-8</span>
+<span class="token keyword">import</span> PIL<span class="token punctuation">.</span>Image
+<span class="token keyword">def</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    im <span class="token operator">=</span> PIL<span class="token punctuation">.</span>Image<span class="token punctuation">.</span><span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'01.bmp'</span><span class="token punctuation">)</span>  <span class="token comment">#将'01.bmp'修改为你的目标文件名 </span>
+    im2 <span class="token operator">=</span> im<span class="token punctuation">.</span>copy<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    pix <span class="token operator">=</span> im2<span class="token punctuation">.</span>load<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    width<span class="token punctuation">,</span>height <span class="token operator">=</span> im2<span class="token punctuation">.</span>size
+    
+    <span class="token keyword">for</span> x <span class="token keyword">in</span> <span class="token builtin">xrange</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span>width<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">for</span> y <span class="token keyword">in</span> <span class="token builtin">xrange</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span>height<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">if</span> pix<span class="token punctuation">[</span>x<span class="token punctuation">.</span>y<span class="token punctuation">]</span><span class="token operator">&amp;</span><span class="token number">0x1</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
+                pix<span class="token punctuation">[</span>x<span class="token punctuation">,</span>y<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0</span>
+            <span class="token keyword">else</span><span class="token punctuation">:</span>
+                pix<span class="token punctuation">[</span>x<span class="token punctuation">,</span>y<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">255</span>
+    im2<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">pass</span>
+<span class="token keyword">if</span> __name__<span class="token operator">==</span><span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    foo<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span> <span class="token string">'ok.'</span>
+    <span class="token keyword">pass</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+</ol>
+</li>
+<li class="lvl-3">
+<p>TTweakPNG</p>
+<p><strong>TweakPNG</strong>是一款简单易用的PNG图像浏览工具，它允许查看和修改一些PNG图像文件的元信息存储。</p>
+<p><mark>使用场景：文件头正常却无法打开文件，利用TweakPNG修CRC</mark></p>
+<p>例：</p>
+<ol>
+<li class="lvl-6">
+<p>当PNG文件头正常但无法打开文件，可能是CRC校验出错，可以尝试通过TweakPNG打开PNG，会弹出校验错误的提示，这里显示CRC是fe1a5ab6，正确的是b0a7a9f1。打开winhex搜索fe1a5ab6将其改为b0a7a9f1</p>
+<p><img src="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202302011629751.png" alt="TTweakPNG修改CRC"></p>
+</li>
+</ol>
+<p><mark>有时CRC没有错误，但是图片的高度或者宽度发生了错误，需要通过CRC计算出正确的高度或者宽度。</mark></p>
+<p><img src="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202302011652177.png" alt="图片十六进制信息"></p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#cooding:utf-8</span>
+<span class="token keyword">import</span> binascii
+<span class="token keyword">import</span> struct
+crcbp <span class="token operator">=</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">"xxx.png"</span><span class="token punctuation">,</span><span class="token string">"rb"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment"># 此处将'xxx.png'改成你的目标文件名</span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1024</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">for</span> j <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1024</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        data <span class="token operator">=</span> crcbp<span class="token punctuation">[</span><span class="token number">12</span><span class="token punctuation">:</span><span class="token number">16</span><span class="token punctuation">]</span><span class="token operator">+</span>struct<span class="token punctuation">.</span>pack<span class="token punctuation">(</span><span class="token string">'&gt;i'</span><span class="token punctuation">,</span>i<span class="token punctuation">)</span><span class="token operator">+</span>struct<span class="token punctuation">.</span>pack<span class="token punctuation">(</span><span class="token string">'&gt;i'</span><span class="token punctuation">,</span>j<span class="token punctuation">)</span><span class="token operator">+</span>crcbp<span class="token punctuation">[</span><span class="token number">24</span><span class="token punctuation">:</span><span class="token number">29</span><span class="token punctuation">]</span>
+        crc32 <span class="token operator">=</span> binascii<span class="token punctuation">.</span>crc32<span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token operator">&amp;</span><span class="token number">0xffffffff</span>
+        <span class="token keyword">if</span> crc32 <span class="token operator">==</span> <span class="token number">0x08ec7edb</span><span class="token punctuation">:</span>  <span class="token comment"># 此处填上CRC值</span>
+            <span class="token keyword">print</span> i<span class="token punctuation">,</span>j
+            <span class="token keyword">print</span> <span class="token string">"hex"</span><span class="token punctuation">.</span><span class="token builtin">hex</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token builtin">hex</span><span class="token punctuation">(</span>j<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li class="lvl-3">
+<p><strong>Bftools</strong></p>
+<p><strong>bftools</strong>用于解密图片信息</p>
+<p><mark>使用场景：在Windows的cmd下，对加密过的图片文件进行解密</mark></p>
+<p><code>格式：Bftools.exe decode braincopter 要解密的图片名称 -output 输出文件名</code></p>
+<p><code>Bftools.exe run 上一步输出的文件</code></p>
+<p><img src="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202302011703200.png" alt="bftools命令使用"></p>
+</li>
+<li class="lvl-3">
+<p><strong>SilentEye</strong></p>
+<p><strong>silenteye</strong>是一款可以将文字或者文件隐藏到图片的解密工具。</p>
+<p><mark>使用场景：Windows下打开silentEye工具，对加密的图片进行解密</mark></p>
+<p>例：</p>
+<ol>
+<li class="lvl-6">
+<p>使用silentEye程序打开目标图片，点击image -&gt; decode，点击decode，可以查看隐藏文件，点击保存即可</p>
+</li>
+</ol>
+</li>
+<li class="lvl-3">
+<p>JPG图像加密</p>
+<ol>
+<li class="lvl-6">
+<p><strong>Stegdetect</strong>工具探测加密方式</p>
+<blockquote>
+<p>Stegdetect程序主要用于分析JPEG文件。因此用Stegdetect可以检测到通过JSteg、JPHide、OutGuess、Invisble Secrets、F5、appendx和Camoutflage等这些隐写工具隐藏的信息。</p>
+</blockquote>
+<p><code>Linux环境下命令：</code></p>
+<p><code>stegdetect xxx,jpg</code></p>
+<p><code>stegdetect -s 敏感度 xxx.jpgexi</code></p>
+</li>
+<li class="lvl-6">
+<p><strong>Jphide</strong></p>
+<p><strong>Jphide</strong>是基于最低有效位LSB的JPEG格式图像隐写算法。</p>
+<p>例：</p>
+<p>Stegdetect提示jphide加密时，可以用Jphs工具进行解密，打开jphswin.exe，使用open jpeg打开图片，点击seek，输入密码和确认密码，在弹出文件框中选择要保存的解密文件位置即可，结果保存成txt文件。</p>
+</li>
+<li class="lvl-6">
+<p><strong>Outguess</strong></p>
+<p><strong>Outguess</strong>一般用于解密文件信息</p>
+<p><mark>使用场景：Stegdetect识别出来或者题目提示时outguess加密的图片</mark></p>
+<p><code>格式：outguess -r 要解密的文件名输出结果文件名</code></p>
+</li>
+<li class="lvl-6">
+<p><strong>F5</strong></p>
+<p><strong>F5</strong>一般用于解密文件信息</p>
+<p><mark>使用场景：Stegdetect识别出来是F5加密的图片或题目提示是F5加密的图片</mark></p>
+<p>进入F5-steganography_F5目录，将图片文件拷贝至该目录下，从CMD进入该目录</p>
+<p><code>格式：Java Exrtact 要解密的文件名 -p 密码</code></p>
+</li>
+</ol>
+</li>
+<li class="lvl-3">
+<p><strong>二维码处理</strong></p>
+<ol>
+<li class="lvl-6">使用二维码扫描工具CQR.exe打开图片，找到内容字段</li>
+<li class="lvl-6">如果二维码某个定位角被覆盖了，该工具有时候也可以自动识别，如果识别失败，需要使用PS或画图工具将另外几个角的定位符移动到相应的位置，补全二维码。</li>
+<li class="lvl-6">如果某个二维码的定位点中间是白色，可能被反色了，使用画图工具把颜色反色回来再扫描即可。</li>
+</ol>
+</li>
+</ol>
 
                 
             </div>
@@ -913,7 +812,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://www.ahao8.top/posts/bb2d.html">http://www.ahao8.top/posts/bb2d.html</a>
+                    <a href="http://www.ahao8.top/posts/b478.html">http://www.ahao8.top/posts/b478.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -951,8 +850,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/python/">
-                                    <span class="chip bg-color">python</span>
+                                <a href="/tags/msic/">
+                                    <span class="chip bg-color">msic</span>
                                 </a>
                             
                         </div>
@@ -1298,9 +1197,60 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/posts/b478.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="msic的基本解题思路(一)">
+                        
+                        <span class="card-title">msic的基本解题思路(一)</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            msic的基本解题思路
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-02-01
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/CTF/" class="post-category">
+                                    CTF
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/msic/">
+                        <span class="chip bg-color">msic</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
             <div class="card">
                 <a href="/posts/4c50.html">
                     <div class="card-image">
@@ -1318,9 +1268,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-01-27
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-01-27
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1342,58 +1292,6 @@
                     
                     <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/">
                         <span class="chip bg-color">数据结构和算法</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/posts/3eeb.html">
-                    <div class="card-image">
-                        
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="我的第一篇博客文章">
-                        
-                        <span class="card-title">我的第一篇博客文章</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            谈谈我个人对博客的看法
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-01-21
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E6%97%A5%E5%B8%B8/" class="post-category">
-                                    日常
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E6%97%A5%E5%B8%B8/">
-                        <span class="chip bg-color">日常</span>
-                    </a>
-                    
-                    <a href="/tags/%E5%8D%9A%E5%AE%A2/">
-                        <span class="chip bg-color">博客</span>
                     </a>
                     
                 </div>
