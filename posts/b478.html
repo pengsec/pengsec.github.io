@@ -357,7 +357,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-02-01
+                    2023-02-03
                 </div>
                 
 
@@ -497,7 +497,7 @@
 <h3 id="文件分离操作">文件分离操作</h3>
 <ol>
 <li class="lvl-3">
-<p>Binwalk工具</p>
+<p><strong>Binwalk工具</strong></p>
 <p><strong>Binwalk</strong>工具是Linux下用来分析和分离文件的工具，可以快速分辨文件是否由多个文件合并而成，并将文件进行分离。如果分离成功会在目标文件的目录。</p>
 <p>同目录下生成一个形如_文件名_extracted的文件目录，目录中有分离后的文件。</p>
 <p><mark>用法</mark>：</p>
@@ -508,13 +508,13 @@
 </blockquote>
 </li>
 <li class="lvl-3">
-<p>formost</p>
+<p><strong>formost</strong></p>
 <p>如果<strong>binwalk</strong>无法正确分离文件，可以使用<strong>foremost</strong>，将目标文件复制到kali中，成功执行后，会在目标文件的文件目录下生成我们设置的目录，目录中会按文件类型分离出文件。</p>
 <p><mark>用法</mark>：</p>
 <p><code>foremost 文件名 -o 输出目录名</code></p>
 </li>
 <li class="lvl-3">
-<p>dd</p>
+<p><strong>dd</strong></p>
 <p>当文件自动分离出错或者因为其他原因无法自动分离时，可以使用<strong>dd</strong>实现文件手动分离。</p>
 <p><code>格式：dd if=源文件 of=目标文件名 bs=1 skip=开始分离的字节数</code></p>
 <p><mark>参数说明</mark>：</p>
@@ -524,12 +524,12 @@
 <p><code>skip=blocks  #从输入文件开头跳过blocks个块后再开始复制</code></p>
 </li>
 <li class="lvl-3">
-<p>Winhex</p>
+<p><strong>Winhex</strong></p>
 <p>除了使用dd外，还可以使用winhex实现文件手动分离，将目标文件拖入问winhex中，找到要分离的部分，点击复制即可。</p>
 <p><mark>使用场景：Windows下利用winhex程序对文件进行手动分离</mark></p>
 </li>
 <li class="lvl-3">
-<p>010Editor</p>
+<p><strong>010Editor</strong></p>
 <p><mark>将某块区域文件保存的方式如下：</mark></p>
 <ol>
 <li class="lvl-6">
@@ -553,14 +553,14 @@
 <h3 id="文件合并操作">文件合并操作</h3>
 <ol>
 <li class="lvl-3">
-<p>Linux下的文件合并</p>
+<p><strong>Linux下的文件合并</strong></p>
 <p><mark>使用场景：Linux下，通常对文件名相似的文件要进行批量合并</mark></p>
 <p><code>格式：cat 合并的文件 &gt; 输出的文件</code></p>
 <p><mark>完整性检测：Linux下计算文件md5：</mark></p>
 <p><code>md5sum 文件名</code></p>
 </li>
 <li class="lvl-3">
-<p>Windows下的文件合并</p>
+<p><strong>Windows下的文件合并</strong></p>
 <p><mark>使用场景：Windows下，通常要对文件 名相似的文件进行批量合并</mark></p>
 <p><code>格式：copy /B 合并的文件 输出的文件命令</code></p>
 <p><mark>完整性检测：Windows下计算文件md5：</mark></p>
