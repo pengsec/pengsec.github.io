@@ -565,7 +565,7 @@
                 type: 'pie',
                 radius: '50%',
                 color: ['#6772e5', '#ff9e0f', '#fa755a', '#3ecf8e', '#82d3f4', '#ab47bc', '#525f7f', '#f51c47', '#26A69A'],
-                data: [{"name":"数据结构和算法","value":1},{"name":"日常","value":1},{"name":"python","value":1},{"name":"CTF","value":1}],
+                data: [{"name":"数据结构和算法","value":1},{"name":"CTF","value":1},{"name":"python","value":1},{"name":"日常","value":1}],
                 itemStyle: {
                     emphasis: {
                         shadowBlur: 10,
@@ -589,7 +589,7 @@
         xAxis: [
             {
                 type: 'category',
-                data: ["python","数据结构和算法","日常","博客","misc"]
+                data: ["python","数据结构和算法","misc","日常","博客"]
             }
         ],
         yAxis: [
@@ -1097,6 +1097,27 @@ document.addEventListener("visibilitychange", function () { document.hidden ? (d
     </script>
 
 
-</body>
+
+        <script src="//cdn.jsdelivr.net/npm/js-base64/base64.min.js"></script>
+        <script>
+        const hasAttr = (e,a) => a.some(_=> e.attr(_)!==undefined);
+        $('a').each(function() {
+          const $this = $(this);
+          if(hasAttr($this,["data-fancybox","ignore-external-link"])) return;
+          const href = $this.attr('href');
+          if (href && href.match('^((http|https|thunder|qqdl|ed2k|Flashget|qbrowser|ftp|rtsp|mms)://)')) {
+            const strs = href.split('/');
+            if (strs.length >= 3) {
+                const host = strs[2];
+                if (host !== 'your_domain' || window.location.host) {
+                    $this.attr('href', '/go.html?u='+Base64.encode(href)+'').attr('rel', 'external nofollow noopener noreferrer');
+                    if (true) {
+                        $this.attr('target', '_blank');
+                    }
+                }
+            }
+          }
+        });
+        </script></body>
 
 </html>
