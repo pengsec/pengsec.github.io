@@ -357,7 +357,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-02-03
+                    2023-02-09
                 </div>
                 
 
@@ -496,7 +496,7 @@
 <p>通常文件无法正常打开有两种情况，一种文件头部残缺，另一种头部字段错误。针对文件头部残缺的情况，使用winhex程序添加相应的文件头，针对头部字段错误，可以找一个相同类型的文件进行替换。</p>
 <p><mark>使用场景：文件头部残缺或文件头部字段错误无法打开正常文件</mark></p>
 <p><code>格式：file 文件名</code></p>
-<p><img src="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202302011320661.png" alt="file命令识别文件"></p>
+<p><img src="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202302011320661.png" alt=""></p>
 </li>
 </ol>
 <h3 id="文件分离操作">文件分离操作</h3>
@@ -720,7 +720,7 @@
 </li>
 </ol>
 <p><mark>有时CRC没有错误，但是图片的高度或者宽度发生了错误，需要通过CRC计算出正确的高度或者宽度。</mark></p>
-<p><img src="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202302011652177.png" alt="图片十六进制信息"></p>
+<p><img src="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202302011652177.png" alt=""></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#cooding:utf-8</span>
 <span class="token keyword">import</span> binascii
 <span class="token keyword">import</span> struct
@@ -739,7 +739,7 @@ crcbp <span class="token operator">=</span> <span class="token builtin">open</sp
 <p><mark>使用场景：在Windows的cmd下，对加密过的图片文件进行解密</mark></p>
 <p><code>格式：Bftools.exe decode braincopter 要解密的图片名称 -output 输出文件名</code></p>
 <p><code>Bftools.exe run 上一步输出的文件</code></p>
-<p><img src="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202302011703200.png" alt="bftools命令使用"></p>
+<p><img src="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202302011703200.png" alt=""></p>
 </li>
 <li class="lvl-3">
 <p><strong>SilentEye</strong></p>
@@ -1816,27 +1816,6 @@ document.addEventListener("visibilitychange", function () { document.hidden ? (d
     </script>
 
 
-
-        <script src="//cdn.jsdelivr.net/npm/js-base64/base64.min.js"></script>
-        <script>
-        const hasAttr = (e,a) => a.some(_=> e.attr(_)!==undefined);
-        $('a').each(function() {
-          const $this = $(this);
-          if(hasAttr($this,["data-fancybox","ignore-external-link"])) return;
-          const href = $this.attr('href');
-          if (href && href.match('^((http|https|thunder|qqdl|ed2k|Flashget|qbrowser|ftp|rtsp|mms)://)')) {
-            const strs = href.split('/');
-            if (strs.length >= 3) {
-                const host = strs[2];
-                if (host !== 'your_domain' || window.location.host) {
-                    $this.attr('href', '/go.html?u='+Base64.encode(href)+'').attr('rel', 'external nofollow noopener noreferrer');
-                    if (true) {
-                        $this.attr('target', '_blank');
-                    }
-                }
-            }
-          }
-        });
-        </script></body>
+</body>
 
 </html>
