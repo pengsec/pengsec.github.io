@@ -391,7 +391,7 @@
             <div id="articleContent">
                 <h1>misc的基本解题思路(一)</h1>
 <blockquote>
-<p>免责声明：本文章涉及的知识和技能仅用于学习交流，如有用于非法途径或未被授权的真实网络环境，后果自负，责任与本文作者无关，倡导把安全知识和技能用于正当、正规、正义的途径。</p>
+<p>免责声明：本文章涉及的知识和技能仅用于学习交流，如有用于非法途径或未被授权的真实网络环境，所造成的后果自行承担，责任与本文作者无关，倡导把安全知识和技能用于正当、正规、正义的途径。</p>
 </blockquote>
 <p><strong>misc的四大部分：</strong></p>
 <ul class="lvl-0">
@@ -496,7 +496,7 @@
 <p>通常文件无法正常打开有两种情况，一种文件头部残缺，另一种头部字段错误。针对文件头部残缺的情况，使用winhex程序添加相应的文件头，针对头部字段错误，可以找一个相同类型的文件进行替换。</p>
 <p><mark>使用场景：文件头部残缺或文件头部字段错误无法打开正常文件</mark></p>
 <p><code>格式：file 文件名</code></p>
-<p><img src="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202302011320661.png" alt=""></p>
+<p><img src="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202302011320661.png" alt="文件识别"></p>
 </li>
 </ol>
 <h3 id="文件分离操作">文件分离操作</h3>
@@ -720,7 +720,7 @@
 </li>
 </ol>
 <p><mark>有时CRC没有错误，但是图片的高度或者宽度发生了错误，需要通过CRC计算出正确的高度或者宽度。</mark></p>
-<p><img src="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202302011652177.png" alt=""></p>
+<p><img src="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202302011652177.png" alt="CRC"></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#cooding:utf-8</span>
 <span class="token keyword">import</span> binascii
 <span class="token keyword">import</span> struct
@@ -739,7 +739,7 @@ crcbp <span class="token operator">=</span> <span class="token builtin">open</sp
 <p><mark>使用场景：在Windows的cmd下，对加密过的图片文件进行解密</mark></p>
 <p><code>格式：Bftools.exe decode braincopter 要解密的图片名称 -output 输出文件名</code></p>
 <p><code>Bftools.exe run 上一步输出的文件</code></p>
-<p><img src="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202302011703200.png" alt=""></p>
+<p><img src="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202302011703200.png" alt="Bftools"></p>
 </li>
 <li class="lvl-3">
 <p><strong>SilentEye</strong></p>
@@ -1216,7 +1216,7 @@ crcbp <span class="token operator">=</span> <span class="token builtin">open</sp
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            谈谈列表查找
+                            谈谈数据结构与算法的列表查找
                         
                     </div>
                     <div class="publish-info">

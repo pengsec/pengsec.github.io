@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="谈谈列表查找">
-    <meta name="description" content="谈谈列表查找">
+    <meta name="keywords" content="数据结构与算法的列表查找">
+    <meta name="description" content="谈谈数据结构与算法的列表查找">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -368,7 +368,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    480
+                    475
                 </div>
                 
 
@@ -466,7 +466,7 @@
         <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"%s running time: %s secs."</span> <span class="token operator">%</span> <span class="token punctuation">(</span>func<span class="token punctuation">.</span>__name__<span class="token punctuation">,</span>t2<span class="token operator">-</span>t1<span class="token punctuation">)</span><span class="token punctuation">)</span>
         <span class="token keyword">return</span> result
     <span class="token keyword">return</span> wrapper
-<span class="token comment"># 运用时，先导入这个模块，再用@cal_time语句前后引用整个函数代码，如：</span>
+<span class="token comment"># 运用时，先导入这个模块，再用@cal_time语句放在函数代码，如：</span>
 <span class="token decorator annotation punctuation">@cal_time</span>
 <span class="token keyword">def</span> <span class="token function">binary_search</span><span class="token punctuation">(</span>li<span class="token punctuation">,</span>val<span class="token punctuation">)</span><span class="token punctuation">:</span>   <span class="token comment"># val：元素</span>
     left <span class="token operator">=</span> <span class="token number">0</span>
@@ -480,8 +480,7 @@
         <span class="token keyword">else</span><span class="token punctuation">:</span>   <span class="token comment"># li[mid] &lt; val 带查找的值在mid右侧</span>
             left <span class="token operator">=</span> mid <span class="token operator">+</span> <span class="token number">1</span>
       <span class="token keyword">else</span><span class="token punctuation">:</span>     
-        <span class="token keyword">return</span> <span class="token boolean">None</span>
-<span class="token decorator annotation punctuation">@cal_time</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+        <span class="token keyword">return</span> <span class="token boolean">None</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
 <p>注：内置函数 index() 用的是线性查找。</p>
 </blockquote>
