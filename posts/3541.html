@@ -4,8 +4,31 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="misc的基本解题思路">
-    <meta name="description" content="谈谈有关CTF中的misc的基本解题思路,misc的四大部分:文件操作与隐写,图片隐写术,压缩文件处理,流量取证技术">
+    <meta name="keywords" content="排序算法">
+    <meta name="description" content="归并排序
+归并
+
+
+假设现在的列表分两段，如何将其合成一个有序列表
+
+
+
+这种操作称为一次归并
+
+
+使用归并
+
+
+分解：将列表越分越小，直至分成一个元素
+
+
+终止条件：一个元素是有序的
+
+
+合并：将两个有序列表归并，列表越来越大
+
+
+代码示">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +40,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>misc的基本解题思路(一) | 阿浩の博客</title>
+    <title>数据结构与算法中的排序算法(三) | 阿浩の博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
     <style>
@@ -296,12 +319,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">misc的基本解题思路(一)</h1>
+                    <h1 class="description center-align post-title">数据结构与算法中的排序算法(三)</h1>
                 </div>
             </div>
         </div>
@@ -325,12 +348,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/CTF/">
-                                <span class="chip bg-color">CTF</span>
+                            <a href="/tags/python/">
+                                <span class="chip bg-color">python</span>
                             </a>
                         
-                            <a href="/tags/misc/">
-                                <span class="chip bg-color">misc</span>
+                            <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">
+                                <span class="chip bg-color">数据结构与算法</span>
                             </a>
                         
                     </div>
@@ -341,8 +364,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/CTF/" class="post-category">
-                                CTF
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" class="post-category">
+                                数据结构与算法
                             </a>
                         
                     </div>
@@ -354,21 +377,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-02-01
+                    2023-02-19
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-02-15
+                    2023-02-19
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.8k
+                    342
                 </div>
                 
 
@@ -393,402 +416,93 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p><strong>misc的四大部分：</strong></p>
+                <h2 id="归并排序">归并排序</h2>
+<h3 id="归并">归并</h3>
 <ul class="lvl-0">
-<li class="lvl-2">文件操作与隐写</li>
-<li class="lvl-2">图片隐写术</li>
-<li class="lvl-2">压缩文件处理</li>
-<li class="lvl-2">流量取证技术</li>
+<li class="lvl-2">
+<p>假设现在的列表分两段，如何将其合成一个有序列表</p>
+<p><img src="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202302191523668.png" alt="归并排序"></p>
+</li>
+<li class="lvl-2">
+<p>这种操作称为一次归并</p>
+</li>
 </ul>
-<h2 id="文件操作与隐写">文件操作与隐写</h2>
-<h3 id="文件类型识别">文件类型识别</h3>
-<ol>
-<li class="lvl-3">
-<p>File命令</p>
-<p>当文件没有后缀名或者有后缀名而无法打开时，根据识别出的文件类型来修改后缀名即可正常打开文件。</p>
-<p><mark>使用场景：不知道后缀名，无法打开文件</mark></p>
-<p><code>Linux环境下命令格式：file+文件名</code></p>
+<h3 id="使用归并">使用归并</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>分解：将列表越分越小，直至分成一个元素</p>
 </li>
-<li class="lvl-3">
-<p>winhex</p>
-<p>通过<mark>winhex</mark>程序中可以查看文件头类型，根据头类型判断文件类型</p>
-<p><mark>使用场景：windows下通过文件头信息判断文件类型</mark></p>
+<li class="lvl-2">
+<p>终止条件：一个元素是有序的</p>
 </li>
-</ol>
-<p><strong>常见的文件头类型如下：</strong></p>
-<table>
-<thead>
-<tr>
-<th>文件类型</th>
-<th>文件头</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>JPEG(jpg)</td>
-<td>FFD8FFE1</td>
-</tr>
-<tr>
-<td>PNG(png)</td>
-<td>89504E47</td>
-</tr>
-<tr>
-<td>GIF(gif)</td>
-<td>47494638</td>
-</tr>
-<tr>
-<td>TIFF(tiff)</td>
-<td>49492A00</td>
-</tr>
-<tr>
-<td>Windows Bitmap(bmp)</td>
-<td>424DC001</td>
-</tr>
-<tr>
-<td>ZIP Archive(ZIP)</td>
-<td>504B0304</td>
-</tr>
-<tr>
-<td>RAR Archive(rar)</td>
-<td>52617221</td>
-</tr>
-<tr>
-<td>Adobe Photshop(psd)</td>
-<td>38425053</td>
-</tr>
-<tr>
-<td>Rich Text Format(rtf)</td>
-<td>7B5C727466</td>
-</tr>
-<tr>
-<td>XML(xml)</td>
-<td>3C3F786D6C</td>
-</tr>
-<tr>
-<td>HTML(html)</td>
-<td>68746D6C3E</td>
-</tr>
-<tr>
-<td>Adobe Acrobat(pdf)</td>
-<td>255044462D312E</td>
-</tr>
-<tr>
-<td>Wave(wav)</td>
-<td>57415645</td>
-</tr>
-<tr>
-<td>pacp</td>
-<td>4D3C2B1A</td>
-</tr>
-</tbody>
-</table>
-<ol start="3">
-<li class="lvl-3">
-<p>文件头残缺/错误</p>
-<p>通常文件无法正常打开有两种情况，一种文件头部残缺，另一种头部字段错误。针对文件头部残缺的情况，使用winhex程序添加相应的文件头，针对头部字段错误，可以找一个相同类型的文件进行替换。</p>
-<p><mark>使用场景：文件头部残缺或文件头部字段错误无法打开正常文件</mark></p>
-<p><code>格式：file 文件名</code></p>
-<p><img src="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202302011320661.png" alt=""></p>
+<li class="lvl-2">
+<p>合并：将两个有序列表归并，列表越来越大</p>
 </li>
-</ol>
-<h3 id="文件分离操作">文件分离操作</h3>
-<ol>
-<li class="lvl-3">
-<p><strong>Binwalk工具</strong></p>
-<p><strong>Binwalk</strong>工具是Linux下用来分析和分离文件的工具，可以快速分辨文件是否由多个文件合并而成，并将文件进行分离。如果分离成功会在目标文件的目录。</p>
-<p>同目录下生成一个形如_文件名_extracted的文件目录，目录中有分离后的文件。</p>
-<p><mark>用法</mark>：</p>
-<p><code>分析文件：binwalk filename</code></p>
-<p><code>分离文件：binwalk -e filename</code></p>
-<blockquote>
-<p>注：binwalk遇到压缩包会自动解压。</p>
-</blockquote>
+</ul>
+<p><strong>代码示例：</strong></p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">merge</span><span class="token punctuation">(</span>li<span class="token punctuation">,</span>low<span class="token punctuation">,</span>high<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    i <span class="token operator">=</span> low
+    j <span class="token operator">=</span> mid <span class="token operator">+</span> <span class="token number">1</span>
+    ltmp <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token keyword">while</span> i<span class="token operator">&lt;</span>mid <span class="token keyword">and</span> j<span class="token operator">&lt;=</span>high<span class="token punctuation">:</span>  <span class="token comment"># 只要左右两边都有数</span>
+        <span class="token keyword">if</span> li<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">&lt;</span> li<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">:</span>
+            ltmp<span class="token punctuation">.</span>append<span class="token punctuation">(</span>li<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
+            i <span class="token operator">+=</span> <span class="token number">1</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            ltmp<span class="token punctuation">.</span>append<span class="token punctuation">(</span>li<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span>
+            j <span class="token operator">+=</span> <span class="token number">1</span>
+    <span class="token comment"># while执行完，肯定有一部分没数了</span>
+    <span class="token keyword">while</span> i <span class="token operator">&lt;=</span> mid<span class="token punctuation">:</span>
+        ltmp<span class="token punctuation">.</span>append<span class="token punctuation">(</span>li<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
+        i <span class="token operator">+=</span> <span class="token number">1</span>
+    <span class="token keyword">while</span> j <span class="token operator">&lt;=</span> high<span class="token punctuation">:</span>
+        ltmp<span class="token punctuation">.</span>append<span class="token punctuation">(</span>li<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
+        j <span class="token operator">+=</span> <span class="token number">1</span>
+    li<span class="token punctuation">[</span>low<span class="token punctuation">:</span>high<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> ltmp
+            
+<span class="token keyword">def</span> <span class="token function">merge_sort</span><span class="token punctuation">(</span>li<span class="token punctuation">,</span>low<span class="token punctuation">,</span>hight<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> low <span class="token operator">&lt;</span> high<span class="token punctuation">:</span>  <span class="token comment"># 至少有两个元素，递归</span>
+        mid <span class="token operator">=</span> <span class="token punctuation">(</span>low <span class="token operator">+</span> high<span class="token punctuation">)</span> <span class="token operator">//</span> <span class="token number">2</span>
+        merge_sort<span class="token punctuation">(</span>li<span class="token punctuation">,</span>low<span class="token punctuation">,</span>mid<span class="token punctuation">)</span>
+        merge_sort<span class="token punctuation">(</span>li<span class="token punctuation">,</span>mid<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span>high<span class="token punctuation">)</span>
+        merge<span class="token punctuation">(</span>li<span class="token punctuation">,</span>low<span class="token punctuation">,</span>mid<span class="token punctuation">,</span>high<span class="token punctuation">)</span>
+        
+<span class="token comment">#测试</span>
+li <span class="token operator">=</span> <span class="token builtin">list</span><span class="token punctuation">(</span><span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">import</span> random
+random<span class="token punctuation">.</span>shuffle<span class="token punctuation">(</span>li<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>li<span class="token punctuation">)</span>
+merge_sort<span class="token punctuation">(</span>li<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token builtin">len</span><span class="token punctuation">(</span>li<span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>li<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><mark>时间复杂度：O(nlogn)</mark></p>
 </li>
-<li class="lvl-3">
-<p><strong>formost</strong></p>
-<p>如果<strong>binwalk</strong>无法正确分离文件，可以使用<strong>foremost</strong>，将目标文件复制到kali中，成功执行后，会在目标文件的文件目录下生成我们设置的目录，目录中会按文件类型分离出文件。</p>
-<p><mark>用法</mark>：</p>
-<p><code>foremost 文件名 -o 输出目录名</code></p>
+<li class="lvl-2">
+<p>空间复杂度：O(n)</p>
 </li>
-<li class="lvl-3">
-<p><strong>dd</strong></p>
-<p>当文件自动分离出错或者因为其他原因无法自动分离时，可以使用<strong>dd</strong>实现文件手动分离。</p>
-<p><code>格式：dd if=源文件 of=目标文件名 bs=1 skip=开始分离的字节数</code></p>
-<p><mark>参数说明</mark>：</p>
-<p><code>if=file  #输入文件名，缺省为标准输入</code></p>
-<p><code>of=file  #输出文件名，缺省为标准输出</code></p>
-<p><code>bs=bytes  #同时设置读写块的大小为bytes，可代替ibs和obs</code></p>
-<p><code>skip=blocks  #从输入文件开头跳过blocks个块后再开始复制</code></p>
+</ul>
+<h2 id="小结">小结</h2>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>三种排序算法的时间复杂度都是O(nlogn)</p>
 </li>
-<li class="lvl-3">
-<p><strong>Winhex</strong></p>
-<p>除了使用dd外，还可以使用winhex实现文件手动分离，将目标文件拖入问winhex中，找到要分离的部分，点击复制即可。</p>
-<p><mark>使用场景：Windows下利用winhex程序对文件进行手动分离</mark></p>
+<li class="lvl-2">
+<p>一般情况下，就运行时间而言：</p>
+<ul class="lvl-2">
+<li class="lvl-4">快速排序 &lt; 归并排序 &lt; 堆排序</li>
+</ul>
 </li>
-<li class="lvl-3">
-<p><strong>010Editor</strong></p>
-<p><mark>将某块区域文件保存的方式如下：</mark></p>
-<ol>
-<li class="lvl-6">
-<p>010Editor打开文件 -&gt; 选中右键 -&gt; Selection -&gt; Save Selection</p>
+<li class="lvl-2">
+<p>三种排序算法的缺点：</p>
+<ul class="lvl-2">
+<li class="lvl-4">快速排序：极端情况下排序效率低</li>
+<li class="lvl-4">归并排序：需要额外的内存开销</li>
+<li class="lvl-4">堆排序：在快的排序算法中相对较慢</li>
+</ul>
 </li>
-</ol>
-<p><mark>将16进制字符文件导入保存操作方法如下：</mark></p>
-<ol>
-<li class="lvl-6">
-<p>将16进制字符文件保存在一个文件</p>
-</li>
-<li class="lvl-6">
-<p>打开010Editor import Hex</p>
-</li>
-<li class="lvl-6">
-<p>另存为一个文件，后缀名以010Editor获取到它本身文件信息而定</p>
-</li>
-</ol>
-</li>
-</ol>
-<h3 id="文件合并操作">文件合并操作</h3>
-<ol>
-<li class="lvl-3">
-<p><strong>Linux下的文件合并</strong></p>
-<p><mark>使用场景：Linux下，通常对文件名相似的文件要进行批量合并</mark></p>
-<p><code>格式：cat 合并的文件 &gt; 输出的文件</code></p>
-<p><mark>完整性检测：Linux下计算文件md5：</mark></p>
-<p><code>md5sum 文件名</code></p>
-</li>
-<li class="lvl-3">
-<p><strong>Windows下的文件合并</strong></p>
-<p><mark>使用场景：Windows下，通常要对文件 名相似的文件进行批量合并</mark></p>
-<p><code>格式：copy /B 合并的文件 输出的文件命令</code></p>
-<p><mark>完整性检测：Windows下计算文件md5：</mark></p>
-<p><code>certutil -hashfiel 文件名 md5</code></p>
-</li>
-</ol>
-<h3 id="文件内容隐写">文件内容隐写</h3>
-<p>文件内容隐写，就是直接将KEY以十六进制的形式写在文件中，通常在文件的开头或结尾部分，<mark>分析时通常重点观察文件开头和结尾部分</mark>。如果在文件中间部分，通常搜索关键字<strong>KEY</strong>或者<strong>flag</strong>来查找隐藏内容。</p>
-<p><mark>使用场景：Windows下，搜索隐写的文件内容</mark></p>
-<ol>
-<li class="lvl-3">
-<p>winhex/010Editor</p>
-<p>通常将识别的文件拖入<strong>winhex</strong>中，查找具有关键字或明显与文件不和谐的部分，通常优先观察文件首部和尾部，搜索flag或key等关键字，最后拖动滚轮寻找。</p>
-</li>
-<li class="lvl-3">
-<p>Notepad++</p>
-<p>使用<strong>Notepad++<strong>打开文件，查看文件头尾是否有含有关键字的字符串，搜索</strong>flag</strong>或<strong>key</strong>等关键字，最后拖动滚轮寻找。</p>
-<p>另外通过安装插件HEX-Editor可以实现winhex的功能</p>
-</li>
-</ol>
-<h2 id="图片隐写术">图片隐写术</h2>
-<h3 id="图片隐写的常见隐写方法">图片隐写的常见隐写方法</h3>
-<ol>
-<li class="lvl-3">
-<p><strong>细微的颜色差别</strong></p>
-</li>
-<li class="lvl-3">
-<p><strong>GIF图多帧隐藏</strong></p>
-<ol>
-<li class="lvl-6">颜色通道隐藏</li>
-<li class="lvl-6">不同帧图信息隐藏</li>
-<li class="lvl-6">不同帧对比隐写</li>
-</ol>
-</li>
-<li class="lvl-3">
-<p><strong>Exif信息隐藏</strong></p>
-</li>
-<li class="lvl-3">
-<p><strong>图片修复</strong></p>
-<ol>
-<li class="lvl-6">图片头修复</li>
-<li class="lvl-6">图片尾修复</li>
-<li class="lvl-6">CRC校验修复</li>
-<li class="lvl-6">长、宽、高度修复</li>
-</ol>
-</li>
-<li class="lvl-3">
-<p><strong>最低有效位LSB隐写</strong></p>
-</li>
-<li class="lvl-3">
-<p><strong>图片加密</strong></p>
-<ol>
-<li class="lvl-6">Stedetect</li>
-<li class="lvl-6">outguess</li>
-<li class="lvl-6">F5</li>
-</ol>
-</li>
-</ol>
-<h3 id="图片文件隐写">图片文件隐写</h3>
-<ol>
-<li class="lvl-3">
-<p><strong>Firework</strong></p>
-<p>使用<strong>winhex</strong>打开文件时会看到文件头部中包含f<strong>irework</strong>的标识，通过<strong>firework</strong>可以找到隐藏图片。</p>
-<p><mark>使用场景：查看隐写的图片文件</mark></p>
-</li>
-<li class="lvl-3">
-<p><strong>Exif</strong></p>
-<p><strong>Exif</strong>按照JPEG的规格在JPEG中插入一些图像/数字相机的信息数据以及缩略图像，可以通过与JPEG兼容的互联浏览器/图片浏览器/图片处理等一些软件来查看<strong>Exif</strong>格式的图片文件，就跟浏览器通常JPEG图像文件一样。</p>
-<p>图片右键属性，查看Exif或查看详细信息，在相关选项卡中看找flag信息。</p>
-<p>如果是Linux环境下，可以用<strong>exiftool</strong>工具，<code>命令：exiftool 文件名（带后缀名）</code></p>
-</li>
-<li class="lvl-3">
-<p><strong>Stegsolve</strong></p>
-<p>当两张图片外观、大小、像素都基本相同时，可以考虑进行结合分析，即将两个文件的像素RGB值进行XOR、ADD、SUB等操作，看能否得到有用的信息，Stegsolve可以方便地进行这些操作。</p>
-<p><mark>使用场景：两张图片信息基本相同</mark></p>
-<ol>
-<li class="lvl-6">
-<p>打开第一张图片，点击analyse -&gt; Image combiner</p>
-</li>
-<li class="lvl-6">
-<p>在弹出的窗口中点击左右按钮选择处理方式，点击save保存有价值的结果</p>
-</li>
-</ol>
-</li>
-<li class="lvl-3">
-<p><strong>LSB（最低有效位Least Significant Bit)</strong></p>
-<p><strong>LSB</strong>替换隐写基本思想是用嵌入的秘密信息取代载体图像的最低特位，原来的7个高位平面与替代秘密信息的最低位平面组合成含有隐藏信息的新图形。</p>
-<ol>
-<li class="lvl-6">
-<p>像素三原色（RGB）</p>
-</li>
-<li class="lvl-6">
-<p>通过修改像素中最低位的1bit来达到隐藏的效果</p>
-</li>
-<li class="lvl-6">
-<p>工具：stegsolve、zsteg、wbstego4、python脚本</p>
-</li>
-<li class="lvl-6">
-<p><strong>Stegsolve.jar工具</strong></p>
-<ol>
-<li class="lvl-9">打开文件 -&gt; Analyse -&gt; Data Extract</li>
-<li class="lvl-9">调整Bit Plans，Bits Order，Bit Plane Order</li>
-</ol>
-</li>
-<li class="lvl-6">
-<p><strong>zsteg工具</strong></p>
-<p><mark>检测LSB隐写：</mark></p>
-<p><code>命令：zsteg xxx.png</code></p>
-</li>
-<li class="lvl-6">
-<p><strong>wbstego4工具</strong></p>
-<p>解密通过1sb加密的图片</p>
-</li>
-<li class="lvl-6">
-<p><strong>python脚本来处理</strong></p>
-<p>将目标文件放在以下脚本目录下，将脚本中的文件名修改为你的目标文件名，运行python脚本即可</p>
-<blockquote>
-<p>注：要在python2的环境运行。</p>
-</blockquote>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#coding:utf-8</span>
-<span class="token keyword">import</span> PIL<span class="token punctuation">.</span>Image
-<span class="token keyword">def</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    im <span class="token operator">=</span> PIL<span class="token punctuation">.</span>Image<span class="token punctuation">.</span><span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'01.bmp'</span><span class="token punctuation">)</span>  <span class="token comment">#将'01.bmp'修改为你的目标文件名 </span>
-    im2 <span class="token operator">=</span> im<span class="token punctuation">.</span>copy<span class="token punctuation">(</span><span class="token punctuation">)</span>
-    pix <span class="token operator">=</span> im2<span class="token punctuation">.</span>load<span class="token punctuation">(</span><span class="token punctuation">)</span>
-    width<span class="token punctuation">,</span>height <span class="token operator">=</span> im2<span class="token punctuation">.</span>size
-    
-    <span class="token keyword">for</span> x <span class="token keyword">in</span> <span class="token builtin">xrange</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span>width<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token keyword">for</span> y <span class="token keyword">in</span> <span class="token builtin">xrange</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span>height<span class="token punctuation">)</span><span class="token punctuation">:</span>
-            <span class="token keyword">if</span> pix<span class="token punctuation">[</span>x<span class="token punctuation">.</span>y<span class="token punctuation">]</span><span class="token operator">&amp;</span><span class="token number">0x1</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
-                pix<span class="token punctuation">[</span>x<span class="token punctuation">,</span>y<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0</span>
-            <span class="token keyword">else</span><span class="token punctuation">:</span>
-                pix<span class="token punctuation">[</span>x<span class="token punctuation">,</span>y<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">255</span>
-    im2<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span>
-    <span class="token keyword">pass</span>
-<span class="token keyword">if</span> __name__<span class="token operator">==</span><span class="token string">'__main__'</span><span class="token punctuation">:</span>
-    foo<span class="token punctuation">(</span><span class="token punctuation">)</span>
-    <span class="token keyword">print</span> <span class="token string">'ok.'</span>
-    <span class="token keyword">pass</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-</li>
-</ol>
-</li>
-<li class="lvl-3">
-<p>TTweakPNG</p>
-<p><strong>TweakPNG</strong>是一款简单易用的PNG图像浏览工具，它允许查看和修改一些PNG图像文件的元信息存储。</p>
-<p><mark>使用场景：文件头正常却无法打开文件，利用TweakPNG修CRC</mark></p>
-<p>例：</p>
-<ol>
-<li class="lvl-6">
-<p>当PNG文件头正常但无法打开文件，可能是CRC校验出错，可以尝试通过TweakPNG打开PNG，会弹出校验错误的提示，这里显示CRC是fe1a5ab6，正确的是b0a7a9f1。打开winhex搜索fe1a5ab6将其改为b0a7a9f1</p>
-<p><img src="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202302011629751.png" alt=""></p>
-</li>
-</ol>
-<p><mark>有时CRC没有错误，但是图片的高度或者宽度发生了错误，需要通过CRC计算出正确的高度或者宽度。</mark></p>
-<p><img src="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202302011652177.png" alt=""></p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#cooding:utf-8</span>
-<span class="token keyword">import</span> binascii
-<span class="token keyword">import</span> struct
-crcbp <span class="token operator">=</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">"xxx.png"</span><span class="token punctuation">,</span><span class="token string">"rb"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment"># 此处将'xxx.png'改成你的目标文件名</span>
-<span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1024</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">for</span> j <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1024</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-        data <span class="token operator">=</span> crcbp<span class="token punctuation">[</span><span class="token number">12</span><span class="token punctuation">:</span><span class="token number">16</span><span class="token punctuation">]</span><span class="token operator">+</span>struct<span class="token punctuation">.</span>pack<span class="token punctuation">(</span><span class="token string">'&gt;i'</span><span class="token punctuation">,</span>i<span class="token punctuation">)</span><span class="token operator">+</span>struct<span class="token punctuation">.</span>pack<span class="token punctuation">(</span><span class="token string">'&gt;i'</span><span class="token punctuation">,</span>j<span class="token punctuation">)</span><span class="token operator">+</span>crcbp<span class="token punctuation">[</span><span class="token number">24</span><span class="token punctuation">:</span><span class="token number">29</span><span class="token punctuation">]</span>
-        crc32 <span class="token operator">=</span> binascii<span class="token punctuation">.</span>crc32<span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token operator">&amp;</span><span class="token number">0xffffffff</span>
-        <span class="token keyword">if</span> crc32 <span class="token operator">==</span> <span class="token number">0x08ec7edb</span><span class="token punctuation">:</span>  <span class="token comment"># 此处填上CRC值</span>
-            <span class="token keyword">print</span> i<span class="token punctuation">,</span>j
-            <span class="token keyword">print</span> <span class="token string">"hex"</span><span class="token punctuation">.</span><span class="token builtin">hex</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token builtin">hex</span><span class="token punctuation">(</span>j<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-</li>
-<li class="lvl-3">
-<p><strong>Bftools</strong></p>
-<p><strong>bftools</strong>用于解密图片信息</p>
-<p><mark>使用场景：在Windows的cmd下，对加密过的图片文件进行解密</mark></p>
-<p><code>格式：Bftools.exe decode braincopter 要解密的图片名称 -output 输出文件名</code></p>
-<p><code>Bftools.exe run 上一步输出的文件</code></p>
-<p><img src="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202302011703200.png" alt=""></p>
-</li>
-<li class="lvl-3">
-<p><strong>SilentEye</strong></p>
-<p><strong>silenteye</strong>是一款可以将文字或者文件隐藏到图片的解密工具。</p>
-<p><mark>使用场景：Windows下打开silentEye工具，对加密的图片进行解密</mark></p>
-<p>例：</p>
-<ol>
-<li class="lvl-6">
-<p>使用silentEye程序打开目标图片，点击image -&gt; decode，点击decode，可以查看隐藏文件，点击保存即可</p>
-</li>
-</ol>
-</li>
-<li class="lvl-3">
-<p>JPG图像加密</p>
-<ol>
-<li class="lvl-6">
-<p><strong>Stegdetect</strong>工具探测加密方式</p>
-<blockquote>
-<p>Stegdetect程序主要用于分析JPEG文件。因此用Stegdetect可以检测到通过JSteg、JPHide、OutGuess、Invisble Secrets、F5、appendx和Camoutflage等这些隐写工具隐藏的信息。</p>
-</blockquote>
-<p><code>Linux环境下命令：</code></p>
-<p><code>stegdetect xxx,jpg</code></p>
-<p><code>stegdetect -s 敏感度 xxx.jpgexi</code></p>
-</li>
-<li class="lvl-6">
-<p><strong>Jphide</strong></p>
-<p><strong>Jphide</strong>是基于最低有效位LSB的JPEG格式图像隐写算法。</p>
-<p>例：</p>
-<p>Stegdetect提示jphide加密时，可以用Jphs工具进行解密，打开jphswin.exe，使用open jpeg打开图片，点击seek，输入密码和确认密码，在弹出文件框中选择要保存的解密文件位置即可，结果保存成txt文件。</p>
-</li>
-<li class="lvl-6">
-<p><strong>Outguess</strong></p>
-<p><strong>Outguess</strong>一般用于解密文件信息</p>
-<p><mark>使用场景：Stegdetect识别出来或者题目提示时outguess加密的图片</mark></p>
-<p><code>格式：outguess -r 要解密的文件名输出结果文件名</code></p>
-</li>
-<li class="lvl-6">
-<p><strong>F5</strong></p>
-<p><strong>F5</strong>一般用于解密文件信息</p>
-<p><mark>使用场景：Stegdetect识别出来是F5加密的图片或题目提示是F5加密的图片</mark></p>
-<p>进入F5-steganography_F5目录，将图片文件拷贝至该目录下，从CMD进入该目录</p>
-<p><code>格式：Java Exrtact 要解密的文件名 -p 密码</code></p>
-</li>
-</ol>
-</li>
-<li class="lvl-3">
-<p><strong>二维码处理</strong></p>
-<ol>
-<li class="lvl-6">使用二维码扫描工具CQR.exe打开图片，找到内容字段</li>
-<li class="lvl-6">如果二维码某个定位角被覆盖了，该工具有时候也可以自动识别，如果识别失败，需要使用PS或画图工具将另外几个角的定位符移动到相应的位置，补全二维码。</li>
-<li class="lvl-6">如果某个二维码的定位点中间是白色，可能被反色了，使用画图工具把颜色反色回来再扫描即可。</li>
-</ol>
-</li>
-</ol>
-<blockquote>
-<p>免责声明：本文章涉及的知识和技能仅用于学习交流，如有用于非法途径或未被授权的真实网络环境，所造成的后果自行承担，责任与本文作者无关，倡导把安全知识和技能用于正当、正规、正义的途径。</p>
-</blockquote>
+</ul>
+<p><img src="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202302191554786.png" alt="小结"></p>
 
                 
             </div>
@@ -815,7 +529,7 @@ crcbp <span class="token operator">=</span> <span class="token builtin">open</sp
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://www.ahao8.top/posts/b478.html">https://www.ahao8.top/posts/b478.html</a>
+                    <a href="https://www.ahao8.top/posts/3541.html">https://www.ahao8.top/posts/3541.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -853,12 +567,12 @@ crcbp <span class="token operator">=</span> <span class="token builtin">open</sp
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/CTF/">
-                                    <span class="chip bg-color">CTF</span>
+                                <a href="/tags/python/">
+                                    <span class="chip bg-color">python</span>
                                 </a>
                             
-                                <a href="/tags/misc/">
-                                    <span class="chip bg-color">misc</span>
+                                <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">
+                                    <span class="chip bg-color">数据结构与算法</span>
                                 </a>
                             
                         </div>
@@ -1148,17 +862,18 @@ crcbp <span class="token operator">=</span> <span class="token builtin">open</sp
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/posts/6547.html">
+                <a href="/posts/3541.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="数据结构与算法中的排序算法(一)">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="数据结构与算法中的排序算法(三)">
                         
-                        <span class="card-title">数据结构与算法中的排序算法(一)</span>
+                        <span class="card-title">数据结构与算法中的排序算法(三)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1168,9 +883,9 @@ crcbp <span class="token operator">=</span> <span class="token builtin">open</sp
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-02-09
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-02-19
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1183,6 +898,7 @@ crcbp <span class="token operator">=</span> <span class="token builtin">open</sp
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -1205,13 +921,13 @@ crcbp <span class="token operator">=</span> <span class="token builtin">open</sp
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/4c50.html">
+                <a href="/posts/a5e3.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="数据结构与算法中的列表查找">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="数据结构与算法中的排序算法(二)">
                         
-                        <span class="card-title">数据结构与算法中的列表查找</span>
+                        <span class="card-title">数据结构与算法中的排序算法(二)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1222,14 +938,14 @@ crcbp <span class="token operator">=</span> <span class="token builtin">open</sp
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-01-27
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-02-12
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/" class="post-category">
-                                    数据结构和算法
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" class="post-category">
+                                    数据结构与算法
                                 </a>
                             
                             
@@ -1243,8 +959,8 @@ crcbp <span class="token operator">=</span> <span class="token builtin">open</sp
                         <span class="chip bg-color">python</span>
                     </a>
                     
-                    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/">
-                        <span class="chip bg-color">数据结构和算法</span>
+                    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">数据结构与算法</span>
                     </a>
                     
                 </div>
