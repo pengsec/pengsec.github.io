@@ -1,1 +1,5 @@
 /* Here is your custom css styles. */
+#daodream-container .daodream-launcher-enabled {
+    bottom: 140px !important;
+    right: 17px !important;
+}
