@@ -8,6 +8,10 @@ Allow: /friends/
 Allow: /medias/
 Allow: /tags/
 Allow: /categories/
+Allow: /musics/
+Allow: /movies/
+Allow: /galleries/
+Allow: /tools/
 Disallow: /js/
 Disallow: /css/
 Disallow: /libs/
