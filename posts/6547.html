@@ -4,8 +4,30 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="我的第一篇博客文章">
-    <meta name="description" content="谈谈我个人对博客的看法">
+    <meta name="keywords" content="排序算法">
+    <meta name="description" content="列表排序
+
+
+排序：将一组“无序”的记录序列调整为“有序”的记录序列
+
+
+列表排序：将无序列表变为有序列表
+
+输入：列表
+输出：有序列表
+
+
+
+升序与降序
+
+
+内置排序函数：sort()
+
+
+冒泡排序(Bubble Sort)
+
+
+列表每两">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +39,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>我的第一篇博客文章 | 阿浩の博客</title>
+    <title>数据结构与算法中的排序算法(一) | 阿浩の博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
     <style>
@@ -406,12 +428,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">我的第一篇博客文章</h1>
+                    <h1 class="description center-align post-title">数据结构与算法中的排序算法(一)</h1>
                 </div>
             </div>
         </div>
@@ -435,12 +457,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E6%97%A5%E5%B8%B8/">
-                                <span class="chip bg-color">日常</span>
+                            <a href="/tags/python/">
+                                <span class="chip bg-color">python</span>
                             </a>
                         
-                            <a href="/tags/%E5%8D%9A%E5%AE%A2/">
-                                <span class="chip bg-color">博客</span>
+                            <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">
+                                <span class="chip bg-color">数据结构与算法</span>
                             </a>
                         
                     </div>
@@ -451,8 +473,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E6%97%A5%E5%B8%B8/" class="post-category">
-                                日常
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" class="post-category">
+                                数据结构与算法
                             </a>
                         
                     </div>
@@ -478,7 +500,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    558
+                    830
                 </div>
                 
 
@@ -503,10 +525,187 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="谈谈博客对我的影响">谈谈博客对我的影响</h2>
-<p>本人是一名在读大三的学生，这是我写的第一篇博客文章，经过一番折腾后，虽然中间有点小插曲，但是我还是顺利地完成好搭建这个属于我个人的博客，作为一名长期以自学为主的人来说，我的知识的积累和技术的成长很大程度都离不开博客，先是因为学校无法提供偏技术这方面的培养，我便开始了一段独立且漫长的自学历程，由于我是web安全为主要方向学习，在我个人自学和结合靶场训练的过程，遇到问题也常有的事情，很多时候就去网上查资料学习，这时候我一般去阅读别人的博客文章，看别人是怎么解决问题，思路是怎么样的，涉及那些具体的知识点，我都比较地阅读。慢慢地，就会有一定的知识的积累和对问题解决的方法，当然，像技能的提升种肯定是离不开稳扎稳打的训练。我非常感谢别人的对自己个人知识和技术的分享，以及一些问题的解决，写成博客文章，供大家学习，这种分享的精神，我觉得是非常宝贵和伟大的，想必大多数计算机相关的学习者和我都一样，博客对我们的知识的积累和技术的成长有一定的影响的。</p>
-<h2 id="希望自己也能成为影响他人的人">希望自己也能成为影响他人的人</h2>
-<p>由于自己在学习的过程中有经常记笔记的习惯，并且积累了一定个人自学笔记，我也希望自己写出一些博客文章，供大家作学习参考，这是我个人搭建博客的想法和初衷，如果你觉得我的博客文章写得不错，或者某部分细节能解决你手上棘手的问题的话，你也可以关注一下我的博客，我会尽个人所能写好每一篇博客文章，原创不易，也非常期待你的小赏喔。</p>
+                <h2 id="列表排序">列表排序</h2>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>排序：将一组“无序”的记录序列调整为“有序”的记录序列</p>
+</li>
+<li class="lvl-2">
+<p>列表排序：将无序列表变为有序列表</p>
+<ul class="lvl-2">
+<li class="lvl-4">输入：列表</li>
+<li class="lvl-4">输出：有序列表</li>
+</ul>
+</li>
+<li class="lvl-2">
+<p>升序与降序</p>
+</li>
+<li class="lvl-2">
+<p>内置排序函数：<mark>sort()</mark></p>
+</li>
+</ul>
+<h2 id="冒泡排序-Bubble-Sort">冒泡排序(Bubble Sort)</h2>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>列表每两个相邻的数，如果前面比后面大，则交换这两个数</p>
+</li>
+<li class="lvl-2">
+<p>一趟排序完成后，则无序区减少一个数，有序区增加一个数</p>
+</li>
+<li class="lvl-2">
+<p>代码关键点：趟、无序区范围</p>
+</li>
+</ul>
+<p><strong>代码示例</strong>：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">import random
+
+def bubble_sort(li):
+    for i in range(len(li)-1):  # 第i趟
+        for j in range(len(li)-i):
+            if li[j]&gt;li[j+1]:
+                li[j],li[j+1]=li[j+1],li[j]
+
+#验证
+li = [random.randint(0,10000) for i in range(1000)]
+print(li)
+bubble_sort(li)
+print(li)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>时间复杂度：O(n<sup>2</sup>)</p>
+</li>
+</ul>
+<p><mark>冒泡排序-优化</mark>：</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>如果冒泡排序中的一趟排序没有发生交换，则说明列表已经有序，可以直接结束算法。</p>
+</li>
+</ul>
+<p><strong>代码示例</strong>：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">def bubble_sort(li):
+    for i in range(len(li)-1):
+        exchange = False
+        for j in range(len(li)-i-1):
+            if li[j] &gt; li[j+1]:
+                li[j], li[j+1] = li[j+1], li[j] 
+                exchange = True
+            if not exchange:
+                return<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>时间复杂度：O(n<sup>2</sup>)</p>
+</li>
+</ul>
+<h2 id="选择排序-Select-Sort">选择排序(Select Sort)</h2>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>一趟排序记录最小的数，放到第一个位置</p>
+</li>
+<li class="lvl-2">
+<p>再一趟排序记录列表无序最小的数，放到第二个位置</p>
+</li>
+<li class="lvl-2">
+<p>…</p>
+</li>
+<li class="lvl-2">
+<p>算法关键点：有序和无序区、无序区最小数的位置</p>
+</li>
+</ul>
+<p><strong>代码示例：</strong></p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">def select_sort(li):
+    for i in range(len(li)-1):
+        min_loc = i
+        for j in range(i+1,len(li)):
+            if li[j] &lt; li[min_loc]:
+                min_loc = j
+        if min_loc != i:
+            li[i], li[min_loc] = li[min_loc], li[i]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="插入排序-Inset-Sort">插入排序(Inset Sort)</h2>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>初始时手里（有序区）只有一张牌</p>
+</li>
+<li class="lvl-2">
+<p>每次（从无序区）摸一张牌，插入到手里已有牌的正确位置</p>
+</li>
+</ul>
+<p><strong>代码示例：</strong></p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">def insect_sort(li):
+    for i in range(1,len(li)):
+        tmp = li[i]
+        j = i - 1
+        while j &gt;= 0 and tmp &lt; li[j]:
+            li[j+1] = li[j]
+            j = j - 1
+         li[j+1] = tmp<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>时间复杂度：O(n<sup>2</sup>)</p>
+</li>
+</ul>
+<h2 id="快速排序-Quick-Sort">快速排序(Quick Sort)</h2>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>快速排序：<mark>快</mark></p>
+</li>
+<li class="lvl-2">
+<p>快速排序思路：</p>
+<ul class="lvl-2">
+<li class="lvl-4">取一个元素p（第一个元素），使元素p归位；</li>
+<li class="lvl-4">列表被p分成两部分，左边都比p小，右边都比p大；</li>
+<li class="lvl-4">递归完成排序</li>
+</ul>
+</li>
+</ul>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202302062134346.png" alt=""></p>
+<p><strong>快速排序-框架：</strong></p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">def quick_sort(data,left,right):
+    if left &lt; right:
+        mid = partition(data,left,right)
+        quick_sort(data,left,mid-1)
+        quick_sort(data,mid+1,right)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>代码示例：</strong></p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">def partition(li,left,right):
+    tmp = li[left]
+    while left &lt; right:
+        while li[right] &gt;= tmp:  # 从右边找比tmp小的数
+            right -= 1  # 往左走一步
+        li[left] = li[right]  # 把右边的值写到左边空位上
+        while left &lt; right and li[left] &lt;= tmp:
+            left += 1
+        li[left] = tmp  # 把tmp归位
+        return left
+def quick_sort(li,left,right)    :
+    if left &lt; right:  # 至少两个元素
+        mid = partition(li,left,right)
+        quick_sort(li,left,mid-1)
+        quick_sort(li,mid+1,right)
+#调用测试
+li = [5,7,6,3,1,2,9,8]
+quick_sort(li,0,len(li)-1)
+print(li)  <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>快速排序的效率：</p>
+<ul class="lvl-2">
+<li class="lvl-4">快速排序的时间复杂度：<mark>O(nlogn)</mark></li>
+</ul>
+</li>
+<li class="lvl-2">
+<p>快速排序的问题</p>
+<ul class="lvl-2">
+<li class="lvl-4">
+<p>最坏情况：</p>
+<p>正序或逆序排列，二叉树画出来应该是一棵斜树，并且需要经过n-1次递归调用才能完成，且第i次划分需要经过n‐i次关键字的比较才能找到第i个记录，也就是枢轴的位置，所以：</p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202302091721179.png" alt=""></p>
+<p>最终的时间复杂度应该O(n<sup>2</sup>)</p>
+</li>
+<li class="lvl-4">
+<p>递归：消耗一部分系统资源</p>
+</li>
+</ul>
+</li>
+</ul>
 
                 
             </div>
@@ -533,7 +732,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://www.ahao8.top/posts/3eeb.html">https://www.ahao8.top/posts/3eeb.html</a>
+                    <a href="https://www.ahao8.top/posts/6547.html">https://www.ahao8.top/posts/6547.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -571,12 +770,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E6%97%A5%E5%B8%B8/">
-                                    <span class="chip bg-color">日常</span>
+                                <a href="/tags/python/">
+                                    <span class="chip bg-color">python</span>
                                 </a>
                             
-                                <a href="/tags/%E5%8D%9A%E5%AE%A2/">
-                                    <span class="chip bg-color">博客</span>
+                                <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">
+                                    <span class="chip bg-color">数据结构与算法</span>
                                 </a>
                             
                         </div>
@@ -870,13 +1069,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/a5e3.html">
+                <a href="/posts/3541.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/loading.gif" data-original="/medias/featureimages/6.jpg" class="responsive-img" alt="数据结构与算法中的排序算法(二)">
+                        <img src="/medias/loading.gif" data-original="/medias/featureimages/1.jpg" class="responsive-img" alt="数据结构与算法中的排序算法(三)">
                         
-                        <span class="card-title">数据结构与算法中的排序算法(二)</span>
+                        <span class="card-title">数据结构与算法中的排序算法(三)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -923,13 +1122,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/b478.html">
+                <a href="/posts/a5e3.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/loading.gif" data-original="/medias/featureimages/8.jpg" class="responsive-img" alt="misc的基本解题思路(一)">
+                        <img src="/medias/loading.gif" data-original="/medias/featureimages/6.jpg" class="responsive-img" alt="数据结构与算法中的排序算法(二)">
                         
-                        <span class="card-title">misc的基本解题思路(一)</span>
+                        <span class="card-title">数据结构与算法中的排序算法(二)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -946,8 +1145,8 @@
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/CTF/" class="post-category">
-                                    CTF
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" class="post-category">
+                                    数据结构与算法
                                 </a>
                             
                             
@@ -957,12 +1156,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/CTF/">
-                        <span class="chip bg-color">CTF</span>
+                    <a href="/tags/python/">
+                        <span class="chip bg-color">python</span>
                     </a>
                     
-                    <a href="/tags/misc/">
-                        <span class="chip bg-color">misc</span>
+                    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">数据结构与算法</span>
                     </a>
                     
                 </div>
