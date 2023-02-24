@@ -74,7 +74,7 @@
             <div class="brand-logo">
                 <a href="/" class="waves-effect waves-light">
                     
-                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    <img src="./images/loading.gif" data-original="/medias/logo.png" class="logo-img" alt="LOGO">
                     
                     <span class="logo-span">阿浩の博客</span>
                 </a>
@@ -232,7 +232,7 @@
 
     <div class="mobile-head bg-color">
         
-        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        <img src="./images/loading.gif" data-original="/medias/logo.png" class="logo-img circle responsive-img">
         
         <div class="logo-name">阿浩の博客</div>
         <div class="logo-desc">
@@ -598,7 +598,7 @@
 <p>通常文件无法正常打开有两种情况，一种文件头部残缺，另一种头部字段错误。针对文件头部残缺的情况，使用winhex程序添加相应的文件头，针对头部字段错误，可以找一个相同类型的文件进行替换。</p>
 <p><mark>使用场景：文件头部残缺或文件头部字段错误无法打开正常文件</mark></p>
 <p><code>格式：file 文件名</code></p>
-<p><img src="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202302011320661.png" alt=""></p>
+<p><img src="./images/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202302011320661.png" alt=""></p>
 </li>
 </ol>
 <h3 id="文件分离操作">文件分离操作</h3>
@@ -818,11 +818,11 @@
 <ol>
 <li class="lvl-6">
 <p>当PNG文件头正常但无法打开文件，可能是CRC校验出错，可以尝试通过TweakPNG打开PNG，会弹出校验错误的提示，这里显示CRC是fe1a5ab6，正确的是b0a7a9f1。打开winhex搜索fe1a5ab6将其改为b0a7a9f1</p>
-<p><img src="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202302011629751.png" alt=""></p>
+<p><img src="./images/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202302011629751.png" alt=""></p>
 </li>
 </ol>
 <p><mark>有时CRC没有错误，但是图片的高度或者宽度发生了错误，需要通过CRC计算出正确的高度或者宽度。</mark></p>
-<p><img src="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202302011652177.png" alt=""></p>
+<p><img src="./images/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202302011652177.png" alt=""></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#cooding:utf-8</span>
 <span class="token keyword">import</span> binascii
 <span class="token keyword">import</span> struct
@@ -841,7 +841,7 @@ crcbp <span class="token operator">=</span> <span class="token builtin">open</sp
 <p><mark>使用场景：在Windows的cmd下，对加密过的图片文件进行解密</mark></p>
 <p><code>格式：Bftools.exe decode braincopter 要解密的图片名称 -output 输出文件名</code></p>
 <p><code>Bftools.exe run 上一步输出的文件</code></p>
-<p><img src="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202302011703200.png" alt=""></p>
+<p><img src="./images/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202302011703200.png" alt=""></p>
 </li>
 <li class="lvl-3">
 <p><strong>SilentEye</strong></p>
@@ -1005,10 +1005,10 @@ crcbp <span class="token operator">=</span> <span class="token builtin">open</sp
                         <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
                     </ul>
                     <div id="alipay">
-                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                        <img src="./images/loading.gif" data-original="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
                     </div>
                     <div id="wechat">
-                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                        <img src="./images/loading.gif" data-original="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
                     </div>
                 </div>
             </div>
@@ -1266,7 +1266,7 @@ crcbp <span class="token operator">=</span> <span class="token builtin">open</sp
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="数据结构与算法中的排序算法(一)">
+                        <img src="./images/loading.gif" data-original="/medias/featureimages/10.jpg" class="responsive-img" alt="数据结构与算法中的排序算法(一)">
                         
                         <span class="card-title">数据结构与算法中的排序算法(一)</span>
                     </div>
@@ -1319,7 +1319,7 @@ crcbp <span class="token operator">=</span> <span class="token builtin">open</sp
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="数据结构与算法中的列表查找">
+                        <img src="./images/loading.gif" data-original="/medias/featureimages/22.jpg" class="responsive-img" alt="数据结构与算法中的列表查找">
                         
                         <span class="card-title">数据结构与算法中的列表查找</span>
                     </div>
@@ -1950,6 +1950,19 @@ document.addEventListener("visibilitychange", function () { document.hidden ? (d
     </script>
 
 
-</body>
+
+        <style>
+            [bg-lazy] {
+                background-image: none !important;
+                background-color: #eee !important;
+            }
+        </style>
+        <script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                preloadRatio: 1,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(r){r.imageLazyLoadSetting.processImages=t;var e=r.imageLazyLoadSetting.isSPA,n=r.imageLazyLoadSetting.preloadRatio||1,c=a();function a(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(){e&&(c=a());for(var t,o=0;o<c.length;o++)0<=(t=(t=c[o]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(r.innerHeight*n||document.documentElement.clientHeight*n)&&function(){var t,e,n,a,i=c[o];e=function(){c=c.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(n=new Image,a=t.getAttribute("data-original"),n.onload=function(){t.src=a,t.removeAttribute("data-original"),e&&e()},t.src!==a&&(n.src=a))}()}function i(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",i),r.addEventListener("resize",i),r.addEventListener("orientationchange",i)}(this);</script></body>
 
 </html>

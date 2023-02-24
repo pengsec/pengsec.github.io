@@ -96,7 +96,7 @@
             <div class="brand-logo">
                 <a href="/" class="waves-effect waves-light">
                     
-                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    <img src="./images/loading.gif" data-original="/medias/logo.png" class="logo-img" alt="LOGO">
                     
                     <span class="logo-span">阿浩の博客</span>
                 </a>
@@ -254,7 +254,7 @@
 
     <div class="mobile-head bg-color">
         
-        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        <img src="./images/loading.gif" data-original="/medias/logo.png" class="logo-img circle responsive-img">
         
         <div class="logo-name">阿浩の博客</div>
         <div class="logo-desc">
@@ -657,7 +657,7 @@ bubble_sort<span class="token punctuation">(</span>li<span class="token punctuat
 </ul>
 </li>
 </ul>
-<p><img src="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202302062134346.png" alt=""></p>
+<p><img src="./images/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202302062134346.png" alt=""></p>
 <p><strong>快速排序-框架：</strong></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">quick_sort</span><span class="token punctuation">(</span>data<span class="token punctuation">,</span>left<span class="token punctuation">,</span>right<span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token keyword">if</span> left <span class="token operator">&lt;</span> right<span class="token punctuation">:</span>
@@ -697,7 +697,7 @@ quick_sort<span class="token punctuation">(</span>li<span class="token punctuati
 <li class="lvl-4">
 <p>最坏情况：</p>
 <p>正序或逆序排列，二叉树画出来应该是一棵斜树，并且需要经过n-1次递归调用才能完成，且第i次划分需要经过n‐i次关键字的比较才能找到第i个记录，也就是枢轴的位置，所以：</p>
-<p><img src="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202302091721179.png" alt=""></p>
+<p><img src="./images/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202302091721179.png" alt=""></p>
 <p>最终的时间复杂度应该O(n<sup>2</sup>)</p>
 </li>
 <li class="lvl-4">
@@ -812,10 +812,10 @@ quick_sort<span class="token punctuation">(</span>li<span class="token punctuati
                         <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
                     </ul>
                     <div id="alipay">
-                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                        <img src="./images/loading.gif" data-original="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
                     </div>
                     <div id="wechat">
-                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                        <img src="./images/loading.gif" data-original="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
                     </div>
                 </div>
             </div>
@@ -1073,7 +1073,7 @@ quick_sort<span class="token punctuation">(</span>li<span class="token punctuati
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="数据结构与算法中的排序算法(二)">
+                        <img src="./images/loading.gif" data-original="/medias/featureimages/6.jpg" class="responsive-img" alt="数据结构与算法中的排序算法(二)">
                         
                         <span class="card-title">数据结构与算法中的排序算法(二)</span>
                     </div>
@@ -1126,7 +1126,7 @@ quick_sort<span class="token punctuation">(</span>li<span class="token punctuati
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="misc的基本解题思路(一)">
+                        <img src="./images/loading.gif" data-original="/medias/featureimages/8.jpg" class="responsive-img" alt="misc的基本解题思路(一)">
                         
                         <span class="card-title">misc的基本解题思路(一)</span>
                     </div>
@@ -1757,6 +1757,19 @@ document.addEventListener("visibilitychange", function () { document.hidden ? (d
     </script>
 
 
-</body>
+
+        <style>
+            [bg-lazy] {
+                background-image: none !important;
+                background-color: #eee !important;
+            }
+        </style>
+        <script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                preloadRatio: 1,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(r){r.imageLazyLoadSetting.processImages=t;var e=r.imageLazyLoadSetting.isSPA,n=r.imageLazyLoadSetting.preloadRatio||1,c=a();function a(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(){e&&(c=a());for(var t,o=0;o<c.length;o++)0<=(t=(t=c[o]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(r.innerHeight*n||document.documentElement.clientHeight*n)&&function(){var t,e,n,a,i=c[o];e=function(){c=c.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(n=new Image,a=t.getAttribute("data-original"),n.onload=function(){t.src=a,t.removeAttribute("data-original"),e&&e()},t.src!==a&&(n.src=a))}()}function i(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",i),r.addEventListener("resize",i),r.addEventListener("orientationchange",i)}(this);</script></body>
 
 </html>

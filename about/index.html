@@ -74,7 +74,7 @@
             <div class="brand-logo">
                 <a href="/" class="waves-effect waves-light">
                     
-                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    <img src="./images/loading.gif" data-original="/medias/logo.png" class="logo-img" alt="LOGO">
                     
                     <span class="logo-span">阿浩の博客</span>
                 </a>
@@ -232,7 +232,7 @@
 
     <div class="mobile-head bg-color">
         
-        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        <img src="./images/loading.gif" data-original="/medias/logo.png" class="logo-img circle responsive-img">
         
         <div class="logo-name">阿浩の博客</div>
         <div class="logo-desc">
@@ -683,7 +683,7 @@
                 type: 'pie',
                 radius: '50%',
                 color: ['#6772e5', '#ff9e0f', '#fa755a', '#3ecf8e', '#82d3f4', '#ab47bc', '#525f7f', '#f51c47', '#26A69A'],
-                data: [{"name":"CTF","value":1},{"name":"数据结构与算法","value":4},{"name":"python","value":1},{"name":"日常","value":1}],
+                data: [{"name":"数据结构与算法","value":4},{"name":"CTF","value":1},{"name":"日常","value":1},{"name":"python","value":1}],
                 itemStyle: {
                     emphasis: {
                         shadowBlur: 10,
@@ -838,18 +838,6 @@
         <div class="tag-chips center-align">
             
             
-            <a href="/tags/CTF/">
-                <span class="chip center-align waves-effect waves-light chip-default">CTF</span>
-            </a>
-            
-            
-            
-            <a href="/tags/misc/">
-                <span class="chip center-align waves-effect waves-light chip-default">misc</span>
-            </a>
-            
-            
-            
             <a href="/tags/python/">
                 <span class="chip center-align waves-effect waves-light chip-default">python</span>
             </a>
@@ -858,6 +846,18 @@
             
             <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">
                 <span class="chip center-align waves-effect waves-light chip-default">数据结构与算法</span>
+            </a>
+            
+            
+            
+            <a href="/tags/CTF/">
+                <span class="chip center-align waves-effect waves-light chip-default">CTF</span>
+            </a>
+            
+            
+            
+            <a href="/tags/misc/">
+                <span class="chip center-align waves-effect waves-light chip-default">misc</span>
             </a>
             
             
@@ -1342,6 +1342,19 @@ document.addEventListener("visibilitychange", function () { document.hidden ? (d
     </script>
 
 
-</body>
+
+        <style>
+            [bg-lazy] {
+                background-image: none !important;
+                background-color: #eee !important;
+            }
+        </style>
+        <script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                preloadRatio: 1,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(r){r.imageLazyLoadSetting.processImages=t;var e=r.imageLazyLoadSetting.isSPA,n=r.imageLazyLoadSetting.preloadRatio||1,c=a();function a(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(){e&&(c=a());for(var t,o=0;o<c.length;o++)0<=(t=(t=c[o]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(r.innerHeight*n||document.documentElement.clientHeight*n)&&function(){var t,e,n,a,i=c[o];e=function(){c=c.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(n=new Image,a=t.getAttribute("data-original"),n.onload=function(){t.src=a,t.removeAttribute("data-original"),e&&e()},t.src!==a&&(n.src=a))}()}function i(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",i),r.addEventListener("resize",i),r.addEventListener("orientationchange",i)}(this);</script></body>
 
 </html>
