@@ -83,9 +83,9 @@
 
     <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
 	<meta name="baidu-site-verification" content="codeva-zKkMicDbub" />
-<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="阿浩の博客" type="application/atom+xml">
-
+<meta name="generator" content="Hexo 6.3.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="阿浩の博客" type="application/atom+xml">
 </head>
 
 
@@ -557,19 +557,19 @@
 </li>
 </ul>
 <p><strong>代码示例</strong>：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> random
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">import random
 
-<span class="token keyword">def</span> <span class="token function">bubble_sort</span><span class="token punctuation">(</span>li<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>li<span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>  <span class="token comment"># 第i趟</span>
-        <span class="token keyword">for</span> j <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>li<span class="token punctuation">)</span><span class="token operator">-</span>i<span class="token punctuation">)</span><span class="token punctuation">:</span>
-            <span class="token keyword">if</span> li<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">&gt;</span>li<span class="token punctuation">[</span>j<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
-                li<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">,</span>li<span class="token punctuation">[</span>j<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">=</span>li<span class="token punctuation">[</span>j<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span>li<span class="token punctuation">[</span>j<span class="token punctuation">]</span>
+def bubble_sort(li):
+    for i in range(len(li)-1):  # 第i趟
+        for j in range(len(li)-i):
+            if li[j]&gt;li[j+1]:
+                li[j],li[j+1]=li[j+1],li[j]
 
-<span class="token comment">#验证</span>
-li <span class="token operator">=</span> <span class="token punctuation">[</span>random<span class="token punctuation">.</span>randint<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">10000</span><span class="token punctuation">)</span> <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>li<span class="token punctuation">)</span>
-bubble_sort<span class="token punctuation">(</span>li<span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>li<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+#验证
+li = [random.randint(0,10000) for i in range(1000)]
+print(li)
+bubble_sort(li)
+print(li)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul class="lvl-0">
 <li class="lvl-2">
 <p>时间复杂度：O(n<sup>2</sup>)</p>
@@ -582,15 +582,15 @@ bubble_sort<span class="token punctuation">(</span>li<span class="token punctuat
 </li>
 </ul>
 <p><strong>代码示例</strong>：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">bubble_sort</span><span class="token punctuation">(</span>li<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>li<span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-        exchange <span class="token operator">=</span> <span class="token boolean">False</span>
-        <span class="token keyword">for</span> j <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>li<span class="token punctuation">)</span><span class="token operator">-</span>i<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-            <span class="token keyword">if</span> li<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">&gt;</span> li<span class="token punctuation">[</span>j<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
-                li<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">,</span> li<span class="token punctuation">[</span>j<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> li<span class="token punctuation">[</span>j<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> li<span class="token punctuation">[</span>j<span class="token punctuation">]</span> 
-                exchange <span class="token operator">=</span> <span class="token boolean">True</span>
-            <span class="token keyword">if</span> <span class="token keyword">not</span> exchange<span class="token punctuation">:</span>
-                <span class="token keyword">return</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">def bubble_sort(li):
+    for i in range(len(li)-1):
+        exchange = False
+        for j in range(len(li)-i-1):
+            if li[j] &gt; li[j+1]:
+                li[j], li[j+1] = li[j+1], li[j] 
+                exchange = True
+            if not exchange:
+                return<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul class="lvl-0">
 <li class="lvl-2">
 <p>时间复杂度：O(n<sup>2</sup>)</p>
@@ -612,14 +612,14 @@ bubble_sort<span class="token punctuation">(</span>li<span class="token punctuat
 </li>
 </ul>
 <p><strong>代码示例：</strong></p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">select_sort</span><span class="token punctuation">(</span>li<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>li<span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-        min_loc <span class="token operator">=</span> i
-        <span class="token keyword">for</span> j <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token builtin">len</span><span class="token punctuation">(</span>li<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-            <span class="token keyword">if</span> li<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">&lt;</span> li<span class="token punctuation">[</span>min_loc<span class="token punctuation">]</span><span class="token punctuation">:</span>
-                min_loc <span class="token operator">=</span> j
-        <span class="token keyword">if</span> min_loc <span class="token operator">!=</span> i<span class="token punctuation">:</span>
-            li<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> li<span class="token punctuation">[</span>min_loc<span class="token punctuation">]</span> <span class="token operator">=</span> li<span class="token punctuation">[</span>min_loc<span class="token punctuation">]</span><span class="token punctuation">,</span> li<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">def select_sort(li):
+    for i in range(len(li)-1):
+        min_loc = i
+        for j in range(i+1,len(li)):
+            if li[j] &lt; li[min_loc]:
+                min_loc = j
+        if min_loc != i:
+            li[i], li[min_loc] = li[min_loc], li[i]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="插入排序-Inset-Sort">插入排序(Inset Sort)</h2>
 <ul class="lvl-0">
 <li class="lvl-2">
@@ -630,14 +630,14 @@ bubble_sort<span class="token punctuation">(</span>li<span class="token punctuat
 </li>
 </ul>
 <p><strong>代码示例：</strong></p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">insect_sort</span><span class="token punctuation">(</span>li<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token builtin">len</span><span class="token punctuation">(</span>li<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-        tmp <span class="token operator">=</span> li<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
-        j <span class="token operator">=</span> i <span class="token operator">-</span> <span class="token number">1</span>
-        <span class="token keyword">while</span> j <span class="token operator">&gt;=</span> <span class="token number">0</span> <span class="token keyword">and</span> tmp <span class="token operator">&lt;</span> li<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">:</span>
-            li<span class="token punctuation">[</span>j<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> li<span class="token punctuation">[</span>j<span class="token punctuation">]</span>
-            j <span class="token operator">=</span> j <span class="token operator">-</span> <span class="token number">1</span>
-         li<span class="token punctuation">[</span>j<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> tmp<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">def insect_sort(li):
+    for i in range(1,len(li)):
+        tmp = li[i]
+        j = i - 1
+        while j &gt;= 0 and tmp &lt; li[j]:
+            li[j+1] = li[j]
+            j = j - 1
+         li[j+1] = tmp<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul class="lvl-0">
 <li class="lvl-2">
 <p>时间复杂度：O(n<sup>2</sup>)</p>
@@ -659,31 +659,31 @@ bubble_sort<span class="token punctuation">(</span>li<span class="token punctuat
 </ul>
 <p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202302062134346.png" alt=""></p>
 <p><strong>快速排序-框架：</strong></p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">quick_sort</span><span class="token punctuation">(</span>data<span class="token punctuation">,</span>left<span class="token punctuation">,</span>right<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">if</span> left <span class="token operator">&lt;</span> right<span class="token punctuation">:</span>
-        mid <span class="token operator">=</span> partition<span class="token punctuation">(</span>data<span class="token punctuation">,</span>left<span class="token punctuation">,</span>right<span class="token punctuation">)</span>
-        quick_sort<span class="token punctuation">(</span>data<span class="token punctuation">,</span>left<span class="token punctuation">,</span>mid<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>
-        quick_sort<span class="token punctuation">(</span>data<span class="token punctuation">,</span>mid<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span>right<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">def quick_sort(data,left,right):
+    if left &lt; right:
+        mid = partition(data,left,right)
+        quick_sort(data,left,mid-1)
+        quick_sort(data,mid+1,right)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><strong>代码示例：</strong></p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">partition</span><span class="token punctuation">(</span>li<span class="token punctuation">,</span>left<span class="token punctuation">,</span>right<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    tmp <span class="token operator">=</span> li<span class="token punctuation">[</span>left<span class="token punctuation">]</span>
-    <span class="token keyword">while</span> left <span class="token operator">&lt;</span> right<span class="token punctuation">:</span>
-        <span class="token keyword">while</span> li<span class="token punctuation">[</span>right<span class="token punctuation">]</span> <span class="token operator">&gt;=</span> tmp<span class="token punctuation">:</span>  <span class="token comment"># 从右边找比tmp小的数</span>
-            right <span class="token operator">-=</span> <span class="token number">1</span>  <span class="token comment"># 往左走一步</span>
-        li<span class="token punctuation">[</span>left<span class="token punctuation">]</span> <span class="token operator">=</span> li<span class="token punctuation">[</span>right<span class="token punctuation">]</span>  <span class="token comment"># 把右边的值写到左边空位上</span>
-        <span class="token keyword">while</span> left <span class="token operator">&lt;</span> right <span class="token keyword">and</span> li<span class="token punctuation">[</span>left<span class="token punctuation">]</span> <span class="token operator">&lt;=</span> tmp<span class="token punctuation">:</span>
-            left <span class="token operator">+=</span> <span class="token number">1</span>
-        li<span class="token punctuation">[</span>left<span class="token punctuation">]</span> <span class="token operator">=</span> tmp  <span class="token comment"># 把tmp归位</span>
-        <span class="token keyword">return</span> left
-<span class="token keyword">def</span> <span class="token function">quick_sort</span><span class="token punctuation">(</span>li<span class="token punctuation">,</span>left<span class="token punctuation">,</span>right<span class="token punctuation">)</span>    <span class="token punctuation">:</span>
-    <span class="token keyword">if</span> left <span class="token operator">&lt;</span> right<span class="token punctuation">:</span>  <span class="token comment"># 至少两个元素</span>
-        mid <span class="token operator">=</span> partition<span class="token punctuation">(</span>li<span class="token punctuation">,</span>left<span class="token punctuation">,</span>right<span class="token punctuation">)</span>
-        quick_sort<span class="token punctuation">(</span>li<span class="token punctuation">,</span>left<span class="token punctuation">,</span>mid<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>
-        quick_sort<span class="token punctuation">(</span>li<span class="token punctuation">,</span>mid<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span>right<span class="token punctuation">)</span>
-<span class="token comment">#调用测试</span>
-li <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">9</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">]</span>
-quick_sort<span class="token punctuation">(</span>li<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token builtin">len</span><span class="token punctuation">(</span>li<span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>li<span class="token punctuation">)</span>  <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">def partition(li,left,right):
+    tmp = li[left]
+    while left &lt; right:
+        while li[right] &gt;= tmp:  # 从右边找比tmp小的数
+            right -= 1  # 往左走一步
+        li[left] = li[right]  # 把右边的值写到左边空位上
+        while left &lt; right and li[left] &lt;= tmp:
+            left += 1
+        li[left] = tmp  # 把tmp归位
+        return left
+def quick_sort(li,left,right)    :
+    if left &lt; right:  # 至少两个元素
+        mid = partition(li,left,right)
+        quick_sort(li,left,mid-1)
+        quick_sort(li,mid+1,right)
+#调用测试
+li = [5,7,6,3,1,2,9,8]
+quick_sort(li,0,len(li)-1)
+print(li)  <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul class="lvl-0">
 <li class="lvl-2">
 <p>快速排序的效率：</p>
@@ -1065,18 +1065,17 @@ quick_sort<span class="token punctuation">(</span>li<span class="token punctuati
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/6547.html">
+                <a href="/posts/3541.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/loading.gif" data-original="/medias/featureimages/10.jpg" class="responsive-img" alt="数据结构与算法中的排序算法(一)">
+                        <img src="/medias/loading.gif" data-original="/medias/featureimages/1.jpg" class="responsive-img" alt="数据结构与算法中的排序算法(三)">
                         
-                        <span class="card-title">数据结构与算法中的排序算法(一)</span>
+                        <span class="card-title">数据结构与算法中的排序算法(三)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1086,9 +1085,9 @@ quick_sort<span class="token punctuation">(</span>li<span class="token punctuati
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-02-24
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-02-24
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1101,7 +1100,6 @@ quick_sort<span class="token punctuation">(</span>li<span class="token punctuati
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
@@ -1124,13 +1122,13 @@ quick_sort<span class="token punctuation">(</span>li<span class="token punctuati
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/3541.html">
+                <a href="/posts/a5e3.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/loading.gif" data-original="/medias/featureimages/1.jpg" class="responsive-img" alt="数据结构与算法中的排序算法(三)">
+                        <img src="/medias/loading.gif" data-original="/medias/featureimages/6.jpg" class="responsive-img" alt="数据结构与算法中的排序算法(二)">
                         
-                        <span class="card-title">数据结构与算法中的排序算法(三)</span>
+                        <span class="card-title">数据结构与算法中的排序算法(二)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">

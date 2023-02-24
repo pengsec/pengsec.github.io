@@ -74,9 +74,9 @@
 
     <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
 	<meta name="baidu-site-verification" content="codeva-zKkMicDbub" />
-<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="阿浩の博客" type="application/atom+xml">
-
+<meta name="generator" content="Hexo 6.3.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="阿浩の博客" type="application/atom+xml">
 </head>
 
 
@@ -541,68 +541,68 @@
 <p>时间复杂度：O(n)</p>
 </li>
 </ul>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">linear_search</span><span class="token punctuation">(</span>li<span class="token punctuation">,</span>val<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">for</span> ind <span class="token punctuation">,</span>v <span class="token keyword">in</span> emumerate<span class="token punctuation">(</span>li<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token keyword">if</span> v <span class="token operator">==</span> val<span class="token punctuation">:</span>
-            <span class="token keyword">return</span> ind
-        <span class="token keyword">else</span><span class="token punctuation">:</span>
-            <span class="token keyword">return</span> <span class="token boolean">None</span>
-<span class="token comment">#或者</span>
-<span class="token keyword">def</span> <span class="token function">linear_search</span><span class="token punctuation">(</span>data_set<span class="token punctuation">,</span>value<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token builtin">range</span><span class="token punctuation">(</span>data_set<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token keyword">if</span> data_set<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> value<span class="token punctuation">:</span>
-            <span class="token keyword">return</span> i
-     <span class="token keyword">return</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">def linear_search(li,val):
+    for ind ,v in emumerate(li):
+        if v == val:
+            return ind
+        else:
+            return None
+#或者
+def linear_search(data_set,value):
+    for i in range(range(data_set)):
+        if data_set[i] == value:
+            return i
+     return <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="二分查找-Binar-Search">二分查找(Binar Search)</h2>
 <ul class="lvl-0">
 <li class="lvl-2">
 <p>二分查找：又叫折半查找，从有序列表的初始候选区 li[0:n] 开始，通过对待查找的值与候选区中间值的比较，可以使候选区减少一半</p>
 </li>
 </ul>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">binary_search</span><span class="token punctuation">(</span>li<span class="token punctuation">,</span>val<span class="token punctuation">)</span><span class="token punctuation">:</span>   <span class="token comment"># val：元素</span>
-    left <span class="token operator">=</span> <span class="token number">0</span>
-    right <span class="token operator">=</span> <span class="token builtin">len</span><span class="token punctuation">(</span>li<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span>
-    <span class="token keyword">while</span> left <span class="token operator">&lt;=</span> right<span class="token punctuation">:</span>	<span class="token comment"># 候选区有值</span>
-        mid <span class="token operator">=</span> <span class="token punctuation">(</span>left <span class="token operator">+</span> right<span class="token punctuation">)</span><span class="token operator">//</span> <span class="token number">2</span>
-        <span class="token keyword">if</span> li<span class="token punctuation">[</span>mid<span class="token punctuation">]</span> <span class="token operator">==</span> val<span class="token punctuation">:</span>
-            <span class="token keyword">return</span> mid
-        <span class="token keyword">elif</span> li<span class="token punctuation">[</span>mid<span class="token punctuation">]</span> <span class="token operator">&gt;</span> val<span class="token punctuation">:</span>	 <span class="token comment"># 带查找的值在mid左侧</span>
-            right <span class="token operator">=</span> mid <span class="token operator">-</span><span class="token number">1</span>
-        <span class="token keyword">else</span><span class="token punctuation">:</span>   <span class="token comment"># li[mid] &lt; val 带查找的值在mid右侧</span>
-            left <span class="token operator">=</span> mid <span class="token operator">+</span> <span class="token number">1</span>
-      <span class="token keyword">else</span><span class="token punctuation">:</span>     
-        <span class="token keyword">return</span> <span class="token boolean">None</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">def binary_search(li,val):   # val：元素
+    left = 0
+    right = len(li) - 1
+    while left &lt;= right:	# 候选区有值
+        mid = (left + right)// 2
+        if li[mid] == val:
+            return mid
+        elif li[mid] &gt; val:	 # 带查找的值在mid左侧
+            right = mid -1
+        else:   # li[mid] &lt; val 带查找的值在mid右侧
+            left = mid + 1
+      else:     
+        return None<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul class="lvl-0">
 <li class="lvl-2">
 <p>时间复杂度：O(logn)</p>
 </li>
 </ul>
 <p><mark>测试运行时间代码</mark>：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> time
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">import time
 
-<span class="token keyword">def</span> <span class="token function">cal_time</span><span class="token punctuation">(</span>func<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">wrapper</span><span class="token punctuation">(</span><span class="token operator">*</span>args<span class="token punctuation">,</span><span class="token operator">**</span>kwargs<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        t1 <span class="token operator">=</span> time<span class="token punctuation">.</span>time<span class="token punctuation">(</span><span class="token punctuation">)</span>
-        result <span class="token operator">=</span> func<span class="token punctuation">(</span><span class="token operator">*</span>args<span class="token punctuation">,</span><span class="token operator">**</span>kwargs<span class="token punctuation">)</span>
-        t2 <span class="token operator">=</span> time<span class="token punctuation">.</span>time<span class="token punctuation">(</span><span class="token punctuation">)</span>
-        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"%s running time: %s secs."</span> <span class="token operator">%</span> <span class="token punctuation">(</span>func<span class="token punctuation">.</span>__name__<span class="token punctuation">,</span>t2<span class="token operator">-</span>t1<span class="token punctuation">)</span><span class="token punctuation">)</span>
-        <span class="token keyword">return</span> result
-    <span class="token keyword">return</span> wrapper
-<span class="token comment"># 运用时，先导入这个模块，再用@cal_time语句放在函数代码，如：</span>
-<span class="token decorator annotation punctuation">@cal_time</span>
-<span class="token keyword">def</span> <span class="token function">binary_search</span><span class="token punctuation">(</span>li<span class="token punctuation">,</span>val<span class="token punctuation">)</span><span class="token punctuation">:</span>   <span class="token comment"># val：元素</span>
-    left <span class="token operator">=</span> <span class="token number">0</span>
-    right <span class="token operator">=</span> <span class="token builtin">len</span><span class="token punctuation">(</span>li<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span>
-    <span class="token keyword">while</span> left <span class="token operator">&lt;=</span> right<span class="token punctuation">:</span>	<span class="token comment"># 候选区有值</span>
-        mid <span class="token operator">=</span> <span class="token punctuation">(</span>left <span class="token operator">+</span> right<span class="token punctuation">)</span><span class="token operator">//</span> <span class="token number">2</span>
-        <span class="token keyword">if</span> li<span class="token punctuation">[</span>mid<span class="token punctuation">]</span> <span class="token operator">==</span> val<span class="token punctuation">:</span>
-            <span class="token keyword">return</span> midcal_time
-        <span class="token keyword">elif</span> li<span class="token punctuation">[</span>mid<span class="token punctuation">]</span> <span class="token operator">&gt;</span> val<span class="token punctuation">:</span>	 <span class="token comment"># 带查找的值在mid左侧</span>
-            right <span class="token operator">=</span> mid <span class="token operator">-</span><span class="token number">1</span>
-        <span class="token keyword">else</span><span class="token punctuation">:</span>   <span class="token comment"># li[mid] &lt; val 带查找的值在mid右侧</span>
-            left <span class="token operator">=</span> mid <span class="token operator">+</span> <span class="token number">1</span>
-      <span class="token keyword">else</span><span class="token punctuation">:</span>     
-        <span class="token keyword">return</span> <span class="token boolean">None</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+def cal_time(func):
+    def wrapper(*args,**kwargs):
+        t1 = time.time()
+        result = func(*args,**kwargs)
+        t2 = time.time()
+        print("%s running time: %s secs." % (func.__name__,t2-t1))
+        return result
+    return wrapper
+# 运用时，先导入这个模块，再用@cal_time语句放在函数代码，如：
+@cal_time
+def binary_search(li,val):   # val：元素
+    left = 0
+    right = len(li) - 1
+    while left &lt;= right:	# 候选区有值
+        mid = (left + right)// 2
+        if li[mid] == val:
+            return midcal_time
+        elif li[mid] &gt; val:	 # 带查找的值在mid左侧
+            right = mid -1
+        else:   # li[mid] &lt; val 带查找的值在mid右侧
+            left = mid + 1
+      else:     
+        return None<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
 <p>注：内置函数 index() 用的是线性查找。</p>
 </blockquote>
@@ -1022,19 +1022,19 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/bb2d.html">
+                <a href="/posts/b478.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/loading.gif" data-original="/medias/featureimages/10.jpg" class="responsive-img" alt="python数据类型">
+                        <img src="/medias/loading.gif" data-original="/medias/featureimages/8.jpg" class="responsive-img" alt="misc的基本解题思路(一)">
                         
-                        <span class="card-title">python数据类型</span>
+                        <span class="card-title">misc的基本解题思路(一)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            谈谈有关CTF中的misc的基本解题思路,misc的四大部分:文件操作与隐写,图片隐写术,压缩文件处理,流量取证技术
                         
                     </div>
                     <div class="publish-info">
@@ -1045,8 +1045,8 @@
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/python/" class="post-category">
-                                    python
+                            <a href="/categories/CTF/" class="post-category">
+                                    CTF
                                 </a>
                             
                             
@@ -1056,8 +1056,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/python/">
-                        <span class="chip bg-color">python</span>
+                    <a href="/tags/CTF/">
+                        <span class="chip bg-color">CTF</span>
+                    </a>
+                    
+                    <a href="/tags/misc/">
+                        <span class="chip bg-color">misc</span>
                     </a>
                     
                 </div>

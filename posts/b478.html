@@ -61,9 +61,9 @@
 
     <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
 	<meta name="baidu-site-verification" content="codeva-zKkMicDbub" />
-<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="阿浩の博客" type="application/atom+xml">
-
+<meta name="generator" content="Hexo 6.3.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="阿浩の博客" type="application/atom+xml">
 </head>
 
 
@@ -787,26 +787,26 @@
 <blockquote>
 <p>注：要在python2的环境运行。</p>
 </blockquote>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#coding:utf-8</span>
-<span class="token keyword">import</span> PIL<span class="token punctuation">.</span>Image
-<span class="token keyword">def</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    im <span class="token operator">=</span> PIL<span class="token punctuation">.</span>Image<span class="token punctuation">.</span><span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'01.bmp'</span><span class="token punctuation">)</span>  <span class="token comment">#将'01.bmp'修改为你的目标文件名 </span>
-    im2 <span class="token operator">=</span> im<span class="token punctuation">.</span>copy<span class="token punctuation">(</span><span class="token punctuation">)</span>
-    pix <span class="token operator">=</span> im2<span class="token punctuation">.</span>load<span class="token punctuation">(</span><span class="token punctuation">)</span>
-    width<span class="token punctuation">,</span>height <span class="token operator">=</span> im2<span class="token punctuation">.</span>size
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">#coding:utf-8
+import PIL.Image
+def foo():
+    im = PIL.Image.open('01.bmp')  #将'01.bmp'修改为你的目标文件名 
+    im2 = im.copy()
+    pix = im2.load()
+    width,height = im2.size
     
-    <span class="token keyword">for</span> x <span class="token keyword">in</span> <span class="token builtin">xrange</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span>width<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token keyword">for</span> y <span class="token keyword">in</span> <span class="token builtin">xrange</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span>height<span class="token punctuation">)</span><span class="token punctuation">:</span>
-            <span class="token keyword">if</span> pix<span class="token punctuation">[</span>x<span class="token punctuation">.</span>y<span class="token punctuation">]</span><span class="token operator">&amp;</span><span class="token number">0x1</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
-                pix<span class="token punctuation">[</span>x<span class="token punctuation">,</span>y<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0</span>
-            <span class="token keyword">else</span><span class="token punctuation">:</span>
-                pix<span class="token punctuation">[</span>x<span class="token punctuation">,</span>y<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">255</span>
-    im2<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span>
-    <span class="token keyword">pass</span>
-<span class="token keyword">if</span> __name__<span class="token operator">==</span><span class="token string">'__main__'</span><span class="token punctuation">:</span>
-    foo<span class="token punctuation">(</span><span class="token punctuation">)</span>
-    <span class="token keyword">print</span> <span class="token string">'ok.'</span>
-    <span class="token keyword">pass</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    for x in xrange(0,width):
+        for y in xrange(0,height):
+            if pix[x.y]&amp;0x1 == 0:
+                pix[x,y] = 0
+            else:
+                pix[x,y] = 255
+    im2.show()
+    pass
+if __name__=='__main__':
+    foo()
+    print 'ok.'
+    pass<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 </ol>
 </li>
@@ -823,17 +823,17 @@
 </ol>
 <p><mark>有时CRC没有错误，但是图片的高度或者宽度发生了错误，需要通过CRC计算出正确的高度或者宽度。</mark></p>
 <p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202302011652177.png" alt=""></p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#cooding:utf-8</span>
-<span class="token keyword">import</span> binascii
-<span class="token keyword">import</span> struct
-crcbp <span class="token operator">=</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">"xxx.png"</span><span class="token punctuation">,</span><span class="token string">"rb"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment"># 此处将'xxx.png'改成你的目标文件名</span>
-<span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1024</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">for</span> j <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1024</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-        data <span class="token operator">=</span> crcbp<span class="token punctuation">[</span><span class="token number">12</span><span class="token punctuation">:</span><span class="token number">16</span><span class="token punctuation">]</span><span class="token operator">+</span>struct<span class="token punctuation">.</span>pack<span class="token punctuation">(</span><span class="token string">'&gt;i'</span><span class="token punctuation">,</span>i<span class="token punctuation">)</span><span class="token operator">+</span>struct<span class="token punctuation">.</span>pack<span class="token punctuation">(</span><span class="token string">'&gt;i'</span><span class="token punctuation">,</span>j<span class="token punctuation">)</span><span class="token operator">+</span>crcbp<span class="token punctuation">[</span><span class="token number">24</span><span class="token punctuation">:</span><span class="token number">29</span><span class="token punctuation">]</span>
-        crc32 <span class="token operator">=</span> binascii<span class="token punctuation">.</span>crc32<span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token operator">&amp;</span><span class="token number">0xffffffff</span>
-        <span class="token keyword">if</span> crc32 <span class="token operator">==</span> <span class="token number">0x08ec7edb</span><span class="token punctuation">:</span>  <span class="token comment"># 此处填上CRC值</span>
-            <span class="token keyword">print</span> i<span class="token punctuation">,</span>j
-            <span class="token keyword">print</span> <span class="token string">"hex"</span><span class="token punctuation">.</span><span class="token builtin">hex</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token builtin">hex</span><span class="token punctuation">(</span>j<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">#cooding:utf-8
+import binascii
+import struct
+crcbp = open("xxx.png","rb").read()  # 此处将'xxx.png'改成你的目标文件名
+for i in range(1024):
+    for j in range(1024):
+        data = crcbp[12:16]+struct.pack('&gt;i',i)+struct.pack('&gt;i',j)+crcbp[24:29]
+        crc32 = binascii.crc32(data)&amp;0xffffffff
+        if crc32 == 0x08ec7edb:  # 此处填上CRC值
+            print i,j
+            print "hex".hex(i),hex(j)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 <li class="lvl-3">
 <p><strong>Bftools</strong></p>
@@ -1262,13 +1262,13 @@ crcbp <span class="token operator">=</span> <span class="token builtin">open</sp
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/bb2d.html">
+                <a href="/posts/4c50.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/loading.gif" data-original="/medias/featureimages/10.jpg" class="responsive-img" alt="python数据类型">
+                        <img src="/medias/loading.gif" data-original="/medias/featureimages/22.jpg" class="responsive-img" alt="数据结构与算法中的列表查找">
                         
-                        <span class="card-title">python数据类型</span>
+                        <span class="card-title">数据结构与算法中的列表查找</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1285,8 +1285,8 @@ crcbp <span class="token operator">=</span> <span class="token builtin">open</sp
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/python/" class="post-category">
-                                    python
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" class="post-category">
+                                    数据结构与算法
                                 </a>
                             
                             
@@ -1298,6 +1298,10 @@ crcbp <span class="token operator">=</span> <span class="token builtin">open</sp
                     
                     <a href="/tags/python/">
                         <span class="chip bg-color">python</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">数据结构与算法</span>
                     </a>
                     
                 </div>
