@@ -4,30 +4,20 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="排序算法">
-    <meta name="description" content="列表排序
+    <meta name="keywords" content="misc的基本解题思路">
+    <meta name="description" content="misc的四大部分：
+
+文件操作与隐写
+图片隐写术
+压缩文件处理
+流量取证技术
+
+压缩文件处理
+压缩文件分析
 
 
-排序：将一组“无序”的记录序列调整为“有序”的记录序列
-
-
-列表排序：将无序列表变为有序列表
-
-输入：列表
-输出：有序列表
-
-
-
-升序与降序
-
-
-内置排序函数：sort()
-
-
-冒泡排序(Bubble Sort)
-
-
-列表每两">
+伪加密
+如果压缩文件是加密的，或文件头正常但解压缩错误，首先尝试文件是否为伪加密。zip文件是否加密是通过识别符来显示的，在每">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -39,7 +29,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>数据结构与算法中的排序算法(一) | 阿浩の博客</title>
+    <title>misc的基本解题思路(二) | 阿浩の博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
     <style>
@@ -428,12 +418,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">数据结构与算法中的排序算法(一)</h1>
+                    <h1 class="description center-align post-title">misc的基本解题思路(二)</h1>
                 </div>
             </div>
         </div>
@@ -457,12 +447,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/python/">
-                                <span class="chip bg-color">python</span>
+                            <a href="/tags/CTF/">
+                                <span class="chip bg-color">CTF</span>
                             </a>
                         
-                            <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">
-                                <span class="chip bg-color">数据结构与算法</span>
+                            <a href="/tags/misc/">
+                                <span class="chip bg-color">misc</span>
                             </a>
                         
                     </div>
@@ -473,8 +463,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" class="post-category">
-                                数据结构与算法
+                            <a href="/categories/CTF/" class="post-category">
+                                CTF
                             </a>
                         
                     </div>
@@ -486,21 +476,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-02-24
+                    2023-02-25
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-02-14
+                    2023-02-25
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    830
+                    1.3k
                 </div>
                 
 
@@ -525,187 +515,132 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="列表排序">列表排序</h2>
+                <p><strong>misc的四大部分：</strong></p>
+<ul class="lvl-0">
+<li class="lvl-2">文件操作与隐写</li>
+<li class="lvl-2">图片隐写术</li>
+<li class="lvl-2">压缩文件处理</li>
+<li class="lvl-2">流量取证技术</li>
+</ul>
+<h2 id="压缩文件处理">压缩文件处理</h2>
+<h3 id="压缩文件分析">压缩文件分析</h3>
+<ol>
+<li class="lvl-3">
+<p><strong>伪加密</strong></p>
+<p>如果压缩文件是加密的，或文件头正常但解压缩错误，首先尝试文件是否为伪加密。zip文件是否加密是通过识别符来显示的，在每个文件的文件目录字段有一位专门标识了文件是否加密，将其设置为00表示</p>
+<p><mark>使用场景：伪加密文件</mark></p>
+<p><code>操作方法：使用winhex打开压缩文件，找到文件头第九第十个字符，将其修改为0000.</code></p>
+<ol>
+<li class="lvl-6">
+<p>使用winhex打开文件搜索16进制504B0102，可以看到每个加密文件头字段</p>
+</li>
+<li class="lvl-6">
+<p>从50开始计算，第九第十个字符为加密字段，将其设置为0000即为可变成无加密状态</p>
+</li>
+<li class="lvl-6">
+<p>RAR文件由于有头部校验，使用伪加密打开文件会出现报错，使用winhex修改标志位后如报错消失且正常解压缩，说明是伪加密。使用winhex打开RAR文件，找到第24个字节，该字节尾数为4表示加密，0表示无加密，将尾数改为0即可破解伪加密。</p>
+</li>
+</ol>
+</li>
+<li class="lvl-3">
+<p><strong>暴力破解</strong></p>
+<p>通常可以使用ARCHPR.exe工具来破解zip文件</p>
+<p><mark>使用场景：Windows下加密过的zip文件</mark></p>
+<ol>
+<li class="lvl-6">
+<p>攻击类型选择暴力破解，在范围位置根据提示选择暴力破解范围选项设置暴力破解包含的类型，开始于和结束于选项具体范围，如果没有定义则全范围暴力破解。</p>
+<p><code>点击打开选择要破解的文件，点击开始进行破解。建议使用1~9位的数字密码，以及系统自带的英文字典作为密码字典</code></p>
+</li>
+<li class="lvl-6">
+<p>攻击类型选择掩码可以进行复杂的暴力破解，比如知道密码前3位是<mark>abc</mark>，后3位为数字，则在攻击类型选择掩码，在掩码处输入<mark>abc???</mark>，暴力范围选项选择所有数字，打开要破解的点击，点击破解。此时==???==的部分会被我们选择的暴力破解范围中字符代替。</p>
+</li>
+</ol>
+</li>
+<li class="lvl-3">
+<p><strong>明文攻击</strong></p>
+<p>明文攻击指知道加密的ZIP中部分文件的明文内容，利用这些内容推测出密钥并解密ZIP文件方法，相比于暴力破解，这种方法在破解密码较为复杂的压缩包时效率更高。</p>
+<p><mark>使用场景：已知加密的ZIP部分文件明文内容</mark></p>
+<p>例：假设一个加密的压缩包中有两个文件readme.txt和flag.txt，其中flag.txt的内容是我们希望知道的内容，而我们拥有readme.txt的明文文件，使用上述两个文件即可进行明文攻击。</p>
+<p><code>操作：</code></p>
+<p><code>1、将readme.txt的明文文件进行压缩，变成readme1.zip</code></p>
+<p><code>2、打开archpr，攻击类型选择明文，明文文件路径选择readme1.zip（即将明文文件不加密压缩后的文件），加密的文件</code></p>
+<p><code>选择要破解的文件，点击开始，破解成功后会获得密码。</code></p>
+<blockquote>
+<p>使用该方法需要注意两个关键点：</p>
+<p>1、有一个明文文件，压缩后CRC值与加密压缩包中的文件一致。</p>
+<p>2、明文文件的压缩算法需要与加密压缩文件的压缩算法一致。</p>
+</blockquote>
+<p><strong>RAR文件格式</strong></p>
+<p><mark>有时候给出的RAR文件的头部各个字块会会故意给错误导致无法识别。</mark></p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202302020003592.png" alt="**RAR文件格式**"></p>
+</li>
+</ol>
+<h2 id="流量取证技术">流量取证技术</h2>
+<p>CTF比赛中，<mark>流量包的取证分析</mark>是另一项重要的考察方向。</p>
+<p>通常比赛中会提供一个包含流量数据的PCAP文件，有时候也会需要选手们先进行修复或重构传输文件后，再进行分析。</p>
 <ul class="lvl-0">
 <li class="lvl-2">
-<p>排序：将一组“无序”的记录序列调整为“有序”的记录序列</p>
-</li>
-<li class="lvl-2">
-<p>列表排序：将无序列表变为有序列表</p>
+<p>总体把握</p>
 <ul class="lvl-2">
-<li class="lvl-4">输入：列表</li>
-<li class="lvl-4">输出：有序列表</li>
+<li class="lvl-4">协议分级</li>
+<li class="lvl-4">端点统计</li>
 </ul>
 </li>
 <li class="lvl-2">
-<p>升序与降序</p>
-</li>
-<li class="lvl-2">
-<p>内置排序函数：<mark>sort()</mark></p>
-</li>
-</ul>
-<h2 id="冒泡排序-Bubble-Sort">冒泡排序(Bubble Sort)</h2>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>列表每两个相邻的数，如果前面比后面大，则交换这两个数</p>
-</li>
-<li class="lvl-2">
-<p>一趟排序完成后，则无序区减少一个数，有序区增加一个数</p>
-</li>
-<li class="lvl-2">
-<p>代码关键点：趟、无序区范围</p>
-</li>
-</ul>
-<p><strong>代码示例</strong>：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">import random
-
-def bubble_sort(li):
-    for i in range(len(li)-1):  # 第i趟
-        for j in range(len(li)-i):
-            if li[j]&gt;li[j+1]:
-                li[j],li[j+1]=li[j+1],li[j]
-
-#验证
-li = [random.randint(0,10000) for i in range(1000)]
-print(li)
-bubble_sort(li)
-print(li)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>时间复杂度：O(n<sup>2</sup>)</p>
-</li>
-</ul>
-<p><mark>冒泡排序-优化</mark>：</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>如果冒泡排序中的一趟排序没有发生交换，则说明列表已经有序，可以直接结束算法。</p>
-</li>
-</ul>
-<p><strong>代码示例</strong>：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">def bubble_sort(li):
-    for i in range(len(li)-1):
-        exchange = False
-        for j in range(len(li)-i-1):
-            if li[j] &gt; li[j+1]:
-                li[j], li[j+1] = li[j+1], li[j] 
-                exchange = True
-            if not exchange:
-                return<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>时间复杂度：O(n<sup>2</sup>)</p>
-</li>
-</ul>
-<h2 id="选择排序-Select-Sort">选择排序(Select Sort)</h2>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>一趟排序记录最小的数，放到第一个位置</p>
-</li>
-<li class="lvl-2">
-<p>再一趟排序记录列表无序最小的数，放到第二个位置</p>
-</li>
-<li class="lvl-2">
-<p>…</p>
-</li>
-<li class="lvl-2">
-<p>算法关键点：有序和无序区、无序区最小数的位置</p>
-</li>
-</ul>
-<p><strong>代码示例：</strong></p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">def select_sort(li):
-    for i in range(len(li)-1):
-        min_loc = i
-        for j in range(i+1,len(li)):
-            if li[j] &lt; li[min_loc]:
-                min_loc = j
-        if min_loc != i:
-            li[i], li[min_loc] = li[min_loc], li[i]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="插入排序-Inset-Sort">插入排序(Inset Sort)</h2>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>初始时手里（有序区）只有一张牌</p>
-</li>
-<li class="lvl-2">
-<p>每次（从无序区）摸一张牌，插入到手里已有牌的正确位置</p>
-</li>
-</ul>
-<p><strong>代码示例：</strong></p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">def insect_sort(li):
-    for i in range(1,len(li)):
-        tmp = li[i]
-        j = i - 1
-        while j &gt;= 0 and tmp &lt; li[j]:
-            li[j+1] = li[j]
-            j = j - 1
-         li[j+1] = tmp<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>时间复杂度：O(n<sup>2</sup>)</p>
-</li>
-</ul>
-<h2 id="快速排序-Quick-Sort">快速排序(Quick Sort)</h2>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>快速排序：<mark>快</mark></p>
-</li>
-<li class="lvl-2">
-<p>快速排序思路：</p>
+<p>过滤筛选</p>
 <ul class="lvl-2">
-<li class="lvl-4">取一个元素p（第一个元素），使元素p归位；</li>
-<li class="lvl-4">列表被p分成两部分，左边都比p小，右边都比p大；</li>
-<li class="lvl-4">递归完成排序</li>
+<li class="lvl-4">过滤语法</li>
+<li class="lvl-4">Host，Protocol，contains，特征值</li>
+</ul>
+</li>
+<li class="lvl-2">
+<p>发现异常</p>
+<ul class="lvl-2">
+<li class="lvl-4">特殊字符串</li>
+<li class="lvl-4">协议某字符</li>
+<li class="lvl-4">flag位于服务器中</li>
+</ul>
+</li>
+<li class="lvl-2">
+<p>数据提取</p>
+<ul class="lvl-2">
+<li class="lvl-4">字符串取</li>
+<li class="lvl-4">文件提取</li>
 </ul>
 </li>
 </ul>
-<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202302062134346.png" alt=""></p>
-<p><strong>快速排序-框架：</strong></p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">def quick_sort(data,left,right):
-    if left &lt; right:
-        mid = partition(data,left,right)
-        quick_sort(data,left,mid-1)
-        quick_sort(data,mid+1,right)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><strong>代码示例：</strong></p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">def partition(li,left,right):
-    tmp = li[left]
-    while left &lt; right:
-        while li[right] &gt;= tmp:  # 从右边找比tmp小的数
-            right -= 1  # 往左走一步
-        li[left] = li[right]  # 把右边的值写到左边空位上
-        while left &lt; right and li[left] &lt;= tmp:
-            left += 1
-        li[left] = tmp  # 把tmp归位
-        return left
-def quick_sort(li,left,right)    :
-    if left &lt; right:  # 至少两个元素
-        mid = partition(li,left,right)
-        quick_sort(li,left,mid-1)
-        quick_sort(li,mid+1,right)
-#调用测试
-li = [5,7,6,3,1,2,9,8]
-quick_sort(li,0,len(li)-1)
-print(li)  <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><mark>总的来说比赛中的流量分析可以概括为以下三个方向：</mark></p>
 <ul class="lvl-0">
 <li class="lvl-2">
-<p>快速排序的效率：</p>
-<ul class="lvl-2">
-<li class="lvl-4">快速排序的时间复杂度：<mark>O(nlogn)</mark></li>
-</ul>
+<p>流量包修复</p>
 </li>
 <li class="lvl-2">
-<p>快速排序的问题</p>
-<ul class="lvl-2">
-<li class="lvl-4">
-<p>最坏情况：</p>
-<p>正序或逆序排列，二叉树画出来应该是一棵斜树，并且需要经过n-1次递归调用才能完成，且第i次划分需要经过n‐i次关键字的比较才能找到第i个记录，也就是枢轴的位置，所以：</p>
-<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202302091721179.png" alt=""></p>
-<p>最终的时间复杂度应该O(n<sup>2</sup>)</p>
+<p>协议分析</p>
 </li>
-<li class="lvl-4">
-<p>递归：消耗一部分系统资源</p>
+<li class="lvl-2">
+<p>数据提取</p>
 </li>
 </ul>
+<h3 id="流量数据包文件分析">流量数据包文件分析</h3>
+<p><strong>WireShark工具的基本使用</strong></p>
+<p>wirkshark的过滤器和过滤规则能够帮助我们迅速定位到要分析的报文。</p>
+<p><mark>常用的过滤命令：</mark></p>
+<ol>
+<li class="lvl-3">
+<p>过滤IP，如源IP或者目标 x.x.x.x</p>
+<p><code>ip.src eq x.x.x.x or ip.dst eq x.x.x.x 或者 ip.addr eq x.x.x.x</code></p>
 </li>
-</ul>
+<li class="lvl-3">
+<p>过滤端口</p>
+<p><code>tcp.port eq 80 or udp.port eq 80</code></p>
+<p><code>tcp.dstport == 80</code>    只显示tcp协议的目标端口为80</p>
+<p><code>tcp.srcport == 80</code>    只显示tcp协议的源端口为80</p>
+<p><code>tcp.port &gt;= 1 and tcp.port &lt;= 80</code></p>
+</li>
+</ol>
+<blockquote>
+<p>免责声明：本文章涉及的知识和技能仅用于学习研究，如有用于非法途径或未被授权的真实网络环境，所造成的后果自行承担，责任与本文作者无关，倡导把安全知识和技能用于正当、正规、正义的途径。</p>
+</blockquote>
 
                 
             </div>
@@ -732,7 +667,7 @@ print(li)  <span aria-hidden="true" class="line-numbers-rows"><span></span><span
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://www.ahao8.top/posts/6547.html">https://www.ahao8.top/posts/6547.html</a>
+                    <a href="https://www.ahao8.top/posts/e560.html">https://www.ahao8.top/posts/e560.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -770,12 +705,12 @@ print(li)  <span aria-hidden="true" class="line-numbers-rows"><span></span><span
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/python/">
-                                    <span class="chip bg-color">python</span>
+                                <a href="/tags/CTF/">
+                                    <span class="chip bg-color">CTF</span>
                                 </a>
                             
-                                <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">
-                                    <span class="chip bg-color">数据结构与算法</span>
+                                <a href="/tags/misc/">
+                                    <span class="chip bg-color">misc</span>
                                 </a>
                             
                         </div>
@@ -1065,9 +1000,10 @@ print(li)  <span aria-hidden="true" class="line-numbers-rows"><span></span><span
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/posts/e560.html">
                     <div class="card-image">
@@ -1085,9 +1021,9 @@ print(li)  <span aria-hidden="true" class="line-numbers-rows"><span></span><span
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-02-25
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-02-25
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1100,6 +1036,7 @@ print(li)  <span aria-hidden="true" class="line-numbers-rows"><span></span><span
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -1122,13 +1059,13 @@ print(li)  <span aria-hidden="true" class="line-numbers-rows"><span></span><span
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/3541.html">
+                <a href="/posts/6547.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/loading.gif" data-original="/medias/featureimages/1.jpg" class="responsive-img" alt="数据结构与算法中的排序算法(三)">
+                        <img src="/medias/loading.gif" data-original="/medias/featureimages/10.jpg" class="responsive-img" alt="数据结构与算法中的排序算法(一)">
                         
-                        <span class="card-title">数据结构与算法中的排序算法(三)</span>
+                        <span class="card-title">数据结构与算法中的排序算法(一)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
