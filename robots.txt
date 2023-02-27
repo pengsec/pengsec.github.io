@@ -11,7 +11,7 @@ Allow: /categories/
 Allow: /musics/
 Allow: /movies/
 Allow: /galleries/
-Allow: /tools/
+Allow: /navigation/
 Disallow: /js/
 Disallow: /css/
 Disallow: /libs/
