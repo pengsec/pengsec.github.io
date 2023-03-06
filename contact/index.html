@@ -465,6 +465,17 @@
                 <div class="tag-title center-align">
                     <i class="fas fa-comments"></i>&nbsp;&nbsp;留言板
                 </div>
+				<script>$.get("https://v1.hitokoto.cn?c=i&c=j&c=d&c=h",function(data,status){if(status=='success'){$('#poem').html(data.hitokoto);if(data.from_who!=null){$('#info').html(data.from_who+" · "+"《 "+data.from+" 》");}else{$('#info').html(data.from);}}else{$('#poem').html("获取出错啦");}});</script>
+		<!-- 加入网易云音乐热门评论，实时更新 -->
+		<div class="poem-wrap">
+			<div class="poem-border poem-left">
+			</div>
+			<div class="poem-border poem-right">
+			</div>
+			<h1>一言</h1>
+			<p id="poem"></p>
+			<p id="info"></p>
+		</div>
                 <h2 id="畅所欲言">畅所欲言</h2>
 <hr>
 <p><strong>在这里留下你的足迹，欢迎在下方留言，欢迎交换友链，一起交流学习！</strong></p>
@@ -483,6 +494,7 @@
 <h6 id="博客介绍：（你博客的简介，让更多人了解你）">博客介绍：（你博客的简介，让更多人了解你）</h6>
 
             </div>
+
             <!--valine评论弹幕-->
             
         </div>
@@ -717,6 +729,8 @@
         </div>
     </div>
 </main>
+
+
 
 
     <footer class="page-footer bg-color">
