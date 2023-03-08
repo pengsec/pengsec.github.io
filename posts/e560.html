@@ -981,15 +981,46 @@
   
 
   <!-- <script src="//cdn.jsdelivr.net/npm/@waline/client"></script> -->
-  <script src="https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js"></script>
-  <script>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js"></script> -->
+  <!-- <script>
     new Waline({
         el: '#waline',
         serverURL: 'https://comment.ahao8.top',
         avatar: 'monsterid',
 		dark: 'body[class="DarkMode"]'
     });
-  </script> 
+  </script> -->
+  <!-- 样式文件 -->
+  <link
+	rel="stylesheet"
+	href="https://unpkg.com/@waline/client@v2/dist/waline.css"
+  />
+  <script type="module">
+  import { init } from 'https://unpkg.com/@waline/client@v2/dist/waline.mjs';
+  
+  init({
+    el: '#waline',
+    serverURL: 'https://comment.ahao8.top',
+    avatar: 'monsterid',
+	dark: 'body[class="DarkMode"]'
+  });
+  </script>
+  
+  <script type="module">
+  import { pageviewCount } from 'https://unpkg.com/@waline/client@v2/dist/pageview.mjs';
+
+  pageviewCount({
+    // options
+  });
+  </script>
+  
+  <script type="module">
+  import { commentCount } from 'https://unpkg.com/@waline/client@v2/dist/comment.mjs';
+
+  commentCount({
+    // options
+  });
+  </script>
     
 
     
@@ -1060,13 +1091,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/3541.html">
+                <a href="/posts/6547.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/loading.gif" data-original="/medias/featureimages/1.jpg" class="responsive-img" alt="数据结构与算法中的排序算法(三)">
+                        <img src="/medias/loading.gif" data-original="/medias/featureimages/10.jpg" class="responsive-img" alt="数据结构与算法中的排序算法(一)">
                         
-                        <span class="card-title">数据结构与算法中的排序算法(三)</span>
+                        <span class="card-title">数据结构与算法中的排序算法(一)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">

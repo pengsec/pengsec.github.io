@@ -847,15 +847,46 @@
   
 
   <!-- <script src="//cdn.jsdelivr.net/npm/@waline/client"></script> -->
-  <script src="https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js"></script>
-  <script>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js"></script> -->
+  <!-- <script>
     new Waline({
         el: '#waline',
         serverURL: 'https://comment.ahao8.top',
         avatar: 'monsterid',
 		dark: 'body[class="DarkMode"]'
     });
-  </script> 
+  </script> -->
+  <!-- 样式文件 -->
+  <link
+	rel="stylesheet"
+	href="https://unpkg.com/@waline/client@v2/dist/waline.css"
+  />
+  <script type="module">
+  import { init } from 'https://unpkg.com/@waline/client@v2/dist/waline.mjs';
+  
+  init({
+    el: '#waline',
+    serverURL: 'https://comment.ahao8.top',
+    avatar: 'monsterid',
+	dark: 'body[class="DarkMode"]'
+  });
+  </script>
+  
+  <script type="module">
+  import { pageviewCount } from 'https://unpkg.com/@waline/client@v2/dist/pageview.mjs';
+
+  pageviewCount({
+    // options
+  });
+  </script>
+  
+  <script type="module">
+  import { commentCount } from 'https://unpkg.com/@waline/client@v2/dist/comment.mjs';
+
+  commentCount({
+    // options
+  });
+  </script>
     
 
     

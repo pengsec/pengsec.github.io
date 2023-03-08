@@ -953,15 +953,46 @@ print(li)<span aria-hidden="true" class="line-numbers-rows"><span></span><span><
   
 
   <!-- <script src="//cdn.jsdelivr.net/npm/@waline/client"></script> -->
-  <script src="https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js"></script>
-  <script>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js"></script> -->
+  <!-- <script>
     new Waline({
         el: '#waline',
         serverURL: 'https://comment.ahao8.top',
         avatar: 'monsterid',
 		dark: 'body[class="DarkMode"]'
     });
-  </script> 
+  </script> -->
+  <!-- 样式文件 -->
+  <link
+	rel="stylesheet"
+	href="https://unpkg.com/@waline/client@v2/dist/waline.css"
+  />
+  <script type="module">
+  import { init } from 'https://unpkg.com/@waline/client@v2/dist/waline.mjs';
+  
+  init({
+    el: '#waline',
+    serverURL: 'https://comment.ahao8.top',
+    avatar: 'monsterid',
+	dark: 'body[class="DarkMode"]'
+  });
+  </script>
+  
+  <script type="module">
+  import { pageviewCount } from 'https://unpkg.com/@waline/client@v2/dist/pageview.mjs';
+
+  pageviewCount({
+    // options
+  });
+  </script>
+  
+  <script type="module">
+  import { commentCount } from 'https://unpkg.com/@waline/client@v2/dist/comment.mjs';
+
+  commentCount({
+    // options
+  });
+  </script>
     
 
     
@@ -977,13 +1008,13 @@ print(li)<span aria-hidden="true" class="line-numbers-rows"><span></span><span><
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/e560.html">
+                <a href="/posts/a5e3.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/loading.gif" data-original="/medias/featureimages/4.jpg" class="responsive-img" alt="misc的基本解题思路(二)">
+                        <img src="/medias/loading.gif" data-original="/medias/featureimages/6.jpg" class="responsive-img" alt="数据结构与算法中的排序算法(二)">
                         
-                        <span class="card-title">misc的基本解题思路(二)</span>
+                        <span class="card-title">数据结构与算法中的排序算法(二)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -994,14 +1025,14 @@ print(li)<span aria-hidden="true" class="line-numbers-rows"><span></span><span><
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-02-25
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-02-24
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/CTF/" class="post-category">
-                                    CTF
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" class="post-category">
+                                    数据结构与算法
                                 </a>
                             
                             
@@ -1011,12 +1042,12 @@ print(li)<span aria-hidden="true" class="line-numbers-rows"><span></span><span><
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/CTF/">
-                        <span class="chip bg-color">CTF</span>
+                    <a href="/tags/python/">
+                        <span class="chip bg-color">python</span>
                     </a>
                     
-                    <a href="/tags/misc/">
-                        <span class="chip bg-color">misc</span>
+                    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">数据结构与算法</span>
                     </a>
                     
                 </div>
@@ -1030,13 +1061,13 @@ print(li)<span aria-hidden="true" class="line-numbers-rows"><span></span><span><
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/6547.html">
+                <a href="/posts/4c50.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/loading.gif" data-original="/medias/featureimages/10.jpg" class="responsive-img" alt="数据结构与算法中的排序算法(一)">
+                        <img src="/medias/loading.gif" data-original="/medias/featureimages/22.jpg" class="responsive-img" alt="数据结构与算法中的列表查找">
                         
-                        <span class="card-title">数据结构与算法中的排序算法(一)</span>
+                        <span class="card-title">数据结构与算法中的列表查找</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
