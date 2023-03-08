@@ -187,20 +187,6 @@
   </url>
   
   <url>
-    <loc>https://www.ahao8.top/tags/CTF/</loc>
-    <lastmod>2023-03-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.ahao8.top/tags/misc/</loc>
-    <lastmod>2023-03-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://www.ahao8.top/tags/%E6%97%A5%E5%B8%B8/</loc>
     <lastmod>2023-03-08</lastmod>
     <changefreq>weekly</changefreq>
@@ -209,6 +195,20 @@
   
   <url>
     <loc>https://www.ahao8.top/tags/%E5%8D%9A%E5%AE%A2/</loc>
+    <lastmod>2023-03-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.ahao8.top/tags/CTF/</loc>
+    <lastmod>2023-03-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.ahao8.top/tags/misc/</loc>
     <lastmod>2023-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -224,14 +224,14 @@
   </url>
   
   <url>
-    <loc>https://www.ahao8.top/categories/CTF/</loc>
+    <loc>https://www.ahao8.top/categories/%E6%97%A5%E5%B8%B8/</loc>
     <lastmod>2023-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://www.ahao8.top/categories/%E6%97%A5%E5%B8%B8/</loc>
+    <loc>https://www.ahao8.top/categories/CTF/</loc>
     <lastmod>2023-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
