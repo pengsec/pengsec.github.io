@@ -1000,7 +1000,7 @@
   import { pageviewCount } from 'https://unpkg.com/@waline/client@v2/dist/pageview.mjs';
 
   pageviewCount({
-     options
+    // options
   });
   </script>
   
@@ -1008,7 +1008,7 @@
   import { commentCount } from 'https://unpkg.com/@waline/client@v2/dist/comment.mjs';
 
   commentCount({
-     options
+    // options
   });
   </script>
   
@@ -1019,7 +1019,9 @@
     el: '#waline',
     serverURL: 'https://comment.ahao8.top',
     avatar: 'monsterid',
-	dark: 'body[class="DarkMode"]'
+	dark: 'body[class="DarkMode"]',
+	pageviewCount: true,  //浏览量
+	commentCount： true   // 评论数统计
   });
   </script>
     
@@ -1092,13 +1094,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/6547.html">
+                <a href="/posts/3541.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/loading.gif" data-original="/medias/featureimages/10.jpg" class="responsive-img" alt="数据结构与算法中的排序算法(一)">
+                        <img src="/medias/loading.gif" data-original="/medias/featureimages/1.jpg" class="responsive-img" alt="数据结构与算法中的排序算法(三)">
                         
-                        <span class="card-title">数据结构与算法中的排序算法(一)</span>
+                        <span class="card-title">数据结构与算法中的排序算法(三)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">

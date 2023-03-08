@@ -731,7 +731,7 @@
   import { pageviewCount } from 'https://unpkg.com/@waline/client@v2/dist/pageview.mjs';
 
   pageviewCount({
-     options
+    // options
   });
   </script>
   
@@ -739,7 +739,7 @@
   import { commentCount } from 'https://unpkg.com/@waline/client@v2/dist/comment.mjs';
 
   commentCount({
-     options
+    // options
   });
   </script>
   
@@ -750,7 +750,9 @@
     el: '#waline',
     serverURL: 'https://comment.ahao8.top',
     avatar: 'monsterid',
-	dark: 'body[class="DarkMode"]'
+	dark: 'body[class="DarkMode"]',
+	pageviewCount: true,  //浏览量
+	commentCount： true   // 评论数统计
   });
   </script>
             
