@@ -1267,7 +1267,7 @@ for i in range(1024):
 	href="https://unpkg.com/@waline/client@v2/dist/waline.css"
   />
   
-  <script type="module">
+  <!--<script type="module">
   import { pageviewCount } from 'https://unpkg.com/@waline/client@v2/dist/pageview.mjs';
 
   pageviewCount({
@@ -1281,7 +1281,7 @@ for i in range(1024):
   commentCount({
     // options
   });
-  </script>
+  </script> -->
   
   <script type="module">
   import { init } from 'https://unpkg.com/@waline/client@v2/dist/waline.mjs';
@@ -1291,8 +1291,8 @@ for i in range(1024):
     serverURL: 'https://comment.ahao8.top',
     avatar: 'monsterid',
 	dark: 'body[class="DarkMode"]',
-	pageviewCount: true,  //浏览量
-	commentCount： true   // 评论数统计
+	pageview: true, // 浏览量统计
+	comment: true, // 评论数统计
   });
   </script>
     
@@ -1363,19 +1363,18 @@ for i in range(1024):
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/bb2d.html">
+                <a href="/posts/3eeb.html">
                     <div class="card-image">
                         
+                        <img src="/medias/loading.gif" data-original="/medias/featureimages/16.jpg" class="responsive-img" alt="我的第一篇博客文章">
                         
-                        <img src="/medias/loading.gif" data-original="/medias/featureimages/10.jpg" class="responsive-img" alt="python数据类型">
-                        
-                        <span class="card-title">python数据类型</span>
+                        <span class="card-title">我的第一篇博客文章</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            谈谈我个人对博客的看法
                         
                     </div>
                     <div class="publish-info">
@@ -1386,8 +1385,8 @@ for i in range(1024):
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/python/" class="post-category">
-                                    python
+                            <a href="/categories/%E6%97%A5%E5%B8%B8/" class="post-category">
+                                    日常
                                 </a>
                             
                             
@@ -1397,8 +1396,12 @@ for i in range(1024):
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/python/">
-                        <span class="chip bg-color">python</span>
+                    <a href="/tags/%E6%97%A5%E5%B8%B8/">
+                        <span class="chip bg-color">日常</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%8D%9A%E5%AE%A2/">
+                        <span class="chip bg-color">博客</span>
                     </a>
                     
                 </div>

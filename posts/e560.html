@@ -996,7 +996,7 @@
 	href="https://unpkg.com/@waline/client@v2/dist/waline.css"
   />
   
-  <script type="module">
+  <!--<script type="module">
   import { pageviewCount } from 'https://unpkg.com/@waline/client@v2/dist/pageview.mjs';
 
   pageviewCount({
@@ -1010,7 +1010,7 @@
   commentCount({
     // options
   });
-  </script>
+  </script> -->
   
   <script type="module">
   import { init } from 'https://unpkg.com/@waline/client@v2/dist/waline.mjs';
@@ -1020,8 +1020,8 @@
     serverURL: 'https://comment.ahao8.top',
     avatar: 'monsterid',
 	dark: 'body[class="DarkMode"]',
-	pageviewCount: true,  //浏览量
-	commentCount： true   // 评论数统计
+	pageview: true, // 浏览量统计
+	comment: true, // 评论数统计
   });
   </script>
     
