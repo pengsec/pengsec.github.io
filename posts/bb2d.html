@@ -1371,6 +1371,23 @@ print(type(3.1415926))<span aria-hidden="true" class="line-numbers-rows"><span><
 	rel="stylesheet"
 	href="https://unpkg.com/@waline/client@v2/dist/waline.css"
   />
+  
+  <script type="module">
+  import { pageviewCount } from 'https://unpkg.com/@waline/client@v2/dist/pageview.mjs';
+
+  pageviewCount({
+     options
+  });
+  </script>
+  
+  <script type="module">
+  import { commentCount } from 'https://unpkg.com/@waline/client@v2/dist/comment.mjs';
+
+  commentCount({
+     options
+  });
+  </script>
+  
   <script type="module">
   import { init } from 'https://unpkg.com/@waline/client@v2/dist/waline.mjs';
   
@@ -1379,22 +1396,6 @@ print(type(3.1415926))<span aria-hidden="true" class="line-numbers-rows"><span><
     serverURL: 'https://comment.ahao8.top',
     avatar: 'monsterid',
 	dark: 'body[class="DarkMode"]'
-  });
-  </script>
-  
-  <script type="module">
-  import { pageviewCount } from 'https://unpkg.com/@waline/client@v2/dist/pageview.mjs';
-
-  pageviewCount({
-    // options
-  });
-  </script>
-  
-  <script type="module">
-  import { commentCount } from 'https://unpkg.com/@waline/client@v2/dist/comment.mjs';
-
-  commentCount({
-    // options
   });
   </script>
     
