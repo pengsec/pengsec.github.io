@@ -192,7 +192,7 @@
       </li>
       
       <li>
-        <a href="/gallery">
+        <a href="/galleries">
           
           <i class="fas fa-image" style="margin-top: -20px; zoom: 0.6;"></i>
           
@@ -354,7 +354,7 @@
               
                 <li>
 
-                  <a href="/gallery " style="margin-left:75px">
+                  <a href="/galleries " style="margin-left:75px">
 				  
 				   <i class="fa fas fa-image" style="position: absolute;left:50px" ></i>
 			      
@@ -389,265 +389,52 @@
 
 </header>
 
-    <!-- 加密功能 -->
+    <link rel="stylesheet" href="/css/gallery.css">
 
-    <script src="/libs/cryptojs/crypto-js.min.js"></script>
-    <script>
-        (function() {
-            let pwd = '';
-
-            if (pwd && pwd.length > 0) {
-                if (pwd !== CryptoJS.SHA256(prompt('该相册已加密，请输入密码访问')).toString(CryptoJS.enc.Hex)) {
-                    alert('密码错误，将返回主页！');
-                    location.href = '/';
-                }
-            }
-        })();
-    </script>
+<link type="text/css" href="/libs/fancybox/jquery.fancybox.css" rel="stylesheet">
+<link type="text/css" href="/libs/justifiedGallery/justifiedGallery.min.css" rel="stylesheet">
 
 
-<!-- <div class="bg-cover pd-header about-cover">
-    <div class="container">
-    <div class="row">
-    <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
-        <div class="brand">
-            <div class="title center-align">
-                
-                阿浩の博客
-                
-            </div>
 
-            <div class="description center-align">
-                
-                <span id="subtitle"></span>
-                <script src="/libs/typed/typed.js"></script>
-                <script>
-                    var typed = new Typed("#subtitle", {
-                        strings: [ 
-                            
-                                "因为热爱，所以会为之疯狂。",
-                            
-                                "Because I love it, I go crazy about it.",
-                            
-                        ],
-                        startDelay: 300,
-                        typeSpeed: 100,
-                        loop: true,
-                        backSpeed: 50,
-                        showCursor: true
-                    });
-                </script>
-                
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<script>
-    // 每天切换 banner 图.  Switch banner image every day.
-    var bannerUrl = "/medias/banner/" + new Date().getDay() + '.jpg';
-    $('.bg-cover').css('background-image', 'url(' + bannerUrl + ')');
-</script>
-
-
-    </div>
-</div> -->
-
-<link rel="stylesheet" href="">
-<!-- 该主题自带的lightGallery.js在图片多的时候会很卡，所以弃用，使用了一个我在网上找的baguetteBox，很轻量级，就是功能少了点 -->
-<script src=""></script> 
-<style>    
-    .my-gallery .photo img {
-        transition: all 0.6s ease-in-out; 
-    }     
-    .my-gallery .photo:hover img {
-        opacity: 0.6;
-        transform: scale(1.05);
-    }      
-    .my-gallery {
-        margin: 20px auto;
-    }   
-    .miaoshus .title {
-        font-family: MV Boli;
-    }
-    .miaoshus {
-        padding: 20px;
-        border: 1px dashed #e6e6e6;
-        color: #969696;
-        position: relative;
-        display: inline-block;
-        width: 75%;
-        background: #fbfbfb50;
-        border-radius: 10px;
-        font-size: 16px;
-        margin: 24px auto 12px;
-        
-    }
-    body.dark .miaoshus {
-        background: 0 0;
-        border: 1px dashed #888;
-    }
-    body {
-        overflow: visible!important;
-    }
-    .box {
-            position: relative;
-        }
-    .box img {
-        width: 350px;
-        vertical-align: top;
-        padding: 8px;
-        border-radius: 10px;
-        transition: all 0.5s;
-    }
-    .box img:hover {
-        transform: scale(1.05);
-    }
-    .page-footer {
-        display: none
-    }
-    body {
-        overflow-y: visible!important;
-    }
-    header {
-        background-color: #000;
-    }
-    .biaotiss {
-            font-family: MV Boli;
-        }   
-    @media only screen and (max-width: 1058px) {
-        .box {
-            margin-left: 145px;
-        }
-    }
-    @media only screen and (max-width: 770px) {
-        .box {
-            margin-left: 15px;
-        }
-    }
-    @media only screen and (max-width: 500px) {
-        #previous-button, #next-button {
-            display: none;
-        }
-    }
-    @media only screen and (max-width: 380px) {
-        .box {
-            margin-left: -5px;
-        }
-    }
-    @media only screen and (max-width: 323px) {
-        .box img {
-            width: 296px;
-            left: 0;
-        }
-    }
-</style>
-
-<div class="tag-title center-align">
-    <div class="miaoshus">
-        <div class="title center-align">
-            “ 
-                2023
-             ”
-        </div>
-        “ 光影流年 ”
-        “ 这里有光影流年，还有两朵穿衣裳的云，相拥在明天的河岸。”
-    </div>
-</div>
-
-<!-- 相册 -->
-<section class="gallery">
-    <div id="myGallery" class="my-gallery">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
-            <div class="box">
-            
-                
-                
-                                       
-                        <a target="_blank" rel="noopener" href="https://i.loli.net/2020/10/05/qtOevHpw5XImS1J.jpg" data-caption="2023">
-                            <img class="mat" src="/medias/loading.gif" data-original="/medias/loading.svg" data-src="https://i.loli.net/2020/10/05/qtOevHpw5XImS1J.jpg" alt="img"+0 >
-                        </a>                   
-                
-            
-        </div>
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">2023</h1>
+                </div>
+            </div>
         </div>
     </div>
-</section>
+</div>
+
+  
+
+<div class="container">
+    <div class="photo-wrapper">
+        
+            <div class="waterfall" id="encrypt-blog">
+                <a target="_blank" href="https://images-c1f.pages.dev/0.jpg"     class="photo-item" rel="example_group noopener"     data-fancybox="images">      <img src="/medias/loading.gif" data-original="https://images-c1f.pages.dev/0.jpg"       alt=https://images-c1f.pages.dev/0.jpg>
+    </a><a target="_blank" href="https://images-c1f.pages.dev/1.jpg"     class="photo-item" rel="example_group noopener"     data-fancybox="images">      <img src="/medias/loading.gif" data-original="https://images-c1f.pages.dev/1.jpg"       alt=https://images-c1f.pages.dev/1.jpg>
+    </a><a target="_blank" href="https://images-c1f.pages.dev/2.jpg"     class="photo-item" rel="example_group noopener"     data-fancybox="images">      <img src="/medias/loading.gif" data-original="https://images-c1f.pages.dev/2.jpg"       alt=https://images-c1f.pages.dev/2.jpg>
+    </a><a target="_blank" href="https://images-c1f.pages.dev/3.jpg"     class="photo-item" rel="example_group noopener"     data-fancybox="images">      <img src="/medias/loading.gif" data-original="https://images-c1f.pages.dev/3.jpg"       alt=https://images-c1f.pages.dev/3.jpg>
+    </a><a target="_blank" href="https://images-c1f.pages.dev/4.jpg"     class="photo-item" rel="example_group noopener"     data-fancybox="images">      <img src="/medias/loading.gif" data-original="https://images-c1f.pages.dev/4.jpg"       alt=https://images-c1f.pages.dev/4.jpg>
+    </a><a target="_blank" href="https://images-c1f.pages.dev/5.jpg"     class="photo-item" rel="example_group noopener"     data-fancybox="images">      <img src="/medias/loading.gif" data-original="https://images-c1f.pages.dev/5.jpg"       alt=https://images-c1f.pages.dev/5.jpg>
+    </a><a target="_blank" href="https://images-c1f.pages.dev/6.jpg"     class="photo-item" rel="example_group noopener"     data-fancybox="images">      <img src="/medias/loading.gif" data-original="https://images-c1f.pages.dev/6.jpg"       alt=https://images-c1f.pages.dev/6.jpg>
+    </a>
+            </div>
+        
+    </div>
+</div>
+
+<script src="/libs/fancybox/fancybox.js"></script>
+<script src="/libs/justifiedGallery/justifiedGallery.min.js"></script>
 <script>
-    $(function () {
-        // 获取图片的宽度(200px)
-        let imgWidth = $('.mat').outerWidth(); // 200
-        waterfallHandler();
-        // 瀑布流处理
-        function waterfallHandler() {
-            // 获取图片的列数
-            let column = parseInt($(window).width() / imgWidth);
-            // 高度数组
-            let heightArr = [];
-            for(let i=0; i<column; i++) {
-                heightArr[i] = 0;
-            }
-            // 遍历所有图片进行定位处理
-            $.each($('.mat'), function (index, item) {
-                // 当前元素的高度
-                let itemHeight = $(item).outerHeight();
-                // 高度数组最小的高度
-                let minHeight = Math.min(...heightArr);
-                // 高度数组最小的高度的索引
-                let minIndex = heightArr.indexOf(minHeight);
-                
-                $(item).css({
-                    position: 'absolute',
-                    top: minHeight + 'px',
-                    left: minIndex * imgWidth + 'px'
-                });
-                heightArr[minIndex] += itemHeight;
-            });
-        }
-        // 窗口大小改变
-        $(window).resize(function () {
-            waterfallHandler();
-        });
-    });
+
+    $("a[rel=example_group]").fancybox();
+    $("#encrypt-blog").justifiedGallery({margins: 5, rowHeight: 150});
+
 </script>
-<script>
-    baguetteBox.run('.gallery', {
-        // 配置参数
-        buttons:Boolean,//是否显示导航按钮。
-        noScrollbars:true,//是否在显示时隐藏滚动条。
-        titleTag:true,//是否使用图片上的title属性作为图片标题
-        async:false,//是否异步加载文件。
-    });
-
-    start()
-        $(window).on('scroll', function(){
-        start();
-    })
-
-    function start(){
-          //.not('[data-isLoaded]')选中已加载的图片不需要重新加载
-        $('.gallery img').not('[data-isLoaded]').each(function(){
-            var $node = $(this)
-            if( isShow($node) ){
-                loadImg($node);
-            }
-        });
-    }
-
-    //判断一个元素是不是出现在窗口(视野)
-    function isShow($node){
-        return $node.offset().top <= $(window).height() + $(window).scrollTop();
-    }
-    //加载图片
-    function loadImg($img){
-    //.attr(值)
-    //.attr(属性名称,值)
-        $img.attr('src', $img.attr('data-src')); //把data-src的值 赋值给src
-        $img.attr('data-isLoaded', 1);//已加载的图片做标记
-    }
-</script>
-
 
     <footer class="page-footer bg-color">
     
