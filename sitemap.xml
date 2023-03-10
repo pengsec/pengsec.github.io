@@ -2,6 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.ahao8.top/gallery/2023/index.html</loc>
+    
+    <lastmod>2023-03-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.ahao8.top/gallery/index.html</loc>
+    
+    <lastmod>2023-03-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://www.ahao8.top/posts/3eeb.html</loc>
     
     <lastmod>2023-03-07</lastmod>
@@ -20,15 +38,6 @@
   </url>
   
   <url>
-    <loc>https://www.ahao8.top/galleries/2023/index.html</loc>
-    
-    <lastmod>2023-03-06</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://www.ahao8.top/posts/e560.html</loc>
     
     <lastmod>2023-02-26</lastmod>
@@ -41,15 +50,6 @@
     <loc>https://www.ahao8.top/posts/b478.html</loc>
     
     <lastmod>2023-02-25</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.ahao8.top/galleries/index.html</loc>
-    
-    <lastmod>2023-02-24</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
