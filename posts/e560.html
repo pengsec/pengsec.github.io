@@ -73,9 +73,9 @@
 
     <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
 	<meta name="baidu-site-verification" content="codeva-zKkMicDbub" />
-<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="阿浩の博客" type="application/atom+xml">
-
+<meta name="generator" content="Hexo 6.3.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="阿浩の博客" type="application/atom+xml">
 </head>
 
 
@@ -483,14 +483,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-02-26
+                    2023-03-11
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.3k
+                    1.6k
                 </div>
                 
 
@@ -636,6 +636,41 @@
 <p><code>tcp.dstport == 80</code>    只显示tcp协议的目标端口为80</p>
 <p><code>tcp.srcport == 80</code>    只显示tcp协议的源端口为80</p>
 <p><code>tcp.port &gt;= 1 and tcp.port &lt;= 80</code></p>
+</li>
+</ol>
+<p><strong>WireShark协议分析技巧：</strong></p>
+<ol>
+<li class="lvl-3">
+<p>查看网络协议：统计 -&gt; 协议分级</p>
+</li>
+<li class="lvl-3">
+<p>根据数据包特征进行筛选</p>
+<p>右键 -&gt; 作为过滤器应用 -&gt; 选中</p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202303072340671.png" alt=""></p>
+</li>
+<li class="lvl-3">
+<p>WireShark流汇聚</p>
+<p>在关注的http数据包或tcp数据包中选择流汇聚，可以将HTTP流或TCP流汇聚或还原成数据，在弹出的框中可以看到数据内容。</p>
+</li>
+</ol>
+<blockquote>
+<p>常见的HTTP流关键内容：</p>
+<ol>
+<li class="lvl-3">HTML中直接包含重要信息</li>
+<li class="lvl-3">上传或下载文件内容，通常包含文件名、hash值等关键信息，常用POST请求上传</li>
+<li class="lvl-3">一句话木马，POST请求，内容包含eval，内容使用base64加密</li>
+</ol>
+</blockquote>
+<p><strong>WireShark数据提取</strong></p>
+<ol>
+<li class="lvl-3">
+<p>使用WireShark可以自动提取通过http传输的文件内容</p>
+<p><mark>文件 -&gt; 导出对象 -&gt; HTTP</mark></p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202303111906811.png" alt=""></p>
+</li>
+<li class="lvl-3">
+<p>WireShark可以手动提取文件内容</p>
+<p>点击想要的数据包，选定内容 的位置，右键 -&gt; 导出分组字节流，或者点击菜单栏 文件 -&gt; 导出分组字节流，快捷方式Ctrl + H，在弹出的框中将文件保存成二进制文件。</p>
 </li>
 </ol>
 <blockquote>
@@ -1095,13 +1130,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/6547.html">
+                <a href="/posts/a5e3.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/loading.gif" data-original="/medias/featureimages/10.jpg" class="responsive-img" alt="数据结构与算法中的排序算法(一)">
+                        <img src="/medias/loading.gif" data-original="/medias/featureimages/6.jpg" class="responsive-img" alt="数据结构与算法中的排序算法(二)">
                         
-                        <span class="card-title">数据结构与算法中的排序算法(一)</span>
+                        <span class="card-title">数据结构与算法中的排序算法(二)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1369,7 +1404,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">9.3k</span>
+                        class="white-color">9.6k</span>
             
             
             
