@@ -4,30 +4,13 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="排序算法">
-    <meta name="description" content="列表排序
+    <meta name="keywords" content="Linux服务器基础知识">
+    <meta name="description" content="登录tty的快捷键
 
-
-排序：将一组“无序”的记录序列调整为“有序”的记录序列
-
-
-列表排序：将无序列表变为有序列表
-
-输入：列表
-输出：有序列表
-
-
-
-升序与降序
-
-
-内置排序函数：sort()
-
-
-冒泡排序(Bubble Sort)
-
-
-列表每两">
+Ctrl + Alt + F1：回到图形界面
+Ctrl + Alt + F2：terminal 1（:0 大致等于tty 1）
+Ctrl + Alt + F3：terminal 2（tty2）
+Ctrl + Alt +">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -39,7 +22,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>数据结构与算法中的排序算法(一) | 阿浩の博客</title>
+    <title>linux服务器基础知识 | 阿浩の博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
     <style>
@@ -428,12 +411,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/24.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">数据结构与算法中的排序算法(一)</h1>
+                    <h1 class="description center-align post-title">linux服务器基础知识</h1>
                 </div>
             </div>
         </div>
@@ -457,12 +440,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/python/">
-                                <span class="chip bg-color">python</span>
+                            <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/">
+                                <span class="chip bg-color">服务器</span>
                             </a>
                         
-                            <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">
-                                <span class="chip bg-color">数据结构与算法</span>
+                            <a href="/tags/Linux/">
+                                <span class="chip bg-color">Linux</span>
                             </a>
                         
                     </div>
@@ -473,8 +456,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" class="post-category">
-                                数据结构与算法
+                            <a href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/" class="post-category">
+                                服务器
                             </a>
                         
                     </div>
@@ -486,21 +469,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-02-24
+                    2023-03-15
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-02-14
+                    2023-03-15
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    830
+                    2.2k
                 </div>
                 
 
@@ -525,187 +508,346 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="列表排序">列表排序</h2>
+                <h2 id="登录tty的快捷键">登录tty的快捷键</h2>
+<ul class="lvl-0">
+<li class="lvl-2">Ctrl + Alt + F1：<strong>回到图形界面</strong></li>
+<li class="lvl-2">Ctrl + Alt + F2：terminal 1（:0 大致等于tty 1）</li>
+<li class="lvl-2">Ctrl + Alt + F3：terminal 2（tty2）</li>
+<li class="lvl-2">Ctrl + Alt + F4：terminal 4（tty 3）</li>
+<li class="lvl-2">Ctrl + Alt + F5：terminal 4（tty4）</li>
+</ul>
+<h2 id="打开图形模式终端的方式">打开图形模式终端的方式</h2>
 <ul class="lvl-0">
 <li class="lvl-2">
-<p>排序：将一组“无序”的记录序列调整为“有序”的记录序列</p>
+<p>调出系统搜索框，在搜索框中输入”terminal“</p>
 </li>
 <li class="lvl-2">
-<p>列表排序：将无序列表变为有序列表</p>
+<p>用快捷键来调出终端，比如可以自己设置快捷键：Ctrl + Alt + T</p>
+</li>
+</ul>
+<h2 id="命令行">命令行</h2>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>切换成root身份：<mark>sudo su</mark></p>
+</li>
+<li class="lvl-2">
+<p>退出root身份，可以用Ctrl + D 的组合键，或者用exit命令</p>
+</li>
+<li class="lvl-2">
+<p>检测当前用户身份命令：<mark>whoami</mark></p>
+</li>
+<li class="lvl-2">
+<p>检测当前主机名：<mark>hostname</mark></p>
+</li>
+<li class="lvl-2">
+<p>Linux的开发者们写了丰富详尽的命令使用手册，英语是<mark>manual</mark></p>
+</li>
+<li class="lvl-2">
+<p>显示当前日期信息：<mark>date</mark></p>
+<p><mark>CST</mark>是Central Standard Time的缩写，表示“中央标准时间”</p>
+</li>
+<li class="lvl-2">
+<p>ls命令：ls是list的缩写。list是“列举，列出”的意思</p>
+</li>
+<li class="lvl-2">
+<p>命令参数：</p>
+<p>参数是写在命令之后的一些补充选项。命令和参数之间有空格隔开</p>
+<ol>
+<li class="lvl-5">
+<p>短参数（一个字母）</p>
+<ul class="lvl-4">
+<li class="lvl-7">
+<p>最常用的参数形式就是一个短横线后接一个字母：command -p</p>
+</li>
+<li class="lvl-7">
+<p>一次加好几个参数，可以用空格隔开：command -p -a -T -c</p>
+</li>
+<li class="lvl-7">
+<p>多个短参数也可以合并在一起：command -paTc</p>
+</li>
+<li class="lvl-7">
+<p>字母的大小写有区别，大写的T和小写的t通常含义不同</p>
+</li>
+</ul>
+</li>
+<li class="lvl-5">
+<p>长参数（多个字母）</p>
+<ul class="lvl-4">
+<li class="lvl-7">
+<p>短参数是以一个短横线开始，而长参数是以两个短横线开始的</p>
+</li>
+<li class="lvl-7">
+<p>多格长参数，是不能像多个短参数那样合并写的</p>
+</li>
+<li class="lvl-7">
+<p>可以组合使用短参数和长参数</p>
+</li>
+<li class="lvl-7">
+<p>有时候，同一个意义的参数有短参数和长参数两种形式</p>
+<p>效果是一样的：例如<mark>ls -a</mark>和<mark>ls --all</mark></p>
+</li>
+</ul>
+</li>
+<li class="lvl-5">
+<p>参数的值</p>
+<ul class="lvl-4">
+<li class="lvl-7">有一些参数需要赋值。短参数和长参数的赋值方式不一样</li>
+<li class="lvl-7">短参数赋值，通常是这样：command -p 10</li>
+<li class="lvl-7">长参数赋值，通常是这样的：command --paremeter=10</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<h2 id="如何查找命令和命令历史记录">如何查找命令和命令历史记录</h2>
+<h3 id="如何找到一个命令">如何找到一个命令</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>有时候会想不起一个命令到底是如何拼写的</p>
+</li>
+<li class="lvl-2">
+<p>Linux的开发者们早就为我们准备了对策：用Tab键补全命令</p>
+</li>
+<li class="lvl-2">
+<p>Tab键可以补全命令，也可以补全文件名、路径名：按两次Tab键</p>
+<blockquote>
+<p>技巧：</p>
+<ul class="lvl-3">
+<li class="lvl-2">
+<p>按一个下空格键，切换下一页</p>
+</li>
+<li class="lvl-2">
+<p>按一下回车键切换下一行</p>
+</li>
+<li class="lvl-2">
+<p>按一下Q键退出</p>
+</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<h3 id="命令的历史记录">命令的历史记录</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>向上键：按时间顺序向前查找用过的命令，每按一次就前进一个命令</p>
+</li>
+<li class="lvl-2">
+<p>向下键：按时间顺序向后查找用过的命令，每按一次就前进一个命令</p>
+</li>
+<li class="lvl-2">
+<p><mark>Ctrl + R</mark>：用于查找使用过的命令</p>
+</li>
+<li class="lvl-2">
+<p><mark>history</mark>命令：用于列出之前使用过的所有命令</p>
+</li>
+<li class="lvl-2">
+<p>可以用==！编号==这样的格式来重新运行history输出中对应编号的命令</p>
+</li>
+</ul>
+<h2 id="一些实用的快捷键">一些实用的快捷键</h2>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>Ctrl + L：用于清理终端的内容，就是清屏的作用。同clear命令</p>
+</li>
+<li class="lvl-2">
+<p>Ctrl + D给终端传递EOF（End Of File，文件结束符）</p>
+</li>
+<li class="lvl-2">
+<p>Shift + PgUp用于向上滚屏，与鼠标的滚轮向上滚屏是一个效果</p>
+</li>
+<li class="lvl-2">
+<p>Shift + PgDn 用于向下滚屏，与鼠标的滚轮向下滚屏是一个效果</p>
+</li>
+<li class="lvl-2">
+<p>Ctrl + A 光标跳到一行命令的开头。Home键有相同的效果</p>
+</li>
+<li class="lvl-2">
+<p>Ctrl + E 光标跳到一行命令的结尾。End键有相同的效果</p>
+</li>
+<li class="lvl-2">
+<p>Ctrl + U 删除所有在光标左侧的命令字符</p>
+</li>
+<li class="lvl-2">
+<p>Ctrl + K 删除所有光标右侧的命令字符</p>
+</li>
+<li class="lvl-2">
+<p>Ctrl + W删除光标左侧的一个“单词”</p>
+<p>“单词”指用空格隔开的一个字符串。例如 -a 就是一个“单词”</p>
+</li>
+<li class="lvl-2">
+<p>Ctrl + Y 粘贴用 Ctrl + U，Ctrl + K</p>
+<p>或Ctrl + W “删除”的字符串，有点像“剪切-粘贴”</p>
+</li>
+</ul>
+<h2 id="文件组织">文件组织</h2>
+<h3 id="Linux中两种类型的文件">Linux中两种类型的文件</h3>
+<p>分类：</p>
+<ol>
+<li class="lvl-3">
+<p>普通的文件</p>
+</li>
+<li class="lvl-3">
+<p>特殊的文件</p>
+</li>
+</ol>
+<p><strong>普通的文件：</strong></p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>文本类型的文件（.txt，.doc，.odt，等等）</p>
+</li>
+<li class="lvl-2">
+<p>声音文件（.wav，.mp3，.ogg），还有程序，等</p>
+</li>
+</ul>
+<p><strong>特殊的文件：</strong></p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>其他一些文件时特殊的，因为它们表示一些东西</p>
+<p>例如，你的光盘驱动器就是这类特殊的文件</p>
+</li>
+</ul>
+<h3 id="根目录">根目录</h3>
+<p><strong>windows中</strong></p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>可以有好几个根目录</p>
+</li>
+<li class="lvl-2">
+<p>C盘（C:\）是硬盘的根目录（假如没有把C盘分区的话）</p>
+</li>
+<li class="lvl-2">
+<p>H盘可能是光盘驱动器的根目录</p>
+</li>
+<li class="lvl-2">
+<p>一个目录的形式是这样的<mark>C:\Program Files\Baidu</mark></p>
 <ul class="lvl-2">
-<li class="lvl-4">输入：列表</li>
-<li class="lvl-4">输出：有序列表</li>
+<li class="lvl-4">Baidu这个目录是Program Files这个目录的一个子目录</li>
+<li class="lvl-4">Program Files这个目录是C盘这个目录的一个子目录</li>
+<li class="lvl-4">Windows中用反斜杠 \ 来表明目录的层级与包含关系</li>
 </ul>
 </li>
-<li class="lvl-2">
-<p>升序与降序</p>
-</li>
-<li class="lvl-2">
-<p>内置排序函数：<mark>sort()</mark></p>
-</li>
 </ul>
-<h2 id="冒泡排序-Bubble-Sort">冒泡排序(Bubble Sort)</h2>
+<p><strong>Linux中：</strong></p>
 <ul class="lvl-0">
 <li class="lvl-2">
-<p>列表每两个相邻的数，如果前面比后面大，则交换这两个数</p>
+<p>Linux有且只有一个根目录，就是 / (斜杠)</p>
 </li>
 <li class="lvl-2">
-<p>一趟排序完成后，则无序区减少一个数，有序区增加一个数</p>
+<p>Linux中没有比根目录再高一阶的目录了，没有目录包含根目录</p>
 </li>
 <li class="lvl-2">
-<p>代码关键点：趟、无序区范围</p>
+<p>Linux中用斜杠 / 来标明目录层级与包含关系</p>
+<p>Linux的目录形式是这样的 /usr/bin</p>
+<p>bin 是usr目录的子目录，usr 是 / 这个根目录的子目录</p>
 </li>
 </ul>
-<p><strong>代码示例</strong>：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">import random
-
-def bubble_sort(li):
-    for i in range(len(li)-1):  # 第i趟
-        for j in range(len(li)-i):
-            if li[j]&gt;li[j+1]:
-                li[j],li[j+1]=li[j+1],li[j]
-
-#验证
-li = [random.randint(0,10000) for i in range(1000)]
-print(li)
-bubble_sort(li)
-print(li)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="根目录的直属子目录">根目录的直属子目录</h3>
+<p><strong>Windows的根目录的直属子目录：</strong></p>
 <ul class="lvl-0">
 <li class="lvl-2">
-<p>时间复杂度：O(n<sup>2</sup>)</p>
+<p>Windows的C盘这个根目录下一般都会找到一些相同的子目录</p>
 </li>
 </ul>
-<p><mark>冒泡排序-优化</mark>：</p>
+<p><strong>Linux的根目录的直属子目录：</strong></p>
 <ul class="lvl-0">
 <li class="lvl-2">
-<p>如果冒泡排序中的一趟排序没有发生交换，则说明列表已经有序，可以直接结束算法。</p>
+<p>bin：英语binary的缩写，表示“二进制文件”，可执行文件为二进制文件，bin目录包含了会被所有用户使用的可执行程序</p>
+</li>
+<li class="lvl-2">
+<p>boot：英语boot表示“启动”，boot目录包含与Linux启动密切相关的文件</p>
+</li>
+<li class="lvl-2">
+<p>dev：英语device的缩写，表示“设备”</p>
+<p>包含外设，它里面的子目录，每一个对应一个外设，比如代表光盘驱动器的文件就会出现在这个目录下面</p>
+</li>
+<li class="lvl-3">
+<p>etc：etc是法语et cetera的缩写，翻译成英语就是and so on，表示“……等等”</p>
 </li>
 </ul>
-<p><strong>代码示例</strong>：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">def bubble_sort(li):
-    for i in range(len(li)-1):
-        exchange = False
-        for j in range(len(li)-i-1):
-            if li[j] &gt; li[j+1]:
-                li[j], li[j+1] = li[j+1], li[j] 
-                exchange = True
-            if not exchange:
-                return<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>etc目录包含系统的配置文件</p>
 <ul class="lvl-0">
 <li class="lvl-2">
-<p>时间复杂度：O(n<sup>2</sup>)</p>
+<p>home：英语home表示“家”。用户的私人目录</p>
+<p>在home目录中，放置私人的文件。类似Windows中的Documents文件夹，也叫“我的文档”</p>
+<p>Linux中每个用户都在home目录下有一个私人目录（除了root）</p>
+</li>
+<li class="lvl-2">
+<p>lib：英语library的缩写，表示“库”</p>
+<p>lib目录包含被程序所调用的库文件，例如 .so 结尾的文件</p>
+<p><mark>Windows下这样的库文件则是以.dll结尾</mark></p>
+</li>
+<li class="lvl-2">
+<p>media：英语media表示“媒体”</p>
+<p>可移动的外设（USB盘，SD卡，DVD，光盘，等等）插入电脑时，Linux可以让我们通过media的子目录来访问这些外设中的内容</p>
+</li>
+<li class="lvl-2">
+<p>mnt：英语mount的缩写，表示“挂载”</p>
+<p>有点类似media目录，但一般用于临时挂载一些装置</p>
+</li>
+<li class="lvl-2">
+<p>opt：英语 optional application software package 的缩写</p>
+<p>表示“可选的应用软件包”，用于安装多数第三方软件和插件</p>
+</li>
+<li class="lvl-2">
+<p>root：英语“根”的意思</p>
+<p>超级用户root的根目录，一般的用户的根目录位于 /home下，root用户是个例外</p>
+</li>
+<li class="lvl-2">
+<p>sbin：英语system binary 的缩写，表示“系统二进制文件”</p>
+<p>比bin目录多了一个前缀system（“系统”），sbin目录包含系统级的重要可执行程序</p>
+</li>
+<li class="lvl-2">
+<p>srv：英语service的缩写，表示“服务”</p>
+<p>包含一些网络服务启动之后所需要的取用的数据</p>
+</li>
+<li class="lvl-2">
+<p>tmp：英语tamporary的缩写，表示“临时的”</p>
+<p>普通用户和程序存放临时文件的地方</p>
+</li>
+<li class="lvl-2">
+<p>usr：是英语Unix Software Resource的缩写</p>
+<p>表示“Unix操作系统软件资源（类似etc，属于历史遗留的命名），ust是最庞大的目录之一，类似Windows中的<mark>C:\Windows</mark>和<mark>C:\Program Files</mark>这两个文件夹的集合，usr目录里安装了大部分用户要调用的程序</p>
+</li>
+<li class="lvl-2">
+<p>var：英语variable的缩写，表示”动态的，可变的“</p>
+<p>通常包含程序的数据，比如log（日志）文件</p>
 </li>
 </ul>
-<h2 id="选择排序-Select-Sort">选择排序(Select Sort)</h2>
+<p>以上目录的列表形式，在类Unix的操作系统里类似的</p>
+<p><strong>参考资料：</strong><a target="_blank" rel="noopener" href="https://linuxtoy.org/archives/linux-file-structure.html">Linux 文件结构 </a></p>
+<blockquote>
+<p>目录注意事项：</p>
+<ul class="lvl-1">
+<li class="lvl-2">Windows的目录名称可以包含空格等符号，Linux也可以</li>
+<li class="lvl-2">一般在Linux下命名目录时尽量不使用空格或者其他特殊的符号</li>
+<li class="lvl-2">尽量用小写英文字母。这会省去一些不必要的麻烦</li>
+</ul>
+</blockquote>
+<h2 id="pwd命令">pwd命令</h2>
 <ul class="lvl-0">
 <li class="lvl-2">
-<p>一趟排序记录最小的数，放到第一个位置</p>
+<p>pwd是Print Working Directory（”打印当前工作目录“）的缩写</p>
 </li>
 <li class="lvl-2">
-<p>再一趟排序记录列表无序最小的数，放到第二个位置</p>
-</li>
-<li class="lvl-2">
-<p>…</p>
-</li>
-<li class="lvl-2">
-<p>算法关键点：有序和无序区、无序区最小数的位置</p>
+<p>显示当前目录的路径</p>
 </li>
 </ul>
-<p><strong>代码示例：</strong></p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">def select_sort(li):
-    for i in range(len(li)-1):
-        min_loc = i
-        for j in range(i+1,len(li)):
-            if li[j] &lt; li[min_loc]:
-                min_loc = j
-        if min_loc != i:
-            li[i], li[min_loc] = li[min_loc], li[i]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="插入排序-Inset-Sort">插入排序(Inset Sort)</h2>
+<h2 id="which命令">which命令</h2>
 <ul class="lvl-0">
 <li class="lvl-2">
-<p>初始时手里（有序区）只有一张牌</p>
+<p>用于显示一个命令的对应的可执行文件的位置</p>
 </li>
 <li class="lvl-2">
-<p>每次（从无序区）摸一张牌，插入到手里已有牌的正确位置</p>
-</li>
-</ul>
-<p><strong>代码示例：</strong></p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">def insect_sort(li):
-    for i in range(1,len(li)):
-        tmp = li[i]
-        j = i - 1
-        while j &gt;= 0 and tmp &lt; li[j]:
-            li[j+1] = li[j]
-            j = j - 1
-         li[j+1] = tmp<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>时间复杂度：O(n<sup>2</sup>)</p>
-</li>
-</ul>
-<h2 id="快速排序-Quick-Sort">快速排序(Quick Sort)</h2>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>快速排序：<mark>快</mark></p>
+<p>Linux下，每一条命令其实对应了一个可执行程序</p>
+<p>在终端汇总输入命令，按回车键的时候，就是执行了对应的那个程序，如，pwd命令对应的pwd程序就是存在于Linux中的 /usr/bin 目录中</p>
 </li>
 <li class="lvl-2">
-<p>快速排序思路：</p>
-<ul class="lvl-2">
-<li class="lvl-4">取一个元素p（第一个元素），使元素p归位；</li>
-<li class="lvl-4">列表被p分成两部分，左边都比p小，右边都比p大；</li>
-<li class="lvl-4">递归完成排序</li>
-</ul>
+<p>which命令接受一个参数，参数是你想知道可执行程序位于哪里的那个命令</p>
 </li>
 </ul>
-<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202302062134346.png" alt=""></p>
-<p><strong>快速排序-框架：</strong></p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">def quick_sort(data,left,right):
-    if left &lt; right:
-        mid = partition(data,left,right)
-        quick_sort(data,left,mid-1)
-        quick_sort(data,mid+1,right)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><strong>代码示例：</strong></p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">def partition(li,left,right):
-    tmp = li[left]
-    while left &lt; right:
-        while li[right] &gt;= tmp:  # 从右边找比tmp小的数
-            right -= 1  # 往左走一步
-        li[left] = li[right]  # 把右边的值写到左边空位上
-        while left &lt; right and li[left] &lt;= tmp:
-            left += 1
-        li[left] = tmp  # 把tmp归位
-        return left
-def quick_sort(li,left,right)    :
-    if left &lt; right:  # 至少两个元素
-        mid = partition(li,left,right)
-        quick_sort(li,left,mid-1)
-        quick_sort(li,mid+1,right)
-#调用测试
-li = [5,7,6,3,1,2,9,8]
-quick_sort(li,0,len(li)-1)
-print(li)  <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>快速排序的效率：</p>
-<ul class="lvl-2">
-<li class="lvl-4">快速排序的时间复杂度：<mark>O(nlogn)</mark></li>
-</ul>
-</li>
-<li class="lvl-2">
-<p>快速排序的问题</p>
-<ul class="lvl-2">
-<li class="lvl-4">
-<p>最坏情况：</p>
-<p>正序或逆序排列，二叉树画出来应该是一棵斜树，并且需要经过n-1次递归调用才能完成，且第i次划分需要经过n‐i次关键字的比较才能找到第i个记录，也就是枢轴的位置，所以：</p>
-<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202302091721179.png" alt=""></p>
-<p>最终的时间复杂度应该O(n<sup>2</sup>)</p>
-</li>
-<li class="lvl-4">
-<p>递归：消耗一部分系统资源</p>
-</li>
-</ul>
-</li>
-</ul>
+<blockquote>
+<p>注：Windows可执行程序以.exe结尾，Linux中一般是没有后缀名的。</p>
+</blockquote>
 
                 
             </div>
@@ -732,7 +874,7 @@ print(li)  <span aria-hidden="true" class="line-numbers-rows"><span></span><span
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://www.ahao8.top/posts/6547.html">https://www.ahao8.top/posts/6547.html</a>
+                    <a href="https://www.ahao8.top/posts/8b0b.html">https://www.ahao8.top/posts/8b0b.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -770,12 +912,12 @@ print(li)  <span aria-hidden="true" class="line-numbers-rows"><span></span><span
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/python/">
-                                    <span class="chip bg-color">python</span>
+                                <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/">
+                                    <span class="chip bg-color">服务器</span>
                                 </a>
                             
-                                <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">
-                                    <span class="chip bg-color">数据结构与算法</span>
+                                <a href="/tags/Linux/">
+                                    <span class="chip bg-color">Linux</span>
                                 </a>
                             
                         </div>
@@ -1101,9 +1243,63 @@ print(li)  <span aria-hidden="true" class="line-numbers-rows"><span></span><span
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/posts/8b0b.html">
+                    <div class="card-image">
+                        
+                        <img src="/medias/loading.gif" data-original="/medias/featureimages/24.jpg" class="responsive-img" alt="linux服务器基础知识">
+                        
+                        <span class="card-title">linux服务器基础知识</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-03-15
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/" class="post-category">
+                                    服务器
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/">
+                        <span class="chip bg-color">服务器</span>
+                    </a>
+                    
+                    <a href="/tags/Linux/">
+                        <span class="chip bg-color">Linux</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
             <div class="card">
                 <a href="/posts/e560.html">
                     <div class="card-image">
@@ -1121,9 +1317,9 @@ print(li)  <span aria-hidden="true" class="line-numbers-rows"><span></span><span
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-02-25
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-02-25
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1145,59 +1341,6 @@ print(li)  <span aria-hidden="true" class="line-numbers-rows"><span></span><span
                     
                     <a href="/tags/misc/">
                         <span class="chip bg-color">misc</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/posts/a5e3.html">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/loading.gif" data-original="/medias/featureimages/6.jpg" class="responsive-img" alt="数据结构与算法中的排序算法(二)">
-                        
-                        <span class="card-title">数据结构与算法中的排序算法(二)</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-02-24
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" class="post-category">
-                                    数据结构与算法
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/python/">
-                        <span class="chip bg-color">python</span>
-                    </a>
-                    
-                    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">
-                        <span class="chip bg-color">数据结构与算法</span>
                     </a>
                     
                 </div>
