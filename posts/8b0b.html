@@ -66,9 +66,9 @@ Ctrl + Alt +">
 
     <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
 	<meta name="baidu-site-verification" content="codeva-zKkMicDbub" />
-<meta name="generator" content="Hexo 6.3.0">
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="阿浩の博客" type="application/atom+xml">
+
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="alternate" href="/atom.xml" title="阿浩の博客" type="application/atom+xml">
 </head>
 
 
@@ -483,7 +483,7 @@ Ctrl + Alt +">
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.2k
+                    2.8k
                 </div>
                 
 
@@ -848,6 +848,122 @@ Ctrl + Alt +">
 <blockquote>
 <p>注：Windows可执行程序以.exe结尾，Linux中一般是没有后缀名的。</p>
 </blockquote>
+<h2 id="ls命令">ls命令</h2>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>ls命令：列出文件和目录</p>
+</li>
+<li class="lvl-2">
+<p>可以加上参数 --color=auto 来开启颜色：<mark>ls --color=auto</mark></p>
+</li>
+<li class="lvl-2">
+<p>可以用 --color=none来关闭颜色标注：<mark>ls --color=none</mark></p>
+</li>
+</ul>
+<p><strong>ls 常用的参数：</strong></p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>-a：显示所有文件和目录，包括隐藏的</p>
+</li>
+<li class="lvl-2">
+<p>-A：它的作用和小写的==-a<mark>几乎一样，唯一不同的是</mark>-A== 不列出==.== 和 <mark>…</mark> 这两个文件</p>
+</li>
+<li class="lvl-2">
+<p>-l：使得ls命令列出一个显示文件和目录的详细信息的列表</p>
+<p>每一个文件或目录都有对应的详细信息</p>
+<p><mark>如文件权限：drwxr-xr-x之类</mark></p>
+</li>
+<li class="lvl-2">
+<p>-h：以Ko，Mo，Go的形式显示文件大小</p>
+<p><mark>ls -l</mark>，列出的文件详细信息中，文件大小是以字节为单位的</p>
+<p>参数==-h==，h是humain readable的缩写，表示“适合人类阅读的”</p>
+</li>
+<li class="lvl-2">
+<p>-t：按文件最近一次修改时间排序</p>
+<p>t是time的缩写，表示“时间”</p>
+<p>ls的常用参数合并在一起使用，效果是叠加的：<mark>ls -lath</mark></p>
+</li>
+</ul>
+<blockquote>
+<ul class="lvl-1">
+<li class="lvl-2">
+<p>Linux中，以点（.）开头的文件是隐藏文件</p>
+</li>
+<li class="lvl-2">
+<p>不包括开头的两个 <mark>.</mark> 和 <mark>…</mark> ，这两个的含义如下：</p>
+</li>
+<li class="lvl-2">
+<p><mark>.</mark>  (一个点）表示当前目录；<mark>…</mark>（两个点）表示上一级目录</p>
+</li>
+</ul>
+</blockquote>
+<h2 id="cd命令">cd命令</h2>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>cd 是英语 change directory的缩写，表示“切换目录”</p>
+</li>
+<li class="lvl-2">
+<p>cd命令后面接的参数就是一个：去的那个目录的路径</p>
+</li>
+<li class="lvl-2">
+<p>要返回上一级目录：<mark>cd …</mark></p>
+</li>
+<li class="lvl-2">
+<p>进入当前目录：<mark>cd .</mark></p>
+</li>
+<li class="lvl-2">
+<p>连续退回两个父目录：<mark>cd …/…</mark></p>
+</li>
+<li class="lvl-2">
+<p>回到根目录：<mark>cd /</mark> 或 <mark>cd ~</mark></p>
+</li>
+<li class="lvl-2">
+<p>相对路径：相对当前目录的一个路径表示法</p>
+</li>
+<li class="lvl-2">
+<p>绝对路径：绝对的，不因当前目录而改变的一个路径表示法</p>
+<p>总是以 ==/<mark>开头，</mark>/==表示根目录</p>
+</li>
+<li class="lvl-2">
+<p>重回家目录的三种办法</p>
+<ul class="lvl-2">
+<li class="lvl-4">cd /home/username，username可替换为你的用户名</li>
+<li class="lvl-4">cd ~</li>
+<li class="lvl-4">cd，不加任何参数</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>路径自动补充：</p>
+<ul class="lvl-1">
+<li class="lvl-2">Tab键可以进行命令的补充（按两下Tab键）</li>
+<li class="lvl-2">其实Tab键还可以用于路径的补全</li>
+</ul>
+</blockquote>
+<h2 id="du命令">du命令</h2>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>显示目录包含的文件大小</p>
+</li>
+<li class="lvl-2">
+<p>相比ls -l命令，du命令统计的才是真正的文件大小</p>
+</li>
+<li class="lvl-2">
+<p>du命令会深入遍历每个目录的子目录，统计所有文件的大小</p>
+</li>
+<li class="lvl-2">
+<p>du是英语disk usage的缩写，表示“磁盘使用/占用”</p>
+</li>
+<li class="lvl-2">
+<p>适合人类阅读的文件大小命令：<mark>du -h</mark></p>
+</li>
+<li class="lvl-2">
+<p>-a：显示文件和目录的大小</p>
+</li>
+<li class="lvl-2">
+<p>-s：只显示总计大小</p>
+</li>
+</ul>
 
                 
             </div>
@@ -1575,7 +1691,7 @@ Ctrl + Alt +">
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">11.8k</span>
+                        class="white-color">12.4k</span>
             
             
             
