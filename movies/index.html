@@ -604,6 +604,7 @@
                 <span id="sitetime"> Loading ...</span>
                 <script>
                     var calcSiteTime = function () {
+						window.setTimeout("calcSiteTime()", 1000);
                         var seconds = 1000;
                         var minutes = seconds * 60;
                         var hours = minutes * 60;
@@ -655,7 +656,7 @@
                         }
 					}
 
-                    setInterval(calcSiteTime, 1000);
+                    calcSiteTime();
                 </script>
 				
             
