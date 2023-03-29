@@ -460,20 +460,20 @@
                 </a>
                 
                 
-                <a href="/categories/CTF/" title="CTF: 2">
+                <a href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/" title="服务器: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #F5EEF8;">CTF
-                        <span class="tag-length">2</span>
+                            style="background-color: #F5EEF8;">服务器
+                        <span class="tag-length">1</span>
                     </span>
                 </a>
                 
                 
-                <a href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/" title="服务器: 1">
+                <a href="/categories/CTF/" title="CTF: 2">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #D5F5E3;">服务器
-                        <span class="tag-length">1</span>
+                            style="background-color: #D5F5E3;">CTF
+                        <span class="tag-length">2</span>
                     </span>
                 </a>
                 
@@ -582,32 +582,41 @@
             
             <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/posts/a5e3.html">
+                    <a href="/posts/6547.html">
                         <div class="card-image tag-image">
                             
                             
-                            <img src="/medias/loading.gif" data-original="/medias/featureimages/6.jpg" class="responsive-img" alt="数据结构与算法中的排序算法(二)">
+                            <img src="/medias/loading.gif" data-original="/medias/featureimages/10.jpg" class="responsive-img" alt="数据结构与算法中的排序算法(一)">
                             
-                            <span class="card-title">数据结构与算法中的排序算法(二)</span>
+                            <span class="card-title">数据结构与算法中的排序算法(一)</span>
                         </div>
                     </a>
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                堆排序前传 - 树与二叉树
-树
+                                列表排序
 
 
-树是一种数据结构
+排序：将一组“无序”的记录序列调整为“有序”的记录序列
 
 
-树是一种可以递归定义的数据结构
+列表排序：将无序列表变为有序列表
+
+输入：列表
+输出：有序列表
 
 
-树是由几个节点组成的集合
 
-如果n=0，那这是一棵空树；
-如果n&gt;0，那存在1个节点作为树的根节点，其他节点可以分为m个集合，每个集合本身又
+升序与降序
+
+
+内置排序函数：sort()
+
+
+冒泡排序(Bubble Sort)
+
+
+列表每两
                             
                         </div>
                         <div class="publish-info">
@@ -645,41 +654,32 @@
             
             <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/posts/6547.html">
+                    <a href="/posts/a5e3.html">
                         <div class="card-image tag-image">
                             
                             
-                            <img src="/medias/loading.gif" data-original="/medias/featureimages/10.jpg" class="responsive-img" alt="数据结构与算法中的排序算法(一)">
+                            <img src="/medias/loading.gif" data-original="/medias/featureimages/6.jpg" class="responsive-img" alt="数据结构与算法中的排序算法(二)">
                             
-                            <span class="card-title">数据结构与算法中的排序算法(一)</span>
+                            <span class="card-title">数据结构与算法中的排序算法(二)</span>
                         </div>
                     </a>
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                列表排序
+                                堆排序前传 - 树与二叉树
+树
 
 
-排序：将一组“无序”的记录序列调整为“有序”的记录序列
+树是一种数据结构
 
 
-列表排序：将无序列表变为有序列表
-
-输入：列表
-输出：有序列表
+树是一种可以递归定义的数据结构
 
 
+树是由几个节点组成的集合
 
-升序与降序
-
-
-内置排序函数：sort()
-
-
-冒泡排序(Bubble Sort)
-
-
-列表每两
+如果n=0，那这是一棵空树；
+如果n&gt;0，那存在1个节点作为树的根节点，其他节点可以分为m个集合，每个集合本身又
                             
                         </div>
                         <div class="publish-info">
@@ -904,32 +904,34 @@
                         var diff = t2 - t1;
                         var diffYears = Math.floor(diff / years);
                         var diffDays = Math.floor((diff / days) - diffYears * 365);
+						var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+						var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
+						var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes * minutes) / seconds);
 
                         // 区分是否有年份.
                         var language = 'zh-CN';
                         if (startYear === String(todayYear)) {
                             document.getElementById("year").innerHTML = todayYear;
-                            var daysTip = 'This site has been running for ' + diffDays + ' days';
+                            var daysTip = 'This site has been running for ' + diffDays + ' days and ' + diffHours + ' hours and ' + diffMinutes + ' minutes and ' + diffSeconds + ' seconds';
                             if (language === 'zh-CN') {
-                                daysTip = '本站已安全运行 ' + diffDays + ' 天';
+                                daysTip = '本站已安全运行 ' + diffDays + ' 天 ' + diffHours + ' 小时 ' + diffMinutes + ' 分钟 ' + diffSeconds + ' 秒';
                             } else if (language === 'zh-HK') {
-                                daysTip = '本站已安全運行 ' + diffDays + ' 天';
+                                daysTip = '本站已安全運行 ' + diffDays + ' 天' + diffHours + ' 小時 ' + diffMinutes + ' 分鐘 ' + diffSeconds + ' 秒';
                             }
                             document.getElementById("sitetime").innerHTML = daysTip;
                         } else {
                             document.getElementById("year").innerHTML = startYear + " - " + todayYear;
-                            var yearsAndDaysTip = 'This site has been running for ' + diffYears + ' years and '
-                                + diffDays + ' days';
+                            var yearsAndDaysTip = 'This site has been running for ' + diffYears + ' years and ' + diffDays + ' days and ' + diffHours + ' hours and ' + diffMinutes + ' minutes and ' + diffSeconds + ' seconds';
                             if (language === 'zh-CN') {
-                                yearsAndDaysTip = '本站已安全运行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                                yearsAndDaysTip = '本站已安全运行 ' + diffYears + ' 年 ' + diffDays + ' 天' + diffHours + ' 小时 ' + diffMinutes + ' 分钟 ' + diffSeconds + ' 秒';
                             } else if (language === 'zh-HK') {
-                                yearsAndDaysTip = '本站已安全運行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                                yearsAndDaysTip = '本站已安全運行 ' + diffYears + ' 年 ' + diffDays + ' 天' + diffHours + ' 小時 ' + diffMinutes + ' 分鐘 ' + diffSeconds + ' 秒';
                             }
                             document.getElementById("sitetime").innerHTML = yearsAndDaysTip;
                         }
                     }
 
-                    calcSiteTime();
+                    setInterval(calcSiteTime, 1000);
                 </script>
             
             <br>

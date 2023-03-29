@@ -1311,59 +1311,6 @@ for i in range(1024):
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/4c50.html">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/loading.gif" data-original="/medias/featureimages/22.jpg" class="responsive-img" alt="数据结构与算法中的列表查找">
-                        
-                        <span class="card-title">数据结构与算法中的列表查找</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-02-24
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" class="post-category">
-                                    数据结构与算法
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/python/">
-                        <span class="chip bg-color">python</span>
-                    </a>
-                    
-                    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">
-                        <span class="chip bg-color">数据结构与算法</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
                 <a href="/posts/3eeb.html">
                     <div class="card-image">
                         
@@ -1379,9 +1326,9 @@ for i in range(1024):
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-02-24
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-02-24
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1403,6 +1350,55 @@ for i in range(1024):
                     
                     <a href="/tags/%E5%8D%9A%E5%AE%A2/">
                         <span class="chip bg-color">博客</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/posts/bb2d.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/loading.gif" data-original="/medias/featureimages/10.jpg" class="responsive-img" alt="python数据类型">
+                        
+                        <span class="card-title">python数据类型</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-02-24
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/python/" class="post-category">
+                                    python
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/python/">
+                        <span class="chip bg-color">python</span>
                     </a>
                     
                 </div>
@@ -1685,32 +1681,34 @@ for i in range(1024):
                         var diff = t2 - t1;
                         var diffYears = Math.floor(diff / years);
                         var diffDays = Math.floor((diff / days) - diffYears * 365);
+						var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+						var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
+						var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes * minutes) / seconds);
 
                         // 区分是否有年份.
                         var language = 'zh-CN';
                         if (startYear === String(todayYear)) {
                             document.getElementById("year").innerHTML = todayYear;
-                            var daysTip = 'This site has been running for ' + diffDays + ' days';
+                            var daysTip = 'This site has been running for ' + diffDays + ' days and ' + diffHours + ' hours and ' + diffMinutes + ' minutes and ' + diffSeconds + ' seconds';
                             if (language === 'zh-CN') {
-                                daysTip = '本站已安全运行 ' + diffDays + ' 天';
+                                daysTip = '本站已安全运行 ' + diffDays + ' 天 ' + diffHours + ' 小时 ' + diffMinutes + ' 分钟 ' + diffSeconds + ' 秒';
                             } else if (language === 'zh-HK') {
-                                daysTip = '本站已安全運行 ' + diffDays + ' 天';
+                                daysTip = '本站已安全運行 ' + diffDays + ' 天' + diffHours + ' 小時 ' + diffMinutes + ' 分鐘 ' + diffSeconds + ' 秒';
                             }
                             document.getElementById("sitetime").innerHTML = daysTip;
                         } else {
                             document.getElementById("year").innerHTML = startYear + " - " + todayYear;
-                            var yearsAndDaysTip = 'This site has been running for ' + diffYears + ' years and '
-                                + diffDays + ' days';
+                            var yearsAndDaysTip = 'This site has been running for ' + diffYears + ' years and ' + diffDays + ' days and ' + diffHours + ' hours and ' + diffMinutes + ' minutes and ' + diffSeconds + ' seconds';
                             if (language === 'zh-CN') {
-                                yearsAndDaysTip = '本站已安全运行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                                yearsAndDaysTip = '本站已安全运行 ' + diffYears + ' 年 ' + diffDays + ' 天' + diffHours + ' 小时 ' + diffMinutes + ' 分钟 ' + diffSeconds + ' 秒';
                             } else if (language === 'zh-HK') {
-                                yearsAndDaysTip = '本站已安全運行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                                yearsAndDaysTip = '本站已安全運行 ' + diffYears + ' 年 ' + diffDays + ' 天' + diffHours + ' 小時 ' + diffMinutes + ' 分鐘 ' + diffSeconds + ' 秒';
                             }
                             document.getElementById("sitetime").innerHTML = yearsAndDaysTip;
                         }
                     }
 
-                    calcSiteTime();
+                    setInterval(calcSiteTime, 1000);
                 </script>
             
             <br>

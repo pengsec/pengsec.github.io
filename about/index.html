@@ -695,7 +695,7 @@
                 type: 'pie',
                 radius: '50%',
                 color: ['#6772e5', '#ff9e0f', '#fa755a', '#3ecf8e', '#82d3f4', '#ab47bc', '#525f7f', '#f51c47', '#26A69A'],
-                data: [{"name":"数据结构与算法","value":4},{"name":"CTF","value":2},{"name":"服务器","value":1},{"name":"日常","value":1},{"name":"python","value":1}],
+                data: [{"name":"数据结构与算法","value":4},{"name":"服务器","value":1},{"name":"CTF","value":2},{"name":"日常","value":1},{"name":"python","value":1}],
                 itemStyle: {
                     emphasis: {
                         shadowBlur: 10,
@@ -794,18 +794,6 @@
             
             
             
-            <a href="/tags/CTF/">
-                <span class="chip center-align waves-effect waves-light chip-default">CTF</span>
-            </a>
-            
-            
-            
-            <a href="/tags/misc/">
-                <span class="chip center-align waves-effect waves-light chip-default">misc</span>
-            </a>
-            
-            
-            
             <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/">
                 <span class="chip center-align waves-effect waves-light chip-default">服务器</span>
             </a>
@@ -814,6 +802,18 @@
             
             <a href="/tags/Linux/">
                 <span class="chip center-align waves-effect waves-light chip-default">Linux</span>
+            </a>
+            
+            
+            
+            <a href="/tags/CTF/">
+                <span class="chip center-align waves-effect waves-light chip-default">CTF</span>
+            </a>
+            
+            
+            
+            <a href="/tags/misc/">
+                <span class="chip center-align waves-effect waves-light chip-default">misc</span>
             </a>
             
             
@@ -985,32 +985,34 @@
                         var diff = t2 - t1;
                         var diffYears = Math.floor(diff / years);
                         var diffDays = Math.floor((diff / days) - diffYears * 365);
+						var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+						var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
+						var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes * minutes) / seconds);
 
                         // 区分是否有年份.
                         var language = 'zh-CN';
                         if (startYear === String(todayYear)) {
                             document.getElementById("year").innerHTML = todayYear;
-                            var daysTip = 'This site has been running for ' + diffDays + ' days';
+                            var daysTip = 'This site has been running for ' + diffDays + ' days and ' + diffHours + ' hours and ' + diffMinutes + ' minutes and ' + diffSeconds + ' seconds';
                             if (language === 'zh-CN') {
-                                daysTip = '本站已安全运行 ' + diffDays + ' 天';
+                                daysTip = '本站已安全运行 ' + diffDays + ' 天 ' + diffHours + ' 小时 ' + diffMinutes + ' 分钟 ' + diffSeconds + ' 秒';
                             } else if (language === 'zh-HK') {
-                                daysTip = '本站已安全運行 ' + diffDays + ' 天';
+                                daysTip = '本站已安全運行 ' + diffDays + ' 天' + diffHours + ' 小時 ' + diffMinutes + ' 分鐘 ' + diffSeconds + ' 秒';
                             }
                             document.getElementById("sitetime").innerHTML = daysTip;
                         } else {
                             document.getElementById("year").innerHTML = startYear + " - " + todayYear;
-                            var yearsAndDaysTip = 'This site has been running for ' + diffYears + ' years and '
-                                + diffDays + ' days';
+                            var yearsAndDaysTip = 'This site has been running for ' + diffYears + ' years and ' + diffDays + ' days and ' + diffHours + ' hours and ' + diffMinutes + ' minutes and ' + diffSeconds + ' seconds';
                             if (language === 'zh-CN') {
-                                yearsAndDaysTip = '本站已安全运行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                                yearsAndDaysTip = '本站已安全运行 ' + diffYears + ' 年 ' + diffDays + ' 天' + diffHours + ' 小时 ' + diffMinutes + ' 分钟 ' + diffSeconds + ' 秒';
                             } else if (language === 'zh-HK') {
-                                yearsAndDaysTip = '本站已安全運行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                                yearsAndDaysTip = '本站已安全運行 ' + diffYears + ' 年 ' + diffDays + ' 天' + diffHours + ' 小時 ' + diffMinutes + ' 分鐘 ' + diffSeconds + ' 秒';
                             }
                             document.getElementById("sitetime").innerHTML = yearsAndDaysTip;
                         }
                     }
 
-                    calcSiteTime();
+                    setInterval(calcSiteTime, 1000);
                 </script>
             
             <br>

@@ -468,28 +468,10 @@
                 </a>
                 
                 
-                <a href="/tags/CTF/" title="CTF: 2">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="CTF" style="background-color: #D5F5E3;">CTF
-                        <span class="tag-length">2</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/misc/" title="misc: 2">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="misc" style="background-color: #E8F8F5;">misc
-                        <span class="tag-length">2</span>
-                    </span>
-                </a>
-                
-                
                 <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" title="服务器: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-active "
-                            data-tagname="服务器" style="background-color: #FEF9E7;">服务器
+                            data-tagname="服务器" style="background-color: #D5F5E3;">服务器
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -498,8 +480,26 @@
                 <a href="/tags/Linux/" title="Linux: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="Linux" style="background-color: #F8F9F9;">Linux
+                            data-tagname="Linux" style="background-color: #E8F8F5;">Linux
                         <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/CTF/" title="CTF: 2">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="CTF" style="background-color: #FEF9E7;">CTF
+                        <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/misc/" title="misc: 2">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="misc" style="background-color: #F8F9F9;">misc
+                        <span class="tag-length">2</span>
                     </span>
                 </a>
                 
@@ -688,32 +688,34 @@
                         var diff = t2 - t1;
                         var diffYears = Math.floor(diff / years);
                         var diffDays = Math.floor((diff / days) - diffYears * 365);
+						var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+						var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
+						var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes * minutes) / seconds);
 
                         // 区分是否有年份.
                         var language = 'zh-CN';
                         if (startYear === String(todayYear)) {
                             document.getElementById("year").innerHTML = todayYear;
-                            var daysTip = 'This site has been running for ' + diffDays + ' days';
+                            var daysTip = 'This site has been running for ' + diffDays + ' days and ' + diffHours + ' hours and ' + diffMinutes + ' minutes and ' + diffSeconds + ' seconds';
                             if (language === 'zh-CN') {
-                                daysTip = '本站已安全运行 ' + diffDays + ' 天';
+                                daysTip = '本站已安全运行 ' + diffDays + ' 天 ' + diffHours + ' 小时 ' + diffMinutes + ' 分钟 ' + diffSeconds + ' 秒';
                             } else if (language === 'zh-HK') {
-                                daysTip = '本站已安全運行 ' + diffDays + ' 天';
+                                daysTip = '本站已安全運行 ' + diffDays + ' 天' + diffHours + ' 小時 ' + diffMinutes + ' 分鐘 ' + diffSeconds + ' 秒';
                             }
                             document.getElementById("sitetime").innerHTML = daysTip;
                         } else {
                             document.getElementById("year").innerHTML = startYear + " - " + todayYear;
-                            var yearsAndDaysTip = 'This site has been running for ' + diffYears + ' years and '
-                                + diffDays + ' days';
+                            var yearsAndDaysTip = 'This site has been running for ' + diffYears + ' years and ' + diffDays + ' days and ' + diffHours + ' hours and ' + diffMinutes + ' minutes and ' + diffSeconds + ' seconds';
                             if (language === 'zh-CN') {
-                                yearsAndDaysTip = '本站已安全运行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                                yearsAndDaysTip = '本站已安全运行 ' + diffYears + ' 年 ' + diffDays + ' 天' + diffHours + ' 小时 ' + diffMinutes + ' 分钟 ' + diffSeconds + ' 秒';
                             } else if (language === 'zh-HK') {
-                                yearsAndDaysTip = '本站已安全運行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                                yearsAndDaysTip = '本站已安全運行 ' + diffYears + ' 年 ' + diffDays + ' 天' + diffHours + ' 小時 ' + diffMinutes + ' 分鐘 ' + diffSeconds + ' 秒';
                             }
                             document.getElementById("sitetime").innerHTML = yearsAndDaysTip;
                         }
                     }
 
-                    calcSiteTime();
+                    setInterval(calcSiteTime, 1000);
                 </script>
             
             <br>
