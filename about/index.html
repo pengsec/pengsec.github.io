@@ -695,7 +695,7 @@
                 type: 'pie',
                 radius: '50%',
                 color: ['#6772e5', '#ff9e0f', '#fa755a', '#3ecf8e', '#82d3f4', '#ab47bc', '#525f7f', '#f51c47', '#26A69A'],
-                data: [{"name":"服务器","value":1},{"name":"CTF","value":2},{"name":"数据结构与算法","value":4},{"name":"python","value":1},{"name":"日常","value":1}],
+                data: [{"name":"数据结构与算法","value":4},{"name":"CTF","value":2},{"name":"服务器","value":1},{"name":"日常","value":1},{"name":"python","value":1}],
                 itemStyle: {
                     emphasis: {
                         shadowBlur: 10,
@@ -782,14 +782,14 @@
         <div class="tag-chips center-align">
             
             
-            <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/">
-                <span class="chip center-align waves-effect waves-light chip-default">服务器</span>
+            <a href="/tags/python/">
+                <span class="chip center-align waves-effect waves-light chip-default">python</span>
             </a>
             
             
             
-            <a href="/tags/Linux/">
-                <span class="chip center-align waves-effect waves-light chip-default">Linux</span>
+            <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">
+                <span class="chip center-align waves-effect waves-light chip-default">数据结构与算法</span>
             </a>
             
             
@@ -806,14 +806,14 @@
             
             
             
-            <a href="/tags/python/">
-                <span class="chip center-align waves-effect waves-light chip-default">python</span>
+            <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/">
+                <span class="chip center-align waves-effect waves-light chip-default">服务器</span>
             </a>
             
             
             
-            <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">
-                <span class="chip center-align waves-effect waves-light chip-default">数据结构与算法</span>
+            <a href="/tags/Linux/">
+                <span class="chip center-align waves-effect waves-light chip-default">Linux</span>
             </a>
             
             
@@ -1012,41 +1012,6 @@
 
                     calcSiteTime();
                 </script>
-				<script language=javascript>
-					function siteTime() {
-						window.setTimeout("siteTime()", 1000);
-						var seconds = 1000;
-						var minutes = seconds * 60;
-						var hours = minutes * 60;
-						var days = hours * 24;
-						var years = days * 365;
-						var today = new Date();
-						var todayYear = today.getFullYear();
-						var todayMonth = today.getMonth() + 1;
-						var todayDate = today.getDate();
-						var todayHour = today.getHours();
-						var todayMinute = today.getMinutes();
-						var todaySecond = today.getSeconds();
-						/* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
-						year - 作为date对象的年份，为4位年份值
-						month - 0-11之间的整数，做为date对象的月份
-						day - 1-31之间的整数，做为date对象的天数
-						hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
-						minutes - 0-59之间的整数，做为date对象的分钟数
-						seconds - 0-59之间的整数，做为date对象的秒数
-						microseconds - 0-999之间的整数，做为date对象的毫秒数 */
-						var t1 = Date.UTC(2023, 01, 16, 00, 00, 00); // 北京时间2023-01-16 00:00:00
-						var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
-						var diff = t2 - t1;
-						var diffYears = Math.floor(diff / years);
-						var diffDays = Math.floor((diff / days) - diffYears * 365);
-						var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
-						var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
-						var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes * minutes) / seconds);
-						document.getElementById("sitetime").innerHTML = "本站已安全运行 " +diffYears+" 年 "+diffDays + " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
-					}
-					siteTime();
-				</script>
             
             <br>
             

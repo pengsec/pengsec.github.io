@@ -1311,13 +1311,13 @@ for i in range(1024):
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/a5e3.html">
+                <a href="/posts/4c50.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/loading.gif" data-original="/medias/featureimages/6.jpg" class="responsive-img" alt="数据结构与算法中的排序算法(二)">
+                        <img src="/medias/loading.gif" data-original="/medias/featureimages/22.jpg" class="responsive-img" alt="数据结构与算法中的列表查找">
                         
-                        <span class="card-title">数据结构与算法中的排序算法(二)</span>
+                        <span class="card-title">数据结构与算法中的列表查找</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1364,19 +1364,18 @@ for i in range(1024):
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/4c50.html">
+                <a href="/posts/3eeb.html">
                     <div class="card-image">
                         
+                        <img src="/medias/loading.gif" data-original="/medias/featureimages/16.jpg" class="responsive-img" alt="我的第一篇博客文章">
                         
-                        <img src="/medias/loading.gif" data-original="/medias/featureimages/22.jpg" class="responsive-img" alt="数据结构与算法中的列表查找">
-                        
-                        <span class="card-title">数据结构与算法中的列表查找</span>
+                        <span class="card-title">我的第一篇博客文章</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            谈谈我个人对博客的看法
                         
                     </div>
                     <div class="publish-info">
@@ -1387,8 +1386,8 @@ for i in range(1024):
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" class="post-category">
-                                    数据结构与算法
+                            <a href="/categories/%E6%97%A5%E5%B8%B8/" class="post-category">
+                                    日常
                                 </a>
                             
                             
@@ -1398,12 +1397,12 @@ for i in range(1024):
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/python/">
-                        <span class="chip bg-color">python</span>
+                    <a href="/tags/%E6%97%A5%E5%B8%B8/">
+                        <span class="chip bg-color">日常</span>
                     </a>
                     
-                    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">
-                        <span class="chip bg-color">数据结构与算法</span>
+                    <a href="/tags/%E5%8D%9A%E5%AE%A2/">
+                        <span class="chip bg-color">博客</span>
                     </a>
                     
                 </div>
@@ -1713,41 +1712,6 @@ for i in range(1024):
 
                     calcSiteTime();
                 </script>
-				<script language=javascript>
-					function siteTime() {
-						window.setTimeout("siteTime()", 1000);
-						var seconds = 1000;
-						var minutes = seconds * 60;
-						var hours = minutes * 60;
-						var days = hours * 24;
-						var years = days * 365;
-						var today = new Date();
-						var todayYear = today.getFullYear();
-						var todayMonth = today.getMonth() + 1;
-						var todayDate = today.getDate();
-						var todayHour = today.getHours();
-						var todayMinute = today.getMinutes();
-						var todaySecond = today.getSeconds();
-						/* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
-						year - 作为date对象的年份，为4位年份值
-						month - 0-11之间的整数，做为date对象的月份
-						day - 1-31之间的整数，做为date对象的天数
-						hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
-						minutes - 0-59之间的整数，做为date对象的分钟数
-						seconds - 0-59之间的整数，做为date对象的秒数
-						microseconds - 0-999之间的整数，做为date对象的毫秒数 */
-						var t1 = Date.UTC(2023, 01, 16, 00, 00, 00); // 北京时间2023-01-16 00:00:00
-						var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
-						var diff = t2 - t1;
-						var diffYears = Math.floor(diff / years);
-						var diffDays = Math.floor((diff / days) - diffYears * 365);
-						var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
-						var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
-						var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes * minutes) / seconds);
-						document.getElementById("sitetime").innerHTML = "本站已安全运行 " +diffYears+" 年 "+diffDays + " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
-					}
-					siteTime();
-				</script>
             
             <br>
             
