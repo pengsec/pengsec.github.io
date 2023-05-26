@@ -6,7 +6,7 @@
   <link href="https://www.ahao8.top/atom.xml" rel="self"/>
   
   <link href="https://www.ahao8.top/"/>
-  <updated>2023-05-26T06:25:16.130Z</updated>
+  <updated>2023-05-26T12:39:27.721Z</updated>
   <id>https://www.ahao8.top/</id>
   
   <author>
@@ -17,11 +17,42 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>ctfshow-web入门-信息收集</title>
+    <link href="https://www.ahao8.top/posts/fd5.html"/>
+    <id>https://www.ahao8.top/posts/fd5.html</id>
+    <published>2023-05-26T12:29:38.591Z</published>
+    <updated>2023-05-26T12:39:27.721Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;web1&quot;&gt;web1&lt;/h2&gt;
+&lt;p&gt;直接F2查看源代码，或者ctrl+u查看源码，flag就在注释里面。&lt;/p&gt;
+&lt;h2</summary>
+        
+      
+    
+    
+    
+    <category term="CTF" scheme="https://www.ahao8.top/categories/CTF/"/>
+    
+    
+    <category term="CTF" scheme="https://www.ahao8.top/tags/CTF/"/>
+    
+    <category term="信息收集" scheme="https://www.ahao8.top/tags/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/"/>
+    
+    <category term="ctfshow" scheme="https://www.ahao8.top/tags/ctfshow/"/>
+    
+  </entry>
+  
+  <entry>
     <title>信息收集</title>
     <link href="https://www.ahao8.top/posts/970c.html"/>
     <id>https://www.ahao8.top/posts/970c.html</id>
     <published>2023-05-26T06:22:27.408Z</published>
-    <updated>2023-05-26T06:25:16.130Z</updated>
+    <updated>2023-05-26T12:39:03.755Z</updated>
     
     
       
