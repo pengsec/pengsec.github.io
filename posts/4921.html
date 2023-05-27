@@ -4,15 +4,15 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="ctfshow-web入门-信息收集">
-    <meta name="description" content="web1
-直接F2查看源代码，或者ctrl+u查看源码，flag就在注释里面。
-web2
-这一关它限制了鼠标右键和键盘F12，但ctrl+u便可看到源代码，flag就在注释里面。
-web3
-打开，一看
+    <meta name="keywords" content="ctfshow-web入门-爆破">
+    <meta name="description" content="web21
+打开题目，随便输入用户名admin和密码（密码随便）：
 
-通过查看源代码，并没有看出有什么特殊">
+抓包准备爆破，从数据包中可以看出输入用户名和密码是被一起，用base64解密一下，可以看得出，用户名和密码在数据包中的格式为：用户名:密码，接下来准备爆破
+
+
+
+要把UR">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -24,7 +24,7 @@ web3
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>ctfshow-web入门-信息收集 | 阿浩の博客</title>
+    <title>ctfshow-web入门-爆破 | 阿浩の博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
     <style>
@@ -418,7 +418,7 @@ web3
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">ctfshow-web入门-信息收集</h1>
+                    <h1 class="description center-align post-title">ctfshow-web入门-爆破</h1>
                 </div>
             </div>
         </div>
@@ -446,12 +446,12 @@ web3
                                 <span class="chip bg-color">CTF</span>
                             </a>
                         
-                            <a href="/tags/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/">
-                                <span class="chip bg-color">信息收集</span>
-                            </a>
-                        
                             <a href="/tags/ctfshow/">
                                 <span class="chip bg-color">ctfshow</span>
+                            </a>
+                        
+                            <a href="/tags/%E7%88%86%E7%A0%B4/">
+                                <span class="chip bg-color">爆破</span>
                             </a>
                         
                     </div>
@@ -475,7 +475,7 @@ web3
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-05-26
+                    2023-05-27
                 </div>
                 
 
@@ -489,7 +489,7 @@ web3
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.3k
+                    1k
                 </div>
                 
 
@@ -514,93 +514,151 @@ web3
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="web1">web1</h2>
-<p>直接F2查看源代码，或者ctrl+u查看源码，flag就在注释里面。</p>
-<h2 id="web2">web2</h2>
-<p>这一关它限制了鼠标右键和键盘F12，但ctrl+u便可看到源代码，flag就在注释里面。</p>
-<h2 id="web3">web3</h2>
-<p>打开，一看</p>
-<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202305262031101.png" alt=""></p>
-<p>通过查看源代码，并没有看出有什么特殊的信息</p>
-<p>使用burpsuite抓包后，发现响应包里面有flag</p>
-<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202305262031667.png" alt=""></p>
-<p>其实用浏览器抓包也行，也一样可以在找到flag</p>
-<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202305262031394.png" alt=""></p>
-<h2 id="web4">web4</h2>
-<p>根据题目提示，在robots.txt可能会重要信息，查看：</p>
-<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202305262031376.png" alt=""></p>
-<p>根据提示，访问==/flagishere.txt==，flag出来了</p>
-<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202305262031472.png" alt=""></p>
-<h2 id="web5">web5</h2>
-<p>根据题目提示，可能与phps源码泄露有关系</p>
-<p>访问<mark>index.phps</mark>文件</p>
-<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202305262032553.png" alt=""></p>
-<p>可以直接下载<mark>index.phps</mark>文件，查看文件内容，便可以看到flag</p>
-<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202305262032441.png" alt=""></p>
-<h2 id="web6">web6</h2>
-<p>根据题目提示，应该在源码中有重要信息，通过目录扫描工具，可以扫出它有<mark>www.rar</mark>敏感文件，直接访问这个<mark>www.rar</mark>，便可以把源码下载下来，查看</p>
-<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202305262032042.png" alt=""></p>
-<p>直接访问<mark>fl00g.txt</mark>，便可以得到flag</p>
-<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202305262032832.png" alt=""></p>
-<h2 id="web7">web7</h2>
-<p>根据题目提示，<mark>版本控制很重要，但不要部署到生产环境更重要</mark>。这个可能是有些人在开发项目的时候会将自己的项目同步上传到GitHub这样的平台，会有==.git<mark>目录遗留，如果这种情况，他在部署环境如果不细心，把</mark>.gti==目录删除，就会遗留在已部署的环境中。</p>
-<p>通过dirsearch扫描，能扫描到==.git==目录，直接访问，便可得到flag</p>
-<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202305262032242.png" alt=""></p>
-<h2 id="web8">web8</h2>
-<p>这一关和上一个关，只不过这一个遗留目录是==.svn==</p>
-<p>通过dirsearch扫描出来，直接访问，便可得到flag</p>
-<h2 id="web9">web9</h2>
-<p>这一关属于vim缓存信息泄露。</p>
-<p>当开发人员在线上环境中使用 vim 编辑器，在使用过程中会留下 vim 编辑器缓存，当vim异常退出时，缓存会一直留在服务器上，引起网站源码泄露。</p>
-<p>直接访问==/index.php.swp==，便可以下载<mark>index.php.svp</mark>文件，打开，查看，便可以得到flag</p>
-<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202305262032705.png" alt=""></p>
-<h2 id="web10">web10</h2>
-<p>cookie里面应该有重要信息，直接抓包，便可以得到flag，比较简单</p>
-<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202305262032553.png" alt=""></p>
-<h2 id="web11">web11</h2>
-<p>这一关考的是域名解析</p>
-<p>直接使用解析命令<code> nslookup -qt=txt flag.ctfshow.com</code></p>
-<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202305262033471.png" alt=""></p>
+                <h2 id="web21">web21</h2>
+<p>打开题目，随便输入用户名admin和密码（密码随便）：</p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202305271357154.png" alt=""></p>
+<p>抓包准备爆破，从数据包中可以看出输入用户名和密码是被一起，用base64解密一下，可以看得出，用户名和密码在数据包中的格式为：<mark>用户名:密码</mark>，接下来准备爆破</p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202305271357134.png" alt=""></p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202305271357781.png" alt=""></p>
+<p><img src="/medias/loading.gif" data-original="%E7%88%86%E7%A0%B4.assets/image-20230526224228779.png" alt="image-20230526224228779"></p>
+<p>要把URL-encode these characters的打勾去掉，因为“=”会影响base64，然后开始跑，跑出结果：</p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202305271358372.png" alt=""></p>
+<p>把<mark>YWRtaW46c2hhcms2Mw</mark>拿去base64解密得：<mark>admin:shark63</mark>。然后拿用户名和密码去登录，就可以得到flag</p>
+<h2 id="web22">web22</h2>
+<p>这一关就是爆破子域名，没有什么好说的</p>
+<h2 id="web23">web23</h2>
+<p>根据题目：</p>
+<pre class="line-numbers language-php" data-language="php"><code class="language-php">&lt;?php
+error_reporting(0);
+
+include('flag.php');
+if(isset($_GET['token'])){
+    $token = md5($_GET['token']);
+    if(substr($token, 1,1)===substr($token, 14,1) &amp;&amp; substr($token, 14,1) ===substr($token, 17,1)){
+        if((intval(substr($token, 1,1))+intval(substr($token, 14,1))+substr($token, 17,1))/substr($token, 1,1)===intval(substr($token, 31,1))){
+            echo $flag;
+        }
+    }
+}else{
+    highlight_file(__FILE__);
+
+}
+?&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>使用python或php，写payload，找出符合条件的token</p>
+<p>代码如下：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">import hashlib
+
+dic = '0123456789qazwsxedcrfvtgbyhnujmikolp'
+for a in dic:
+  for b in dic:
+    t = str(a)+str(b)
+    md5 = hashlib.md5(t.encode('utf-8')).hexdigest()
+    if md5[1] != md5[14] or md5[14]!= md5[17]:
+        continue
+    if(ord(md5[1]))&gt;=48 and ord(md5[1])&lt;=57 and (ord(md5[31]))&gt;=48 and ord(md5[31])&lt;=57:
+           if((int(md5[1])+int(md5[14])+int(md5[17]))/int(md5[1])==int(md5[31])):
+              print(t)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">import hashlib
+
+for i in range(1,10000):
+	md5 = hashlib.md5(str(i).encode('utf-8')).hexdigest()
+	if md5[1] != md5[14] or md5[14]!= md5[17]:
+		continue
+	if(ord(md5[1]))&gt;=48 and ord(md5[1])&lt;=57 and (ord(md5[31]))&gt;=48 and ord(md5[31])&lt;=57:
+		if((int(md5[1])+int(md5[14])+int(md5[17]))/int(md5[1])==int(md5[31])):
+			print(i)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-php" data-language="php"><code class="language-php">&lt;?php 
+error_reporting(0); 
+ 
+$a="asdfghjklqwertyuiopzxcvbnm1234567890";
+for($i=0;$i&lt;36;$i++){
+    for($j=0;$j&lt;36;$j++){
+        $token=$a[$i].$a[$j];    
+        $token = md5($token); 
+        if(substr($token, 1,1)===substr($token, 14,1) &amp;&amp; substr($token, 14,1) ===substr($token, 17,1)){ 
+            if((intval(substr($token, 1,1))+intval(substr($token, 14,1))+substr($token, 17,1))/substr($token, 1,1)===intval(substr($token, 31,1))){ 
+                echo $a[$i].$a[$j];
+                exit(0);
+            } 
+        } 
+    }
+} 
+?&gt; <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>以上三个payload代码都可以跑出符合条件的token，接着拼接上token参数便可以获取flag</p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202305271359955.png" alt=""></p>
+<h2 id="web24">web24</h2>
+<p>题目：</p>
+<pre class="line-numbers language-php" data-language="php"><code class="language-php">&lt;?php
+error_reporting(0);
+include("flag.php");
+if(isset($_GET['r'])){
+    $r = $_GET['r'];
+    mt_srand(372619038);
+    if(intval($r)===intval(mt_rand())){
+        echo $flag;
+    }
+}else{
+    highlight_file(__FILE__);
+    echo system('cat /proc/version');
+}
+
+?&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>这一关考察PHP伪随机数种子，用简单代码跑出<mark>r</mark></p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202305271359411.png" alt=""></p>
+<p>传递r参数便可以得到flag</p>
+<p><img src="/medias/loading.gif" data-original="%E7%88%86%E7%A0%B4.assets/image-20230526233632632.png" alt="image-20230526233632632"></p>
 <blockquote>
-<p>查询全部域名解析记录 基本格式：nslookup -query=any host [server]</p>
+<ul class="lvl-1">
+<li class="lvl-2">
+<p>mt_srand() 播种 Mersenne Twister 随机数生成器。</p>
+<p>语法：mt_srand(seed)</p>
+</li>
+<li class="lvl-2">
+<p>intval() 函数用于获取变量的整数值</p>
+</li>
+</ul>
 </blockquote>
-<h2 id="web12">web12</h2>
-<p>查看一下robots.txt文件，发现==/admin==，直接访问，需要用户名和密码，用户名应该是admin，根据题目提示，密码可能出现在页面中，再仔细看一下页面，密码应该是底下那个提示</p>
-<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202305262033738.png" alt=""></p>
-<p>果真登录用户名admin以及密码372619038，便可获得flag</p>
-<h2 id="web13">web13</h2>
-<p>在页面下面发现document，查看后，下面发现后台地址以及用户名和密码</p>
-<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202305262033216.png" alt=""></p>
-<p>打开后台地址，输入用户名和密码，就可以获取flag了</p>
-<h2 id="web14">web14</h2>
-<p>直接用<mark>dirsearch</mark>扫描敏感目录，发现==/editor==，访问，发现编辑器，点击上传文件按钮，看一下，发现里面可以看到空间文件，这个空间文件是属于服务器中的文件，在var/www/html中的nothingthere发现有一个文件fl000g.txt，访问==/nothinghere/fl000g.txt==便可以获取flag</p>
-<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202305262033017.png" alt=""></p>
-<h2 id="web15">web15</h2>
-<p>用dirsearch扫描到==/admin<mark>这个目录，直接访问，发现是一个后台登录系统，先试一下点击忘记密码，发现密保是填写城市，再首页中的qq邮箱，查到管理员属于西安，输入密保城市</mark>西安后便可以获取管理员密码，登录后台用户名admin，密码admin7789，便可以获取flag</p>
-<h2 id="web16">web16</h2>
+<h2 id="web25">web25</h2>
+<p>题目：</p>
+<pre class="line-numbers language-php" data-language="php"><code class="language-php">&lt;?php
+error_reporting(0);
+include("flag.php");
+if(isset($_GET['r'])){
+    $r = $_GET['r'];
+    mt_srand(hexdec(substr(md5($flag), 0,8)));
+    $rand = intval($r)-intval(mt_rand());
+    if((!$rand)){
+        if($_COOKIE['token']==(mt_rand()+mt_rand())){
+            echo $flag;
+        }
+    }else{
+        echo $rand;
+    }
+}else{
+    highlight_file(__FILE__);
+    echo system('cat /proc/version');
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>这一关因为我的环境有点问题，php_mt_seed跑不了，所以这一关我复现不了</p>
+<h2 id="web26">web26</h2>
+<p>这一关直接爆破抓包密码</p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202305271359205.png" alt=""></p>
+<h2 id="web27">web27</h2>
+<p>这一关的思路：先点击查看录取名单，发现学生姓名和身份证号码关键信息，只不过身份证号码是不完整的，很明显，这就需要爆破</p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202305271359173.png" alt=""></p>
+<p>点击<mark>学生学籍信息查询系统</mark>后，发现它需要学生姓名和身份证号码才能才查询</p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202305271359220.png" alt=""></p>
+<p>接着就在把身份证号码作为变量进行爆破</p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202305271359868.png" alt=""></p>
+<p><img src="/medias/loading.gif" data-original="%E7%88%86%E7%A0%B4.assets/image-20230527133516256.png" alt="image-20230527133516256"></p>
+<p>奇怪的是我爆破后，没有发现结果，也不知道哪里出问题，还是环境问题。如果爆破出结果后，要把结果拿去Unicode编码一下才能看到文字信息，便可以拿到学号，然后再到用户登录，输入学号，密码是身份证号码。</p>
 <blockquote>
-<p>PHP探针php探针是用来探测空间、服务器运行状况和PHP信息用的，探针可以实时查看服务器硬盘资源、内存占用、网卡 流量、系统负载、服务器时间等信息。</p>
+<p>这一关如果用火狐浏览器，burp不能直接抓到这个页面的数据，需要用谷歌浏览器</p>
 </blockquote>
-<p>访问==/tz.php==，然后再查看phpinfo，接着直接搜索ctf，便可以看到flag</p>
-<h2 id="web17">web17</h2>
-<p>使用dirsearch扫描出有==/backup.sql==这个敏感目录，直接访问便可以下载，下载后查看，搜索ctf，便可以看到flag</p>
-<h2 id="web18">web18</h2>
-<p>这一关很有意思，这是一个javascript 的游戏，从js代码中可知，当score&gt;120时，且game_over这个参数为false时，即可赢</p>
-<p>打开浏览器的控制台</p>
-<p>依次执行<code>score=130 game_over=false  run()</code>后</p>
-<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202305262033849.png" alt=""></p>
-<p>根据访问<mark>110.php</mark>，后便可以得到flag，为什么要访问110.php，你念一下那句话就知道了</p>
-<h2 id="web19">web19</h2>
-<p>通过查看前端源代码，这道题关键信息在</p>
-<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202305262033397.png" alt=""></p>
-<p>拿去解密，可得</p>
-<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202305262034939.png" alt=""></p>
-<p>输入用户名admin，密码i_want_a_36d_girl，便可以获取flag</p>
-<h2 id="web20">web20</h2>
-<blockquote>
-<p>mdb文件是早期asp+access构架的数据库文件</p>
-</blockquote>
-<p>访问==/db/db.mdb==，便可以下载mdb文件，然后使用EasyAccess.exe打开搜索ctf，便可以获取flag，也可以用notepad++打开搜索ctf也可以获取flag</p>
+<h2 id="web28">web28</h2>
+<p>把目录中的==/0/2/==中的“0”和“2”分别设为变量，去掉2.txt，进行爆破：</p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202305271400534.png" alt=""></p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202305271400715.png" alt=""></p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202305271400724.png" alt=""></p>
 <blockquote>
 <p>免责声明：本文章涉及的知识和技能仅用于学习研究，如有用于非法途径或未被授权的真实网络环境，所造成的后果及连带责任自行承担，责任与本文作者无关，倡导把安全知识和技能用于正当、正规、正义的途径。</p>
 </blockquote>
@@ -630,7 +688,7 @@ web3
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://www.ahao8.top/posts/fd5.html">https://www.ahao8.top/posts/fd5.html</a>
+                    <a href="https://www.ahao8.top/posts/4921.html">https://www.ahao8.top/posts/4921.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -672,12 +730,12 @@ web3
                                     <span class="chip bg-color">CTF</span>
                                 </a>
                             
-                                <a href="/tags/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/">
-                                    <span class="chip bg-color">信息收集</span>
-                                </a>
-                            
                                 <a href="/tags/ctfshow/">
                                     <span class="chip bg-color">ctfshow</span>
+                                </a>
+                            
+                                <a href="/tags/%E7%88%86%E7%A0%B4/">
+                                    <span class="chip bg-color">爆破</span>
                                 </a>
                             
                         </div>
@@ -1003,9 +1061,10 @@ web3
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/posts/4921.html">
                     <div class="card-image">
@@ -1022,9 +1081,9 @@ web3
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-05-27
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-05-27
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1037,6 +1096,7 @@ web3
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -1063,12 +1123,12 @@ web3
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/970c.html">
+                <a href="/posts/fd5.html">
                     <div class="card-image">
                         
-                        <img src="/medias/loading.gif" data-original="/medias/featureimages/27.jpg" class="responsive-img" alt="信息收集">
+                        <img src="/medias/loading.gif" data-original="/medias/featureimages/28.jpg" class="responsive-img" alt="ctfshow-web入门-信息收集">
                         
-                        <span class="card-title">信息收集</span>
+                        <span class="card-title">ctfshow-web入门-信息收集</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1085,8 +1145,8 @@ web3
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/" class="post-category">
-                                    渗透测试
+                            <a href="/categories/CTF/" class="post-category">
+                                    CTF
                                 </a>
                             
                             
@@ -1096,12 +1156,16 @@ web3
                 
                 <div class="card-action article-tags">
                     
+                    <a href="/tags/CTF/">
+                        <span class="chip bg-color">CTF</span>
+                    </a>
+                    
                     <a href="/tags/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/">
                         <span class="chip bg-color">信息收集</span>
                     </a>
                     
-                    <a href="/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/">
-                        <span class="chip bg-color">渗透测试</span>
+                    <a href="/tags/ctfshow/">
+                        <span class="chip bg-color">ctfshow</span>
                     </a>
                     
                 </div>
