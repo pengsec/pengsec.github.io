@@ -6,7 +6,7 @@
   <link href="https://www.ahao8.top/atom.xml" rel="self"/>
   
   <link href="https://www.ahao8.top/"/>
-  <updated>2023-05-27T06:07:49.152Z</updated>
+  <updated>2023-05-28T14:40:55.852Z</updated>
   <id>https://www.ahao8.top/</id>
   
   <author>
@@ -17,11 +17,41 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>ctfshow-web入门-爆破</title>
+    <title>SSTI漏洞分析</title>
+    <link href="https://www.ahao8.top/posts/62cc.html"/>
+    <id>https://www.ahao8.top/posts/62cc.html</id>
+    <published>2023-05-28T14:24:52.841Z</published>
+    <updated>2023-05-28T14:40:55.852Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;SSTI漏洞原理&quot;&gt;SSTI漏洞原理&lt;/h2&gt;
+&lt;p&gt;漏洞成因就是服务端接收了用户的恶意输入以后，未经任何处理就将其作为 Web</summary>
+        
+      
+    
+    
+    
+    <category term="渗透测试" scheme="https://www.ahao8.top/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
+    
+    
+    <category term="渗透测试" scheme="https://www.ahao8.top/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
+    
+    <category term="漏洞分析" scheme="https://www.ahao8.top/tags/%E6%BC%8F%E6%B4%9E%E5%88%86%E6%9E%90/"/>
+    
+    <category term="CTFSHOW" scheme="https://www.ahao8.top/tags/CTFSHOW/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CTFSHOW-web入门-爆破</title>
     <link href="https://www.ahao8.top/posts/4921.html"/>
     <id>https://www.ahao8.top/posts/4921.html</id>
     <published>2023-05-27T05:56:35.853Z</published>
-    <updated>2023-05-27T06:07:49.152Z</updated>
+    <updated>2023-05-28T02:09:42.021Z</updated>
     
     
       
@@ -39,20 +69,20 @@
     <category term="CTF" scheme="https://www.ahao8.top/categories/CTF/"/>
     
     
-    <category term="CTF" scheme="https://www.ahao8.top/tags/CTF/"/>
+    <category term="CTFSHOW" scheme="https://www.ahao8.top/tags/CTFSHOW/"/>
     
-    <category term="ctfshow" scheme="https://www.ahao8.top/tags/ctfshow/"/>
+    <category term="CTF" scheme="https://www.ahao8.top/tags/CTF/"/>
     
     <category term="爆破" scheme="https://www.ahao8.top/tags/%E7%88%86%E7%A0%B4/"/>
     
   </entry>
   
   <entry>
-    <title>ctfshow-web入门-信息收集</title>
+    <title>CTFSHOW-web入门-信息收集</title>
     <link href="https://www.ahao8.top/posts/fd5.html"/>
     <id>https://www.ahao8.top/posts/fd5.html</id>
     <published>2023-05-26T12:29:38.591Z</published>
-    <updated>2023-05-27T06:03:02.642Z</updated>
+    <updated>2023-05-28T02:10:06.630Z</updated>
     
     
       
@@ -70,11 +100,11 @@
     <category term="CTF" scheme="https://www.ahao8.top/categories/CTF/"/>
     
     
+    <category term="CTFSHOW" scheme="https://www.ahao8.top/tags/CTFSHOW/"/>
+    
     <category term="CTF" scheme="https://www.ahao8.top/tags/CTF/"/>
     
     <category term="信息收集" scheme="https://www.ahao8.top/tags/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/"/>
-    
-    <category term="ctfshow" scheme="https://www.ahao8.top/tags/ctfshow/"/>
     
   </entry>
   
@@ -105,9 +135,9 @@
     <category term="渗透测试" scheme="https://www.ahao8.top/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
     
     
-    <category term="信息收集" scheme="https://www.ahao8.top/tags/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/"/>
-    
     <category term="渗透测试" scheme="https://www.ahao8.top/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
+    
+    <category term="信息收集" scheme="https://www.ahao8.top/tags/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/"/>
     
   </entry>
   

