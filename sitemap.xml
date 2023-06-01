@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.ahao8.top/posts/9afe.html</loc>
+    
+    <lastmod>2023-06-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://www.ahao8.top/posts/5a5a.html</loc>
     
     <lastmod>2023-06-01</lastmod>
@@ -312,13 +321,6 @@
   
   <url>
     <loc>https://www.ahao8.top/tags/%E5%8D%9A%E5%AE%A2/</loc>
-    <lastmod>2023-06-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.ahao8.top/tags/%E6%BC%8F%E6%B4%9E/</loc>
     <lastmod>2023-06-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

