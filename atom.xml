@@ -6,7 +6,7 @@
   <link href="https://www.ahao8.top/atom.xml" rel="self"/>
   
   <link href="https://www.ahao8.top/"/>
-  <updated>2023-06-01T14:55:29.349Z</updated>
+  <updated>2023-06-02T15:52:42.451Z</updated>
   <id>https://www.ahao8.top/</id>
   
   <author>
@@ -17,11 +17,43 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>ASP安全分析</title>
+    <link href="https://www.ahao8.top/posts/743c.html"/>
+    <id>https://www.ahao8.top/posts/743c.html</id>
+    <published>2023-06-02T15:48:55.394Z</published>
+    <updated>2023-06-02T15:52:42.451Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;ASP是什么&quot;&gt;ASP是什么&lt;/h2&gt;
+&lt;ul class=&quot;lvl-0&quot;&gt;
+&lt;li class=&quot;lvl-2&quot;&gt;ASP 指 Active Server Pages （动态服务器页面）&lt;/li&gt;
+&lt;li class=&quot;lvl-2&quot;&gt;ASP</summary>
+        
+      
+    
+    
+    
+    <category term="渗透测试" scheme="https://www.ahao8.top/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
+    
+    
+    <category term="渗透测试" scheme="https://www.ahao8.top/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
+    
+    <category term="漏洞分析" scheme="https://www.ahao8.top/tags/%E6%BC%8F%E6%B4%9E%E5%88%86%E6%9E%90/"/>
+    
+    <category term="ASP" scheme="https://www.ahao8.top/tags/ASP/"/>
+    
+  </entry>
+  
+  <entry>
     <title>SQL注入漏洞分析(二)</title>
     <link href="https://www.ahao8.top/posts/9afe.html"/>
     <id>https://www.ahao8.top/posts/9afe.html</id>
     <published>2023-06-01T14:53:05.658Z</published>
-    <updated>2023-06-01T14:55:29.349Z</updated>
+    <updated>2023-06-02T15:52:29.537Z</updated>
     
     
       
@@ -79,7 +111,7 @@
     <link href="https://www.ahao8.top/posts/62cc.html"/>
     <id>https://www.ahao8.top/posts/62cc.html</id>
     <published>2023-05-28T14:24:52.841Z</published>
-    <updated>2023-06-01T05:22:35.140Z</updated>
+    <updated>2023-06-01T16:24:03.831Z</updated>
     
     
       
