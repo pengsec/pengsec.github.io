@@ -6,7 +6,7 @@
   <link href="https://www.ahao8.top/atom.xml" rel="self"/>
   
   <link href="https://www.ahao8.top/"/>
-  <updated>2023-06-02T15:52:42.451Z</updated>
+  <updated>2023-06-03T15:37:09.564Z</updated>
   <id>https://www.ahao8.top/</id>
   
   <author>
@@ -17,11 +17,44 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>PHP安全特性分析</title>
+    <link href="https://www.ahao8.top/posts/b08d.html"/>
+    <id>https://www.ahao8.top/posts/b08d.html</id>
+    <published>2023-06-03T14:59:20.865Z</published>
+    <updated>2023-06-03T15:37:09.564Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;过滤函数缺陷绕过&quot;&gt;过滤函数缺陷绕过&lt;/h2&gt;
+&lt;h3 id=&quot;与&quot;&gt;== 与 ===&lt;/h3&gt;
+&lt;ul class=&quot;lvl-0&quot;&gt;
+&lt;li class=&quot;lvl-2&quot;&gt;
+&lt;p&gt;== 赋值，弱类型对比&lt;/p&gt;
+&lt;/li&gt;
+&lt;li</summary>
+        
+      
+    
+    
+    
+    <category term="渗透测试" scheme="https://www.ahao8.top/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
+    
+    
+    <category term="渗透测试" scheme="https://www.ahao8.top/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
+    
+    <category term="PHP" scheme="https://www.ahao8.top/tags/PHP/"/>
+    
+  </entry>
+  
+  <entry>
     <title>ASP安全分析</title>
     <link href="https://www.ahao8.top/posts/743c.html"/>
     <id>https://www.ahao8.top/posts/743c.html</id>
     <published>2023-06-02T15:48:55.394Z</published>
-    <updated>2023-06-02T15:52:42.451Z</updated>
+    <updated>2023-06-03T15:37:21.640Z</updated>
     
     
       
@@ -53,7 +86,7 @@
     <link href="https://www.ahao8.top/posts/9afe.html"/>
     <id>https://www.ahao8.top/posts/9afe.html</id>
     <published>2023-06-01T14:53:05.658Z</published>
-    <updated>2023-06-02T15:52:29.537Z</updated>
+    <updated>2023-06-03T15:38:12.753Z</updated>
     
     
       
@@ -84,7 +117,7 @@
     <link href="https://www.ahao8.top/posts/5a5a.html"/>
     <id>https://www.ahao8.top/posts/5a5a.html</id>
     <published>2023-06-01T05:14:31.437Z</published>
-    <updated>2023-06-01T05:58:01.285Z</updated>
+    <updated>2023-06-03T15:38:21.063Z</updated>
     
     
       
@@ -111,7 +144,7 @@
     <link href="https://www.ahao8.top/posts/62cc.html"/>
     <id>https://www.ahao8.top/posts/62cc.html</id>
     <published>2023-05-28T14:24:52.841Z</published>
-    <updated>2023-06-01T16:24:03.831Z</updated>
+    <updated>2023-06-03T15:38:28.334Z</updated>
     
     
       
@@ -141,7 +174,7 @@
     <link href="https://www.ahao8.top/posts/4921.html"/>
     <id>https://www.ahao8.top/posts/4921.html</id>
     <published>2023-05-27T05:56:35.853Z</published>
-    <updated>2023-06-01T05:19:20.397Z</updated>
+    <updated>2023-06-03T15:37:55.039Z</updated>
     
     
       
@@ -172,7 +205,7 @@
     <link href="https://www.ahao8.top/posts/fd5.html"/>
     <id>https://www.ahao8.top/posts/fd5.html</id>
     <published>2023-05-26T12:29:38.591Z</published>
-    <updated>2023-05-28T02:10:06.630Z</updated>
+    <updated>2023-06-03T15:38:02.893Z</updated>
     
     
       
@@ -203,7 +236,7 @@
     <link href="https://www.ahao8.top/posts/970c.html"/>
     <id>https://www.ahao8.top/posts/970c.html</id>
     <published>2023-05-26T06:22:27.408Z</published>
-    <updated>2023-05-26T12:39:03.755Z</updated>
+    <updated>2023-06-03T15:38:37.184Z</updated>
     
     
       
