@@ -4,21 +4,12 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="misc的基本解题思路">
-    <meta name="description" content="misc的四大部分：
-
-文件操作与隐写
-图片隐写术
-压缩文件处理
-流量取证技术
-
-文件操作与隐写
-文件类型识别
+    <meta name="keywords" content="渗透测试基础入门">
+    <meta name="description" content="名词解释-渗透测试-漏洞&amp;amp;攻击&amp;amp;后门&amp;amp;代码&amp;amp;专业词
+前后端
 
 
-File命令
-当文件没有后缀名或者有后缀名而无法打开时，根据识别出的文件类型来修改后缀名即可正常打开文件。
-使用场景：不知道">
+Web前端: 顾名思义是来做Web的前端的。我们这里所说的前端泛指Web前端，也就是在Web应用中用户可以看得见碰得着的东西。包括Web页面的结">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -30,7 +21,7 @@ File命令
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>misc的基本解题思路(一) | 阿浩の博客</title>
+    <title>渗透测试基础入门(一) | 阿浩の博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
     <style>
@@ -419,12 +410,12 @@ File命令
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">misc的基本解题思路(一)</h1>
+                    <h1 class="description center-align post-title">渗透测试基础入门(一)</h1>
                 </div>
             </div>
         </div>
@@ -448,12 +439,12 @@ File命令
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/CTF/">
-                                <span class="chip bg-color">CTF</span>
+                            <a href="/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/">
+                                <span class="chip bg-color">渗透测试</span>
                             </a>
                         
-                            <a href="/tags/misc/">
-                                <span class="chip bg-color">misc</span>
+                            <a href="/tags/%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/">
+                                <span class="chip bg-color">基础入门</span>
                             </a>
                         
                     </div>
@@ -464,8 +455,8 @@ File命令
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/CTF/" class="post-category">
-                                CTF
+                            <a href="/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/" class="post-category">
+                                渗透测试
                             </a>
                         
                     </div>
@@ -477,21 +468,21 @@ File命令
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-02-24
+                    2023-07-06
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-02-25
+                    2023-07-06
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.8k
+                    1.6k
                 </div>
                 
 
@@ -516,401 +507,172 @@ File命令
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p><strong>misc的四大部分：</strong></p>
+                <h2 id="名词解释-渗透测试-漏洞-攻击-后门-代码-专业词">名词解释-渗透测试-漏洞&amp;攻击&amp;后门&amp;代码&amp;专业词</h2>
+<p><strong>前后端</strong></p>
 <ul class="lvl-0">
-<li class="lvl-2">文件操作与隐写</li>
-<li class="lvl-2">图片隐写术</li>
-<li class="lvl-2">压缩文件处理</li>
-<li class="lvl-2">流量取证技术</li>
+<li class="lvl-2">
+<p>Web前端: 顾名思义是来做Web的前端的。我们这里所说的前端泛指Web前端，也就是在Web应用中用户可以看得见碰得着的东西。包括Web页面的结构、Web的外观视觉表现以及Web层面的交互实现。</p>
+</li>
+<li class="lvl-2">
+<p>Web后端：后端更多的是与数据库进行交互以处理相应的业务逻辑。需要考虑的是如何实现功能、数据的存取、平台的稳定性与性能等。</p>
+</li>
 </ul>
-<h2 id="文件操作与隐写">文件操作与隐写</h2>
-<h3 id="文件类型识别">文件类型识别</h3>
+<p><strong>POC/EXP</strong></p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>POC：全称 ’ Proof of Concept '，中文 ’ 概念验证 ’ ，常指一段漏洞证明的代码。</p>
+</li>
+<li class="lvl-2">
+<p>EXP：全称 ’ Exploit '，中文 ’ 利用 '，指利用系统漏洞进行攻击的动作。</p>
+</li>
+</ul>
+<p><strong>Payload/Shellcode</strong></p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>Payload：中文 ’ 有效载荷 '，指成功exploit之后，真正在目标系统执行的代码或指令。</p>
+</li>
+<li class="lvl-2">
+<p>Shellcode：简单翻译 ’ shell代码 '，是Payload的一种，由于其建立正向/反向shell而得名。</p>
+</li>
+</ul>
+<p><strong>后门/Webshell</strong></p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>后门：入侵者在利用某些方法成功的控制了目标主机后，可以在对方的系统中植入特定的程序，或者是修改某些设置，用于访问、查看或者控制这台主机。 通常大多数木马程序都可以被入侵者用于创建后门（BackDoor）。</p>
+</li>
+<li class="lvl-2">
+<p>Webshell：以asp、php、jsp或者cgi等网页文件形式存在的一种命令执行环境，也可以将其称做是一种网页后门，可以上传下载文件，查看数据库，执行任意程序命令等。</p>
+</li>
+</ul>
+<p><strong>木马/病毒</strong></p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>木马：就是那些表面上伪装成了正常的程序，但是当这些程序运行时，就会获取系统的整个控制权限。有很多黑客就是热衷使用木马程序来控制别人的电脑，比如灰鸽子、Gh0st、PcShare等等。</p>
+</li>
+<li class="lvl-2">
+<p>病毒：具有破环性的计算机程序</p>
+</li>
+</ul>
+<p><strong>反弹</strong></p>
+<p>反弹shell就是一种反向链接，与正向的<code>ssh</code>等不同，它是在对方电脑执行命令连接到我方的攻击模式，并且这种攻击模式必须搭配远程执行命令漏洞来使用。</p>
+<p><strong>回显</strong></p>
+<p>有交互数据显示。</p>
+<p><strong>跳板</strong></p>
+<p>相当于中间人的意思，比如代理转发的服务器就相当于一个跳板。</p>
+<p><strong>黑白盒测试</strong></p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>黑盒测试：不知道目标的一些情况。</p>
+</li>
+<li class="lvl-2">
+<p>白盒测试：知道目标的情况，比如代码，系统的一些配置信息等。</p>
+</li>
+</ul>
+<p><strong>暴力破解</strong></p>
+<p>简称“爆破”。黑客对系统中账号的每一个可能的密码进行高度密集的自动搜索，从而破坏安全并获得对计算机的访问权限。</p>
+<p><strong>社会工程学</strong></p>
+<p>一种无需依托任何黑客软件，更注重研究人性弱点的黑客手法正在兴起，这就是社会工程学黑客技术。通俗而言是指利用人的社会学弱点实施网络攻击的一整套方法论，其攻击手法往往出乎人意料。世界第一黑客凯文·米特尼克在《反欺骗的艺术》中曾提到，人为因素才是安全的软肋。很多企业、公司在信息安全上投入大量的资金，最终导致数据泄露的原因，往往却是发生在人本身。</p>
+<p><strong>撞库</strong></p>
+<p>撞库是黑客通过收集互联网已泄露的用户和密码信息，生成对应的字典表，尝试批量登陆其他网站后，得到一系列可以登录的用户。很多用户在不同网站使用的是相同的帐号密码，因此黑客可以通过获取用户在A网站的账户从而尝试登录B网址，这就可以理解为撞库攻击。</p>
+<p><strong>ATT&amp;CK</strong></p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>可以简单理解为描述攻击者技战术的知识库。</p>
+</li>
+<li class="lvl-2">
+<p>MITRE在2013年推出了该模型，它是根据真实的观察数据来描述和分类对抗行为。ATT&amp;CK将已知攻击者行为转换为结构化列表，将这些已知的行为汇总成战术和技术，并通过几个矩阵以及结构化威胁信息表达式（STIX）、指标信息的可信自动化交换（TAXII）来表示。</p>
+</li>
+</ul>
+<p>参考文章：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/sunny11/p/13583083.html">https://www.cnblogs.com/sunny11/p/13583083.html</a></p>
+<h2 id="必备技能-操作系统-用途-命令-权限-用户-防火墙">必备技能-操作系统-用途&amp;命令&amp;权限&amp;用户&amp;防火墙</h2>
+<h3 id="操作系统">操作系统</h3>
+<p>常见操作系统主要分为两类：Windows和Linux</p>
+<h3 id="用途">用途</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>个人计算机</p>
+</li>
+<li class="lvl-2">
+<p>服务器用机</p>
+</li>
+</ul>
+<h3 id="命令">命令</h3>
+<p>Windows&amp;Linux常见命令参考文章：<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_43303273/article/details/83029138">https://blog.csdn.net/weixin_43303273/article/details/83029138</a></p>
+<p><strong>案例：</strong></p>
 <ol>
 <li class="lvl-3">
-<p>File命令</p>
-<p>当文件没有后缀名或者有后缀名而无法打开时，根据识别出的文件类型来修改后缀名即可正常打开文件。</p>
-<p><mark>使用场景：不知道后缀名，无法打开文件</mark></p>
-<p><code>Linux环境下命令格式：file+文件名</code></p>
+<p><mark>文件上传下载</mark>-解决无图形化&amp;解决数据传输</p>
+<p>Linux：wget curl python ruby perl java等Windows：PowerShell Certutil Bitsadmin msiexec mshta rundll32等</p>
 </li>
 <li class="lvl-3">
-<p>winhex</p>
-<p>通过<mark>winhex</mark>程序中可以查看文件头类型，根据头类型判断文件类型</p>
-<p><mark>使用场景：windows下通过文件头信息判断文件类型</mark></p>
+<p><mark>反弹Shell命令</mark>-解决数据回显&amp;解决数据通讯</p>
+<p>useradd 用户名 passwd 用户名</p>
+<p>测试Linux系统添加用户或修改密码命令交互回显问题</p>
 </li>
 </ol>
-<p><strong>常见的文件头类型如下：</strong></p>
-<table>
-<thead>
-<tr>
-<th>文件类型</th>
-<th>文件头</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>JPEG(jpg)</td>
-<td>FFD8FFE1</td>
-</tr>
-<tr>
-<td>PNG(png)</td>
-<td>89504E47</td>
-</tr>
-<tr>
-<td>GIF(gif)</td>
-<td>47494638</td>
-</tr>
-<tr>
-<td>TIFF(tiff)</td>
-<td>49492A00</td>
-</tr>
-<tr>
-<td>Windows Bitmap(bmp)</td>
-<td>424DC001</td>
-</tr>
-<tr>
-<td>ZIP Archive(ZIP)</td>
-<td>504B0304</td>
-</tr>
-<tr>
-<td>RAR Archive(rar)</td>
-<td>52617221</td>
-</tr>
-<tr>
-<td>Adobe Photshop(psd)</td>
-<td>38425053</td>
-</tr>
-<tr>
-<td>Rich Text Format(rtf)</td>
-<td>7B5C727466</td>
-</tr>
-<tr>
-<td>XML(xml)</td>
-<td>3C3F786D6C</td>
-</tr>
-<tr>
-<td>HTML(html)</td>
-<td>68746D6C3E</td>
-</tr>
-<tr>
-<td>Adobe Acrobat(pdf)</td>
-<td>255044462D312E</td>
-</tr>
-<tr>
-<td>Wave(wav)</td>
-<td>57415645</td>
-</tr>
-<tr>
-<td>pacp</td>
-<td>4D3C2B1A</td>
-</tr>
-</tbody>
-</table>
-<ol start="3">
-<li class="lvl-3">
-<p>文件头残缺/错误</p>
-<p>通常文件无法正常打开有两种情况，一种文件头部残缺，另一种头部字段错误。针对文件头部残缺的情况，使用winhex程序添加相应的文件头，针对头部字段错误，可以找一个相同类型的文件进行替换。</p>
-<p><mark>使用场景：文件头部残缺或文件头部字段错误无法打开正常文件</mark></p>
-<p><code>格式：file 文件名</code></p>
-<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202302011320661.png" alt=""></p>
+<p>具体命令参考：<a target="_blank" rel="noopener" href="https://forum.ywhack.com/bountytips.php?download">https://forum.ywhack.com/bountytips.php?download</a></p>
+<h3 id="权限">权限</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>文件权限</p>
 </li>
-</ol>
-<h3 id="文件分离操作">文件分离操作</h3>
-<ol>
-<li class="lvl-3">
-<p><strong>Binwalk工具</strong></p>
-<p><strong>Binwalk</strong>工具是Linux下用来分析和分离文件的工具，可以快速分辨文件是否由多个文件合并而成，并将文件进行分离。如果分离成功会在目标文件的目录。</p>
-<p>同目录下生成一个形如_文件名_extracted的文件目录，目录中有分离后的文件。</p>
-<p><mark>用法</mark>：</p>
-<p><code>分析文件：binwalk filename</code></p>
-<p><code>分离文件：binwalk -e filename</code></p>
+<li class="lvl-2">
+<p>服务权限</p>
+</li>
+<li class="lvl-2">
+<p>用户权限</p>
+</li>
+</ul>
+<h3 id="用户">用户</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>系统用户</p>
+</li>
+<li class="lvl-2">
+<p>用户组</p>
+</li>
+<li class="lvl-2">
+<p>服务用户</p>
+</li>
+</ul>
 <blockquote>
-<p>注：binwalk遇到压缩包会自动解压。</p>
+<p>Administrators：电脑本地的用户组</p>
 </blockquote>
+<h3 id="防火墙">防火墙</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>自带防火墙出站</p>
+<p>自己的服务器的流量出去，比如，用nc 将<mark>cmd</mark>的权限交给一个外网的服务器，这个过程便涉及到出站。</p>
 </li>
-<li class="lvl-3">
-<p><strong>formost</strong></p>
-<p>如果<strong>binwalk</strong>无法正确分离文件，可以使用<strong>foremost</strong>，将目标文件复制到kali中，成功执行后，会在目标文件的文件目录下生成我们设置的目录，目录中会按文件类型分离出文件。</p>
-<p><mark>用法</mark>：</p>
-<p><code>foremost 文件名 -o 输出目录名</code></p>
+<li class="lvl-2">
+<p>入站规则策略协议</p>
+<p>以Windows为例作为演示：<br>
+<img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202307061655210.png" alt=""></p>
 </li>
-<li class="lvl-3">
-<p><strong>dd</strong></p>
-<p>当文件自动分离出错或者因为其他原因无法自动分离时，可以使用<strong>dd</strong>实现文件手动分离。</p>
-<p><code>格式：dd if=源文件 of=目标文件名 bs=1 skip=开始分离的字节数</code></p>
-<p><mark>参数说明</mark>：</p>
-<p><code>if=file  #输入文件名，缺省为标准输入</code></p>
-<p><code>of=file  #输出文件名，缺省为标准输出</code></p>
-<p><code>bs=bytes  #同时设置读写块的大小为bytes，可代替ibs和obs</code></p>
-<p><code>skip=blocks  #从输入文件开头跳过blocks个块后再开始复制</code></p>
-</li>
-<li class="lvl-3">
-<p><strong>Winhex</strong></p>
-<p>除了使用dd外，还可以使用winhex实现文件手动分离，将目标文件拖入问winhex中，找到要分离的部分，点击复制即可。</p>
-<p><mark>使用场景：Windows下利用winhex程序对文件进行手动分离</mark></p>
-</li>
-<li class="lvl-3">
-<p><strong>010Editor</strong></p>
-<p><mark>将某块区域文件保存的方式如下：</mark></p>
+</ul>
+<p><strong>案例：</strong></p>
+<p>防火墙绕过-正向连接&amp;反向连接&amp;内网服务器</p>
+<p>**正向连接：**以攻击机作参照，自己主动去连接目标属于正向连接。</p>
+<p>**反向连接：**以攻击机作参照，让目标机主动去连接自己。</p>
+<p><strong>内网服务器</strong></p>
 <ol>
-<li class="lvl-6">
-<p>010Editor打开文件 -&gt; 选中右键 -&gt; Selection -&gt; Save Selection</p>
+<li class="lvl-3">
+<p>内网：</p>
+<p>内网 -&gt; 具有公网IP服务器</p>
+<p>具有公网IP服务器 !-&gt; 内网</p>
+</li>
+<li class="lvl-3">
+<p>防火墙：</p>
+<p>具有公网IP服务器A &lt;-&gt; 具有公网IP服务器B</p>
+<p>具有公网IP服务器A防火墙 -&gt; 具有公网IP服务器B</p>
+<p>具有公网IP服务器B !-&gt; 具有公网IP服务器A防火墙</p>
 </li>
 </ol>
-<p><mark>将16进制字符文件导入保存操作方法如下：</mark></p>
-<ol>
-<li class="lvl-6">
-<p>将16进制字符文件保存在一个文件</p>
-</li>
-<li class="lvl-6">
-<p>打开010Editor import Hex</p>
-</li>
-<li class="lvl-6">
-<p>另存为一个文件，后缀名以010Editor获取到它本身文件信息而定</p>
-</li>
-</ol>
-</li>
-</ol>
-<h3 id="文件合并操作">文件合并操作</h3>
-<ol>
-<li class="lvl-3">
-<p><strong>Linux下的文件合并</strong></p>
-<p><mark>使用场景：Linux下，通常对文件名相似的文件要进行批量合并</mark></p>
-<p><code>格式：cat 合并的文件 &gt; 输出的文件</code></p>
-<p><mark>完整性检测：Linux下计算文件md5：</mark></p>
-<p><code>md5sum 文件名</code></p>
-</li>
-<li class="lvl-3">
-<p><strong>Windows下的文件合并</strong></p>
-<p><mark>使用场景：Windows下，通常要对文件 名相似的文件进行批量合并</mark></p>
-<p><code>格式：copy /B 合并的文件 输出的文件命令</code></p>
-<p><mark>完整性检测：Windows下计算文件md5：</mark></p>
-<p><code>certutil -hashfiel 文件名 md5</code></p>
-</li>
-</ol>
-<h3 id="文件内容隐写">文件内容隐写</h3>
-<p>文件内容隐写，就是直接将KEY以十六进制的形式写在文件中，通常在文件的开头或结尾部分，<mark>分析时通常重点观察文件开头和结尾部分</mark>。如果在文件中间部分，通常搜索关键字<strong>KEY</strong>或者<strong>flag</strong>来查找隐藏内容。</p>
-<p><mark>使用场景：Windows下，搜索隐写的文件内容</mark></p>
-<ol>
-<li class="lvl-3">
-<p>winhex/010Editor</p>
-<p>通常将识别的文件拖入<strong>winhex</strong>中，查找具有关键字或明显与文件不和谐的部分，通常优先观察文件首部和尾部，搜索flag或key等关键字，最后拖动滚轮寻找。</p>
-</li>
-<li class="lvl-3">
-<p>Notepad++</p>
-<p>使用<strong>Notepad++<strong>打开文件，查看文件头尾是否有含有关键字的字符串，搜索</strong>flag</strong>或<strong>key</strong>等关键字，最后拖动滚轮寻找。</p>
-<p>另外通过安装插件HEX-Editor可以实现winhex的功能</p>
-</li>
-</ol>
-<h2 id="图片隐写术">图片隐写术</h2>
-<h3 id="图片隐写的常见隐写方法">图片隐写的常见隐写方法</h3>
-<ol>
-<li class="lvl-3">
-<p><strong>细微的颜色差别</strong></p>
-</li>
-<li class="lvl-3">
-<p><strong>GIF图多帧隐藏</strong></p>
-<ol>
-<li class="lvl-6">颜色通道隐藏</li>
-<li class="lvl-6">不同帧图信息隐藏</li>
-<li class="lvl-6">不同帧对比隐写</li>
-</ol>
-</li>
-<li class="lvl-3">
-<p><strong>Exif信息隐藏</strong></p>
-</li>
-<li class="lvl-3">
-<p><strong>图片修复</strong></p>
-<ol>
-<li class="lvl-6">图片头修复</li>
-<li class="lvl-6">图片尾修复</li>
-<li class="lvl-6">CRC校验修复</li>
-<li class="lvl-6">长、宽、高度修复</li>
-</ol>
-</li>
-<li class="lvl-3">
-<p><strong>最低有效位LSB隐写</strong></p>
-</li>
-<li class="lvl-3">
-<p><strong>图片加密</strong></p>
-<ol>
-<li class="lvl-6">Stedetect</li>
-<li class="lvl-6">outguess</li>
-<li class="lvl-6">F5</li>
-</ol>
-</li>
-</ol>
-<h3 id="图片文件隐写">图片文件隐写</h3>
-<ol>
-<li class="lvl-3">
-<p><strong>Firework</strong></p>
-<p>使用<strong>winhex</strong>打开文件时会看到文件头部中包含f<strong>irework</strong>的标识，通过<strong>firework</strong>可以找到隐藏图片。</p>
-<p><mark>使用场景：查看隐写的图片文件</mark></p>
-</li>
-<li class="lvl-3">
-<p><strong>Exif</strong></p>
-<p><strong>Exif</strong>按照JPEG的规格在JPEG中插入一些图像/数字相机的信息数据以及缩略图像，可以通过与JPEG兼容的互联浏览器/图片浏览器/图片处理等一些软件来查看<strong>Exif</strong>格式的图片文件，就跟浏览器通常JPEG图像文件一样。</p>
-<p>图片右键属性，查看Exif或查看详细信息，在相关选项卡中看找flag信息。</p>
-<p>如果是Linux环境下，可以用<strong>exiftool</strong>工具，<code>命令：exiftool 文件名（带后缀名）</code></p>
-</li>
-<li class="lvl-3">
-<p><strong>Stegsolve</strong></p>
-<p>当两张图片外观、大小、像素都基本相同时，可以考虑进行结合分析，即将两个文件的像素RGB值进行XOR、ADD、SUB等操作，看能否得到有用的信息，Stegsolve可以方便地进行这些操作。</p>
-<p><mark>使用场景：两张图片信息基本相同</mark></p>
-<ol>
-<li class="lvl-6">
-<p>打开第一张图片，点击analyse -&gt; Image combiner</p>
-</li>
-<li class="lvl-6">
-<p>在弹出的窗口中点击左右按钮选择处理方式，点击save保存有价值的结果</p>
-</li>
-</ol>
-</li>
-<li class="lvl-3">
-<p><strong>LSB（最低有效位Least Significant Bit)</strong></p>
-<p><strong>LSB</strong>替换隐写基本思想是用嵌入的秘密信息取代载体图像的最低特位，原来的7个高位平面与替代秘密信息的最低位平面组合成含有隐藏信息的新图形。</p>
-<ol>
-<li class="lvl-6">
-<p>像素三原色（RGB）</p>
-</li>
-<li class="lvl-6">
-<p>通过修改像素中最低位的1bit来达到隐藏的效果</p>
-</li>
-<li class="lvl-6">
-<p>工具：stegsolve、zsteg、wbstego4、python脚本</p>
-</li>
-<li class="lvl-6">
-<p><strong>Stegsolve.jar工具</strong></p>
-<ol>
-<li class="lvl-9">打开文件 -&gt; Analyse -&gt; Data Extract</li>
-<li class="lvl-9">调整Bit Plans，Bits Order，Bit Plane Order</li>
-</ol>
-</li>
-<li class="lvl-6">
-<p><strong>zsteg工具</strong></p>
-<p><mark>检测LSB隐写：</mark></p>
-<p><code>命令：zsteg xxx.png</code></p>
-</li>
-<li class="lvl-6">
-<p><strong>wbstego4工具</strong></p>
-<p>解密通过1sb加密的图片</p>
-</li>
-<li class="lvl-6">
-<p><strong>python脚本来处理</strong></p>
-<p>将目标文件放在以下脚本目录下，将脚本中的文件名修改为你的目标文件名，运行python脚本即可</p>
 <blockquote>
-<p>注：要在python2的环境运行。</p>
+<p>防火墙入站的检测比出站的检测更加严格。</p>
 </blockquote>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">#coding:utf-8
-import PIL.Image
-def foo():
-    im = PIL.Image.open('01.bmp')  #将'01.bmp'修改为你的目标文件名 
-    im2 = im.copy()
-    pix = im2.load()
-    width,height = im2.size
-    
-    for x in xrange(0,width):
-        for y in xrange(0,height):
-            if pix[x.y]&amp;0x1 == 0:
-                pix[x,y] = 0
-            else:
-                pix[x,y] = 255
-    im2.show()
-    pass
-if __name__=='__main__':
-    foo()
-    print 'ok.'
-    pass<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-</li>
-</ol>
-</li>
-<li class="lvl-3">
-<p>TTweakPNG</p>
-<p><strong>TweakPNG</strong>是一款简单易用的PNG图像浏览工具，它允许查看和修改一些PNG图像文件的元信息存储。</p>
-<p><mark>使用场景：文件头正常却无法打开文件，利用TweakPNG修CRC</mark></p>
-<p>例：</p>
-<ol>
-<li class="lvl-6">
-<p>当PNG文件头正常但无法打开文件，可能是CRC校验出错，可以尝试通过TweakPNG打开PNG，会弹出校验错误的提示，这里显示CRC是fe1a5ab6，正确的是b0a7a9f1。打开winhex搜索fe1a5ab6将其改为b0a7a9f1</p>
-<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202302011629751.png" alt=""></p>
-</li>
-</ol>
-<p><mark>有时CRC没有错误，但是图片的高度或者宽度发生了错误，需要通过CRC计算出正确的高度或者宽度。</mark></p>
-<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202302011652177.png" alt=""></p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">#cooding:utf-8
-import binascii
-import struct
-crcbp = open("xxx.png","rb").read()  # 此处将'xxx.png'改成你的目标文件名
-for i in range(1024):
-    for j in range(1024):
-        data = crcbp[12:16]+struct.pack('&gt;i',i)+struct.pack('&gt;i',j)+crcbp[24:29]
-        crc32 = binascii.crc32(data)&amp;0xffffffff
-        if crc32 == 0x08ec7edb:  # 此处填上CRC值
-            print i,j
-            print "hex".hex(i),hex(j)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-</li>
-<li class="lvl-3">
-<p><strong>Bftools</strong></p>
-<p><strong>bftools</strong>用于解密图片信息</p>
-<p><mark>使用场景：在Windows的cmd下，对加密过的图片文件进行解密</mark></p>
-<p><code>格式：Bftools.exe decode braincopter 要解密的图片名称 -output 输出文件名</code></p>
-<p><code>Bftools.exe run 上一步输出的文件</code></p>
-<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202302011703200.png" alt=""></p>
-</li>
-<li class="lvl-3">
-<p><strong>SilentEye</strong></p>
-<p><strong>silenteye</strong>是一款可以将文字或者文件隐藏到图片的解密工具。</p>
-<p><mark>使用场景：Windows下打开silentEye工具，对加密的图片进行解密</mark></p>
-<p>例：</p>
-<ol>
-<li class="lvl-6">
-<p>使用silentEye程序打开目标图片，点击image -&gt; decode，点击decode，可以查看隐藏文件，点击保存即可</p>
-</li>
-</ol>
-</li>
-<li class="lvl-3">
-<p>JPG图像加密</p>
-<ol>
-<li class="lvl-6">
-<p><strong>Stegdetect</strong>工具探测加密方式</p>
 <blockquote>
-<p>Stegdetect程序主要用于分析JPEG文件。因此用Stegdetect可以检测到通过JSteg、JPHide、OutGuess、Invisble Secrets、F5、appendx和Camoutflage等这些隐写工具隐藏的信息。</p>
-</blockquote>
-<p><code>Linux环境下命令：</code></p>
-<p><code>stegdetect xxx,jpg</code></p>
-<p><code>stegdetect -s 敏感度 xxx.jpgexi</code></p>
-</li>
-<li class="lvl-6">
-<p><strong>Jphide</strong></p>
-<p><strong>Jphide</strong>是基于最低有效位LSB的JPEG格式图像隐写算法。</p>
-<p>例：</p>
-<p>Stegdetect提示jphide加密时，可以用Jphs工具进行解密，打开jphswin.exe，使用open jpeg打开图片，点击seek，输入密码和确认密码，在弹出文件框中选择要保存的解密文件位置即可，结果保存成txt文件。</p>
-</li>
-<li class="lvl-6">
-<p><strong>Outguess</strong></p>
-<p><strong>Outguess</strong>一般用于解密文件信息</p>
-<p><mark>使用场景：Stegdetect识别出来或者题目提示时outguess加密的图片</mark></p>
-<p><code>格式：outguess -r 要解密的文件名输出结果文件名</code></p>
-</li>
-<li class="lvl-6">
-<p><strong>F5</strong></p>
-<p><strong>F5</strong>一般用于解密文件信息</p>
-<p><mark>使用场景：Stegdetect识别出来是F5加密的图片或题目提示是F5加密的图片</mark></p>
-<p>进入F5-steganography_F5目录，将图片文件拷贝至该目录下，从CMD进入该目录</p>
-<p><code>格式：Java Exrtact 要解密的文件名 -p 密码</code></p>
-</li>
-</ol>
-</li>
-<li class="lvl-3">
-<p><strong>二维码处理</strong></p>
-<ol>
-<li class="lvl-6">使用二维码扫描工具CQR.exe打开图片，找到内容字段</li>
-<li class="lvl-6">如果二维码某个定位角被覆盖了，该工具有时候也可以自动识别，如果识别失败，需要使用PS或画图工具将另外几个角的定位符移动到相应的位置，补全二维码。</li>
-<li class="lvl-6">如果某个二维码的定位点中间是白色，可能被反色了，使用画图工具把颜色反色回来再扫描即可。</li>
-</ol>
-</li>
-</ol>
-<blockquote>
-<p>免责声明：本文章涉及的知识和技能仅用于学习研究，如有用于非法途径或未被授权的真实网络环境，所造成的后果自行承担，责任与本文作者无关，倡导把安全知识和技能用于正当、正规、正义的途径。</p>
+<p>免责声明：本文章涉及的知识和技能仅用于学习研究，如有用于非法途径或未被授权的真实网络环境，所造成的后果及连带责任自行承担，与本文作者无关，倡导把安全知识和技能用于正当、正规、正义的途径。</p>
 </blockquote>
 
                 
@@ -938,7 +700,7 @@ for i in range(1024):
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://www.ahao8.top/posts/b478.html">https://www.ahao8.top/posts/b478.html</a>
+                    <a href="https://www.ahao8.top/posts/351d.html">https://www.ahao8.top/posts/351d.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -976,12 +738,12 @@ for i in range(1024):
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/CTF/">
-                                    <span class="chip bg-color">CTF</span>
+                                <a href="/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/">
+                                    <span class="chip bg-color">渗透测试</span>
                                 </a>
                             
-                                <a href="/tags/misc/">
-                                    <span class="chip bg-color">misc</span>
+                                <a href="/tags/%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/">
+                                    <span class="chip bg-color">基础入门</span>
                                 </a>
                             
                         </div>
@@ -1307,17 +1069,18 @@ for i in range(1024):
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/posts/4c50.html">
+                <a href="/posts/351d.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/loading.gif" data-original="/medias/featureimages/22.jpg" class="responsive-img" alt="数据结构与算法中的列表查找">
+                        <img src="/medias/loading.gif" data-original="/medias/featureimages/6.jpg" class="responsive-img" alt="渗透测试基础入门(一)">
                         
-                        <span class="card-title">数据结构与算法中的列表查找</span>
+                        <span class="card-title">渗透测试基础入门(一)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1327,30 +1090,31 @@ for i in range(1024):
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-02-24
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-07-06
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" class="post-category">
-                                    数据结构与算法
+                            <a href="/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/" class="post-category">
+                                    渗透测试
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/python/">
-                        <span class="chip bg-color">python</span>
+                    <a href="/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/">
+                        <span class="chip bg-color">渗透测试</span>
                     </a>
                     
-                    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">
-                        <span class="chip bg-color">数据结构与算法</span>
+                    <a href="/tags/%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/">
+                        <span class="chip bg-color">基础入门</span>
                     </a>
                     
                 </div>
@@ -1364,13 +1128,13 @@ for i in range(1024):
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/bb2d.html">
+                <a href="/posts/b08d.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/loading.gif" data-original="/medias/featureimages/10.jpg" class="responsive-img" alt="python数据类型">
+                        <img src="/medias/loading.gif" data-original="/medias/featureimages/1.jpg" class="responsive-img" alt="PHP安全特性分析">
                         
-                        <span class="card-title">python数据类型</span>
+                        <span class="card-title">PHP安全特性分析</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1381,14 +1145,14 @@ for i in range(1024):
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-02-24
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-06-03
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/python/" class="post-category">
-                                    python
+                            <a href="/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/" class="post-category">
+                                    渗透测试
                                 </a>
                             
                             
@@ -1398,8 +1162,12 @@ for i in range(1024):
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/python/">
-                        <span class="chip bg-color">python</span>
+                    <a href="/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/">
+                        <span class="chip bg-color">渗透测试</span>
+                    </a>
+                    
+                    <a href="/tags/PHP%E5%AE%89%E5%85%A8/">
+                        <span class="chip bg-color">PHP安全</span>
                     </a>
                     
                 </div>

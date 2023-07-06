@@ -6,7 +6,7 @@
   <link href="https://www.ahao8.top/atom.xml" rel="self"/>
   
   <link href="https://www.ahao8.top/"/>
-  <updated>2023-06-04T08:10:28.541Z</updated>
+  <updated>2023-07-06T08:58:12.245Z</updated>
   <id>https://www.ahao8.top/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>渗透测试基础入门(一)</title>
+    <link href="https://www.ahao8.top/posts/351d.html"/>
+    <id>https://www.ahao8.top/posts/351d.html</id>
+    <published>2023-07-06T08:55:08.985Z</published>
+    <updated>2023-07-06T08:58:12.245Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;名词解释-渗透测试-漏洞-攻击-后门-代码-专业词&quot;&gt;名词解释-渗透测试-漏洞&amp;amp;攻击&amp;amp;后门&amp;amp;代码&amp;amp;专业词&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;前后端&lt;/strong&gt;&lt;/p&gt;
+&lt;ul class=&quot;lvl-0&quot;&gt;
+&lt;li</summary>
+        
+      
+    
+    
+    
+    <category term="渗透测试" scheme="https://www.ahao8.top/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
+    
+    
+    <category term="渗透测试" scheme="https://www.ahao8.top/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
+    
+    <category term="基础入门" scheme="https://www.ahao8.top/tags/%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/"/>
+    
+  </entry>
   
   <entry>
     <title>PHP安全特性分析</title>
