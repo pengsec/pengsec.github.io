@@ -4,22 +4,11 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="PHP安全特性分析">
-    <meta name="description" content="过滤函数缺陷绕过
-== 与 ===
-
-
-== 赋值，弱类型对比
-
-
-=== 对比，类型也会对比
-
-
-本地示例演示：
-==的情况：
-代码：
-&amp;lt;?php
-header(&#34;Content-Type:text/html;charset=utf">
+    <meta name="keywords" content="渗透测试基础入门">
+    <meta name="description" content="网站搭建前置知识
+域名
+域名（Domain Name）：简单地理解，域名是由一串字符组成的，域名指向某一个IP地址。
+域名的出现解决了记忆困难的问题，这个是你不再需要去记那么难记的IP地址，你只需要记住http://baidu.com这种便">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -31,7 +20,7 @@ header(&#34;Content-Type:text/html;charset=utf">
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>PHP安全特性分析 | 阿浩の博客</title>
+    <title>渗透测试基础入门(二) | 阿浩の博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
     <style>
@@ -420,12 +409,12 @@ header(&#34;Content-Type:text/html;charset=utf">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">PHP安全特性分析</h1>
+                    <h1 class="description center-align post-title">渗透测试基础入门(二)</h1>
                 </div>
             </div>
         </div>
@@ -453,8 +442,8 @@ header(&#34;Content-Type:text/html;charset=utf">
                                 <span class="chip bg-color">渗透测试</span>
                             </a>
                         
-                            <a href="/tags/PHP%E5%AE%89%E5%85%A8/">
-                                <span class="chip bg-color">PHP安全</span>
+                            <a href="/tags/%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/">
+                                <span class="chip bg-color">基础入门</span>
                             </a>
                         
                     </div>
@@ -478,21 +467,21 @@ header(&#34;Content-Type:text/html;charset=utf">
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-06-03
+                    2023-07-07
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-06-04
+                    2023-07-07
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.5k
+                    773
                 </div>
                 
 
@@ -517,361 +506,49 @@ header(&#34;Content-Type:text/html;charset=utf">
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="过滤函数缺陷绕过">过滤函数缺陷绕过</h2>
-<h3 id="与">== 与 ===</h3>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>== 赋值，弱类型对比</p>
-</li>
-<li class="lvl-2">
-<p>=== 对比，类型也会对比</p>
-</li>
-</ul>
-<p>本地示例演示：</p>
-<p><strong>==的情况：</strong></p>
-<p>代码：</p>
-<pre class="line-numbers language-php" data-language="php"><code class="language-php">&lt;?php
-header("Content-Type:text/html;charset=utf-8");
-$flag='You can get the flag!';
-//1、== ===缺陷绕过 == 弱类型对比 ===还会比较类型
-$a=1;
-if($a==$_GET['x']){
- echo $flag;
-}
-?&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>这种属于==的情况，在参数中输入+1 1.0 1a 这三种方式都可以输出flag</p>
-<p><strong>===的情况：</strong></p>
-<p>代码：</p>
-<pre class="line-numbers language-php" data-language="php"><code class="language-php">&lt;?php
-header("Content-Type:text/html;charset=utf-8");
-$flag='You can get the flag!';
-//1、== ===缺陷绕过 == 弱类型对比 ===还会比较类型
-$a='1';
-if($a===$_GET['y']){
- echo $flag;
-}
-?&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>这种情况输入参数为1能获取flag</p>
-<h3 id="md5">md5</h3>
-<p>md5()属于md5加密函数</p>
-<p>因为处理hash字符串时，PHP会将每一个以 0E开头的哈希值解释为0，那么只要传入的不同字符串经过哈希以后是以 0E开头的，那么PHP会认为它们相同</p>
-<p>基本的原理是这样的，但更严谨的字符串格式是，<code>0e</code> 开头，同时后面都是数字，不能包含其他字符的字符串，md5 值才会相等（<code>==</code> 的结果为 True，但 <code>===</code> 的结果为 False）</p>
-<p>参考文章：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/ainsliaea/p/15126218.html">https://www.cnblogs.com/ainsliaea/p/15126218.html</a></p>
-<p><strong>本地代码示例演示：</strong></p>
-<p>代码：</p>
-<pre class="line-numbers language-php" data-language="php"><code class="language-php">&lt;?php
-header("Content-Type:text/html;charset=utf-8");
-$flag='You can get the flag!';
-if($_GET['name'] != $_GET['password']){
-    if(MD5($_GET['name']) == MD5($_GET['password'])){
-        echo $flag;
-    }else{
-         echo '?';
-    }  
-}
-?&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>这种情况有两种方式绕过：</p>
-<ol>
-<li class="lvl-3">
-<p>echo MD5(‘QNKCDZO’);<br>
-echo MD5(‘240610708’);</p>
-<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202306032256492.png" alt=""></p>
-</li>
-<li class="lvl-3">
-<p>利用数组绕过：name[]=1&amp;password[]=2</p>
-</li>
-</ol>
-<h3 id="intval">intval</h3>
-<p>intval()函数的作用是获取变量的整数</p>
-<p><strong>本地代码示例演示：</strong></p>
-<p>代码：</p>
-<pre class="line-numbers language-php" data-language="php"><code class="language-php">&lt;?php
-header("Content-Type:text/html;charset=utf-8");
-$flag='You can get the flag!';
-$i='666';
-$ii=$_GET['n'];
-if(intval($ii==$i,0)){
- echo $flag;
-}
-?&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>参数输入<mark>0x29a</mark>进行绕过</p>
-<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202306032256273.png" alt=""></p>
-<h3 id="strpos">strpos</h3>
-<p>strpos()函数查找字符串在另一个字符串汇中第一次出现的位置（区分大小写）</p>
-<p><strong>本地代码示例演示：</strong></p>
-<p>代码：</p>
-<pre class="line-numbers language-php" data-language="php"><code class="language-php">&lt;?php
-header("Content-Type:text/html;charset=utf-8");
-$flag='You can get the flag!';
-$i='666';
-$ii=$_GET['h'];
-if(strpos($ii,$i,"0")){
- echo $flag;
-}
-?&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>输入参数h=%0a666进行绕过</p>
-<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202306032257831.png" alt=""></p>
-<h3 id="in-array">in_array</h3>
-<p>从数组里搜索特定词注：strict 可选，如果该参数设置未TRUE，则in_array()函数检查搜索的数据组的值类型是否相同，也就是没有true，就是相当于==</p>
-<p><strong>本地代码示例演示：</strong></p>
-<p>代码：</p>
-<pre class="line-numbers language-php" data-language="php"><code class="language-php">&lt;?php
-header("Content-Type:text/html;charset=utf-8");
-$flag='You can get the flag!';
-$whitelist = [1,2,3];
-$page=$_GET['i'];
-if (in_array($page, $whitelist)) {
- echo $flag;
-}
-?&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202306032257953.png" alt=""></p>
-<h3 id="preg-match">preg_match</h3>
-<p>执行匹配正则表达式可以利用数组绕过</p>
-<p><strong>本地代码示例演示：</strong></p>
-<p>代码：</p>
-<pre class="line-numbers language-php" data-language="php"><code class="language-php">&lt;?php
-header("Content-Type:text/html;charset=utf-8");
-$flag='You can get the flag!';
-if(isset($_GET['num'])){
-	$num = $_GET['num'];
-	if(preg_match("/[0-9]/", $num)){
-		die("no no no!");
-	}
-	if(intval($num)){
-		echo $flag;
-	}
-}
-?&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>利用数组进行绕过</p>
-<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202306032257750.png" alt=""></p>
-<p>这个报错属于代码没有处理，但不要紧，理解就行</p>
-<blockquote>
-<p><strong>isset()</strong> 函数用于检测变量是否已设置并且非 NULL</p>
-</blockquote>
-<h3 id="str-replace">str_replace</h3>
-<p>过滤字符串，把字符串替换成另一个字符串存在一个问题：无法迭代循环，只能一次过滤</p>
-<p><strong>本地代码示例演示：</strong></p>
-<p>代码：</p>
-<pre class="line-numbers language-php" data-language="php"><code class="language-php">&lt;?php
-header("Content-Type:text/html;charset=utf-8");
-$sql=$_GET['s'];
-$sql=str_replace('select','',$sql);
-echo $sql;
-?&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>这种常用于sql注入双写绕过</p>
-<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202306032257350.png" alt=""></p>
-<h3 id="小结">小结</h3>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>== 与 ===</p>
-<ul class="lvl-2">
-<li class="lvl-4">不比较类型</li>
-<li class="lvl-4">比较类型</li>
-<li class="lvl-4">md5</li>
-</ul>
-</li>
-<li class="lvl-2">
-<p>intval</p>
-<p>取整数，进制或小数等绕过</p>
-</li>
-<li class="lvl-2">
-<p>strops</p>
-<p>查看字符串，换行绕过</p>
-</li>
-<li class="lvl-2">
-<p>in_array</p>
-<p>第三个参数设置安全</p>
-</li>
-<li class="lvl-2">
-<p>preg_match</p>
-<ul class="lvl-2">
-<li class="lvl-4">数组绕过</li>
-<li class="lvl-4">不带M正则表达，可用换行</li>
-</ul>
-</li>
-<li class="lvl-2">
-<p>str_replace</p>
-<p>无递归，双写绕过</p>
-</li>
-</ul>
-<h2 id="实践-CTFShow-PHP-特性-89-关卡">实践-CTFShow-PHP 特性-89 关卡</h2>
-<h3 id="web89">web89</h3>
-<p>题目的关键代码：</p>
-<pre class="line-numbers language-php" data-language="php"><code class="language-php">&lt;?php
-include("flag.php");
-highlight_file(__FILE__);
-
-if(isset($_GET['num'])){
-    $num = $_GET['num'];
-    if(preg_match("/[0-9]/", $num)){
-        die("no no no!");
-    }
-    if(intval($num)){
-        echo $flag;
-    }
-}
-?&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>这一关可以利用数组绕过</p>
-<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202306032257870.png" alt=""></p>
-<h3 id="web90">web90</h3>
-<p>题目的关键代码：</p>
-<pre class="line-numbers language-php" data-language="php"><code class="language-php">&lt;?php
-include("flag.php");
-highlight_file(__FILE__);
-if(isset($_GET['num'])){
-    $num = $_GET['num'];
-    if($num==="4476"){
-        die("no no no!");
-    }
-    if(intval($num,0)===4476){
-        echo $flag;
-    }else{
-        echo intval($num,0);
-    }
-}
-?&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>这一关利用进制绕过</p>
-<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202306032257396.png" alt=""></p>
-<h3 id="web91">web91</h3>
-<p>题目的关键代码：</p>
-<pre class="line-numbers language-php" data-language="php"><code class="language-php">&lt;?php
-show_source(__FILE__);
-include('flag.php');
-$a=$_GET['cmd'];
-if(preg_match('/^php$/im', $a)){
-    if(preg_match('/^php$/i', $a)){
-        echo 'hacker';
-    }
-    else{
-        echo $flag;
-    }
-}
-else{
-    echo 'nonononono';
-}
-&gt;    <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>/^php$/im中的m是指换行，这一关利用换行绕过</p>
-<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202306032257759.png" alt=""></p>
-<h3 id="web92">web92</h3>
-<p>题目的关键代码：</p>
-<pre class="line-numbers language-php" data-language="php"><code class="language-php">&lt;?php
-include("flag.php");
-highlight_file(__FILE__);
-if(isset($_GET['num'])){
-    $num = $_GET['num'];
-    if($num==4476){
-        die("no no no!");
-    }
-    if(intval($num,0)==4476){
-        echo $flag;
-    }else{
-        echo intval($num,0);
-    }
-}
-?&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>这一关可以利用进制绕过，输入参数num=4476.1也能绕过，两种方式都可以</p>
-<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202306032258095.png" alt=""></p>
-<h3 id="web93">web93</h3>
-<p>题目的关键代码：</p>
-<pre class="line-numbers language-php" data-language="php"><code class="language-php">&lt;?php
-include("flag.php");
-highlight_file(__FILE__);
-if(isset($_GET['num'])){
-    $num = $_GET['num'];
-    if($num==4476){
-        die("no no no!");
-    }
-    if(preg_match("/[a-z]/i", $num)){
-        die("no no no!");
-    }
-    if(intval($num,0)==4476){
-        echo $flag;
-    }else{
-        echo intval($num,0);
-    }
-}
-?&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>这一关用上一关的方式同样能绕过</p>
-<h3 id="web94">web94</h3>
-<p>题目的关键代码：</p>
-<pre class="line-numbers language-php" data-language="php"><code class="language-php">&lt;?php
-include("flag.php");
-highlight_file(__FILE__);
-if(isset($_GET['num'])){
-    $num = $_GET['num'];
-    if($num==="4476"){
-        die("no no no!");
-    }
-    if(preg_match("/[a-z]/i", $num)){
-        die("no no no!");
-    }
-    if(!strpos($num, "0")){
-        die("no no no!");
-    }
-    if(intval($num,0)===4476){
-        echo $flag;
-    }
-}
-?&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>这一关用换行或者空格都可以绕过</p>
-<p>?num=%0a010574 或 ?num=%20010574</p>
-<p>这也可以使用参数浮点型绕过 num=4476.0</p>
-<h3 id="web95">web95</h3>
-<p>题目的关键代码：</p>
-<pre class="line-numbers language-php" data-language="php"><code class="language-php">&lt;?php
-include("flag.php");
-highlight_file(__FILE__);
-if(isset($_GET['num'])){
-    $num = $_GET['num'];
-    if($num==4476){
-        die("no no no!");
-    }
-    if(preg_match("/[a-z]|\./i", $num)){
-        die("no no no!!");
-    }
-    if(!strpos($num, "0")){
-        die("no no no!!!");
-    }
-    if(intval($num,0)===4476){
-        echo $flag;
-    }
-}
-?&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>这一关用换行或者空格都可以绕过</p>
-<p>?num=%0a010574 或 ?num=%20010574</p>
-<h3 id="web96">web96</h3>
-<p>题目的关键代码：</p>
-<pre class="line-numbers language-php" data-language="php"><code class="language-php">&lt;?php
-highlight_file(__FILE__);
-
-if(isset($_GET['u'])){
-    if($_GET['u']=='flag.php'){
-        die("no no no");
-    }else{
-        highlight_file($_GET['u']);
-    }
-}
-?&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>这一关可以用num=./flag.php绕过</p>
-<blockquote>
-<p>./flag.php指读取当前目录的flag.php</p>
-</blockquote>
-<h3 id="web97">web97</h3>
-<p>题目的关键代码：</p>
-<pre class="line-numbers language-php" data-language="php"><code class="language-php">&lt;?php
-include("flag.php");
-highlight_file(__FILE__);
-if (isset($_POST['a']) and isset($_POST['b'])) {
-if ($_POST['a'] != $_POST['b'])
-if (md5($_POST['a']) === md5($_POST['b']))
-echo $flag;
-else
-print 'Wrong.';
-}
-?&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>这一关可以利用数组绕过 <code>a[]=1&amp;b[]=2</code></p>
-<p>注意：要用post方式提交参数</p>
-<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202306032258814.png" alt=""></p>
+                <h2 id="网站搭建前置知识">网站搭建前置知识</h2>
+<h3 id="域名">域名</h3>
+<p>域名（Domain Name）：简单地理解，域名是由一串字符组成的，域名指向某一个IP地址。</p>
+<p>域名的出现解决了记忆困难的问题，这个是你不再需要去记那么难记的IP地址，你只需要记住<a href="https://link.zhihu.com/?target=http%3A//baidu.com">http://baidu.com</a>这种便于人类记忆的字母数字组合的域名。就好比你给每个手机号备注名字一样，也是为了方便记忆。</p>
+<h4 id="域名格式">域名格式</h4>
+<p>一般来说，域名包括顶级域名、一级域名、子域名组成。</p>
+<h4 id="顶级域名">顶级域名</h4>
+<p>顶级域/域名后缀，一般是 .com、.net、.org、.com. cn、.cn 等等。</p>
+<p>顶级域（或顶级域名；英语：Top-level Domain；英文缩写：TLD）是互联网DNS等级之中的最高级的域，它保存于DNS根域的名字空间中。顶级域名是域名的最后一个部分，即是域名最后一点之后的字母，例如在 <mark><a target="_blank" rel="noopener" href="http://example.com">example.com</a></mark> 这个域名中，顶级域是 .com（或 .COM ），大小写视为相同</p>
+<p>各种域名后缀都有不同含义。例如 .com 意为商业/公司（Commercial / companies / company ），.net 意为网络（network），.org 意为组织（<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=organization&amp;search_source=Entity&amp;hybrid_search_source=Entity&amp;hybrid_search_extra=%7B%22sourceType%22%3A%22answer%22%2C%22sourceId%22%3A2526511558%7D">organization</a>）。</p>
+<p>还有<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=%E5%9B%BD%E5%88%AB%E5%9F%9F%E5%90%8D&amp;search_source=Entity&amp;hybrid_search_source=Entity&amp;hybrid_search_extra=%7B%22sourceType%22%3A%22answer%22%2C%22sourceId%22%3A2526511558%7D">国别域名</a>。例如 .CN 就是中国的国别域名，；例如 <a target="_blank" rel="noopener" href="http://example.cn">http://example.cn</a> 即可表示这个网站来自于中国/注册在中国。</p>
+<h4 id="一级域名">一级域名</h4>
+<p><mark>example.com</mark> 这样的域名就叫做“一级域名”。</p>
+<p><mark><a target="_blank" rel="noopener" href="http://example.com.cn">example.com.cn</a></mark> 这样的域名也叫做“一级域名”，因为 <a target="_blank" rel="noopener" href="http://com.cn">http://com.cn</a> 是一个域名后缀。</p>
+<h4 id="二级域名">二级域名</h4>
+<p><a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=%E4%BA%8C%E7%BA%A7%E5%9F%9F%E5%90%8D&amp;search_source=Entity&amp;hybrid_search_source=Entity&amp;hybrid_search_extra=%7B%22sourceType%22%3A%22answer%22%2C%22sourceId%22%3A2526511558%7D">二级域名</a>又叫子域名。</p>
+<p>例如 <a target="_blank" rel="noopener" href="http://docs.example.com">http://docs.example.com</a> 前缀就是“docs”； <a target="_blank" rel="noopener" href="http://www.example.com">http://www.example.com</a> 前缀就是“www”。</p>
+<h3 id="HTTP-HTTPSHTTP">HTTP/HTTPSHTTP</h3>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202307071419709.jpg" alt="HTTP和HTTPS的区别"></p>
+<p><a target="_blank" rel="noopener" href="https://xn--SSL-jn2e361gxfau70h6orhlt">https://前缀表明是用SSL</a> (安全套接字)或TSL加密的，你的电脑与服务器之间收发的信息传输将更加安全。</p>
+<h3 id="证书">证书</h3>
+<h2 id="WEB应用环境架构类">WEB应用环境架构类</h2>
+<h3 id="开发语言">开发语言</h3>
+<p>asp,php,aspx,jsp,java,python,ruby,go,html,javascript等</p>
+<h3 id="程序源码">程序源码</h3>
+<p>根据开发语言分类；应用类型分类；开源CMS分类；开发框架分类等</p>
+<h3 id="中间件容器">中间件容器</h3>
+<p>IIS,Apache,Nginx,Tomcat,Weblogic,Jboos,glasshfish等</p>
+<h3 id="数据库类型">数据库类型</h3>
+<p>Access,Mysql,Mssql,Oracle,db2,Sybase,Redis,MongoDB等</p>
+<h3 id="服务器操作系统">服务器操作系统</h3>
+<p>Windows系列，Linux系列，Mac系列等</p>
+<h3 id="第三方软件">第三方软件</h3>
+<p>phpmyadmin,vs-ftpd,VNC,ELK,Openssh等</p>
+<h2 id="WEB应用安全漏洞分类">WEB应用安全漏洞分类</h2>
+<p>SQL注入，文件安全，RCE执行，XSS跨站，CSRF/SSRF/CRLF，</p>
+<p>反序列化，逻辑越权，未授权访问，XXE/XML，弱口令安全等</p>
+<h2 id="WEB请求返回过程数据包参考">WEB请求返回过程数据包参考</h2>
+<p>请求数据包，请求方法，请求体，响应包，响应头，状态码，代理服务器等</p>
+<p>Request,Response,User-Agent,Cookie,Server,Content-Length等</p>
+<p>参考文章：</p>
+<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/558455228c43">https://www.jianshu.com/p/558455228c43</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/cherrycui/p/10815465.html">https://www.cnblogs.com/cherrycui/p/10815465.html</a></p>
 <blockquote>
 <p>免责声明：本文章涉及的知识和技能仅用于学习研究，如有用于非法途径或未被授权的真实网络环境，所造成的后果及连带责任自行承担，与本文作者无关，倡导把安全知识和技能用于正当、正规、正义的途径。</p>
 </blockquote>
@@ -901,7 +578,7 @@ print 'Wrong.';
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://www.ahao8.top/posts/b08d.html">https://www.ahao8.top/posts/b08d.html</a>
+                    <a href="https://www.ahao8.top/posts/f5b9.html">https://www.ahao8.top/posts/f5b9.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -943,8 +620,8 @@ print 'Wrong.';
                                     <span class="chip bg-color">渗透测试</span>
                                 </a>
                             
-                                <a href="/tags/PHP%E5%AE%89%E5%85%A8/">
-                                    <span class="chip bg-color">PHP安全</span>
+                                <a href="/tags/%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/">
+                                    <span class="chip bg-color">基础入门</span>
                                 </a>
                             
                         </div>
@@ -1270,17 +947,18 @@ print 'Wrong.';
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/posts/351d.html">
+                <a href="/posts/f5b9.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/loading.gif" data-original="/medias/featureimages/6.jpg" class="responsive-img" alt="渗透测试基础入门(一)">
+                        <img src="/medias/loading.gif" data-original="/medias/featureimages/2.jpg" class="responsive-img" alt="渗透测试基础入门(二)">
                         
-                        <span class="card-title">渗透测试基础入门(一)</span>
+                        <span class="card-title">渗透测试基础入门(二)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1290,9 +968,9 @@ print 'Wrong.';
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-07-06
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-07-07
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1305,6 +983,7 @@ print 'Wrong.';
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -1327,13 +1006,13 @@ print 'Wrong.';
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/743c.html">
+                <a href="/posts/351d.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/loading.gif" data-original="/medias/featureimages/23.jpg" class="responsive-img" alt="ASP安全分析">
+                        <img src="/medias/loading.gif" data-original="/medias/featureimages/6.jpg" class="responsive-img" alt="渗透测试基础入门(一)">
                         
-                        <span class="card-title">ASP安全分析</span>
+                        <span class="card-title">渗透测试基础入门(一)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1344,7 +1023,7 @@ print 'Wrong.';
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-06-02
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-07-06
                             </span>
                         <span class="publish-author">
                             
@@ -1365,12 +1044,8 @@ print 'Wrong.';
                         <span class="chip bg-color">渗透测试</span>
                     </a>
                     
-                    <a href="/tags/ASP%E5%AE%89%E5%85%A8/">
-                        <span class="chip bg-color">ASP安全</span>
-                    </a>
-                    
-                    <a href="/tags/%E6%BC%8F%E6%B4%9E%E5%88%86%E6%9E%90/">
-                        <span class="chip bg-color">漏洞分析</span>
+                    <a href="/tags/%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/">
+                        <span class="chip bg-color">基础入门</span>
                     </a>
                     
                 </div>
