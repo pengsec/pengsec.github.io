@@ -6,7 +6,7 @@
   <link href="https://www.ahao8.top/atom.xml" rel="self"/>
   
   <link href="https://www.ahao8.top/"/>
-  <updated>2023-07-07T06:21:54.635Z</updated>
+  <updated>2023-07-07T16:25:12.532Z</updated>
   <id>https://www.ahao8.top/</id>
   
   <author>
@@ -17,11 +17,41 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>渗透测试基础入门(三)</title>
+    <link href="https://www.ahao8.top/posts/651b.html"/>
+    <id>https://www.ahao8.top/posts/651b.html</id>
+    <published>2023-07-07T16:24:30.885Z</published>
+    <updated>2023-07-07T16:25:12.532Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;抓包技术&quot;&gt;抓包技术&lt;/h2&gt;
+&lt;h3 id=&quot;抓包技术应用意义&quot;&gt;抓包技术应用意义&lt;/h3&gt;
+&lt;p&gt;有些对象不是直接测试，有可能不是一个域名或者IP，给的可能是APP或小程序，抓包应用的资产信息进行安全测试。&lt;/p&gt;
+&lt;h3</summary>
+        
+      
+    
+    
+    
+    <category term="渗透测试" scheme="https://www.ahao8.top/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
+    
+    
+    <category term="渗透测试" scheme="https://www.ahao8.top/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
+    
+    <category term="基础入门" scheme="https://www.ahao8.top/tags/%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/"/>
+    
+  </entry>
+  
+  <entry>
     <title>渗透测试基础入门(二)</title>
     <link href="https://www.ahao8.top/posts/f5b9.html"/>
     <id>https://www.ahao8.top/posts/f5b9.html</id>
     <published>2023-07-07T06:19:15.007Z</published>
-    <updated>2023-07-07T06:21:54.635Z</updated>
+    <updated>2023-07-07T06:22:16.715Z</updated>
     
     
       

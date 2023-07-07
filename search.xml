@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>渗透测试基础入门(三)</title>
+      <link href="/posts/651b.html"/>
+      <url>/posts/651b.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="抓包技术">抓包技术</h2><h3 id="抓包技术应用意义">抓包技术应用意义</h3><p>有些对象不是直接测试，有可能不是一个域名或者IP，给的可能是APP或小程序，抓包应用的资产信息进行安全测试。</p><h3 id="抓包技术应用对象">抓包技术应用对象</h3><p>网站，小程序，APP，桌面应用等。</p><h3 id="抓包技术应用协议">抓包技术应用协议</h3><p>WEB服务：HTTP/HTTPS</p><p>非WEB服务：例如TCP&amp;UDP</p><h3 id="抓包技术应用支持">抓包技术应用支持</h3><h4 id="Fiddler">Fiddler</h4><p>一个 http 协议调试代理工具，它能够记录并检查所有你的电脑和互联网之间的 http 通讯，设置断点，查看所有的“进出”Fiddler 的数据（指 cookie,html,js,css 等文件）。 Fiddler 要比其他的网络调试器要更加简单，因为它不仅仅暴露 http 通讯还提供了一个用户友好的格式。</p><h4 id="Charles">Charles</h4><p>一个 HTTP 代理服务器,HTTP 监视器,反转代理服务器，当浏览器连接 Charles 的代理访问互联网时，<br>Charles 可以监控浏览器发送和接收的所有数据。它允许一个开发者查看所有连接互联网的 HTTP 通信，这些包括 request, response 和 HTTP headers （包含 cookies 与 caching 信息）。</p><h4 id="TCPDump">TCPDump</h4><p>可以将网络中传送的数据包完全截获下来提供分析。它支持针对网络层、协议、主机、网络或端口的过滤，并提供 and、or、not 等逻辑语句来帮助你去掉无用的信息。</p><h4 id="BurpSuite">BurpSuite</h4><p>用于攻击 web 应用程序的集成平台，包含了许多工具。Burp Suite 为这些工具设计了许多接口，以加快攻击应用程序的过程。所有工具都共享一个请求，并能处理对应的 HTTP 消息、持久性、认证、代理、日志、警报。</p><h4 id="Wireshark">Wireshark</h4><p>一个网络封包分析软件。网络封包分析软件的功能是截取网络封包，并尽可能显示出最为详细的网络封包资料。Wireshark 使用 WinPCAP 作为接口，直接与网卡进行数据报文交换。科来网络分析系统：是一款由科来软件全自主研发，并拥有全部知识产品的网络分析产品。该系统具有行业领先的专家分析技术，通过捕获并分析网络中传输的底层数据包，对网络故障、网络安全以及网络性能进行全面分析，从而快速排查网络中出现或潜在的故障、安全及性能问题。</p><h4 id="WPE-封包分析">WPE&amp;封包分析</h4><p>强大的网络封包编辑器，wpe 可以截取网络上的信息，修改封包数据，是外挂制作的常用工具。一般在安全测试中可用来调试数据通讯地址。</p><h4 id="应用">应用</h4><ul class="lvl-0"><li class="lvl-2"><p>HTTP/HTTPS</p><ul class="lvl-2"><li class="lvl-4">Clarles</li><li class="lvl-4">Fiddler</li><li class="lvl-4">Burpsuite</li></ul></li><li class="lvl-2"><p>其他协议</p><ul class="lvl-2"><li class="lvl-4">科来</li><li class="lvl-4">TCPDump</li><li class="lvl-4">Wireshark</li></ul></li></ul><h3 id="封包技术应用意义">封包技术应用意义</h3><p>零散和整体的区别，抓包是零散的，封包能精确到每个操作的数据包。</p><h2 id="APP抓包环境配置：">APP抓包环境配置：</h2><ol><li class="lvl-3"><p>安卓模拟器安装搭建逍遥，雷电，夜神等自行百度下载安装</p></li><li class="lvl-3"><p>工具相关证书安装指南<br>Charles<br><a href="https://blog.csdn.net/weixin_45459427/article/details/108393878">https://blog.csdn.net/weixin_45459427/article/details/108393878</a><br>Fidder<br><a href="https://blog.csdn.net/weixin_45043349/article/details/120088449">https://blog.csdn.net/weixin_45043349/article/details/120088449</a><br>BurpSuite<br><a href="https://blog.csdn.net/qq_36658099/article/details/81487491">https://blog.csdn.net/qq_36658099/article/details/81487491</a></p></li><li class="lvl-3"><p>代理设置</p><ul class="lvl-2"><li class="lvl-5"><p>burpsuite Charles fiddler<br>模拟器设置证书后设置代理 -&gt; 运行工具的本机IP 端口<br>burpsuite Charles fiddler 配置代理监听抓取</p></li><li class="lvl-5"><p>wireshark 科来 不需要配置任何东西抓网络接口</p></li></ul></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 渗透测试 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 渗透测试 </tag>
+            
+            <tag> 基础入门 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>渗透测试基础入门(二)</title>
       <link href="/posts/f5b9.html"/>
       <url>/posts/f5b9.html</url>
