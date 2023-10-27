@@ -6,7 +6,7 @@
   <link href="https://www.ahao8.top/atom.xml" rel="self"/>
   
   <link href="https://www.ahao8.top/"/>
-  <updated>2023-10-27T13:41:46.228Z</updated>
+  <updated>2023-10-27T14:02:16.229Z</updated>
   <id>https://www.ahao8.top/</id>
   
   <author>
@@ -17,11 +17,40 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>docker学习笔记</title>
+    <link href="https://www.ahao8.top/posts/ed4b.html"/>
+    <id>https://www.ahao8.top/posts/ed4b.html</id>
+    <published>2023-10-27T14:00:36.544Z</published>
+    <updated>2023-10-27T14:02:16.229Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;镜像管理&quot;&gt;镜像管理&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;docker image IS &lt;/code&gt; / &lt;code&gt;docker images&lt;/code&gt;   查看镜像&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;docker search [image]&lt;/code&gt; </summary>
+        
+      
+    
+    
+    
+    <category term="docker" scheme="https://www.ahao8.top/categories/docker/"/>
+    
+    
+    <category term="docker" scheme="https://www.ahao8.top/tags/docker/"/>
+    
+    <category term="学习笔记" scheme="https://www.ahao8.top/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Lampiao靶机详解</title>
     <link href="https://www.ahao8.top/posts/2298.html"/>
     <id>https://www.ahao8.top/posts/2298.html</id>
     <published>2023-10-27T13:30:20.686Z</published>
-    <updated>2023-10-27T13:41:46.228Z</updated>
+    <updated>2023-10-27T13:42:21.812Z</updated>
     
     
       
@@ -600,37 +629,6 @@
     <category term="python" scheme="https://www.ahao8.top/tags/python/"/>
     
     <category term="数据结构与算法" scheme="https://www.ahao8.top/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>misc的基本解题思路(一)</title>
-    <link href="https://www.ahao8.top/posts/b478.html"/>
-    <id>https://www.ahao8.top/posts/b478.html</id>
-    <published>2023-02-24T13:09:49.866Z</published>
-    <updated>2023-02-25T14:55:11.643Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;&lt;strong&gt;misc的四大部分：&lt;/strong&gt;&lt;/p&gt;
-&lt;ul class=&quot;lvl-0&quot;&gt;
-&lt;li class=&quot;lvl-2&quot;&gt;文件操作与隐写&lt;/li&gt;
-&lt;li class=&quot;lvl-2&quot;&gt;图片隐写术&lt;/li&gt;
-&lt;li</summary>
-        
-      
-    
-    
-    
-    <category term="CTF" scheme="https://www.ahao8.top/categories/CTF/"/>
-    
-    
-    <category term="CTF" scheme="https://www.ahao8.top/tags/CTF/"/>
-    
-    <category term="misc" scheme="https://www.ahao8.top/tags/misc/"/>
     
   </entry>
   

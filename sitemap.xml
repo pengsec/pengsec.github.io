@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.ahao8.top/posts/ed4b.html</loc>
+    
+    <lastmod>2023-10-27</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://www.ahao8.top/posts/2298.html</loc>
     
     <lastmod>2023-10-27</lastmod>
@@ -424,6 +433,20 @@
     <priority>0.2</priority>
   </url>
   
+  <url>
+    <loc>https://www.ahao8.top/tags/docker/</loc>
+    <lastmod>2023-10-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.ahao8.top/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
+    <lastmod>2023-10-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
 
   
   <url>
@@ -463,6 +486,13 @@
   
   <url>
     <loc>https://www.ahao8.top/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/</loc>
+    <lastmod>2023-10-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.ahao8.top/categories/docker/</loc>
     <lastmod>2023-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
