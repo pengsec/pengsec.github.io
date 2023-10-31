@@ -6,7 +6,7 @@
   <link href="https://www.ahao8.top/atom.xml" rel="self"/>
   
   <link href="https://www.ahao8.top/"/>
-  <updated>2023-10-31T13:55:04.090Z</updated>
+  <updated>2023-10-31T16:27:28.834Z</updated>
   <id>https://www.ahao8.top/</id>
   
   <author>
@@ -17,11 +17,41 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>LordOfTheRoot_1.0.1靶机详解</title>
+    <link href="https://www.ahao8.top/posts/3b91.html"/>
+    <id>https://www.ahao8.top/posts/3b91.html</id>
+    <published>2023-10-31T15:29:46.362Z</published>
+    <updated>2023-10-31T16:27:28.834Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;靶机基本信息&quot;&gt;靶机基本信息&lt;/h2&gt;
+&lt;p&gt;靶机地址：&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="渗透测试" scheme="https://www.ahao8.top/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
+    
+    
+    <category term="渗透测试" scheme="https://www.ahao8.top/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
+    
+    <category term="vulnhub" scheme="https://www.ahao8.top/tags/vulnhub/"/>
+    
+    <category term="靶机" scheme="https://www.ahao8.top/tags/%E9%9D%B6%E6%9C%BA/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Raven2靶机详解</title>
     <link href="https://www.ahao8.top/posts/41f7.html"/>
     <id>https://www.ahao8.top/posts/41f7.html</id>
     <published>2023-10-31T13:53:14.880Z</published>
-    <updated>2023-10-31T13:55:04.090Z</updated>
+    <updated>2023-10-31T13:57:12.398Z</updated>
     
     
       
@@ -51,7 +81,7 @@
     <link href="https://www.ahao8.top/posts/5602.html"/>
     <id>https://www.ahao8.top/posts/5602.html</id>
     <published>2023-10-31T13:48:08.425Z</published>
-    <updated>2023-10-31T13:56:46.690Z</updated>
+    <updated>2023-10-31T13:57:12.398Z</updated>
     
     
       
@@ -592,38 +622,6 @@
     <category term="CTF" scheme="https://www.ahao8.top/tags/CTF/"/>
     
     <category term="misc" scheme="https://www.ahao8.top/tags/misc/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>数据结构与算法中的排序算法(一)</title>
-    <link href="https://www.ahao8.top/posts/6547.html"/>
-    <id>https://www.ahao8.top/posts/6547.html</id>
-    <published>2023-02-24T13:09:49.881Z</published>
-    <updated>2023-02-14T04:44:44.081Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;列表排序&quot;&gt;列表排序&lt;/h2&gt;
-&lt;ul class=&quot;lvl-0&quot;&gt;
-&lt;li class=&quot;lvl-2&quot;&gt;
-&lt;p&gt;排序：将一组“无序”的记录序列调整为“有序”的记录序列&lt;/p&gt;
-&lt;/li&gt;
-&lt;li</summary>
-        
-      
-    
-    
-    
-    <category term="数据结构与算法" scheme="https://www.ahao8.top/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
-    
-    
-    <category term="python" scheme="https://www.ahao8.top/tags/python/"/>
-    
-    <category term="数据结构与算法" scheme="https://www.ahao8.top/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   

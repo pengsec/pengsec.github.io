@@ -4,11 +4,10 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="渗透测试基础入门">
-    <meta name="description" content="网站搭建前置知识
-域名
-域名（Domain Name）：简单地理解，域名是由一串字符组成的，域名指向某一个IP地址。
-域名的出现解决了记忆困难的问题，这个是你不再需要去记那么难记的IP地址，你只需要记住http://baidu.com这种便">
+    <meta name="keywords" content="LordOfTheRoot_1.0.1靶机详解">
+    <meta name="description" content="靶机基本信息
+靶机地址：https://www.vulnhub.com/entry/lord-of-the-root-101,129/
+靶机难度：中等（CTF）靶机描述：这是KoocSec为黑客练习准备的另一个Boot2Root挑战。他通过">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -20,7 +19,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>渗透测试基础入门(二) | 阿浩の博客</title>
+    <title>LordOfTheRoot_1.0.1靶机详解 | 阿浩の博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
     <style>
@@ -409,12 +408,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">渗透测试基础入门(二)</h1>
+                    <h1 class="description center-align post-title">LordOfTheRoot_1.0.1靶机详解</h1>
                 </div>
             </div>
         </div>
@@ -442,8 +441,12 @@
                                 <span class="chip bg-color">渗透测试</span>
                             </a>
                         
-                            <a href="/tags/%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/">
-                                <span class="chip bg-color">基础入门</span>
+                            <a href="/tags/vulnhub/">
+                                <span class="chip bg-color">vulnhub</span>
+                            </a>
+                        
+                            <a href="/tags/%E9%9D%B6%E6%9C%BA/">
+                                <span class="chip bg-color">靶机</span>
                             </a>
                         
                     </div>
@@ -467,21 +470,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-07-07
+                    2023-10-31
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-07-07
+                    2023-11-01
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    773
+                    1.7k
                 </div>
                 
 
@@ -506,49 +509,171 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="网站搭建前置知识">网站搭建前置知识</h2>
-<h3 id="域名">域名</h3>
-<p>域名（Domain Name）：简单地理解，域名是由一串字符组成的，域名指向某一个IP地址。</p>
-<p>域名的出现解决了记忆困难的问题，这个是你不再需要去记那么难记的IP地址，你只需要记住<a href="https://link.zhihu.com/?target=http%3A//baidu.com">http://baidu.com</a>这种便于人类记忆的字母数字组合的域名。就好比你给每个手机号备注名字一样，也是为了方便记忆。</p>
-<h4 id="域名格式">域名格式</h4>
-<p>一般来说，域名包括顶级域名、一级域名、子域名组成。</p>
-<h4 id="顶级域名">顶级域名</h4>
-<p>顶级域/域名后缀，一般是 .com、.net、.org、.com. cn、.cn 等等。</p>
-<p>顶级域（或顶级域名；英语：Top-level Domain；英文缩写：TLD）是互联网DNS等级之中的最高级的域，它保存于DNS根域的名字空间中。顶级域名是域名的最后一个部分，即是域名最后一点之后的字母，例如在 <mark><a target="_blank" rel="noopener" href="http://example.com">example.com</a></mark> 这个域名中，顶级域是 .com（或 .COM ），大小写视为相同</p>
-<p>各种域名后缀都有不同含义。例如 .com 意为商业/公司（Commercial / companies / company ），.net 意为网络（network），.org 意为组织（<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=organization&amp;search_source=Entity&amp;hybrid_search_source=Entity&amp;hybrid_search_extra=%7B%22sourceType%22%3A%22answer%22%2C%22sourceId%22%3A2526511558%7D">organization</a>）。</p>
-<p>还有<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=%E5%9B%BD%E5%88%AB%E5%9F%9F%E5%90%8D&amp;search_source=Entity&amp;hybrid_search_source=Entity&amp;hybrid_search_extra=%7B%22sourceType%22%3A%22answer%22%2C%22sourceId%22%3A2526511558%7D">国别域名</a>。例如 .CN 就是中国的国别域名，；例如 <a target="_blank" rel="noopener" href="http://example.cn">http://example.cn</a> 即可表示这个网站来自于中国/注册在中国。</p>
-<h4 id="一级域名">一级域名</h4>
-<p><mark>example.com</mark> 这样的域名就叫做“一级域名”。</p>
-<p><mark><a target="_blank" rel="noopener" href="http://example.com.cn">example.com.cn</a></mark> 这样的域名也叫做“一级域名”，因为 <a target="_blank" rel="noopener" href="http://com.cn">http://com.cn</a> 是一个域名后缀。</p>
-<h4 id="二级域名">二级域名</h4>
-<p><a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=%E4%BA%8C%E7%BA%A7%E5%9F%9F%E5%90%8D&amp;search_source=Entity&amp;hybrid_search_source=Entity&amp;hybrid_search_extra=%7B%22sourceType%22%3A%22answer%22%2C%22sourceId%22%3A2526511558%7D">二级域名</a>又叫子域名。</p>
-<p>例如 <a target="_blank" rel="noopener" href="http://docs.example.com">http://docs.example.com</a> 前缀就是“docs”； <a target="_blank" rel="noopener" href="http://www.example.com">http://www.example.com</a> 前缀就是“www”。</p>
-<h3 id="HTTP-HTTPSHTTP">HTTP/HTTPSHTTP</h3>
-<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202307071419709.jpg" alt="HTTP和HTTPS的区别"></p>
-<p><a target="_blank" rel="noopener" href="https://xn--SSL-jn2e361gxfau70h6orhlt">https://前缀表明是用SSL</a> (安全套接字)或TSL加密的，你的电脑与服务器之间收发的信息传输将更加安全。</p>
-<h3 id="证书">证书</h3>
-<h2 id="WEB应用环境架构类">WEB应用环境架构类</h2>
-<h3 id="开发语言">开发语言</h3>
-<p>asp,php,aspx,jsp,java,python,ruby,go,html,javascript等</p>
-<h3 id="程序源码">程序源码</h3>
-<p>根据开发语言分类；应用类型分类；开源CMS分类；开发框架分类等</p>
-<h3 id="中间件容器">中间件容器</h3>
-<p>IIS,Apache,Nginx,Tomcat,Weblogic,Jboos,glasshfish等</p>
-<h3 id="数据库类型">数据库类型</h3>
-<p>Access,Mysql,Mssql,Oracle,db2,Sybase,Redis,MongoDB等</p>
-<h3 id="服务器操作系统">服务器操作系统</h3>
-<p>Windows系列，Linux系列，Mac系列等</p>
-<h3 id="第三方软件">第三方软件</h3>
-<p>phpmyadmin,vs-ftpd,VNC,ELK,Openssh等</p>
-<h2 id="WEB应用安全漏洞分类">WEB应用安全漏洞分类</h2>
-<p>SQL注入，文件安全，RCE执行，XSS跨站，CSRF/SSRF/CRLF，</p>
-<p>反序列化，逻辑越权，未授权访问，XXE/XML，弱口令安全等</p>
-<h2 id="WEB请求返回过程数据包参考">WEB请求返回过程数据包参考</h2>
-<p>请求数据包，请求方法，请求体，响应包，响应头，状态码，代理服务器等</p>
-<p>Request,Response,User-Agent,Cookie,Server,Content-Length等</p>
-<p>参考文章：</p>
-<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/558455228c43">https://www.jianshu.com/p/558455228c43</a></p>
-<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/cherrycui/p/10815465.html">https://www.cnblogs.com/cherrycui/p/10815465.html</a></p>
+                <h2 id="靶机基本信息">靶机基本信息</h2>
+<p>靶机地址：<a target="_blank" rel="noopener" href="https://www.vulnhub.com/entry/lord-of-the-root-101,129/">https://www.vulnhub.com/entry/lord-of-the-root-101,129/</a><br>
+靶机难度：中等（CTF）靶机描述：这是KoocSec为黑客练习准备的另一个Boot2Root挑战。他通过OSCP考试的启发准备了这一过程。它基于伟大的小说改制电影《指环王》的概念。目标：得到root权限&amp;找到flag.txt</p>
+<h2 id="主机发现">主机发现</h2>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202311010018505.png" alt=""></p>
+<p>也可以使用<mark>nmap</mark>进行主机发现</p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202311010018477.png" alt=""></p>
+<h2 id="信息收集">信息收集</h2>
+<p>全端口扫描：</p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202311010018589.png" alt=""></p>
+<p>从扫描结果中可以看得出仅仅开放了22端口</p>
+<p><strong>ssh尝试登录：</strong></p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202311010018076.png" alt=""></p>
+<p>发现信息：Easy as 1,2,3<br>
+意思是让敲震端口3次</p>
+<p><strong>端口碰撞：</strong></p>
+<p>端口试探（port knocking）是一种通过连接尝试，从外部打开原先关闭端口的方法。一旦收到正确顺序的连接尝试，防火墙就会动态打开一些特定的端口给允许尝试连接的主机。</p>
+<p>端口试探的主要目的是防治攻击者通过端口扫描的方式对主机进行攻击。端口试探类似于一次秘密握手协议，比如一种最基本的方式：发送一定序列的UDP、TCP数据包。当运行在主机上的daemon程序捕捉到数据包以后，如果这个序列正确，则开启相应的端口，或者防火墙允许客户端通过。</p>
+<p>由于对外的Linux服务器通过限制IP地址的方式来控制访问，因此可以利用这种端口试探方式来进行防火墙对于访问IP地址的控制。</p>
+<p><strong>如何进行端口碰撞？</strong></p>
+<p>首先需要我们知道端口碰撞的序列，否则暴力碰撞开启的机会太小。</p>
+<p>1）第一种方法：knock 命令<br>
+linux安装：sudo apt install knockd</p>
+<p>使用：<code>knock &lt;IP&gt; &lt;PORT1&gt; &lt;PORT2&gt; &lt;PORT3&gt; &lt;PORT4&gt; -v</code><br>
+例如需要碰撞 172.16.1.1 的 3，4，7，8 端口：<br>
+<code>knock 192.168.255.131 1 2 3 -v</code></p>
+<p>2）第二种方法：hping3：TCP/IP数据包组装/分析工具<br>
+<code>hping3 -S [IP地址] -p 1 -c 1</code></p>
+<p><code>hping3 -S 192.168.255.131 -p 1 -c 1</code><br>
+<code>hping3 -S 192.168.255.131 -p 2 -c 1</code><br>
+<code>hping3 -S 192.168.255.131 -p 3 -c 1</code></p>
+<p>-S（–syn）：SYN是TCP/IP建立连接时使用的握手信号。在客户机和服务器之间建立正常的TCP网络连接时，客户机首先发出一个SYN消息，服务器使用SYN-ACK应答表示接收到了这个消息，最后客户机再以ACK消息响应。这样在客户机和服务器之间才能建立起可靠的TCP连接，数据才可以在客户机和服务器之间传递。<br>
+-p --destport： 目的端口（默认为0），可同时指定多个端口<br>
+-c --count：指定数据包的次数</p>
+<p>参考资料：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_30247635/article/details/86243448">https://blog.csdn.net/qq_30247635/article/details/86243448</a></p>
+<p><strong>敲震三次后：</strong><br>
+nmap全端口查看情况：</p>
+<p><code>sudo nmap -p- 192.168.255.131</code></p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202311010018816.png" alt=""></p>
+<p>访问<a target="_blank" rel="noopener" href="http://192.168.255.131:1337">http://192.168.255.131:1337</a></p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202311010019711.png" alt=""></p>
+<p>**信息枚举：**<a target="_blank" rel="noopener" href="http://192.168.255.131:1337/">http://192.168.255.131:1337/</a></p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202311010019051.png" alt=""></p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202311010019913.png" alt=""></p>
+<p>访问<a target="_blank" rel="noopener" href="http://192.168.255.131:1337/404.html">http://192.168.255.131:1337/404.html</a></p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202311010019706.png" alt=""></p>
+<p>其实这是一个容错处理，请求一个不存在的资源，也会指向这个页面</p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202311010019382.png" alt=""></p>
+<p>审查元素发现：</p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202311010019937.png" alt=""></p>
+<p>在kali通过base64解码这串字符：</p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202311010019743.png" alt=""></p>
+<p>发现还是base64继续解码：</p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202311010019601.png" alt=""></p>
+<p>发现目录</p>
+<p>访问<a target="_blank" rel="noopener" href="http://192.168.255.131:1337/978345210/index.php">http://192.168.255.131:1337/978345210/index.php</a></p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202311010020139.png" alt=""></p>
+<h2 id="漏洞发现与利用">漏洞发现与利用</h2>
+<p><strong>尝试使用sqlmap注入：</strong></p>
+<p><strong>爆破数据库库信息：</strong></p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202311010022341.png" alt=""></p>
+<p>结果：</p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202311010022317.png" alt=""></p>
+<p>爆破出了数据库四个，继续获取webapp数据表信息</p>
+<blockquote>
+<p>Optimization<br>
+-o：开启所有优化开关<br>
+–predict-output：预测常见的查询输出<br>
+–keep-alive：使用持久的HTTP(S)连接<br>
+–null-connection：从没有实际的HTTP响应体中检索页面长度</p>
+<p>–threads=THREADS：设置请求的并发数<br>
+–forms参数，sqlmap会自动从-u中的url获取页面中的表单进行测试</p>
+</blockquote>
+<p><strong>爆破数据库表信息：</strong></p>
+<p>命令：<code>sqlmap -o -u "http://192.168.255.131:1337/978345210/index.php" --forms -D Webapp --tables</code></p>
+<p>结果：</p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202311010022627.png" alt=""></p>
+<p>可以看到Users数据表，继续查看数据表信息</p>
+<p><strong>爆破数据库表字段信息：</strong></p>
+<p>命令：<code>sqlmap -o -u "http://192.168.255.131:1337/978345210/index.php" --forms -D Webapp -T Users --columns</code></p>
+<p>结果：</p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202311010022415.png" alt=""></p>
+<p>可看到数据库Webapp的表Users中存在字段id,password,username信息</p>
+<p><strong>爆破字段内容信息：</strong></p>
+<p>命令：<code>sqlmap -o -u "http://192.168.255.131:1337/978345210/index.php" --forms -D Webapp -T Users --columns -C id,username,password --dump</code></p>
+<p>结果：</p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202311010022532.png" alt=""></p>
+<p>获得用户密码，分别将用户名保存成username.txt，密码保存成password.txt</p>
+<blockquote>
+<p>命令参数解析：</p>
+<p>-D dbname指定数据库名称</p>
+<p>-T tablename：指定某数据表的名称</p>
+<p>–columns：列出指定表上的所有列</p>
+<p>-C Cnmme:指定列名</p>
+<p>–dump:导出列里面的字段</p>
+</blockquote>
+<p><strong>进行SSH爆破：</strong></p>
+<p>有两种办法进行爆破</p>
+<p>1、利用Hydra爆破ssh</p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202311010022832.png" alt=""></p>
+<p>2、利用MSF爆破ssh</p>
+<p>若有用户名和密码字典的话，使用auxiliary/scanner/ssh/ssh_login模块</p>
+<p>若不知道，使用auxiliary/scanner/ssh/ssh_enumusers模块先探测用户名是否存在</p>
+<p>参考：<a target="_blank" rel="noopener" href="https://blog.csdn.net/huweiliyi/article/details/105590291">https://blog.csdn.net/huweiliyi/article/details/105590291</a></p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202311010022228.png" alt=""></p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202311010022557.png" alt=""></p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202311010022810.png" alt=""></p>
+<p><strong>ssh登录：</strong></p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202311010023363.png" alt=""></p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202311010023819.png" alt=""></p>
+<h2 id="权限提升">权限提升</h2>
+<p>查看内核版本信息：</p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202311010023441.png" alt=""></p>
+<p>谷歌搜索引擎搜索：Ubuntu 14.04 exploit<br>
+exp参考链接：<a target="_blank" rel="noopener" href="https://www.exploit-db.com/exploits/39166">https://www.exploit-db.com/exploits/39166</a></p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202311010023430.png" alt=""></p>
+<p>本地使用python开启http服务：</p>
+<p>命令：<code>python2 -m SimpleHTTPServer 8081</code></p>
+<p>提权并读取<mark>root</mark>目录的Flag.txt：</p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202311010023863.png" alt=""></p>
+<p><strong>Mysql UDF提权：</strong></p>
+<p>UDF提权先查看mysql版本：</p>
+<p>命令<code>dpkg -l | grep mysql </code>，查看历史安装包版本</p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202311010023655.png" alt=""></p>
+<p>查看mysql运行权限是不是root：</p>
+<p>命令<code>ps aux | grep root</code>   —查看mysql进程信息</p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202311010023861.png" alt=""></p>
+<p>再寻找mysql账号密码：</p>
+<p>命令：<code>find / -name login.*</code></p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202311010023363.png" alt=""></p>
+<p>发现信息：/var/www/978345210/login.php</p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202311010023043.png" alt=""></p>
+<p>获得mysql密码：darkshadow</p>
+<p><strong>登录mysql：</strong><br>
+<code>mysql -uroot -pdarkshadow</code></p>
+<p>首先看一下是否满足写入条件：<br>
+<code>show global variables like 'secure%';</code></p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202311010023100.png" alt=""></p>
+<p>是可以进行UDF提权的！</p>
+<p>查看插件目录：<br>
+<code>show variables like '%plugin%';</code></p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202311010023595.png" alt=""></p>
+<p>插件目录在：/usr/lib/mysql/plugin/</p>
+<p>查看能否远程登陆：<img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202311010023923.png" alt=""><br>
+只能本地登录！</p>
+<blockquote>
+<p>MySQL中，BLOB是一个二进制大型对象，是一个可以存储大量数据的容器，它能容纳不同大小的数据。BLOB类型实际是个类型系列（TinyBlob、Blob、MediumBlob、LongBlob），除了在存储的最大信息量上不同外，他们是等同的。</p>
+<p>MySQL的四种BLOB类型：类型           大小(单位：字节)<br>
+TinyBlob      最大 255<br>
+Blob          最大 65K<br>
+MediumBlob    最大 16M<br>
+LongBlob      最大 4G</p>
+<p>可以利用lib_mysqludf_sys提供的函数执行系统命令，lib_mysqludf_sys：<br>
+sys_eval，执行任意命令，并将输出返回<br>
+sys_exec，执行任意命令，并将退出码返回。<br>
+sys_get，获取一个环境变量。<br>
+sys_set，创建或修改一个环境变量。</p>
+</blockquote>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202311010023858.png" alt=""></p>
+<p>使用python开启http服务：<code>python2 -m SimpleHTTPServer 8081</code></p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202311010023199.png" alt=""></p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202311010023632.png" alt=""></p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202311010024969.png" alt=""></p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202311010024531.png" alt=""></p>
+<p>这种方法也一样可以提升为root权限！</p>
 <blockquote>
 <p>免责声明：本文章涉及的知识和技能仅用于学习研究，如有用于非法途径或未被授权的真实网络环境，所造成的后果及连带责任自行承担，与本文作者无关，倡导把安全知识和技能用于正当、正规、正义的途径。</p>
 </blockquote>
@@ -578,7 +703,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://www.ahao8.top/posts/f5b9.html">https://www.ahao8.top/posts/f5b9.html</a>
+                    <a href="https://www.ahao8.top/posts/3b91.html">https://www.ahao8.top/posts/3b91.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -620,8 +745,12 @@
                                     <span class="chip bg-color">渗透测试</span>
                                 </a>
                             
-                                <a href="/tags/%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/">
-                                    <span class="chip bg-color">基础入门</span>
+                                <a href="/tags/vulnhub/">
+                                    <span class="chip bg-color">vulnhub</span>
+                                </a>
+                            
+                                <a href="/tags/%E9%9D%B6%E6%9C%BA/">
+                                    <span class="chip bg-color">靶机</span>
                                 </a>
                             
                         </div>
@@ -947,17 +1076,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/posts/651b.html">
+                <a href="/posts/3b91.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/loading.gif" data-original="/medias/featureimages/21.jpg" class="responsive-img" alt="渗透测试基础入门(三)">
+                        <img src="/medias/loading.gif" data-original="/medias/featureimages/9.jpg" class="responsive-img" alt="LordOfTheRoot_1.0.1靶机详解">
                         
-                        <span class="card-title">渗透测试基础入门(三)</span>
+                        <span class="card-title">LordOfTheRoot_1.0.1靶机详解</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -967,9 +1097,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-07-08
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-10-31
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -982,6 +1112,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -989,8 +1120,12 @@
                         <span class="chip bg-color">渗透测试</span>
                     </a>
                     
-                    <a href="/tags/%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/">
-                        <span class="chip bg-color">基础入门</span>
+                    <a href="/tags/vulnhub/">
+                        <span class="chip bg-color">vulnhub</span>
+                    </a>
+                    
+                    <a href="/tags/%E9%9D%B6%E6%9C%BA/">
+                        <span class="chip bg-color">靶机</span>
                     </a>
                     
                 </div>
@@ -1004,13 +1139,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/351d.html">
+                <a href="/posts/41f7.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/loading.gif" data-original="/medias/featureimages/6.jpg" class="responsive-img" alt="渗透测试基础入门(一)">
+                        <img src="/medias/loading.gif" data-original="/medias/featureimages/3.jpg" class="responsive-img" alt="Raven2靶机详解">
                         
-                        <span class="card-title">渗透测试基础入门(一)</span>
+                        <span class="card-title">Raven2靶机详解</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1021,7 +1156,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-07-06
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-10-31
                             </span>
                         <span class="publish-author">
                             
@@ -1042,8 +1177,12 @@
                         <span class="chip bg-color">渗透测试</span>
                     </a>
                     
-                    <a href="/tags/%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/">
-                        <span class="chip bg-color">基础入门</span>
+                    <a href="/tags/vulnhub/">
+                        <span class="chip bg-color">vulnhub</span>
+                    </a>
+                    
+                    <a href="/tags/%E9%9D%B6%E6%9C%BA/">
+                        <span class="chip bg-color">靶机</span>
                     </a>
                     
                 </div>
