@@ -6,7 +6,7 @@
   <link href="https://www.ahao8.top/atom.xml" rel="self"/>
   
   <link href="https://www.ahao8.top/"/>
-  <updated>2023-10-31T16:31:50.738Z</updated>
+  <updated>2023-11-01T13:55:35.216Z</updated>
   <id>https://www.ahao8.top/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>DERPNSTINK-1靶机详解</title>
+    <link href="https://www.ahao8.top/posts/da0.html"/>
+    <id>https://www.ahao8.top/posts/da0.html</id>
+    <published>2023-11-01T13:35:15.187Z</published>
+    <updated>2023-11-01T13:55:35.216Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;靶机基本信息&quot;&gt;靶机基本信息&lt;/h2&gt;
+&lt;p&gt;靶机地址：&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="渗透测试" scheme="https://www.ahao8.top/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
+    
+    
+    <category term="渗透测试" scheme="https://www.ahao8.top/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
+    
+    <category term="vulnhub" scheme="https://www.ahao8.top/tags/vulnhub/"/>
+    
+    <category term="靶机" scheme="https://www.ahao8.top/tags/%E9%9D%B6%E6%9C%BA/"/>
+    
+  </entry>
   
   <entry>
     <title>LordOfTheRoot_1.0.1靶机详解</title>
@@ -591,37 +621,6 @@
     <category term="服务器" scheme="https://www.ahao8.top/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
     
     <category term="Linux" scheme="https://www.ahao8.top/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>misc的基本解题思路(二)</title>
-    <link href="https://www.ahao8.top/posts/e560.html"/>
-    <id>https://www.ahao8.top/posts/e560.html</id>
-    <published>2023-02-25T15:06:05.001Z</published>
-    <updated>2023-03-11T12:18:49.882Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;&lt;strong&gt;misc的四大部分：&lt;/strong&gt;&lt;/p&gt;
-&lt;ul class=&quot;lvl-0&quot;&gt;
-&lt;li class=&quot;lvl-2&quot;&gt;文件操作与隐写&lt;/li&gt;
-&lt;li class=&quot;lvl-2&quot;&gt;图片隐写术&lt;/li&gt;
-&lt;li</summary>
-        
-      
-    
-    
-    
-    <category term="CTF" scheme="https://www.ahao8.top/categories/CTF/"/>
-    
-    
-    <category term="CTF" scheme="https://www.ahao8.top/tags/CTF/"/>
-    
-    <category term="misc" scheme="https://www.ahao8.top/tags/misc/"/>
     
   </entry>
   

